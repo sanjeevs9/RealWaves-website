@@ -5,11 +5,12 @@ import Navbar from "./components/Navbar";
 import CategoryCard from "./components/CategoryCard";
 import categoryBag from "@/public/heroSection/categoryBag.png"
 import Hero from "./components/Hero";
+import CustomerReviewSection from "./Sections/CustomerReviewSection";
 
 export default function Home() {
   return (
     <>
-      <div className="p-8 bg-gray-100 min-h-screen">
+      <div className=" bg-gray-100 min-h-screen w-full bg">
     <Navbar />
     <Hero />
     
@@ -60,6 +61,9 @@ export default function Home() {
         backgroundColor="#001842"
       />
       </div>
+      
+      <CustomerReviewSection />
+
     </div>
      
     </>
