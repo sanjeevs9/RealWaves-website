@@ -6,6 +6,8 @@ import categoryBag from "@/public/heroSection/categoryBag.png";
 import Hero from "./components/Hero";
 import CustomerReviewSection from "./Sections/CustomerReviewSection";
 import MapSection from "./Sections/location";
+import WhyChooseUsSection from "./Sections/WhyChooseUs";
+import AboutVideoSection from "./Sections/AboutUs";
 
 export default function Home() {
   return (
@@ -66,6 +68,8 @@ export default function Home() {
       </div>
 
       <MapSection />
+      <WhyChooseUsSection />
+      <AboutVideoSection />
     </>
   );
 }
