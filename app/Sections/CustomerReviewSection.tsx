@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ReviewCard from "../components/ReviewCard";
 
 export default function CustomerReviewSection() {
@@ -47,11 +47,11 @@ export default function CustomerReviewSection() {
     // }, [reviews.length]);
 
     // Show 1 card on mobile, up to 3 on larger screens
-    const visibleReviews = () => {
-        // This is a simple implementation - for a more responsive approach
-        // you might want to use a hook to detect screen width
-        return [reviews[currentIndex]];
-    };
+    // const visibleReviews = () => {
+    //     // This is a simple implementation - for a more responsive approach
+    //     // you might want to use a hook to detect screen width
+    //     return [reviews[currentIndex]];
+    // };
 
     return (
         <div className="py-16 bg-gray-900 text-white w-full">

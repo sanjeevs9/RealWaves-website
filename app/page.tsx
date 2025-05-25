@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ProductCard from "./components/ProductCard";
 import bagImage from "@/public/bags/redBag.png";
 import Navbar from "./components/Navbar";

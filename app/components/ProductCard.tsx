@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image';
 const ProductCard = ({
   productCode,
   gsmValue,
@@ -38,7 +38,7 @@ const ProductCard = ({
 
         {/* Product Image */}
         <div className="flex justify-center h-48  ">
-            <img 
+            <Image 
             src={productImage} 
             alt={productName}
             className="w-full h-full object-contain absolute bottom-16 left-0 right-0"

@@ -4,19 +4,18 @@ import naividya from "@/public/naivedya.png"
 import quoteMark from "@/public/quote.png"
 
 interface ReviewCardProps {
-  companyName: string;
-  quote: string;
-  authorName: string;
-  authorTitle: string;
-  logoSrc: string;
+  companyName?: string;
+  quote?: string;
+  authorName?: string;
+  authorTitle?: string;
+  logoSrc?: string;
 }
 
 const ReviewCard: React.FC<ReviewCardProps> = ({
   companyName,
   quote,
   authorName,
-  authorTitle,
-  logoSrc,
+  authorTitle
 }) => {
   return (
     <div className="bg-[#EDF0FF] rounded-3xl p-6 shadow-md  max-w-[300px] ">

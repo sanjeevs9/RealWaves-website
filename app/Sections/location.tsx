@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Navigation, Star, Users, Package } from 'lucide-react';
+import { Navigation } from 'lucide-react';
 
 interface StoreLocation {
   name: string;
@@ -58,7 +58,7 @@ const MapSection: React.FC = () => {
   };
 
   // Google Maps Embed URL
-  const googleMapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || 'demo'}&q=${storeLocation.coordinates.lat},${storeLocation.coordinates.lng}&zoom=15&maptype=roadmap`;
+  // const googleMapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || 'demo'}&q=${storeLocation.coordinates.lat},${storeLocation.coordinates.lng}&zoom=15&maptype=roadmap`;
   
   // Fallback URL without API key (limited functionality)
   const fallbackMapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8749042734344!2d${storeLocation.coordinates.lng}!3d${storeLocation.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM2JzUwLjAiTiA3N8KwMTInMzIuNCJF!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin`;
