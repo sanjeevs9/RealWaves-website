@@ -1,4 +1,7 @@
 import React from "react";
+import Image from "next/image";
+
+import logo from "@/public/logo.png";
 
 interface StatCardProps {
   value: string;
@@ -37,9 +40,13 @@ const AboutVideoSection: React.FC = () => {
 
       {/* Logo */}
       <div className="absolute top-6 right-6 md:top-8 md:right-8 z-20">
-        <div className="text-white font-bold text-lg md:text-xl tracking-wider">
-          REAL<span className="text-blue-400">WAVES</span>
-        </div>
+        <Image
+          src={logo}
+          alt="RealWaves Logo"
+          width={300}
+          height={80}
+          className="h-12 w-auto"
+        />
       </div>
 
       {/* Content Container */}

@@ -1,12 +1,12 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import textureBg from "@/public/heroSection/hero-background.webp"
-import yellowBag from "@/public/heroSection/TopLeftBag.png"
-import bagsBottom from "@/public/heroSection/bagsOnTable.png"
-import shoppingBags from "@/public/heroSection/categoryBag.png"
-import ModelImage from "@/public/heroSection/ModelHoldingBag.png"
-import logo from "@/public/logo.png"
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import textureBg from "@/public/heroSection/hero-background.webp";
+import yellowBag from "@/public/heroSection/TopLeftBag.png";
+import bagsBottom from "@/public/heroSection/bagsOnTable.png";
+import shoppingBags from "@/public/heroSection/categoryBag.png";
+import ModelImage from "@/public/heroSection/ModelHoldingBag.png";
+import logo from "@/public/icon.png";
 
 const Hero = () => {
   return (
@@ -26,7 +26,7 @@ const Hero = () => {
         {/* Logo */}
         <div className="mb-6">
           <Image
-            src={logo.src} 
+            src={logo.src}
             alt="Logo"
             width={60}
             height={60}
@@ -42,12 +42,12 @@ const Hero = () => {
             all in budget
           </h1>
           <p className="text-sm md:text-base mb-8 max-w-lg mx-auto">
-            Discover our exclusive range of high-quality bags designed for retailers
-            and corporate clients. Experience unmatched durability, style, and value
-            with every order.
+            Discover our exclusive range of high-quality bags designed for
+            retailers and corporate clients. Experience unmatched durability,
+            style, and value with every order.
           </p>
-          <Link 
-            href="/products" 
+          <Link
+            href="/products"
             className="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all"
           >
             Explore Products
