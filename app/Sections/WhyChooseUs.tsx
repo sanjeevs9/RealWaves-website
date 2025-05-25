@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import Image from "next/image";
 
 // Custom SVG Icon Components (replace with your actual SVGs)
 const SustainabilityIcon = ({ className = "" }: { className?: string }) => (
@@ -201,16 +202,18 @@ const ExpandableCard: React.FC<ExpandableCardProps> = ({
             </p>
           )}
 
-          {/* Image Container */}
+          {/* Image Container - FIXED: Using Next.js Image */}
           <div className="flex justify-center mt-6">
             <div className="relative w-48 h-32 bg-white bg-opacity-20 rounded-lg overflow-hidden">
-              <img
+              <Image
                 src={card.expandedContent.image}
                 alt={card.expandedContent.title}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 192px"
               />
               {/* Expand Arrow Icon */}
-              <div className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center">
+              <div className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center z-10">
                 <svg
                   className="w-4 h-4 text-blue-600"
                   fill="none"
@@ -250,7 +253,8 @@ const WhyChooseUsSection: React.FC = () => {
         title: "Eco-Friendly Solutions",
         description:
           "Our sustainable packaging solutions help reduce environmental impact while maintaining superior quality standards.",
-        image: "/api/placeholder/300/200",
+        image:
+          "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=300&h=200&fit=crop&crop=center",
         additionalText:
           "Made from 100% recyclable materials with carbon-neutral production processes.",
       },
@@ -267,7 +271,8 @@ const WhyChooseUsSection: React.FC = () => {
         title: "Unmatched Quality Standards",
         description:
           "Every product undergoes rigorous testing to ensure it meets our strict quality benchmarks.",
-        image: "/api/placeholder/300/200",
+        image:
+          "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=300&h=200&fit=crop&crop=center",
         additionalText:
           "ISO certified manufacturing with 99.9% quality assurance rate.",
       },
@@ -284,7 +289,8 @@ const WhyChooseUsSection: React.FC = () => {
         title: "Lightning Fast Shipping",
         description:
           "Get your orders delivered quickly with our optimized logistics network.",
-        image: "/api/placeholder/300/200",
+        image:
+          "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=300&h=200&fit=crop&crop=center",
         additionalText:
           "Same-day shipping available for orders placed before 2 PM.",
       },
@@ -301,7 +307,8 @@ const WhyChooseUsSection: React.FC = () => {
         title: "Budget-Friendly Options",
         description:
           "Get the best value for your money without compromising on quality.",
-        image: "/api/placeholder/300/200",
+        image:
+          "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=200&fit=crop&crop=center",
         additionalText:
           "Up to 30% cost savings compared to traditional packaging solutions.",
       },
@@ -318,7 +325,8 @@ const WhyChooseUsSection: React.FC = () => {
         title: "Tailored to Your Needs",
         description:
           "Custom packaging solutions designed specifically for your business requirements.",
-        image: "/api/placeholder/300/200",
+        image:
+          "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300&h=200&fit=crop&crop=center",
         additionalText:
           "Over 500 customization options available with dedicated design support.",
       },
@@ -335,7 +343,8 @@ const WhyChooseUsSection: React.FC = () => {
         title: "Round-the-Clock Assistance",
         description:
           "Our dedicated support team is available 24/7 to help you with any queries.",
-        image: "/api/placeholder/300/200",
+        image:
+          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&h=200&fit=crop&crop=center",
         additionalText:
           "Average response time under 5 minutes with 98% customer satisfaction.",
       },
@@ -499,16 +508,18 @@ const WhyChooseUsSection: React.FC = () => {
                       </p>
                     )}
 
-                    {/* Image Container */}
+                    {/* Image Container - FIXED: Using Next.js Image */}
                     <div className="flex justify-center mt-6">
                       <div className="relative w-48 h-32 bg-white bg-opacity-20 rounded-lg overflow-hidden">
-                        <img
+                        <Image
                           src={card.expandedContent.image}
                           alt={card.expandedContent.title}
-                          className="w-full h-full object-cover"
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 192px"
                         />
                         {/* Expand Arrow Icon */}
-                        <div className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                        <div className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center z-10">
                           <svg
                             className="w-4 h-4 text-blue-600"
                             fill="none"
