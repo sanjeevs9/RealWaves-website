@@ -33,9 +33,14 @@ export default function WhyChooseUs() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[...data, ...data, ...data, ...data, ...data, ...data].slice(0, 6).map((item, index) => (
+        {[...data, ...data, ...data, ...data, ...data, ...data].slice(0, 6).map((item, index) =>
+        
+        {
+          console.log({index})
+          return (
           <WhyChooseUsCard
             key={index}
+            index={index}
             title={item.title}
             description={item.description}
             icon={<div dangerouslySetInnerHTML={{ __html: item.icon1 }} />}
@@ -43,7 +48,8 @@ export default function WhyChooseUs() {
             extraText={item.extraText}
             imageSrc={item.image}
           />
-        ))}
+          )
+        })}
       </div>
     </div>
   );

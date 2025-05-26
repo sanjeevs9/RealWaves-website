@@ -11,9 +11,11 @@ interface WhyChooseUsCardProps {
   imageSrc?: string | StaticImageData;
   extraText?: string;
   icon2?: React.ReactNode;
+  index: number;
 }
 
 export const WhyChooseUsCard: React.FC<WhyChooseUsCardProps> = ({
+  index,
   title,
   description,
   icon,
@@ -54,12 +56,13 @@ export const WhyChooseUsCard: React.FC<WhyChooseUsCardProps> = ({
       </div>
       
       {isExtended && (
-        <div className="absolute left-0 right-0 top-0 z-20">
+        <div className={`absolute left-0 right-0 z-20 ${Number(index) === 0 || Number(index) === 1 || Number(index) === 2 ? 'top-0' : 'bottom-0'}`}>
           <WhyChooseUsExtendedCard
             title={title}
+            index={index}
             description={description}
             icon={icon2}
-            onClick={() => setIsExtended(!isExtended)}
+            onClick={() => {setIsExtended(!isExtended)}}
             extraText={extraText}
             imageSrc={imageSrc}
           />
