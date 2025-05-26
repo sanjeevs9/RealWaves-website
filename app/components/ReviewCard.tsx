@@ -18,7 +18,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   authorTitle
 }) => {
   return (
-    <div className="bg-[#EDF0FF] rounded-3xl p-6 shadow-md  max-w-[300px] ">
+    <div className="bg-[#EDF0FF] rounded-3xl p-6 shadow-md  max-w-[335px] ">
       {/* Company Logo */}
       <div className="mb-2">
         <Image 
@@ -41,9 +41,9 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
           className="object-contain"
         />
       </div>
-      <div className='flex flex-col justify-between min-h-[190px]'>
+      <div className='flex flex-col justify-between min-h-[220px]'>
         {/* Testimonial Text */}
-        <p className=" text-sm leading-snug mb-4 text-gray-800">
+        <p className=" text-base leading-snug mb-4 text-gray-800 font-roboto">
             {quote}
         </p>
         

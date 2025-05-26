@@ -57,19 +57,19 @@ export default function CustomerReviewSection() {
         <div className="py-16 bg-gray-900 text-white w-full">
             <div className="container mx-auto px-4">
                 {/* Section header */}
-                <div className=" mb-12">
-                    <p className="uppercase text-sm tracking-wider mb-2">CUSTOMER REVIEWS</p>
-                    <h2 className="text-3xl font-semibold">RealWaves is trusted by Brands Across India</h2>
+                <div className="mb-12">
+                    <p className="uppercase text-[#898989] font-['Roboto'] text-[16px] font-normal leading-[124%] tracking-[0.8px]">CUSTOMER REVIEWS</p>
+                    <h2 className="text-white font-roboto text-[40px] font-normal leading-[124%] tracking-[2px] pt-2">RealWaves is trusted by Brands Across India</h2>
                 </div>
 
                 {/* Carousel container */}
                 <div className="relative">
                     {/* Cards container with animation */}
-                    <div className="flex justify-center gap-6 overflow-hidden">
-                        <div className="flex transition-transform duration-500 ease-in-out"
+                    <div className="flex justify-center  overflow-hidden w-full">
+                        <div className="flex transition-transform duration-500 ease-in-out w-full "
                              style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                             {reviews.map((review, index) => (
-                                <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex-shrink-0 px-2">
+                                <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex-shrink-0 ">
                                     <ReviewCard
                                         companyName={review.companyName}
                                         quote={review.quote}

@@ -24,7 +24,7 @@ const data = [
 
 export default function WhyChooseUs() {
   return (
-    <div className="w-full pl-36 pr-36 pt-14 pb-16">
+    <div className="w-full pl-40 pr-40 pt-14 pb-16">
       <div className="text-start mb-12 pl-10">
         <p className="text-xl uppercase tracking-wider mb-2 font-roboto text-[#656565]">WHY CHOSE US?</p>
         <h2 className="text-4xl font-normal text-black font-roboto leading-[124%] tracking-[2px]">
