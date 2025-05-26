@@ -22,7 +22,7 @@ const ProductCard = ({
   dimensions: { size: string; unit: string; color: string }[];
 }) => {
   return (
-    <div className="bg-gray-50 rounded-lg shadow-md p-3 w-60 mx-auto border border-gray-200 relative cursor-pointer">
+    <div className="bg-gray-50 rounded-lg shadow-md p-3 w-64 mx-auto border border-gray-200 relative cursor-pointer">
       <div className="flex flex-col bg-gray-200 rounded-lg p-2">
         {/* Header with product code and GSM */}
 
@@ -45,14 +45,15 @@ const ProductCard = ({
           <Image
             src={productImage}
             alt={productName}
-            fill
+            width={500}
+            height={500}
             className="w-full h-full object-contain absolute bottom-16 left-0 right-0"
           />
         </div>
       </div>
 
       {/* Product Name */}
-      <h3 className="text-sm font-medium text-gray-800 mb-2 pt-">
+      <h3 className="text-sm font-medium text-gray-800 mb-2 pt-2">
         {productName}
       </h3>
 

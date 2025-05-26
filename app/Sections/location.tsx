@@ -57,11 +57,11 @@ const MapSection: React.FC = () => {
     ratingDescription: "By the customers visiting our store."
   };
 
-  // Google Maps Embed URL
-  // const googleMapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || 'demo'}&q=${storeLocation.coordinates.lat},${storeLocation.coordinates.lng}&zoom=15&maptype=roadmap`;
+  // Google Maps Embed URL with satellite view
+  const googleMapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}&q=${storeLocation.coordinates.lat},${storeLocation.coordinates.lng}&zoom=15&maptype=satellite`;
   
-  // Fallback URL without API key (limited functionality)
-  const fallbackMapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8749042734344!2d${storeLocation.coordinates.lng}!3d${storeLocation.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM2JzUwLjAiTiA3N8KwMTInMzIuNCJF!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin`;
+  // Fallback URL without API key, with satellite view
+  const fallbackMapUrl = `https://maps.google.com/maps?q=${storeLocation.coordinates.lat},${storeLocation.coordinates.lng}&z=15&t=k&output=embed`;
 
   const handleNavigateClick = () => {
     const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${storeLocation.coordinates.lat},${storeLocation.coordinates.lng}`;
@@ -70,22 +70,22 @@ const MapSection: React.FC = () => {
 
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="w-full pl-40 pr-40 ">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Column - Store Information */}
           <div className="space-y-8">
             {/* Header */}
             <div className="space-y-4">
-              <p className="text-sm font-medium text-gray-500 tracking-wide uppercase">
+              <p className="text-[#656565] font-roboto text-base font-normal leading-[124%] tracking-[0.8px] uppercase">
                 SHOP LOCATION
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-[#000] font-roboto text-[40px] font-normal leading-[124%] tracking-[2px]">
                 Our Store await your Visit
               </h2>
             </div>
 
             {/* Store Details */}
-            <div className="space-y-6">
+            <div className="flex flex-col items-start w-[426px] gap-[13px] font-roboto">
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {storeLocation.name}
@@ -122,9 +122,9 @@ const MapSection: React.FC = () => {
             </div>
 
             {/* Statistics */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 font-roboto">
               <div className="text-center sm:text-left">
-                <div className="w-full h-1 bg-blue-500 rounded-full mb-4"></div>
+                <div className="w-full h-[3px] bg-blue-500 rounded-full mb-4"></div>
                 <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                   {storeStats.dailyFootfall}
                 </div>
@@ -134,7 +134,7 @@ const MapSection: React.FC = () => {
               </div>
 
               <div className="text-center sm:text-left">
-                <div className="w-full h-1 bg-blue-500 rounded-full mb-4"></div>
+                <div className="w-full h-[3px] bg-blue-500 rounded-full mb-4"></div>
                 <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                   {storeStats.bagsShipped}
                 </div>
@@ -144,7 +144,7 @@ const MapSection: React.FC = () => {
               </div>
 
               <div className="text-center sm:text-left">
-                <div className="w-full h-1 bg-blue-500 rounded-full mb-4"></div>
+                <div className="w-full h-[3px] bg-blue-500 rounded-full mb-4"></div>
                 <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                   {storeStats.rating}
                 </div>
@@ -157,11 +157,11 @@ const MapSection: React.FC = () => {
 
           {/* Right Column - Map */}
           <div className="relative">
-            <div className="relative w-full h-[400px] lg:h-[500px] xl:h-[600px] rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-lg">
               {/* Map Container */}
               <div className="absolute inset-0 bg-gray-100">
                 <iframe
-                  src={fallbackMapUrl}
+                  src={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ? googleMapsEmbedUrl : fallbackMapUrl}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
