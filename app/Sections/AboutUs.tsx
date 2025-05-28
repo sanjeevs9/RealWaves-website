@@ -1,50 +1,26 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import logo from "@/public/logo.png";
-import dynamic from "next/dynamic";
 
-// Import ReactPlayer dynamically with no SSR
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+import logo from "@/public/logo.png";
 
 const AboutVideoSection: React.FC = () => {
-  // Track if component is mounted (client-side only)
-  const [isMounted, setIsMounted] = useState(false);
-  
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   return (
     <div className="bg-white p-5">
       <section className="relative flex items-center rounded-3xl">
         {/* Background Video */}
-        <div className="absolute inset-0 w-full h-full rounded-3xl overflow-hidden">
-          {isMounted && (
-            <div className="w-[120%] h-[140%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <ReactPlayer
-                url="https://vimeo.com/1088298237?share=copy"
-                width="100%"
-                height="100%"
-                playing={true}
-                loop={true}
-                muted={true}
-                playsinline={true}
-                config={{
-                  vimeo: {
-                    playerOptions: {
-                      background: true,
-                      responsive: true,
-                      autoplay: true
-                    }
-                  }
-                }}
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          )}
-        </div>
+        <video
+          className="absolute inset-0 w-full h-full object-cover rounded-3xl"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source
+            src="/videos/realwavesVideo.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
 
         {/* Video Overlay */}
         <div className="absolute inset-0"></div>
