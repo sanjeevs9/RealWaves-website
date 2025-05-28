@@ -24,25 +24,25 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
               <Link
-                href="/category-one"
+                href="/products"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
               >
                 Category One
               </Link>
               <Link
-                href="/category-two"
+                href="/products"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
               >
                 Category Two
               </Link>
               <Link
-                href="/category-three"
+                href="/products"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
               >
                 Category Three
               </Link>
               <Link
-                href="/category-four"
+                href="/products"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
               >
                 Category Four
