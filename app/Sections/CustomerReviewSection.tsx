@@ -126,10 +126,6 @@ export default function CustomerReviewSection() {
     setStartX(e.touches[0].clientX);
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    // Just track the touch, don't prevent default
-  };
-
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (!startX) return;
     const currentX = e.changedTouches[0].clientX;
@@ -210,7 +206,6 @@ export default function CustomerReviewSection() {
               onMouseUp={handleMouseUp}
               onMouseLeave={() => setIsDragging(false)}
               onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
             >
               {reviews.map((review, index) => (
