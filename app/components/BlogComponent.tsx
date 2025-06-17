@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface BlogCardProps {
   image: string;
@@ -28,7 +29,7 @@ const BlogComponent: React.FC<BlogCardProps> = ({
       fontFamily: 'Inter, sans-serif',
     }}>
       <div style={{ height: 160, background: "#0a1a2f" }}>
-        <img
+        <Image
           src={image}
           alt={title}
           style={{ width: "100%", height: "100%", objectFit: "cover" }}

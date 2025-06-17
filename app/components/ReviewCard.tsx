@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import naividya from "@/public/naivedya.png"
+// import naividya from "@/public/naivedya.png"
 import quoteMark from "@/public/quote.png"
 
 interface ReviewCardProps {
