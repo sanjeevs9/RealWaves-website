@@ -20,14 +20,14 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   return (
     <div className="bg-[#EDF0FF] rounded-3xl p-6 shadow-md  max-w-[335px] ">
       {/* Company Logo */}
-      <div className="mb-2">
-        <Image 
+      <div className="mb-2 pt-20">
+        {/* <Image 
           src={naividya.src} 
           alt={`${companyName} logo`} 
           width={100} 
           height={30} 
           className="object-contain"
-        />
+        /> */}
       </div>
       
       {/* Quote Mark */}
@@ -50,7 +50,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
         {/* Author Information */}
         <div className="text-xs uppercase text-gray-600 font-medium mt-4 ">
             <p>{authorName}</p>
-            <p>{authorTitle}, {companyName}</p>
+            <p>{authorTitle} {companyName}</p>
         </div>
       </div>
     </div>

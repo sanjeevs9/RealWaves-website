@@ -24,28 +24,28 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
               <Link
-                href="/products"
+                href="/"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
               >
-                Category One
+                Home
+              </Link>
+              <Link
+                href="/about"
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+              >
+                About Us
               </Link>
               <Link
                 href="/products"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
               >
-                Category Two
+                Products
               </Link>
               <Link
-                href="/products"
+                href="/blogs"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
               >
-                Category Three
-              </Link>
-              <Link
-                href="/products"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
-              >
-                Category Four
+                Blogs
               </Link>
             </div>
           </div>

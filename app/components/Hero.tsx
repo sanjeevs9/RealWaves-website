@@ -55,21 +55,22 @@ const Hero = () => {
 
           {/* Center content */}
           <div className=" text-center flex flex-col items-center text-white max-w-3xl  pt-10 ">
-            <h1 className="text-4xl font-normal md:text-5xl lg:text-7xl mb-14 font-roboto">
-              Customize, your Bags
+            <h1 className="text-4xl font-normal md:text-5xl lg:text-6xl mb-6 font-roboto">
+            Premium Non-Woven Bags,
               <br />
-              all in budget
+              Manufacturer & Exporter
             </h1>
+            <p className="text-xl md:text-2xl font-semibold mb-8 tracking-wide text-white/90 font-poppins">
+              Sustainable. Customizable. Reusable.
+            </p>
             <p className="text-sm md:text-base mb-14 max-w-lg mx-auto font-poppins">
-              Discover our exclusive range of high-quality bags designed for
-              retailers and corporate clients. Experience unmatched durability,
-              style, and value with every order.
+            Based in Raipur, Chhattisgarh | 7+ Years of Trusted Manufacturing
             </p>
             <Link
               href="/products"
               className="flex w-[221px] h-[48px] px-0 py-[1px] justify-center items-center gap-4 flex-shrink-0 rounded-[261px] bg-white text-black font-poppins text-base font-normal leading-[110%] tracking-[0.64px] capitalize shadow-[inset_0px_0px_8.7px_0px_rgba(0,0,0,0.51)] hover:bg-opacity-90 transition-all"
             >
-              Explore Products
+              View Products
             </Link>
           </div>
         </div>

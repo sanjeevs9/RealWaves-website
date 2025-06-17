@@ -13,52 +13,28 @@ export default function CustomerReviewSection() {
 
   const reviews = [
     {
-      companyName: "GOOGLE",
+      companyName: "Retail Partner, Bhilai",
       quote:
-        "Partnering with RealWaves transformed our packaging process—superior quality, reliable delivery, and outstanding customer service. They've become a vital part of our supply chain. Highly recommend for any B2B needs!",
-      authorName: "MR. SUNDAR",
-      authorTitle: "CEO",
-      logoSrc: "/images/google-logo.png",
+        "We've been sourcing non-woven bags from Realwaves for the past 3 years — the quality, price, and timely delivery make them our first choice.",
+      authorName: "",
+      authorTitle: "",
+      logoSrc: "",
     },
     {
-      companyName: "MICROSOFT",
+      companyName: "Apparel Exporter, Delhi",
       quote:
-        "RealWaves has consistently delivered exceptional packaging solutions for our products. Their attention to detail and commitment to quality have significantly improved our product presentation.",
-      authorName: "SATYA NADELLA",
-      authorTitle: "CEO",
-      logoSrc: "/images/microsoft-logo.png",
+        "Their custom-printed loop handle bags helped elevate our brand visibility at trade shows. Realwaves is reliable and responsive.",
+      authorName: "",
+      authorTitle: "",
+      logoSrc: "",
     },
     {
-      companyName: "AMAZON",
+      companyName: "Grocery Chain, Raipur",
       quote:
-        "Working with RealWaves has streamlined our packaging operations. Their innovative solutions and reliable service have helped us maintain our delivery standards even during peak seasons.",
-      authorName: "ANDY JASSY",
-      authorTitle: "CEO",
-      logoSrc: "/images/amazon-logo.png",
-    },
-    {
-      companyName: "APPLE",
-      quote:
-        "RealWaves understands our commitment to premium packaging. Their solutions align perfectly with our brand values, providing our customers with an unboxing experience that matches our product quality.",
-      authorName: "TIM COOK",
-      authorTitle: "CEO",
-      logoSrc: "/images/apple-logo.png",
-    },
-    {
-      companyName: "TESLA",
-      quote:
-        "RealWaves has revolutionized our packaging approach with sustainable and innovative solutions. Their commitment to eco-friendly materials aligns perfectly with our environmental mission.",
-      authorName: "ELON MUSK",
-      authorTitle: "CEO",
-      logoSrc: "/images/tesla-logo.png",
-    },
-    {
-      companyName: "META",
-      quote:
-        "The packaging solutions from RealWaves have enhanced our product delivery experience. Their innovative approach and reliable service have exceeded our expectations consistently.",
-      authorName: "MARK ZUCKERBERG",
-      authorTitle: "CEO",
-      logoSrc: "/images/meta-logo.png",
+        "What we love most is their commitment to eco-friendly practices and their support for bulk orders with quick dispatch.",
+      authorName: "",
+      authorTitle: "",
+      logoSrc: "",
     },
   ];
 
@@ -166,7 +142,7 @@ export default function CustomerReviewSection() {
         {/* Section header */}
         <div className="mb-12 ml-12">
           <p className="uppercase text-[#898989] font-['Roboto'] text-[16px] font-normal leading-[124%] tracking-[0.8px]">
-            CUSTOMER REVIEWS
+            Our Happy Customers
           </p>
           <h2 className="text-white font-roboto text-[40px] font-normal leading-[124%] tracking-[2px] pt-2">
             RealWaves is trusted by Brands Across India
@@ -176,7 +152,7 @@ export default function CustomerReviewSection() {
         {/* Carousel container */}
         <div className="relative">
           {/* Navigation arrows */}
-          <button
+          {/* <button
             onClick={goToPrev}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 rounded-full p-3 backdrop-blur-sm transition-all duration-200 shadow-lg"
             aria-label="Previous review"
@@ -190,7 +166,7 @@ export default function CustomerReviewSection() {
             aria-label="Next review"
           >
             <ChevronRight className="w-6 h-6 text-white" />
-          </button>
+          </button> */}
 
           {/* Cards container */}
           <div className="overflow-hidden ml-12 mr-12">

@@ -27,7 +27,7 @@ export const WhyChooseUsCard: React.FC<WhyChooseUsCardProps> = ({
 
   return (
     <div className="relative">
-      <div className={`relative bg-white border-t-[0.5px]  rounded-3xl shadow-2xl p-6 flex flex-col items-center text-center max-w-md mx-auto pb-10 h-fit ${isExtended ? 'hidden' : 'h-fit'}`}>
+      <div className={`relative bg-white border-t-[0.5px] min-h-[310px]  rounded-3xl shadow-2xl p-6 flex flex-col items-center text-center max-w-md mx-auto pb-10 h-fit ${isExtended ? 'hidden' : 'h-fit'}`}>
         {/* Icon/Logo */}
         <div className="mb-6 text-[#02357E]">
           {icon}
@@ -81,7 +81,7 @@ export const WhyChooseUsExtendedCard: React.FC<WhyChooseUsCardProps> = ({
   imageSrc,
 }) => {
   return (
-    <div className="relative bg-[#02357E] rounded-3xl shadow-lg p-6 flex flex-col items-center text-center max-w-md mx-auto overflow-hidden">
+    <div className="relative bg-[#02357E] min-h-[655px] rounded-3xl shadow-lg p-6 flex flex-col items-center text-center max-w-md mx-auto overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 z-0">
         <svg width="100%" height="100%" viewBox="0 0 1407 646" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
@@ -128,16 +128,16 @@ export const WhyChooseUsExtendedCard: React.FC<WhyChooseUsCardProps> = ({
         )}
         
         {/* Bottom Image */}
-        <div className="relative ">
+        <div className="relative w-full flex justify-center items-center">
             {imageSrc && (
             <div className=" mt-4 w-full ">
-                <div className="h-52 w-full overflow-hidden rounded-xl">
+                <div className="h-52 w-full overflow-hidden rounded-xl ">
                 <Image 
                     src={imageSrc} 
                     alt={title} 
                     className="w-full h-full object-cover"
-                    width={600}
-                    height={400}
+                    width={500}
+                    height={500}
                 />
                 </div>
             </div>

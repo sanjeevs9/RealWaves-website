@@ -84,7 +84,7 @@ const AboutVideoSection: React.FC = () => {
                   
                   <div className="text-left">
                     <div className="w-full h-[3px] bg-blue-500 rounded-full mb-4"></div>
-                    <h3 className="text-2xl md:text-3xl font-normal text-white mb-2">100+ clients</h3>
+                    <h3 className="text-2xl md:text-2xl font-normal text-white mb-2">2000+ clients</h3>
                     <p className="text-sm text-gray-200 leading-relaxed">
                       With happy reviews and repeated offers
                     </p>

@@ -4,37 +4,37 @@ import CategoryCard from "../components/CategoryCard";
 const categoryData = [
   {
     id: 1,
-    title: "Category 1",
+    title: "D-Cut Bags",
     imageUrl: categoryBag.src,
     backgroundColor: "#B9C7FF",
   },
   {
     id: 2,
-    title: "Category 1",
+    title: "Loop Handle Bags",
     imageUrl: categoryBag.src,
     backgroundColor: "#7F9EFE",
   },
   {
     id: 3,
-    title: "Category 1",
+    title: "U-Cut Bags",
     imageUrl: categoryBag.src,
     backgroundColor: "#2476FE",
   },
   {
     id: 4,
-    title: "Category 1",
+    title: "Box Bags",
     imageUrl: categoryBag.src,
     backgroundColor: "#0454BF",
   },
   {
     id: 5,
-    title: "Category 1",
+    title: "Printed Bags",
     imageUrl: categoryBag.src,
     backgroundColor: "#02357E",
   },
   {
     id: 6,
-    title: "Category 1",
+    title: "Designed Bags",
     imageUrl: categoryBag.src,
     backgroundColor: "#001842",
   },

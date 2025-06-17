@@ -14,10 +14,10 @@ export default function Home() {
       <div className="bg-white min-h-screen w-full">
         <Hero />
 
-        <BestSellers />
-        <MapSection />
+        {/* <BestSellers /> */}
 
         <AboutVideoSection />
+        <MapSection />
         <BrandingCarousel />
 
         <CustomerReviewSection />
