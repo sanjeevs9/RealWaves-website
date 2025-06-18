@@ -56,18 +56,12 @@ const AboutVideoSection: React.FC = () => {
               {/* Content Paragraphs */}
               <div className="space-y-6 text-gray-200 text-base md:text-lg leading-relaxed mb-12 font-roboto">
                 <p>
-                  With over 22 years of experience in the garment and textile
-                  industry, our director,{" "}
-                  <span className="font-semibold text-white">
-                    Mr. Chandan Kumar Chaudhary
-                  </span>
-                  , is the driving force behind Realwaves Packs India Private
-                  Limited.
+                Realwaves is a leading manufacturer and exporter of eco-friendly, durable, and customizable non-woven bags, proudly operating from Raipur, Chhattisgarh for over 7 years.
+
+
                 </p>
                 <p>
-                  His journey began in his family&apos;s business, where he
-                  immersed himself in the world of fabrics and design, gaining
-                  invaluable insights and honing his entrepreneurial spirit.
+                Backed by advanced machinery, skilled professionals, and a strict quality control process, every Realwaves bag is a step toward a greener tomorrow.
                 </p>
               </div>
 
@@ -92,9 +86,9 @@ const AboutVideoSection: React.FC = () => {
                   
                   <div className="text-left">
                     <div className="w-full h-[3px] bg-blue-500 rounded-full mb-4"></div>
-                    <h3 className="text-2xl md:text-3xl font-normal text-white mb-2">96% retain</h3>
+                    <h3 className="text-2xl md:text-3xl font-normal text-white mb-2">2 Lakh+</h3>
                     <p className="text-sm text-gray-200 leading-relaxed">
-                      of establishing brands larger than life
+                      bags per day manufacturing capability
                     </p>
                   </div>
                 </div>

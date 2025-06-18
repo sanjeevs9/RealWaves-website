@@ -8,11 +8,11 @@ interface StoreLocation {
   address: string;
   city: string;
   zipCode: string;
-  nearestMetro: {
+  nearestMetro?: {
     name: string;
     line: string;
-  };
-  nearestBus: string;
+  } | null;
+  nearestBus?: string;
   coordinates: {
     lat: number;
     lng: number;
@@ -34,24 +34,19 @@ const MapSection: React.FC = () => {
   // Example store data - replace with your actual data
   const storeLocation: StoreLocation = {
     name: "Real Wave Store",
-    address: "221B, FIRST FLOOR, BAKER STREET",
-    city: "NEW YORK",
-    zipCode: "110017",
-    nearestMetro: {
-      name: "Conaught Place",
-      line: "Yellow Line"
-    },
-    nearestBus: "Rajiv Chowk",
+    address: "Near SBI Bank, Nakoda Group Premises Ward 26, Village Saddu, Raipur (C.G) 492014",
+    city: "Raipur",
+    zipCode: "492014",
     coordinates: {
-      lat: 28.6139,
-      lng: 77.2090
+      lat: 21.272750,
+      lng: 81.693197
     }
   };
 
   const storeStats: StoreStats = {
-    dailyFootfall: "2000+",
-    dailyFootfallDescription: "Daily Footfall of customers from all over India",
-    bagsShipped: "30K+",
+    dailyFootfall: "100+",
+    dailyFootfallDescription: "Cities across India we supply to",
+    bagsShipped: "10 Lakh+",
     bagsShippedDescription: "Bags Shipped Daily all over the world",
     rating: "4.9 Rating",
     ratingDescription: "By the customers visiting our store."
@@ -73,7 +68,7 @@ const MapSection: React.FC = () => {
       <div className="w-full pl-40 pr-40 ">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Column - Store Information */}
-          <div className="space-y-8">
+          <div className="space-y-8 flex flex-col justify-between h-full">
             {/* Header */}
             <div className="space-y-4">
               <p className="text-[#656565] font-roboto text-base font-normal leading-[124%] tracking-[0.8px] uppercase">
@@ -102,22 +97,19 @@ const MapSection: React.FC = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">
-                    Nearest Metro Station
+                    Phone Number / Whatsapp 
                   </h4>
                   <p className="text-gray-600">
-                    {storeLocation.nearestMetro.name}{' '}
-                    <span className="text-gray-500">
-                      ({storeLocation.nearestMetro.line})
-                    </span>
+                    +91 90099 90000 / +91 9617234355
                   </p>
                 </div>
 
-                <div>
+                {/* <div>
                   <h4 className="font-semibold text-gray-900 mb-1">
                     Nearest Bus Stop
                   </h4>
                   <p className="text-gray-600">{storeLocation.nearestBus}</p>
-                </div>
+                </div> */}
               </div>
             </div>
 

@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/public/logo.png';
+import facebook from '@/public/socials/fb.png';
+import instagram from '@/public/socials/insta.png';
+import linkedin from '@/public/socials/linkedIn.png';
 
 export const Footer = () => {
     return (
@@ -39,7 +42,7 @@ export const Footer = () => {
                         height={70}
                         className="mx-auto"
                     />
-                    <p className="text-[#F4F4F4] font-['Ananda_Black_Personal_Use'] text-[27.683px] font-normal leading-[110%] tracking-[2.491px] capitalize italic mt-5">Shine Brighter</p>
+                    <p className="text-[#F4F4F4] font-['Ananda_Black_Personal_Use'] text-[20px] font-normal leading-[110%] tracking-[2.491px] capitalize italic mt-5">A LEADING NON-WOVEN BAG MANUFACTURER IN CENTRAL INDIA</p>
                 </div>
 
                 {/* Main Content Area */}
@@ -47,12 +50,12 @@ export const Footer = () => {
                     {/* Contact Information */}
                     <div className="w-full md:w-1/4 ">
                         <h2 className="text-xl font-bold mb-2">Contact</h2>
-                        <p className="mb-1">00000 00000</p>
-                        <p className="mb-1">00000 00000</p>
-                        <p className="mb-1">221B,</p>
-                        <p className="mb-1">Baker Street,</p>
-                        <p className="mb-1">London-110017</p>
-                        <p className="mb-1">emailid@gmail.com</p>
+                        <p className="mb-1">+91 90099 90000</p>
+                        <p className="mb-1">+91 9617234355</p>
+                        <p className="mb-1">Near SBI Bank,Nakoda Group Premises</p>
+                        <p className="mb-1"> Ward 26, Village Saddu,Raipur</p>
+                        <p className="mb-1"> (C.G) 492014</p>
+                        <p className="mb-1">info@realwavepacks.com</p>
                     </div>
 
                     {/* Explore Products Buttons */}
@@ -65,28 +68,37 @@ export const Footer = () => {
                                 Explore Products
                             </Link>
                             <Link
-                                href="/products"
+                                href="/about"
                                 className="flex w-[221px] h-[48px] px-0 py-[1px] justify-center items-center gap-4 flex-shrink-0 bg-white text-black rounded-full hover:bg-gray-200 transition"
                             >
-                                Explore Products
+                                About Us
                             </Link>
                         </div>
                         {/* Social Media Links */}
                         <div className="flex space-x-4 my-4 pt-10">
-                            <Link href="https://facebook.com" className="flex items-center hover:text-blue-400 transition">
-                                Facebook <span className="ml-1">↗</span>
-                            </Link>
+                            <div className='flex flex-row items-center gap-2'>
+                                <Image src={facebook} alt="Facebook" width={20} height={20} />
+                                <Link href="https://facebook.com" className="flex items-center hover:text-blue-400 transition">
+                                    Facebook <span className="ml-1">↗</span>
+                                </Link>
+                            </div>
+                            <div className='flex items-center gap-2'>
+                                <Image src={instagram} alt="Instagram" width={20} height={20} />
                             <Link href="https://instagram.com" className="flex items-center hover:text-pink-400 transition">
                                 Instagram <span className="ml-1">↗</span>
                             </Link>
-                            <Link href="https://linkedin.com" className="flex items-center hover:text-blue-600 transition">
-                                LinkedIn <span className="ml-1">↗</span>
-                            </Link>
+                            </div>
+                            <div className='flex items-center gap-2'>
+                                <Image src={linkedin} alt="LinkedIn" width={20} height={20} />
+                                <Link href="https://linkedin.com" className="flex items-center hover:text-blue-600 transition">
+                                    LinkedIn <span className="ml-1">↗</span>
+                                </Link>
+                            </div>
                         </div>
 
                         {/* Footer */}
                         <div className="mt-4 text-sm text-gray-400">
-                            © RealWaves 2019-2023. All rights reserved.
+                        Copyright:© 2025 Realwaves. All rights reserved.
                         </div>
                     </div>
 

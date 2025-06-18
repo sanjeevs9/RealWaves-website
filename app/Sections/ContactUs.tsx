@@ -1,40 +1,105 @@
+'use client';
+
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import facebook from "@/public/socials/fb.png";
+import linkedin from "@/public/socials/linkedIn.png";
+import instagram from "@/public/socials/insta.png";
+
+const WhatsAppIcon = () => {
+  return (
+    <span className="inline-flex items-center justify-center w-10 h-10 cursor-pointer" onClick={() => {
+      window.open("https://wa.me/919009990000", "_blank")
+    }}>
+      <Image src="/whatsapp.png" alt="WhatsApp Icon" width={32} height={32} />
+    </span>
+  );
+};
 
 export default function ContactUs() {
   return (
     <div className=" py-16 px-4  bg-white pl-52 pr-52">
       <div className="w-full flex flex-col md:flex-row justify-between md:items-start ">
         {/* Left Side: Contact Info */}
-        <div className=" flex flex-col gap-8 ">
-          <div>
-            <p className="text-xl uppercase tracking-wider mb-2 font-roboto text-[#656565]">Contact Us</p>
-            <h2 className="text-4xl font-normal text-black font-roboto leading-[124%] tracking-[2px]">Reach Out to Us at Any Point</h2>
-          </div>
-          <div className="flex items-center gap-4 mb-2">
-            {/* Email Icon */}
-            <span className="inline-flex items-center justify-center w-10 h-10">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="8" fill="#2476FE"/>
-                <path d="M8 12.5L16 18L24 12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <rect x="8" y="12" width="16" height="8" rx="2" stroke="white" strokeWidth="2"/>
-              </svg>
-            </span>
+        <div className=" flex flex-col gap-8  min-h-[550px] bg-white w-full justify-between">
+          <div className="flex flex-col gap-4 justify-between ">
             <div>
-              <p className="text-xs text-gray-500">E-mail</p>
-              <a href="mailto:xyzmmmmmm@gmail.com" className="text-blue-600 font-medium text-base hover:underline">xyzmmmmmm@gmail.com</a>
+              <p className="text-xl uppercase tracking-wider mb-2 font-roboto text-[#656565]">Contact Us</p>
+              <h2 className="text-4xl font-normal text-black font-roboto leading-[124%] tracking-[2px]">Reach Out to Us at Any Point</h2>
+            </div>
+            <div className="flex items-center gap-4 mb-2 pt-5">
+              {/* Email Icon */}
+              <span className="inline-flex items-center justify-center w-10 h-10">
+                <svg width="40" height="40" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="32" height="32" rx="8" fill="#2476FE"/>
+                  <path d="M8 12.5L16 18L24 12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <rect x="8" y="12" width="16" height="8" rx="2" stroke="white" strokeWidth="2"/>
+                </svg>
+              </span>
+              <div>
+                <p className="text-base text-gray-500">E-mail</p>
+                <a href="mailto:info@realwavepacks.com" className="text-blue-600 font-medium text-base hover:underline">info@realwavepacks.com</a>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              {/* Phone Icon */}
+              <span className="inline-flex items-center justify-center w-10 h-10">
+                <Image src="/phone-icon.png" alt="Phone Icon" width={32} height={32} />
+              </span>
+              <div>
+                <p className="text-base text-gray-500">Phone Number</p>
+                <a href="tel:+919009990000" className="text-blue-600 font-medium text-base hover:underline">+ 91 90099 90000</a>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              {/* WhatsApp Icon */}
+              <WhatsAppIcon />
+              <div>
+                <p className="text-base text-gray-500">WhatsApp</p>
+                <a href="https://wa.me/919009990000" className="text-blue-600 font-medium text-base hover:underline">Message us on WhatsApp</a>
+              </div>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            {/* Phone Icon */}
-            <span className="inline-flex items-center justify-center w-10 h-10">
-              <Image src="/phone-icon.png" alt="Phone Icon" width={32} height={32} />
-            </span>
-            <div>
-              <p className="text-xs text-gray-500">Phone Number</p>
-              <a href="tel:900000000000" className="text-blue-600 font-medium text-base hover:underline">900000000000</a>
-            </div>
-          </div>
+          <div className="flex ">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-10 w-4/6">
+                  <div className="text-center">
+                    <div className="w-full h-[3px] bg-blue-500 rounded-full mb-4"></div>
+                    <div   className="flex items-center justify-center gap-2 cursor-pointer" onClick={() => {
+                      window.open("https://facebook.com", "_blank")
+                    }}>
+                    <Image src={facebook} alt="Facebook" width={50} height={50} />  
+                    <Link href="https://facebook.com" className="flex items-center hover:text-blue-400 transition">
+                                    Facebook <span className="ml-1">↗</span>
+                                </Link>
+                                </div>
+                  </div>
+                  
+                  <div className="">
+                    <div className="w-full h-[3px] bg-blue-500 rounded-full mb-4"></div>
+                    <div className="flex items-center justify-center gap-2 cursor-pointer" onClick={() => {
+                      window.open("https://instagram.com", "_blank")
+                    }}>
+                    <Image src={instagram} alt="Instagram" width={50} height={50} />
+                            <Link href="https://instagram.com" className="flex items-center hover:text-pink-400 transition">
+                                Instagram <span className="ml-1">↗</span>
+                            </Link>
+                  </div>                            
+                  </div>
+                  
+                  <div className="text-left">
+                    <div className="w-full h-[3px] bg-blue-500 rounded-full mb-4"></div>
+                    <div className="flex items-center justify-center gap-2 cursor-pointer" onClick={() => {
+                      window.open("https://linkedin.com", "_blank")
+                    }}>
+                    <Image src={linkedin} alt="LinkedIn" width={50} height={50} />
+                                <Link href="https://linkedin.com" className="flex items-center hover:text-blue-600 transition">
+                                    LinkedIn <span className="ml-1">↗</span>
+                                </Link>
+                                </div>
+                  </div>
+                </div>
+              </div>
         </div>
 
         {/* Right Side: Contact Form */}
