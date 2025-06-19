@@ -18,7 +18,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   authorTitle
 }) => {
   return (
-    <div className="bg-[#EDF0FF] rounded-3xl p-6 shadow-md  max-w-[335px] ">
+    <div className="bg-[#EDF0FF] rounded-3xl p-6 shadow-md w-full max-w-[335px] mx-auto">
       {/* Company Logo */}
       <div className="mb-2 pt-20">
         {/* <Image 

@@ -114,7 +114,7 @@ const Hero = () => {
           {/* Logo */}
           <div className="md:mb-6 pr-5 md:pr-0">
             <Image
-            className="object-contain w-30 h-30  md:w-32 md:h-32 "
+            className="object-contain w-20 h-20 sm:w-30 sm:h-30  md:w-32 md:h-32 "
               src={logo.src}
               alt="Logo"
               width={100}
@@ -136,7 +136,7 @@ const Hero = () => {
             </p>
             <Link
               href="/products"
-              className="flex w-[221px] h-[48px] px-0 py-[1px] justify-center items-center gap-4 flex-shrink-0 rounded-[261px] bg-white text-black font-poppins text-base font-normal leading-[110%] tracking-[0.64px] capitalize shadow-[inset_0px_0px_8.7px_0px_rgba(0,0,0,0.51)] hover:bg-opacity-90 transition-all"
+              className="flex w-[180px] h-[48px] sm:w-[221px] sm:h-[48px] px-0 py-[1px] justify-center items-center gap-4 flex-shrink-0 rounded-[261px] bg-white text-black font-poppins text-sm sm:text-base font-normal leading-[110%] tracking-[0.64px] capitalize shadow-[inset_0px_0px_8.7px_0px_rgba(0,0,0,0.51)] hover:bg-opacity-90 transition-all"
             >
               View Products
             </Link>

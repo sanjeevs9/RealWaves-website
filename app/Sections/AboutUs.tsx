@@ -37,10 +37,10 @@ const AboutVideoSection: React.FC = () => {
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 w-full h-screen lg:h-full flex items-center p-5 lg:p-20  ">
+        <div className="relative z-10 w-full h-screen lg:h-full flex items-end lg:items-center p-5 lg:p-20">
           {/* Left Side Glass Card */}
-          <div className="w-full max-w-2xl   translate-y-1/3 md:translate-y-0">
-            <div className="  backdrop-blur-xl bg-black/30 rounded-2xl border border-white/20 shadow-2xl p-6 md:p-8 lg:p-10">
+          <div className="w-full max-w-2xl mb-8 md:mb-12">
+            <div className="backdrop-blur-xl bg-black/30 rounded-2xl border border-white/20 shadow-2xl p-6 md:p-8 lg:p-10">
               {/* About Us Label */}
               <p className="text-white font-['Roboto'] text-sm sm:text-base font-normal leading-[124%] tracking-[0.8px] uppercase mb-6">
                 About Us

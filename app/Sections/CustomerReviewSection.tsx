@@ -169,13 +169,13 @@ export default function CustomerReviewSection() {
           </button> */}
 
           {/* Cards container */}
-          <div className="overflow-hidden ml-12 mr-12">
+          <div className="overflow-hidden ml-0 mr-0 sm:ml-12 sm:mr-12">
             <div
               ref={carouselRef}
-              className="flex transition-transform duration-500 ease-in-out gap-6 select-none"
+              className="flex transition-transform duration-500 ease-in-out gap-6 select-none justify-center items-center md:justify-start md:items-start"
               style={{
                 transform: `translateX(${translateX}px)`,
-                width: `${reviews.length * slideWidth}px`,
+                width: '100%',
               }}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
@@ -185,7 +185,7 @@ export default function CustomerReviewSection() {
               onTouchEnd={handleTouchEnd}
             >
               {reviews.map((review, index) => (
-                <div key={index} className="flex-shrink-0">
+                <div key={index} className="flex-shrink-0 w-full max-w-[335px]">
                   <ReviewCard
                     companyName={review.companyName}
                     quote={review.quote}
