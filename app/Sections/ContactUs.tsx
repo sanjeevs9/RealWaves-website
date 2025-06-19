@@ -39,7 +39,7 @@ export default function ContactUs() {
               </span>
               <div className="min-w-0">
                 <p className="text-sm sm:text-base text-gray-500">E-mail</p>
-                <a href="mailto:info@realwavepacks.com" className="text-blue-600 font-medium text-sm sm:text-base hover:underline break-all">info@realwavepacks.com</a>
+                <a href="mailto:info@realwavespacks.com" className="text-blue-600 font-medium text-sm sm:text-base hover:underline break-all">info@realwavepacks.com</a>
               </div>
             </div>
             <div className="flex items-center gap-3 sm:gap-4">
@@ -65,10 +65,10 @@ export default function ContactUs() {
             <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-10 w-full 2xl:w-4/6 p-5 md:p-0">
               <div className="text-center">
                 <div className="w-full h-[3px] bg-blue-500 rounded-full mb-3 sm:mb-4"></div>
-                <div className="flex items-center justify-center gap-2 cursor-pointer" onClick={() => {
+                <div className="flex items-center justify-center gap-1 sm:gap-2 cursor-pointer" onClick={() => {
                   window.open("https://facebook.com", "_blank")
                 }}>
-                  <Image src={facebook} alt="Facebook" width={40} height={40} className="sm:w-[50px] sm:h-[50px]" />
+                  <Image src={facebook} alt="Facebook" width={40} height={40} className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
                   <Link href="https://facebook.com" className="flex items-center hover:text-blue-400 transition text-sm sm:text-base">
                     Facebook <span className="ml-1">↗</span>
                   </Link>
@@ -77,10 +77,10 @@ export default function ContactUs() {
 
               <div className="">
                 <div className="w-full h-[3px] bg-blue-500 rounded-full mb-3 sm:mb-4"></div>
-                <div className="flex items-center justify-center gap-2 cursor-pointer" onClick={() => {
+                <div className="flex items-center justify-center gap-1 sm:gap-2 cursor-pointer" onClick={() => {
                   window.open("https://instagram.com", "_blank")
                 }}>
-                  <Image src={instagram} alt="Instagram" width={40} height={40} className="sm:w-[50px] sm:h-[50px]" />
+                  <Image src={instagram} alt="Instagram" width={40} height={40} className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
                   <Link href="https://instagram.com" className="flex items-center hover:text-pink-400 transition text-sm sm:text-base">
                     Instagram <span className="ml-1">↗</span>
                   </Link>
@@ -89,10 +89,10 @@ export default function ContactUs() {
 
               <div className="text-left">
                 <div className="w-full h-[3px] bg-blue-500 rounded-full mb-3 sm:mb-4"></div>
-                <div className="flex items-center justify-center gap-2 cursor-pointer" onClick={() => {
+                <div className="flex items-center justify-center gap-1 sm:gap-2 cursor-pointer" onClick={() => {
                   window.open("https://linkedin.com", "_blank")
                 }}>
-                  <Image src={linkedin} alt="LinkedIn" width={40} height={40} className="sm:w-[50px] sm:h-[50px]" />
+                  <Image src={linkedin} alt="LinkedIn" width={40} height={40} className="w-[25px] h-[25px] md:w-[50px] md:h-[50px]" />
                   <Link href="https://linkedin.com" className="flex items-center hover:text-blue-600 transition text-sm sm:text-base">
                     LinkedIn <span className="ml-1">↗</span>
                   </Link>

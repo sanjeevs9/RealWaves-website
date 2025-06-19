@@ -8,10 +8,10 @@ import { FooterSvg } from '@/constants';
 
 export const Footer = () => {
     return (
-        <div className="w-full relative text-white  p-6">
+        <div className="w-full relative text-white  p-6 ">
             {/* SVG Background */}
             <div 
-                className="absolute top-0 left-0 w-full h-full -z-10"
+                className="absolute top-0 left-0 w-full h-full -z-10 "
                 dangerouslySetInnerHTML={{ __html: FooterSvg }}
             />
 
@@ -38,7 +38,7 @@ export const Footer = () => {
                         <p className="mb-1">Near SBI Bank,Nakoda Group Premises</p>
                         <p className="mb-1"> Ward 26, Village Saddu,Raipur</p>
                         <p className="mb-1"> (C.G) 492014</p>
-                        <p className="mb-1">info@realwavepacks.com</p>
+                        <p className="mb-1">info@realwavespacks.com</p>
                     </div>
 
                     {/* Explore Products Buttons */}

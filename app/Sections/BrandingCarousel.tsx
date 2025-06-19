@@ -27,7 +27,7 @@ export default function BrandingCarousel() {
         <div className="carousel-track">
           {[...logos, ...logos].map((src, idx) => (
             <div className="carousel-logo" key={idx}>
-              <Image src={src} alt="Brand Logo" width={100} height={60} style={{ objectFit: 'contain' }} />
+              <Image src={src} alt="Brand Logo" width={100} height={60} style={{ objectFit: 'contain' }} className='w-[80px] h-[40px] md:w-[100px] md:h-[60px]' />
             </div>
           ))}
         </div>

@@ -86,11 +86,11 @@ export default function CustomerReviewSection() {
               arrows={false}
               containerClass="w-full"
               itemClass="flex justify-center"
-              dotListClass="flex justify-center mt-8 gap-2"
+              dotListClass="flex justify-center mt-8 gap-2 "
               renderDotsOutside={false}
             >
               {reviews.map((review, index) => (
-                <div key={index} className="w-full max-w-[335px]">
+                <div key={index} className="w-full max-w-[335px] p-5 md:p-0">
                   <ReviewCard
                     companyName={review.companyName}
                     quote={review.quote}
