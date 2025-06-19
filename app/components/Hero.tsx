@@ -1,8 +1,9 @@
 "use client"
-import React from "react";
+import React, {  useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import yellowBag from "@/public/heroSection/TopLeftBag.png";
+import { motion, useMotionValue, useTransform, useSpring, useAnimation } from "framer-motion";
+import yellowBag from "@/public/heroSection/Adobe Express - file.png";
 import bagsBottom from "@/public/heroSection/bagsOnTable.png";
 import shoppingBags from "@/public/heroSection/categoryBag.png";
 import ModelImage from "@/public/heroSection/ModelHoldingBag.png";
@@ -10,6 +11,49 @@ import logo from "@/public/icon.png";
 import CategorySection from "../Sections/CategorySection";
 
 const Hero = () => {
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const bagAnimation = useAnimation();
+
+  // Physics-based motion values
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  // Transform mouse position to bag rotation
+  const rotateX = useTransform(mouseY, [-300, 300], [15, -15]);
+  const rotateY = useTransform(mouseX, [-300, 300], [-15, 15]);
+  
+  // Spring physics for smooth movement
+  const springConfig = { damping: 20, stiffness: 300 };
+  const springRotateX = useSpring(rotateX, springConfig);
+  const springRotateY = useSpring(rotateY, springConfig);
+
+  useEffect(() => {
+    // Drop animation on page load
+    bagAnimation.start({
+      y: [0, 50, 0],
+      rotate: [0, 5, -5, 0],
+      transition: {
+        duration: 1.5,
+        ease: "easeOut",
+        times: [0, 0.6, 0.8, 1]
+      }
+    });
+
+    // Mouse movement handler
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      
+      mouseX.set(clientX - centerX);
+      mouseY.set(clientY - centerY);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [bagAnimation, mouseX, mouseY]);
+
   const handleWhatsAppClick = () => {
     // Replace with your WhatsApp number
     const phoneNumber = "919009990000"; // Add your WhatsApp number here
@@ -68,19 +112,18 @@ const Hero = () => {
         {/* Content container */}
         <div className="relative z-10 container mx-auto px-4 py-20 pb-32 flex flex-col items-center ">
           {/* Logo */}
-          <div className="mb-6">
+          <div className="md:mb-6 pr-5 md:pr-0">
             <Image
+            className="object-contain w-30 h-30  md:w-32 md:h-32 "
               src={logo.src}
               alt="Logo"
               width={100}
               height={100}
-              className="object-contain"
             />
           </div>
-
           {/* Center content */}
           <div className=" text-center flex flex-col items-center text-white max-w-3xl  pt-10 ">
-            <h1 className="text-4xl font-normal md:text-5xl lg:text-6xl mb-6 font-roboto">
+            <h1 className="text-2xl font-normal md:text-5xl lg:text-6xl mb-6 font-roboto">
             Premium Non-Woven Bags,
               <br />
               Manufacturer & Exporter
@@ -100,41 +143,66 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Yellow bag top left */}
-        <div className="absolute top-0 left-0 ">
-          <Image
-            src={yellowBag.src}
-            alt="Yellow handbag"
-            width={350}
-            height={350}
-            className="object-contain"
-          />
-        </div>
+        {/* Animated Yellow bag top left */}
+        <motion.div 
+          className=" absolute -top-10 sm:-top-11 md:-top-16 lg:-top-20 left-0"
+          animate={bagAnimation}
+          style={{
+            rotateX: springRotateX,
+            rotateY: springRotateY,
+            transformStyle: "preserve-3d",
+            transformOrigin: "center center"
+          }}
+          whileHover={{
+            scale: 1.05,
+            transition: { duration: 0.2 }
+          }}
+        >
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+              rotate: [0, 2, -2, 0]
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            <Image
+              src={yellowBag.src}
+              alt="Yellow handbag"
+              width={350}
+              height={350}
+              className="object-contain w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-80 lg:h-80 drop-shadow-2xl"
+            />
+          </motion.div>
+        </motion.div>
 
         {/* Shopping bags top right */}
-        <div className="absolute top-0 right-0 ">
+        <div className="hidden  absolute top-0 right-0 ">
           <Image
             src={shoppingBags.src}
             alt="Shopping bags"
             width={250}
             height={250}
-            className="object-contain"
+            className="object-contain w-40 h-40 sm:w-50 sm:h-50 md:w-60 md:h-60 lg:w-70 lg:h-70"
           />
         </div>
 
         {/* Person with shopping bags bottom left */}
-        <div className="absolute -bottom-40 left-5 ">
+        <div className="hidden md:block absolute  md:-bottom-40 left-5 ">
           <Image
             src={ModelImage.src}
             alt="Person with shopping bags"
             width={350}
             height={400}
-            className="object-contain"
+            className="object-contain w-40 h-40 sm:w-50 sm:h-50 md:w-60 md:h-60 lg:w-70 lg:h-70"
           />
         </div>
 
         {/* Collection of bags bottom right */}
-        <div className="absolute bottom-6 right-0 ">
+        <div className="hidden md:block absolute bottom-6 right-0 ">
           <Image
             src={bagsBottom.src}
             alt="Collection of bags"

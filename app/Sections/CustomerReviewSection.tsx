@@ -144,7 +144,7 @@ export default function CustomerReviewSection() {
           <p className="uppercase text-[#898989] font-['Roboto'] text-[16px] font-normal leading-[124%] tracking-[0.8px]">
             Our Happy Customers
           </p>
-          <h2 className="text-white font-roboto text-[40px] font-normal leading-[124%] tracking-[2px] pt-2">
+          <h2 className="text-white font-roboto text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-normal leading-[124%] tracking-[2px] pt-2">
             RealWaves is trusted by Brands Across India
           </h2>
         </div>
@@ -203,7 +203,7 @@ export default function CustomerReviewSection() {
             {Array.from({ length: maxIndex + 1 }).map((_, index) => (
               <button
                 key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-200 ${
                   currentIndex === index
                     ? "bg-white scale-110"
                     : "bg-gray-500 hover:bg-gray-400"

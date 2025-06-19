@@ -9,7 +9,7 @@ const AboutVideoSection: React.FC = () => {
       <section className="relative flex items-center rounded-3xl">
         {/* Background Video */}
         <video
-          className="absolute inset-0 w-full h-full object-cover rounded-3xl"
+          className="absolute inset-0 h-screen w-full md:h-full object-cover rounded-3xl"
           autoPlay
           muted
           loop
@@ -32,22 +32,22 @@ const AboutVideoSection: React.FC = () => {
             alt="RealWaves Logo"
             width={300}
             height={80}
-            className="h-12 w-auto"
+            className="h-5 lg:h-12 w-auto"
           />
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 w-full h-full flex items-center p-20">
+        <div className="relative z-10 w-full h-screen lg:h-full flex items-center p-5 lg:p-20  ">
           {/* Left Side Glass Card */}
-          <div className="w-full max-w-2xl ml-8 md:ml-16 lg:ml-20">
-            <div className="backdrop-blur-xl bg-black/30 rounded-2xl border border-white/20 shadow-2xl p-6 md:p-8 lg:p-10">
+          <div className="w-full max-w-2xl   translate-y-1/3 md:translate-y-0">
+            <div className="  backdrop-blur-xl bg-black/30 rounded-2xl border border-white/20 shadow-2xl p-6 md:p-8 lg:p-10">
               {/* About Us Label */}
-              <p className="text-white font-['Roboto'] text-base font-normal leading-[124%] tracking-[0.8px] uppercase mb-6">
+              <p className="text-white font-['Roboto'] text-sm sm:text-base font-normal leading-[124%] tracking-[0.8px] uppercase mb-6">
                 About Us
               </p>
 
               {/* Main Heading */}
-              <h2 className="text-white font-poppins text-[50px] font-normal leading-[124%] tracking-[2px] mb-8">
+              <h2 className="text-white font-poppins text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-normal leading-[124%] tracking-[2px] mb-8">
                 Our Journey-From
                 <br />
                 Trial to Excellence
@@ -60,34 +60,34 @@ const AboutVideoSection: React.FC = () => {
 
 
                 </p>
-                <p>
+                <p className="hidden md:block">
                 Backed by advanced machinery, skilled professionals, and a strict quality control process, every Realwaves bag is a step toward a greener tomorrow.
                 </p>
               </div>
 
               {/* Statistics Section */}
               <div className="">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
+                <div className="grid grid-cols-3 gap-6 md:gap-8">
                   <div className="text-left">
-                    <div className="w-full h-[3px] bg-blue-500 rounded-full mb-4"></div>
-                    <h3 className="text-2xl md:text-3xl font-normal text-white mb-2">7+ years</h3>
-                    <p className="text-sm text-gray-200 leading-relaxed">
+                    <div className="w-full h-[2px] md:h-[3px] bg-blue-500 rounded-full mb-4"></div>
+                    <h3 className="text-base md:text-3xl font-normal text-white mb-2">7+ years</h3>
+                    <p className="text-xs md:text-sm text-gray-200 leading-relaxed">
                       of establishing brands larger than life
                     </p>
                   </div>
                   
                   <div className="text-left">
-                    <div className="w-full h-[3px] bg-blue-500 rounded-full mb-4"></div>
-                    <h3 className="text-2xl md:text-2xl font-normal text-white mb-2">2000+ clients</h3>
-                    <p className="text-sm text-gray-200 leading-relaxed">
-                      With happy reviews and repeated offers
+                    <div className="w-full h-[2px] md:h-[3px] bg-blue-500 rounded-full mb-4"></div>
+                    <h3 className="text-base md:text-2xl font-normal text-white mb-2">2000+ clients</h3>
+                    <p className="text-xs md:text-sm text-gray-200 leading-relaxed">
+                      With happy reviews
                     </p>
                   </div>
                   
                   <div className="text-left">
-                    <div className="w-full h-[3px] bg-blue-500 rounded-full mb-4"></div>
-                    <h3 className="text-2xl md:text-3xl font-normal text-white mb-2">2 Lakh+</h3>
-                    <p className="text-sm text-gray-200 leading-relaxed">
+                    <div className="w-full h-[2px] md:h-[3px] bg-blue-500 rounded-full mb-4"></div>
+                    <h3 className="text-base md:text-3xl font-normal text-white mb-2">2 Lakh+</h3>
+                    <p className="text-xs md:text-sm text-gray-200 leading-relaxed">
                       bags per day manufacturing capability
                     </p>
                   </div>
