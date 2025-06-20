@@ -132,8 +132,8 @@ const Navbar = () => {
               >+ 91 90099 90000</span>
             </a>
           </div>
-          <div className='flex items-center gap-2'>
-          <div className="flex items-center md:hidden">
+          <div className='flex items-center gap-2 md:hidden'>
+          <div className="flex items-center">
             <a
               href="tel:+919009990000"
               className="bg-blue-600 text-white p-2 rounded-full flex items-center space-x-2 hover:bg-blue-700"
@@ -149,7 +149,7 @@ const Navbar = () => {
             </a>
           </div>
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"

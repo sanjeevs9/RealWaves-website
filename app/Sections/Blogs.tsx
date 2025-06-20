@@ -17,9 +17,9 @@ export default function Blogs() {
           {blogData.slice(0, 4).map((blog, idx) => (
             <div
               key={idx}
-              onClick={()=>{
-                router.push(`/blogs/${blog.id}`)
-              }}
+              // onClick={()=>{
+              //   router.push(`/blogs/${blog.id}`)
+              // }}
             className={`bg-white rounded-2xl shadow-lg flex flex-col overflow-hidden ${idx === 3 ? 'hidden xl:block' : ''}`}
             >
               <div className="w-full h-[120px] sm:h-[140px] relative">

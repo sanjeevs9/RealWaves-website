@@ -12,9 +12,9 @@ export default function Blogs() {
           {blogData.map((blog, idx) => (
             <div
               key={idx}
-              onClick={()=>{
-                router.push(`/blogs/${blog.id}`)
-              }}
+              // onClick={()=>{
+              //   router.push(`/blogs/${blog.id}`)
+              // }}
               className="bg-white rounded-2xl shadow-lg max-w-[390px] min-w-[320px] flex-1 flex flex-col overflow-hidden mb-8"
             >
               <div className="w-full h-[140px] relative">
@@ -25,7 +25,7 @@ export default function Blogs() {
                 <div className="font-semibold text-xl mb-3">{blog.title}</div>
                 <div className="text-gray-700 text-sm mb-6 line-clamp-4">{blog.content}</div>
                 <div className="flex items-center mt-auto  pt-10">
-                  <div className="w-8 h-8 rounded-full bg-gray-200 mr-3"></div>
+                  {/* <div className="w-8 h-8 rounded-full bg-gray-200 mr-3"></div> */}
                   <div>
                     <div className="font-semibold text-sm">{blog.author}</div>
                     <div className="text-gray-500 text-sm">
