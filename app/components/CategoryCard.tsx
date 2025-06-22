@@ -23,7 +23,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
             src={imageUrl}
             alt={title}
             fill
-            className="object-cover"
+            className="object-contain"
             />
         </div>
         

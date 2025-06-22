@@ -1,44 +1,7 @@
-import categoryBag from "@/public/heroSection/categoryBag.png"; // Adjust the import path as needed
+import { categoryData } from "@/constants";
 import CategoryCard from "../components/CategoryCard";
 // Create your category data array with all the categories from page.tsx
-const categoryData = [
-  {
-    id: 1,
-    title: "D-Cut",
-    imageUrl: categoryBag.src,
-    backgroundColor: "#B9C7FF",
-  },
-  {
-    id: 2,
-    title: "Loop Handle",
-    imageUrl: categoryBag.src,
-    backgroundColor: "#7F9EFE",
-  },
-  {
-    id: 3,
-    title: "U-Cut",
-    imageUrl: categoryBag.src,
-    backgroundColor: "#2476FE",
-  },
-  {
-    id: 4,
-    title: "Box",
-    imageUrl: categoryBag.src,
-    backgroundColor: "#0454BF",
-  },
-  {
-    id: 5,
-    title: "Printed",
-    imageUrl: categoryBag.src,
-    backgroundColor: "#02357E",
-  },
-  {
-    id: 6,
-    title: "Designed",
-    imageUrl: categoryBag.src,
-    backgroundColor: "#001842",
-  },
-];
+
 
 export default function CategorySection() {
   return (

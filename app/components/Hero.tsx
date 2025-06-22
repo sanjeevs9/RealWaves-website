@@ -9,6 +9,7 @@ import shoppingBags from "@/public/heroSection/categoryBag.png";
 import ModelImage from "@/public/heroSection/ModelHoldingBag.png";
 import logo from "@/public/icon.png";
 import CategorySection from "../Sections/CategorySection";
+import heroImage from "@/public/heroSection/New Project (2).png";
 
 const Hero = () => {
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -202,12 +203,12 @@ const Hero = () => {
         </div>
 
         {/* Collection of bags bottom right */}
-        <div className="hidden md:block absolute bottom-6 right-0 ">
+        <div className="hidden md:block absolute bottom-10 -right-10 ">
           <Image
-            src={bagsBottom.src}
+            src={heroImage.src}
             alt="Collection of bags"
-            width={300}
-            height={280}
+            width={500}
+            height={450}
             className="object-contain"
           />
         </div>

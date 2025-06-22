@@ -39,7 +39,7 @@ export default function ContactUs() {
               </span>
               <div className="min-w-0">
                 <p className="text-sm sm:text-base text-gray-500">E-mail</p>
-                <a href="mailto:info@realwavespacks.com" className="text-blue-600 font-medium text-sm sm:text-base hover:underline break-all">info@realwavepacks.com</a>
+                <a href="mailto:info@realwavespacks.com" className="text-blue-600 font-medium text-sm sm:text-base hover:underline break-all">info@realwavespacks.com</a>
               </div>
             </div>
             <div className="flex items-center gap-3 sm:gap-4">

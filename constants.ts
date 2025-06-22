@@ -10,6 +10,13 @@ import image1 from './public/WhyChooseus/ecological-bag-grass.jpg';
 
 import image6 from './public/WhyChooseus/laptop-delivery-truck-with-box.jpg';
 
+import Dcut from "./public/bags/D-cut1.png"
+import LH from "./public/bags/LH1.png"
+import Ucut from "./public/bags/u-cut.png"
+import Box from "./public/bags/Box1.png"
+import printed from "./public/bags/printed.png"
+import designed from "./public/bags/designed.png"
+
 
 export const icon1 = `<svg xmlns="http://www.w3.org/2000/svg" width="71" height="71" viewBox="0 0 71 71" fill="none">
 <rect x="6.11044" y="5.70224" width="58.7775" height="58.7775" rx="29.3888" fill="#02357E"/>
@@ -316,3 +323,42 @@ export const blogData = [
       image: image6
       }
   ]
+
+  export const categoryData = [
+    {
+      id: 1,
+      title: "D-Cut",
+      imageUrl: Dcut.src,
+      backgroundColor: "#B9C7FF",
+    },
+    {
+      id: 2,
+      title: "Loop Handle",
+      imageUrl: LH.src,
+      backgroundColor: "#7F9EFE",
+    },
+    {
+      id: 3,
+      title: "U-Cut",
+      imageUrl: Ucut.src,
+      backgroundColor: "#2476FE",
+    },
+    {
+      id: 4,
+      title: "Box",
+      imageUrl: Box.src,
+      backgroundColor: "#0454BF",
+    },
+    {
+      id: 5,
+      title: "Printed",
+      imageUrl: printed.src,
+      backgroundColor: "#02357E",
+    },
+    {
+      id: 6,
+      title: "Designed",
+      imageUrl: designed.src,
+      backgroundColor: "#001842",
+    },
+  ];
