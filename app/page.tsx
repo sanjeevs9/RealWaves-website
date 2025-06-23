@@ -5,7 +5,7 @@ import WhyChooseUsSection from "./Sections/WhyChooseUs";
 import AboutVideoSection from "./Sections/AboutUs";
 // import BestSellers from "./Sections/BestSellers";
 import ContactUs from "./Sections/ContactUs";
-import BrandingCarousel from "./Sections/BrandingCarousel";
+// import BrandingCarousel from "./Sections/BrandingCarousel";
 import Blogs from "./Sections/Blogs";
 
 export default function Home() {

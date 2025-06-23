@@ -1,11 +1,11 @@
 "use client"
 import { blogData } from "@/constants";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 
 export default function Blogs() {
-    const router = useRouter();
+    // const router = useRouter();
     return (
         <div className="flex flex-col items-center justify-center  pt-10" >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-between flex-wrap cursor-pointer">

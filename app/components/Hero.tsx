@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useMotionValue, useTransform, useSpring, useAnimation } from "framer-motion";
 import yellowBag from "@/public/heroSection/Adobe Express - file.png";
-import bagsBottom from "@/public/heroSection/bagsOnTable.png";
+// import bagsBottom from "@/public/heroSection/bagsOnTable.png";
 import shoppingBags from "@/public/heroSection/categoryBag.png";
 import ModelImage from "@/public/heroSection/ModelHoldingBag.png";
 import logo from "@/public/icon.png";

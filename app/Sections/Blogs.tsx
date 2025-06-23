@@ -1,11 +1,11 @@
 'use client'
 // import BrandingCarousel from './BrandingCarousel';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 import { blogData } from '@/constants';
 
 export default function Blogs() {
-  const router = useRouter();
+  // const router = useRouter();
   return (
     <section className="bg-white pt-8 px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-40 ">
       <div className="max-w-full mx-auto p-2 md:p-0">
