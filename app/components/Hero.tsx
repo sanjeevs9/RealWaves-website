@@ -123,7 +123,7 @@ const Hero = () => {
             />
           </div>
           {/* Center content */}
-          <div className=" text-center flex flex-col items-center text-white max-w-3xl  pt-10 ">
+          <div className=" text-center flex flex-col items-center text-white max-w-3xl  pt-10 lg:gap-6 ">
             <h1 className="text-2xl font-normal md:text-5xl lg:text-6xl mb-6 font-roboto">
             Premium Non-Woven Bags,
               <br />
@@ -207,9 +207,9 @@ const Hero = () => {
           <Image
             src={heroImage.src}
             alt="Collection of bags"
-            width={500}
-            height={450}
-            className="object-contain"
+            width={600}
+            height={500}
+            className="object-contain md:w-96 lg:w-full 2xl:w-[600px]"
           />
         </div>
       </div>

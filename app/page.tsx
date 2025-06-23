@@ -7,24 +7,26 @@ import AboutVideoSection from "./Sections/AboutUs";
 import ContactUs from "./Sections/ContactUs";
 // import BrandingCarousel from "./Sections/BrandingCarousel";
 import Blogs from "./Sections/Blogs";
+import UnderConstruction from "./under-construction";
 
 export default function Home() {
   return (
     <>
       <div className="bg-white min-h-screen w-full">
-        <Hero />
+        <UnderConstruction />
+        {/* <Hero /> */}
 
         {/* <BestSellers /> */}
 
-        <AboutVideoSection />
-        <MapSection />
+        {/* <AboutVideoSection /> */}
+        {/* <MapSection /> */}
         {/* <BrandingCarousel /> */}
 
-        <CustomerReviewSection />
+        {/* <CustomerReviewSection /> */}
       </div>
-      <WhyChooseUsSection />
-        <Blogs />
-        <ContactUs />
+      {/* <WhyChooseUsSection /> */}
+        {/* <Blogs /> */}
+        {/* <ContactUs /> */}
       
 
     </>
