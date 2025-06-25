@@ -17,7 +17,7 @@ export default function UnderConstruction() {
         <p className="text-lg md:text-xl mb-6 text-black">We&apos;re working hard to bring you a better experience. Please check back soon!</p>
         <div className="text-base md:text-lg bg-white p-6 rounded-xl shadow-lg">
           <div className="mb-2">
-            <strong>Email:</strong> <a href="mailto:info@realwaves.com" className="text-blue-600 hover:underline">info@realwaves.com</a>
+            <strong>Email:</strong> <a href="mailto:info@realwavespacks.com" className="text-blue-600 hover:underline">info@realwavespacks.com</a>
           </div>
           <div>
             <strong>Phone:</strong> <a href="tel:+919009990000" className="text-blue-600 hover:underline">+91 90099 90000</a>

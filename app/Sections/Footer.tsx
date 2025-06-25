@@ -67,7 +67,7 @@ export const Footer = () => {
                             </div>
                             <div className='flex items-center gap-2'>
                                 <Image src={instagram} alt="Instagram" width={20} height={20} />
-                            <Link href="https://instagram.com" className="flex items-center hover:text-pink-400 transition">
+                            <Link href="https://www.instagram.com/real_wavespacks/#" target='_blank' className="flex items-center hover:text-pink-400 transition">
                                 Instagram <span className="ml-1">↗</span>
                             </Link>
                             </div>
