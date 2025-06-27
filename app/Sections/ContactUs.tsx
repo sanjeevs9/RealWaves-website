@@ -26,7 +26,7 @@ export default function ContactUs() {
           <div className="flex flex-col gap-4 sm:gap-6 justify-between p-5 md:p-0">
             <div>
               <p className="text-lg sm:text-xl uppercase tracking-wider mb-2 font-roboto text-[#656565]">Contact Us</p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-black font-roboto leading-[124%] tracking-[1px] sm:tracking-[2px]">Reach Out to Us at Any Point</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-black font-roboto leading-[124%] tracking-[1px] sm:tracking-[2px]">Get in Touch</h2>
             </div>
             <div className="flex items-center gap-3 sm:gap-4 mb-2 pt-3 sm:pt-5">
               {/* Email Icon */}

@@ -10,6 +10,7 @@ export default function CategorySection() {
         <div className="flex flex-row justify-between items-center pl-7 pr-7 overflow-x-auto pt-5 gap-6 scrollbar-hide">
           {categoryData.map((category) => (
             <CategoryCard
+              category={category.category}
               key={category.id}
               title={category.title}
               imageUrl={category.imageUrl}

@@ -56,7 +56,7 @@ export const WhyChooseUsCard: React.FC<WhyChooseUsCardProps> = ({
       </div>
       
       {isExtended && (
-        <div className={`absolute left-0 right-0 z-20 ${Number(index) === 0 || Number(index) === 1 || Number(index) === 2 ? 'top-0' : 'bottom-0'}`}>
+        <div className={`absolute left-0 right-0 z-20 ${Number(index) === 0 || Number(index) === 1 || Number(index) === 2 ? 'top-0' : 'md:bottom-0'}`}>
           <WhyChooseUsExtendedCard
             title={title}
             index={index}

@@ -1,20 +1,20 @@
 "use client"
 import { blogData } from "@/constants";
 import Image from "next/image";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 
 export default function Blogs() {
-    // const router = useRouter();
+    const router = useRouter();
     return (
-        <div className="flex flex-col items-center justify-center  pt-10" >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-between flex-wrap cursor-pointer">
+        <div className="flex flex-col items-center   pt-10 " >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-between flex-wrap cursor-pointer ">
           {blogData.map((blog, idx) => (
             <div
               key={idx}
-              // onClick={()=>{
-              //   router.push(`/blogs/${blog.id}`)
-              // }}
+                onClick={()=>{
+                  router.push(`/blogs/${blog.id}`)
+                }}
               className="bg-white rounded-2xl shadow-lg max-w-[390px] min-w-[320px] flex-1 flex flex-col overflow-hidden mb-8"
             >
               <div className="w-full h-[140px] relative">

@@ -47,7 +47,7 @@ const MapSection: React.FC = () => {
     dailyFootfall: "100+",
     dailyFootfallDescription: "Cities across India we supply to",
     bagsShipped: "10 Lakh+",
-    bagsShippedDescription: "Bags Shipped Daily all over the world",
+    bagsShippedDescription: "Bags Shipped to 100+ cities",
     rating: "4.9 Rating",
     ratingDescription: "By the customers visiting our store."
   };

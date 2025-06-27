@@ -1,5 +1,5 @@
 "use client"
-import React, {  useEffect } from "react";
+import React, {  useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useMotionValue, useTransform, useSpring, useAnimation } from "framer-motion";
@@ -14,6 +14,7 @@ import heroImage from "@/public/heroSection/New Project (2).png";
 const Hero = () => {
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const bagAnimation = useAnimation();
+  const [mounted, setMounted] = useState(false);
 
   // Physics-based motion values
   const mouseX = useMotionValue(0);
@@ -29,6 +30,8 @@ const Hero = () => {
   const springRotateY = useSpring(rotateY, springConfig);
 
   useEffect(() => {
+    setMounted(true);
+    
     // Drop animation on page load
     bagAnimation.start({
       y: [0, 50, 0],
@@ -145,40 +148,42 @@ const Hero = () => {
         </div>
 
         {/* Animated Yellow bag top left */}
-        <motion.div 
-          className=" absolute -top-10 sm:-top-11 md:-top-16 lg:-top-20 left-0"
-          animate={bagAnimation}
-          style={{
-            rotateX: springRotateX,
-            rotateY: springRotateY,
-            transformStyle: "preserve-3d",
-            transformOrigin: "center center"
-          }}
-          whileHover={{
-            scale: 1.05,
-            transition: { duration: 0.2 }
-          }}
-        >
-          <motion.div
-            animate={{
-              y: [0, -10, 0],
-              rotate: [0, 2, -2, 0]
+        {mounted && (
+          <motion.div 
+            className=" absolute -top-10 sm:-top-11 md:-top-16 lg:-top-20 left-0"
+            animate={bagAnimation}
+            style={{
+              rotateX: springRotateX,
+              rotateY: springRotateY,
+              transformStyle: "preserve-3d",
+              transformOrigin: "center center"
             }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
+            whileHover={{
+              scale: 1.05,
+              transition: { duration: 0.2 }
             }}
           >
-            <Image
-              src={yellowBag.src}
-              alt="Yellow handbag"
-              width={350}
-              height={350}
-              className="object-contain w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-80 lg:h-80 drop-shadow-2xl"
-            />
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+                rotate: [0, 2, -2, 0]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <Image
+                src={yellowBag.src}
+                alt="Yellow handbag"
+                width={350}
+                height={350}
+                className="object-contain w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-80 lg:h-80 drop-shadow-2xl"
+              />
+            </motion.div>
           </motion.div>
-        </motion.div>
+        )}
 
         {/* Shopping bags top right */}
         <div className="hidden  absolute top-0 right-0 ">
@@ -203,13 +208,13 @@ const Hero = () => {
         </div>
 
         {/* Collection of bags bottom right */}
-        <div className="hidden md:block absolute bottom-10 -right-10 ">
+        <div className="md:block absolute bottom-10 -right-10 ">
           <Image
             src={heroImage.src}
             alt="Collection of bags"
             width={600}
             height={500}
-            className="object-contain md:w-96 lg:w-full 2xl:w-[600px]"
+            className="object-contain w-56  md:w-96 lg:w-full 2xl:w-[600px]"
           />
         </div>
       </div>

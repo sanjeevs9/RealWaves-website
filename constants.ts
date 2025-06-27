@@ -168,108 +168,37 @@ export const  FooterSvg = `<svg className="absolute top-0 left-0 w-full h-full -
 
 export const blogData = [
     {
-      id:1,
-      title: 'How Customize Carry Bags Help You to Promote Your Business Effectively',
-      tags: 'Marketing, Business Growth',
-      content:
-        `Your business could have the best products and services possible and be positioned at the perfect location, but if you’re not effectively connecting your business to your clients and prospective customers, then you are probably disregarding the power of having a physical presence in the real world. As a matter of fact, physical promotional items are the most effective brand carriers that can help your business reach the target audience and at the same time, give more exposure to your business in the long run. With several types of promotional products playing an imperative role in enhancing your business prospects, customized carry bags are one of the exceedingly effective marketing tools that can give a physical market presence to your business and ensure a long reach for your marketing campaign.`,
-      author: 'Marketing Expert',
-      date: '15 March 2024',
-      readTime: '5 min read',
-      image: '/a310f323ee3331152834763071548ae7378fa3c5.jpg',
-    },
-    {
-      id:2,
-      title: 'Why Customized Carry Bags Matter for Your Business',
-      tags: 'Branding, Marketing Strategy',
-      content:
-        `It is a well acknowledged fact that modern marketing offers numerous effective ways of promoting a brand. So, if you’re selling your products from a physical retail outlet, then handing overprinted or customized carry bags to your customers is a great way of getting some free advertising for your brand. You can also consider using customized carrier packaging for displaying your company’s name, brand logo, and other essential details. Using customized carrier bags is an effective way of promoting your business and products. Simultaneously, a customized carrier bag is a cost-effective form of marketing that offers extended utility to the customers alongside never-ending publicity of your business.`,
-      author: 'Business Consultant',
-      date: '12 March 2024',
-      readTime: '3 min read',
-      image: '/a310f323ee3331152834763071548ae7378fa3c5.jpg',
-    },
-    {
-      id:3,
-      title: 'The Impact of Customized Carry Bags on Brand Image',
-      tags: 'Brand Development, Marketing',
-      content:
-          `Creating designer and attractive personalized carry bags of durable quality will offer the benefit of continuous free advertising to your business. If your customized carrier bag is attractive and durable, then it will undeniably see further use, thereby becoming an effective advertisement tool every time it is used out of the home. This helps keep your brand name in customers' heads and gives your business an edge over the competition.`,
-      author: 'Brand Strategist',
-      date: '10 March 2024',
-      readTime: '1 min read',
-      image: '/a310f323ee3331152834763071548ae7378fa3c5.jpg',
-    },
-    {
-      id:4,
-      title:"Creates a Professional Impression",
-      tags:"Branding, Marketing",
-      content:`One of the greatest benefits of handing out customized carry bags to your customers is that it creates a unique professional look for your brand as well as products. It means that your brand will eventually be viewed as quite prestigious by your target audience. However, you must ensure that you pick the right design, something exceptional and eye-catching, for your customized carry bags in order to mark the presence.`,
-      author:"Brand Strategist",
-      date:"10 March 2024",
-      readTime:"1 min read",
-      image:"/a310f323ee3331152834763071548ae7378fa3c5.jpg"
-    },
-    {
-        id: 5,
-        title: "Additional Advertising Possibilities",
-        tags: "Marketing, Advertising",
-        content: `Creating designer and attractive personalized carry bags of durable quality will offer the benefit of continuous free advertising to your business. If your customized carrier bag is attractive and durable, then it will undeniably see further use, thereby becoming an effective advertisement tool every time it is used out of the home.`,
-        author: "Brand Strategist",
-        date: "12 March 2024",
-        readTime: "1 min read",
-        image: "/a310f323ee3331152834763071548ae7378fa3c5.jpg"
-      },
-      {
-        id: 6,
-        title: "Keep Your Brand Name in Customers’ Head",
-        tags: "Customer Retention, Branding",
-        content: `It is another major benefit of customized carrier bags that could help your customers to stay connected to your business in the long run. With customers reusing your branded carry bags, it will eventually extend your marketing efforts and make your customers recall their shopping experience with you. So, make sure that you use durable quality carrier bags with all your business information printed on them to make it easy for your clients and customers to reconnect with you.`,
-        author: "Marketing Expert",
-        date: "14 March 2024",
-        readTime: "1 min read",
-        image: "/a310f323ee3331152834763071548ae7378fa3c5.jpg"
-      },
-      {
-        id: 7,
-        title: "Gives an Image Boost",
-        tags: "Branding, Business Growth",
-        content: `If you’re trying to expand your business or take it to a new level, or if you’ve just created a new website or started hoarding new products, all that you need to do is to adjust your brand packaging accordingly. Adding customized carry bags to your business marketing strategy will not only enhance your future prospects but also give a boost to your brand image.`,
-        author: "Growth Consultant",
-        date: "16 March 2024",
-        readTime: "1 min read",
-        image: "/a310f323ee3331152834763071548ae7378fa3c5.jpg"
-      },
-      {
-        id: 8,
-        title: "Give Your Business an Edge Over the Competition",
-        tags: "Marketing Strategy, Competitive Edge",
-        content: `The right branded carrier bag can make all the difference and you should consider using customized carry bags as an advantage to your business. We are sure that you will be satisfyingly rewarded for considering customized carry bags, an effective marketing tool for creating brand awareness and advertising.`,
-        author: "Brand Analyst",
-        date: "18 March 2024",
-        readTime: "1 min read",
-        image: "/a310f323ee3331152834763071548ae7378fa3c5.jpg"
-      },
-      {
-        id: 9,
-        title: "Why Customized Carry Bags?",
-        tags: "Cost-Effective Marketing, Branding",
-        content: `It is a well acknowledged fact that modern marketing offers numerous effective ways of promoting a brand. So, if you’re selling your products from a physical retail outlet, then handing over printed or customized carry bags to your customers is a great way of getting some free advertising for your brand. You can also consider using customized carrier packaging for displaying your company’s name, brand logo, and other essential details. Using customized carrier bags is an effective way of promoting your business and products. Simultaneously, a customized carrier bag is a cost-effective form of marketing that offers extended utility to the customers alongside never-ending publicity of your business.`,
-        author: "Packaging Consultant",
-        date: "20 March 2024",
-        readTime: "1 min read",
-        image: "/a310f323ee3331152834763071548ae7378fa3c5.jpg"
-      },
-      {
-        id: 10,
-        title: "Promote Your Business Effectually",
-        tags: "Promotion, Business Strategy",
-        content: `There’s no doubt in the fact that customized carry bags can effectively bump up your business. Today, carry bag manufacturers are producing high-quality customized carrier bags like cotton bags, non-woven bags, paper bags and jute bags in order to avail an ongoing free advertisement for your business. There are many other amazing ways in which customized carry bags can help to effectively promote your business. Some of them are discussed below.`,
-        author: "Retail Marketing Advisor",
-        date: "22 March 2024",
-        readTime: "1 min read",
-        image: "/a310f323ee3331152834763071548ae7378fa3c5.jpg"
-      }
+      id:"1",
+      title: "How Customize Carry Bags Help You to Promote Your Business Effectively",
+      content: `Your business could have the best products and services possible and be positioned at the perfect location, but if you're not effectively connecting your business to your clients and prospective customers, then you are probably disregarding the power of having a physical presence in the real world. As a matter of fact, physical promotional items are the most effective brand carriers that can help your business reach the target audience and at the same time, give more exposure to your business in the long run. With several types of promotional products playing an imperative role in enhancing your business prospects, customized carry bags are one of the exceedingly effective marketing tools that can give a physical market presence to your business and ensure a long reach for your marketing campaign.
+  
+  Why Customized Carry Bags?
+  It is a well acknowledged fact that modern marketing offers numerous effective ways of promoting a brand. So, if you're selling your products from a physical retail outlet, then handing overprinted or customized carry bags to your customers is a great way of getting some free advertising for your brand. You can also consider using customized carrier packaging for displaying your company's name, brand logo, and other essential details. Using customized carrier bags is an effective way of promoting your business and products. Simultaneously, a customized carrier bag is a cost-effective form of marketing that offers extended utility to the customers alongside never-ending publicity of your business.
+  
+  Promote Your Business Effectually
+  There's no doubt in the fact that customized carry bags can effectively bump up your business. Today, carry bag manufacturers are producing high-quality customized carrier bags like cotton bags, non-woven bags, paper bags and jute bags in order to avail an ongoing free advertisement for your business. There are many other amazing ways in which customized carry bags can help to effectively promote your business. Some of them are discussed below.
+  
+  Creates a Professional Impression
+  One of the greatest benefits of handing out customized carry bags to your customers is that it creates a unique professional look for your brand as well as products. It means that your brand will eventually be viewed as quite prestigious by your target audience. However, you must ensure that you pick the right design, something exceptional and eye-catching, for your customized carry bags in order to mark the presence.
+  
+  Additional Advertising Possibilities
+  Creating designer and attractive personalized carry bags of durable quality will offer the benefit of continuous free advertising to your business. If your customized carrier bag is attractive and durable, then it will undeniably see further use, thereby becoming an effective advertisement tool every time it is used out of the home.
+  
+  Keep Your Brand name in Customers' Head
+  It is another major benefit of customized carrier bags that could help your customers to stay connected to your business in the long run. With customers reusing your branded carry bags, it will eventually extend your marketing efforts and make your customers recall their shopping experience with you. So, make sure that you use durable quality carrier bags with all your business information printed on them to make it easy for your clients and customers to reconnect with you.
+  
+  Gives an Image Boost
+  If you're trying to expand your business or take it to a new level, or if you've just created a new website or started hoarding new products, all that you need to do is to adjust your brand packaging accordingly. Adding customized carry bags to your business marketing strategy will not only enhance your future prospects but also give a boost to your brand image.
+  
+  Give Your Business an Edge Over the Competition
+  The right branded carrier bag can make all the difference and you should consider using customized carrier bags as an advantage to your business. We are sure that you will be satisfyingly rewarded for considering customized carry bags, an effective marketing tool for creating brand awareness and advertising.`,
+      author: "RealWaves Team",
+      date: "2024-01-15",
+      readTime: "5 min read",
+      category: "Marketing",
+      tags: ["Custom Bags", "Business Promotion", "Branding", "Marketing"],
+      image: "/a310f323ee3331152834763071548ae7378fa3c5.jpg"
+    }
   ];
 
 
@@ -330,35 +259,41 @@ export const blogData = [
       title: "D-Cut",
       imageUrl: Dcut.src,
       backgroundColor: "#B9C7FF",
+      category: "dcut",
     },
     {
       id: 2,
       title: "Loop Handle",
       imageUrl: LH.src,
       backgroundColor: "#7F9EFE",
+      category: "loophandle",
     },
     {
       id: 3,
       title: "U-Cut",
       imageUrl: Ucut.src,
       backgroundColor: "#2476FE",
+      category: "ucut",
     },
     {
       id: 4,
       title: "Box",
       imageUrl: Box.src,
       backgroundColor: "#0454BF",
+      category: "box",
     },
     {
       id: 5,
       title: "Printed",
       imageUrl: printed.src,
       backgroundColor: "#02357E",
+      category: "printed",
     },
     {
       id: 6,
       title: "Designed",
       imageUrl: designed.src,
       backgroundColor: "#001842",
+      category: "designed",
     },
   ];

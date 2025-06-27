@@ -25,7 +25,7 @@ export const Footer = () => {
                         height={70}
                         className="mx-auto w-[200px] md:w-[250px] lg:w-[300px]"
                     />
-                    <p className="text-[#F4F4F4] font-['Ananda_Black_Personal_Use'] text-[16px] sm:text-[18px] md:text-[20px] font-normal leading-[110%] tracking-[2.491px] capitalize italic mt-5 px-2">A LEADING NON-WOVEN BAG MANUFACTURER IN CENTRAL INDIA</p>
+                    <p className="text-[#F4F4F4] font-['Ananda_Black_Personal_Use'] text-[16px] sm:text-[18px] md:text-[20px] font-normal leading-[110%] tracking-[2.491px] capitalize  mt-5 px-2">A LEADING NON-WOVEN BAG MANUFACTURER IN CENTRAL INDIA</p>
                 </div>
 
                 {/* Main Content Area */}

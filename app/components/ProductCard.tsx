@@ -1,109 +1,97 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+
 const ProductCard = ({
-  productCode,
   gsmValue,
   productImage,
   productName,
-  price1,
-  minQuantity1,
-  price2,
-  minQuantity2,
-  dimensions,
+  dimensions:{
+    width,
+    height,
+    Gusset
+  }
 }: {
-  productCode: string;
   gsmValue: string;
-  productImage: string;
+  productImage: StaticImageData;
   productName: string;
-  price1: string;
-  minQuantity1: string;
-  price2: string;
-  minQuantity2: string;
-  dimensions: { size: string; unit: string; color: string }[];
+  dimensions: { width: number; height: number; Gusset: number };
 }) => {
   return (
-    <div className="bg-gray-50 rounded-lg shadow-md p-3 w-64 mx-auto border border-gray-200 relative cursor-pointer">
-      <div className="flex flex-col bg-gray-200 rounded-lg p-2">
-        {/* Header with product code and GSM */}
-
-        <div className="flex justify-between items-center">
-          <span className="text-sm font-medium text-gray-800 bg-white rounded-md p-1 pl-2 pr-2">
-            {productCode}
-          </span>
-          <div className="flex items-center gap-1 bg-white rounded-md p-1 pl-1.5 pr-1.5">
-            <span className="text-sm font-medium text-gray-800">
-              {gsmValue}
-            </span>
-            <span className="bg-blue-500 text-white text-[10px] px-1.5 py-0.5 rounded">
-              GSM
-            </span>
+    <div className="bg-gray-50 rounded-lg shadow-md p-3 w-64 mx-auto border border-gray-200 relative cursor-pointer group hover:shadow-lg hover:scale-105 transition-all duration-300">
+      <div className="flex flex-col rounded-lg p-2 bg-gray-200 relative">
+        {/* GSM Badge - Hidden by default, shown on hover */}
+        <div className="absolute top-0 right-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="bg-blue-500 text-white text-xs px-2 py-1 rounded-md font-medium ">
+            {gsmValue} GSM
           </div>
         </div>
 
         {/* Product Image */}
-        <div className="flex justify-center h-48  ">
+        <div className="flex justify-center items-center h-48 relative">
           <Image
             src={productImage}
             alt={productName}
-            width={500}
-            height={500}
-            className="w-full h-full object-contain absolute bottom-16 left-0 right-0"
+            width={200}
+            height={200}
+            className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
           />
         </div>
       </div>
+      
 
       {/* Product Name */}
-      <h3 className="text-sm font-medium text-gray-800 mb-2 pt-2">
+      <h3 className="text-sm xl:text-base font-medium text-gray-800 mb-2 pt-2 group-hover:text-blue-600 transition-colors duration-300">
         {productName}
       </h3>
 
-      {/* Pricing */}
-      <div className="space-y-1 mb-3">
-        <div className="flex justify-between items-center">
-          <div className="flex items-baseline gap-1">
-            <span className="text-base font-semibold text-gray-800">
-              Rs. {price1}
-            </span>
-            <span className="text-xs text-gray-500">/unit</span>
-          </div>
-          <span className="text-xs text-gray-500">min {minQuantity1}u</span>
-        </div>
-
-        <div className="flex justify-between items-center">
-          <div className="flex items-baseline gap-1">
-            <span className="text-base font-semibold text-gray-800">
-              Rs. {price2}
-            </span>
-            <span className="text-xs text-gray-500">/unit</span>
-          </div>
-          <span className="text-xs text-gray-500">min {minQuantity2}u</span>
-        </div>
-      </div>
-
       {/* Dimensions */}
       <div className="flex gap-1">
-        {dimensions.map((dim, index) => (
-          <div key={index} className="flex items-center gap-0.5">
+        <div className="flex items-center gap-0.5">
             <span className="text-xs font-medium text-gray-700">
-              {dim.size}
+              {height}
             </span>
             <span className="text-[10px] text-gray-500">mm</span>
             <span
               className={`
-              w-4 h-4 rounded-full text-white text-[10px] flex items-center justify-center
+              w-4 h-4 rounded-full text-white text-[10px] flex items-center justify-center group-hover:scale-110 transition-transform duration-300
               ${
-                dim.color === "blue"
-                  ? "bg-blue-500"
-                  : dim.color === "green"
-                  ? "bg-green-500"
-                  : "bg-gray-500"
+              "bg-blue-500"
               }
             `}
             >
-              {dim.unit}
+              H
+          </span>
+            <span className="text-xs font-medium text-gray-700">
+              {width}
             </span>
-          </div>
-        ))}
+            <span className="text-[10px] text-gray-500">mm</span>
+            <span
+              className={`
+              w-4 h-4 rounded-full text-white text-[10px] flex items-center justify-center group-hover:scale-110 transition-transform duration-300
+              ${
+                "bg-green-500"
+                
+              }
+            `}
+            >
+              W
+          </span>
+            <span className="text-xs font-medium text-gray-700">
+              {Gusset}
+            </span>
+            <span className="text-[10px] text-gray-500">mm</span>
+            <span
+              className={`
+              w-4 h-4 rounded-full text-white text-[10px] flex items-center justify-center group-hover:scale-110 transition-transform duration-300
+              ${
+                  "bg-gray-500"
+                
+              }
+            `}
+            >
+              G
+          </span>
+        </div>
       </div>
     </div>
   );

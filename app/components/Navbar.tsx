@@ -9,26 +9,32 @@ const categoryData = [
   {
     id: 1,
     title: "D-Cut",
+    category: "dcut",
   },
   {
     id: 2,
     title: "Loop Handle",
+    category: "loophandle",
   },
   {
     id: 3,
     title: "U-Cut",
+    category: "ucut",
   },
   {
     id: 4,
     title: "Box",
+    category: "box",
   },
   {
     id: 5,
     title: "Printed",
+    category: "printed",
   },
   {
     id: 6,
     title: "Designed",
+    category: "designed",
   },
 ];
 
@@ -97,7 +103,7 @@ const Navbar = () => {
                     {categoryData.map((category) => (
                       <Link
                         key={category.id}
-                        href={`/products?category=${encodeURIComponent(category.title)}`}
+                        href={`/products?category=${encodeURIComponent(category.category)}`}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
                       >
                         {category.title}
