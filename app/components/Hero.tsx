@@ -123,6 +123,7 @@ const Hero = () => {
               alt="Logo"
               width={100}
               height={100}
+              priority
             />
           </div>
           {/* Center content */}
@@ -180,7 +181,8 @@ const Hero = () => {
                 width={350}
                 height={350}
                 className="object-contain w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-80 lg:h-80 drop-shadow-2xl"
-              />
+                priority
+                />
             </motion.div>
           </motion.div>
         )}
@@ -193,7 +195,8 @@ const Hero = () => {
             width={250}
             height={250}
             className="object-contain w-40 h-40 sm:w-50 sm:h-50 md:w-60 md:h-60 lg:w-70 lg:h-70"
-          />
+            priority
+            />
         </div>
 
         {/* Person with shopping bags bottom left */}
@@ -204,6 +207,7 @@ const Hero = () => {
             width={350}
             height={400}
             className="object-contain w-40 h-40 sm:w-50 sm:h-50 md:w-60 md:h-60 lg:w-70 lg:h-70"
+            priority
           />
         </div>
 
@@ -215,6 +219,7 @@ const Hero = () => {
             width={600}
             height={500}
             className="object-contain w-56  md:w-96 lg:w-full 2xl:w-[600px]"
+            priority
           />
         </div>
       </div>
