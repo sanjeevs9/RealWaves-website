@@ -78,7 +78,7 @@ export default function ContactUs() {
               <div className="">
                 <div className="w-full h-[3px] bg-blue-500 rounded-full mb-3 sm:mb-4"></div>
                 <div className="flex items-center justify-center gap-1 sm:gap-2 cursor-pointer" onClick={() => {
-                  window.open("https://instagram.com", "_blank")
+                  window.open("https://www.instagram.com/real_wavespacks/#", "_blank")
                 }}>
                   <Image src={instagram} alt="Instagram" width={40} height={40} className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
                   <Link href="https://instagram.com" className="flex items-center hover:text-pink-400 transition text-sm sm:text-base">
