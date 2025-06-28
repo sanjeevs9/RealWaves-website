@@ -8,6 +8,9 @@ interface BlogCardProps {
   author: string;
   date: string;
   readTime: string;
+  tags?: string[] | string;
+  id?: string;
+  onClick?: () => void;
 }
 
 const BlogComponent: React.FC<BlogCardProps> = ({
@@ -17,39 +20,35 @@ const BlogComponent: React.FC<BlogCardProps> = ({
   author,
   date,
   readTime,
+  tags,
+  onClick
 }) => {
+  // Format tags: if array, join with commas, otherwise use as is
+  const formattedTags = Array.isArray(tags) ? tags.join(", ") : tags;
+
   return (
-    <div style={{
-      borderRadius: "20px",
-      overflow: "hidden",
-      boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
-      background: "#fff",
-      maxWidth: 350,
-      margin: "auto",
-      fontFamily: 'Inter, sans-serif',
-    }}>
-      <div style={{ height: 160, background: "#0a1a2f" }}>
+    <div 
+      onClick={onClick}
+      className="bg-white rounded-2xl shadow-lg max-w-[350px] flex-1 flex flex-col overflow-hidden mb-8 cursor-pointer font-[Inter]"
+    >
+      <div className="w-full h-[160px] relative bg-[#0a1a2f]">
         <Image
           src={image}
           alt={title}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          fill
+          className="object-cover"
         />
       </div>
-      <div style={{ padding: 24 }}>
-        <div style={{ color: "#888", fontSize: 14, marginBottom: 8 }}>(TAGS)</div>
-        <div style={{ fontWeight: 600, fontSize: 22, marginBottom: 12 }}>{title}</div>
-        <div style={{ color: "#666", fontSize: 16, marginBottom: 28, lineHeight: 1.5 }}>{article}</div>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <div style={{
-            width: 36,
-            height: 36,
-            borderRadius: "50%",
-            background: "#eee",
-            marginRight: 12,
-          }} />
+      <div className="p-6 flex-1 flex flex-col">
+        <div className="text-gray-500 text-sm mb-2">({formattedTags || "TAGS"})</div>
+        <div className="font-semibold text-base mb-3 font-roboto">{title}</div>
+        <div className="text-gray-700 text-base mb-7 line-clamp-4">{article}</div>
+        <div className="flex items-center mt-auto">
           <div>
-            <div style={{ fontWeight: 600, fontSize: 16 }}>{author}</div>
-            <div style={{ color: "#888", fontSize: 14 }}>{date} - {readTime} read</div>
+            <div className="font-semibold text-sm font-roboto">{author}</div>
+            <div className="text-gray-500 text-xs font-roboto">
+              {date} • {readTime}
+            </div>
           </div>
         </div>
       </div>

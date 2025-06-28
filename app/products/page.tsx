@@ -71,7 +71,6 @@ function ProductContent() {
       'dcut': 'D-Cut',
       'loophandle': 'Loop Handle',
       'ucut': 'U-Cut',
-      'box': 'Box',
       'boxbag': 'Box Bag',
       'printed': 'Printed',
       'designed': 'Designed'

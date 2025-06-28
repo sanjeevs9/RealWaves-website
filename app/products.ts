@@ -98,7 +98,7 @@ export const Products: {
         name:"Box bag",
         image:boxbag1,
         description:"",
-        category:"box",
+        category:"boxbag",
         dimensions:{
             Gusset:0,
             width:0,
