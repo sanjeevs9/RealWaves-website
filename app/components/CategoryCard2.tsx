@@ -29,7 +29,6 @@ const CategoryCard2: React.FC<CategoryCard2Props> = ({
       >
         <div className="relative w-full h-full flex items-center justify-center">
           <Image
-            loading='lazy'
             src={imageUrl}
             alt={title}
             width={500}    
