@@ -1,4 +1,4 @@
-   import Hero from "./components/Hero";
+  //  import Hero from "./components/Hero";
    import CustomerReviewSection from "./Sections/CustomerReviewSection";
    import MapSection from "./Sections/location";
    import WhyChooseUsSection from "./Sections/WhyChooseUs";
@@ -8,13 +8,14 @@
   //  import BrandingCarousel from "./Sections/BrandingCarousel";
   //  import Blogs from "./Sections/Blogs";
 // import UnderConstruction from "./under-construction";
+import Hero2 from "./components/Hero2";
 
 export default function Home() {
   return (
     <>
       <div className="bg-white min-h-screen w-full">
         {/* <UnderConstruction /> */}
-        <Hero />
+        <Hero2 />
 
         {/* <BestSellers /> */}
 

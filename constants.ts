@@ -10,9 +10,9 @@ import image1 from './public/WhyChooseus/ecological-bag-grass.jpg';
 
 import image6 from './public/WhyChooseus/laptop-delivery-truck-with-box.jpg';
 
-import Dcut from "./public/bags/D-cut1.png"
-import LH from "./public/bags/LH1.png"
-import Ucut from "./public/bags/u-cut.png"
+import Dcut from "./public/bags/D-cut4.png"
+import LH from "./public/bags/LH3.png"
+import Ucut from "./public/bags/u-cut1.png"
 import Box from "./public/bags/Box1.png"
 import printed from "./public/bags/printed.png"
 import designed from "./public/bags/designed.png"
@@ -288,12 +288,5 @@ export const blogData = [
       imageUrl: printed.src,
       backgroundColor: "#02357E",
       category: "printed",
-    },
-    {
-      id: 6,
-      title: "Designed",
-      imageUrl: designed.src,
-      backgroundColor: "#001842",
-      category: "designed",
     },
   ];

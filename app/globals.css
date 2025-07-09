@@ -24,5 +24,9 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
   }
+  
+  .no-scrollbar {
+    overflow-y: hidden;
+  }
 }
 
