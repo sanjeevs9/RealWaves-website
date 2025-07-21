@@ -33,10 +33,10 @@ const CategoryCard2: React.FC<CategoryCard2Props> = ({
             alt={title}
             width={500}    
             height={500}
-            className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-32 lg:h-32 xl:w-44 xl:h-44 2xl:w-64 2xl:h-64 object-contain -translate-y-6 xl:-translate-y-10"
+            className="w-20 h-20 sm:w-28 sm:h-28  lg:w-32 lg:h-32 xl:w-44 xl:h-44 2xl:w-64 2xl:h-64 object-contain -translate-y-6 xl:-translate-y-10"
           />
         </div>
-        <h3 className="p-1 text-white text-xs md:text-sm font-medium text-center absolute bottom-2">{title}</h3>
+        <h3 className="p-1 text-white text-[10px] sm:text-xs lg:text-sm font-medium text-center absolute bottom-2">{title}</h3>
       </div>
     </div>
   );

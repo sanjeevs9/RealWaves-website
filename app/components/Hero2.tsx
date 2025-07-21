@@ -123,16 +123,6 @@ export default function Hero2() {
                                 />
                             </div>
                             <div>
-                                <label htmlFor="industry" className="block font-semibold text-sm mb-1">Industry</label>
-                                <input 
-                                    id="industry" 
-                                    name="industry" 
-                                    type="text" 
-                                    placeholder="Industry" 
-                                    className="w-full border border-gray-200 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-100 placeholder-gray-400 text-sm" 
-                                />
-                            </div>
-                            <div>
                                 <label htmlFor="description" className="block font-semibold text-sm mb-1">Description</label>
                                 <textarea 
                                     id="description" 

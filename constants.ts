@@ -11,10 +11,10 @@ import image1 from './public/WhyChooseus/ecological-bag-grass.jpg';
 import image6 from './public/WhyChooseus/laptop-delivery-truck-with-box.jpg';
 
 import Dcut from "./public/bags/D-cut4.png"
-import LH from "./public/bags/LH3.png"
+import LH from "./public/bags/LH4.png"
 import Ucut from "./public/bags/u-cut1.png"
-import Box from "./public/bags/Box1.png"
-import printed from "./public/bags/printed.png"
+import Box from "./public/bags/Box3.png"
+import boppLH from "./public/bags/LH5.png"
 import designed from "./public/bags/designed.png"
 
 
@@ -341,16 +341,16 @@ export const blogData = [
     },
     {
       id: 4,
-      title: "Box",
+      title: "Non woven box",
       imageUrl: Box.src,
       backgroundColor: "#0454BF",
-      category: "box",
+      category: "nonwovenboxbag",
     },
     {
       id: 5,
-      title: "Printed",
-      imageUrl: printed.src,
+      title: "Bopp loop handle",
+      imageUrl: boppLH.src,
       backgroundColor: "#02357E",
-      category: "printed",
+      category: "bopploophandle",
     },
   ];

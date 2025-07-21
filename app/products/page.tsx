@@ -11,7 +11,7 @@ function ProductContent() {
   const [filters, setFilters] = useState({
     category: [] as string[],
   });
-  const [categoriesOpen, setCategoriesOpen] = useState(true);
+  const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const searchParams = useSearchParams();
   const category = searchParams.get('category');
@@ -71,9 +71,9 @@ function ProductContent() {
       'dcut': 'D-Cut',
       'loophandle': 'Loop Handle',
       'ucut': 'U-Cut',
-      'boxbag': 'Box Bag',
-      'printed': 'Printed',
-      'designed': 'Designed'
+      'boppboxbag': 'Bopp Box Bag',
+      'bopploophandle': 'Bopp Loop Handle',
+      'nonwovenboxbag': 'Non Woven Box Bag',
     };
     return displayNames[category] || category;
   };

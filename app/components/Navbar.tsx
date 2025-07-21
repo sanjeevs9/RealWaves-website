@@ -23,18 +23,18 @@ const categoryData = [
   },
   {
     id: 4,
-    title: "Box",
-    category: "box",
+    title: "Bopp Box Bag",
+    category: "boppboxbag",
   },
   {
     id: 5,
-    title: "Printed",
-    category: "printed",
+    title: "Bopp Loop Handle",
+    category: "bopploophandle",
   },
   {
     id: 6,
-    title: "Designed",
-    category: "designed",
+    title: "Non Woven Box Bag",
+    category: "nonwovenboxbag",
   },
 ];
 
@@ -54,7 +54,7 @@ const Navbar = () => {
                 alt="RealWaves Logo"
                 width={150}
                 height={40}
-                className="h-6 md:h-8 w-auto"
+                className="h-6 sm:h-6 md:h-8 w-auto"
               />
             </Link>
           </div>
@@ -150,7 +150,7 @@ const Navbar = () => {
                 </svg>
               </div>
               <span
-              className='text-xs md:text-base'
+              className='text-[10px] sm:text-xs md:text-base'
               >+ 91 90099 90000</span>
             </a>
           </div>

@@ -1,13 +1,9 @@
-import dcut1 from "@/public/bags/D-cut1.png"
-import dcut2 from "@/public/bags/D-cut2.png"
-import dcut3 from "@/public/bags/D-cut3.png"
-import loophandle1 from "@/public/bags/LH1.png"
-import loophandle2 from "@/public/bags/LH2.png"
-import ucut from "@/public/bags/u-cut.png"
-import boxbag1 from "@/public/bags/Box1.png"
-import boxbag2 from "@/public/bags/Box2.png"
-import printed from "@/public/bags/printed.png"
-import designed from "@/public/bags/designed.png"
+import dcut from "@/public/bags/D-cut4.png"
+import loophandle from "@/public/bags/LH4.png"
+import ucut from "@/public/bags/u-cut1.png"
+import boxbag from "@/public/bags/Box3.png"
+import bopploophandle from "@/public/bags/LH5.png"
+import boppbox from "@/public/bags/boppbox.png"
 
 
 
@@ -27,31 +23,7 @@ export const Products: {
 }[] = [
     {
         name:"D-cut",
-        image:dcut1,
-        description:"",
-        category:"dcut",
-        dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
-        },
-        gsm:0
-    },
-    {
-        name:"D-cut",
-        image:dcut2,
-        description:"",
-        category:"dcut",
-        dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
-        },
-        gsm:0
-    },
-    {
-        name:"D-cut",
-        image:dcut3,
+        image:dcut,
         description:"",
         category:"dcut",
         dimensions:{
@@ -62,19 +34,7 @@ export const Products: {
         gsm:0
     },{
         name:"Loop Handle",
-        image:loophandle1,
-        description:"",
-        category:"loophandle",
-        dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
-        },
-        gsm:0
-    },
-    {
-        name:"Loop Handle",
-        image:loophandle2,
+        image:loophandle,
         description:"",
         category:"loophandle",
         dimensions:{
@@ -95,10 +55,10 @@ export const Products: {
         },
         gsm:0
     },{
-        name:"Box bag",
-        image:boxbag1,
+        name:"Bopp box bag",
+        image:boppbox,
         description:"",
-        category:"boxbag",
+        category:"boppboxbag",
         dimensions:{
             Gusset:0,
             width:0,
@@ -106,10 +66,10 @@ export const Products: {
         },
         gsm:0
     },{
-        name:"Box bag",
-        image:boxbag2,
+        name:"Bopp loop handle",
+        image:bopploophandle,
         description:"",
-        category:"boxbag",
+        category:"bopploophandle",
         dimensions:{
             Gusset:0,
             width:0,
@@ -117,21 +77,10 @@ export const Products: {
         },
         gsm:0
     },{
-        name:"Printed bag",
-        image:printed,
+        name:"Non woven box bag",
+        image:boxbag,
         description:"",
-        category:"printed",
-        dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
-        },
-        gsm:0
-    },{
-        name:"Designed bag",
-        image:designed,
-        description:"",
-        category:"designed",
+        category:"nonwovenboxbag",
         dimensions:{
                     Gusset:0,
             width:0,
