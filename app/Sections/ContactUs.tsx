@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 // import Link from "next/link";
+import emailjs from "@emailjs/browser";
 import React from "react";
 import facebook from "@/public/socials/fb.png";
 import linkedin from "@/public/socials/linkedIn.png";
@@ -18,6 +19,34 @@ const WhatsAppIcon = () => {
 };
 
 export default function ContactUs() {
+  const formRef = React.useRef<HTMLFormElement>(null);
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (formRef.current) {
+      setIsLoading(true);
+      // console.log(formRef.current);
+      emailjs
+        .sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, formRef.current, {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+        })
+        .then(
+          () => {
+            console.log('SUCCESS!');
+            alert('Message sent successfully!');
+            formRef.current?.reset();
+            setIsLoading(false);
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+            alert('Failed to send message. Please try again.');
+            setIsLoading(false);
+          },
+        );
+    }
+  };
   return (
     <div className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-16 2xl:px-40 bg-white">
       <div className="w-full flex flex-col lg:flex-row justify-between lg:items-start gap-8 lg:gap-12">
@@ -104,7 +133,7 @@ export default function ContactUs() {
 
         {/* Right Side: Contact Form */}
         <div className="w-full lg:max-w-lg bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 border-t-[0.5px]">
-          <form className="flex flex-col gap-3 sm:gap-4">
+          <form ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-3 sm:gap-4">
             <div>
               <label htmlFor="name" className="block font-semibold text-sm sm:text-md mb-1">Name</label>
               <input id="name" name="name" type="text" placeholder="Name" className="w-full border border-gray-200 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-100 placeholder-gray-400 text-sm sm:text-base" />
@@ -121,9 +150,25 @@ export default function ContactUs() {
               <label htmlFor="description" className="block font-semibold text-sm sm:text-md mb-1">Description</label>
               <textarea id="description" name="description" rows={6} placeholder="Go ahead write it out." className="w-full border border-gray-200 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-100 placeholder-gray-400 resize-none text-sm sm:text-base" />
             </div>
-            <button type="submit" className="mt-2 flex items-center gap-2 justify-center bg-blue-600 text-white font-medium rounded-full px-4 sm:px-6 py-2 shadow hover:bg-blue-700 transition-all text-sm sm:text-base">
-              <svg width="20" height="20" fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="#fff" /><path d="M7 10.5l2 2 4-4" stroke="#2476FE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              Submit Response
+            <button 
+              type="submit" 
+              disabled={isLoading}
+              className="mt-2 flex items-center gap-2 justify-center bg-blue-600 text-white font-medium rounded-full px-4 sm:px-6 py-2 shadow hover:bg-blue-700 transition-all text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isLoading ? (
+                <>
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <svg width="20" height="20" fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="#fff" /><path d="M7 10.5l2 2 4-4" stroke="#2476FE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  Submit Response
+                </>
+              )}
             </button>
           </form>
         </div>

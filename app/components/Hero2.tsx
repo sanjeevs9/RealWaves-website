@@ -4,11 +4,14 @@ import CategoryCard2 from './CategoryCard2';
 import { categoryData } from '@/constants';
 import bag2 from "@/public/heroSection/_DSC3176 2.png"
 import { useRouter } from 'next/navigation'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from "@emailjs/browser";
 
 export default function Hero2() {
     const router = useRouter()
     const [isContactOpen, setIsContactOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const formRef = useRef<HTMLFormElement>(null);
 
     const handleWhatsAppClick = () => {
         // Replace with your WhatsApp number
@@ -20,11 +23,30 @@ export default function Hero2() {
         setIsContactOpen(!isContactOpen);
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Handle form submission here
-        console.log('Form submitted');
-        setIsContactOpen(false);
+
+        if (formRef.current) {
+            setIsLoading(true);
+            emailjs
+                .sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, formRef.current, {
+                    publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+                })
+                .then(
+                    () => {
+                        console.log('SUCCESS!');
+                        alert('Message sent successfully!');
+                        formRef.current?.reset();
+                        setIsContactOpen(false);
+                        setIsLoading(false);
+                    },
+                    (error) => {
+                        console.log('FAILED...', error.text);
+                        alert('Failed to send message. Please try again.');
+                        setIsLoading(false);
+                    },
+                );
+        }
     };
       
     return (
@@ -99,7 +121,7 @@ export default function Hero2() {
                             </button>
                         </div>
                         
-                        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                        <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
                             <div>
                                 <label htmlFor="name" className="block font-semibold text-sm mb-1">Name</label>
                                 <input 
@@ -135,13 +157,26 @@ export default function Hero2() {
                             </div>
                             <button 
                                 type="submit" 
-                                className="mt-2 flex items-center gap-2 justify-center bg-blue-600 text-white font-medium rounded-full px-6 py-2 shadow hover:bg-blue-700 transition-all text-sm"
+                                disabled={isLoading}
+                                className="mt-2 flex items-center gap-2 justify-center bg-blue-600 text-white font-medium rounded-full px-6 py-2 shadow hover:bg-blue-700 transition-all text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                <svg width="20" height="20" fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="10" cy="10" r="10" fill="#fff" />
-                                    <path d="M7 10.5l2 2 4-4" stroke="#2476FE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                                Submit Response
+                                {isLoading ? (
+                                    <>
+                                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        Sending...
+                                    </>
+                                ) : (
+                                    <>
+                                        <svg width="20" height="20" fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="10" cy="10" r="10" fill="#fff" />
+                                            <path d="M7 10.5l2 2 4-4" stroke="#2476FE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        Submit Response
+                                    </>
+                                )}
                             </button>
                         </form>
                     </div>
