@@ -38,7 +38,7 @@ export const Footer = () => {
                         <p className="mb-1">Near SBI Bank,Nakoda Group Premises</p>
                         <p className="mb-1"> Ward 26, Village Saddu,Raipur</p>
                         <p className="mb-1"> (C.G) 492014</p>
-                        <p className="mb-1">info@realwavespacks.com</p>
+                        <p className="mb-1">realwavespacks@gmail.com</p>
                     </div>
 
                     {/* Explore Products Buttons */}
@@ -61,7 +61,7 @@ export const Footer = () => {
                         <div className="flex space-x-4 my-4 pt-10">
                             <div className='flex flex-row items-center gap-2'>
                                 <Image src={facebook} alt="Facebook" width={20} height={20} />
-                                <Link href="https://facebook.com" className="flex items-center hover:text-blue-400 transition">
+                                <Link href="https://www.facebook.com/realwavespacksraipur?mibextid=ZbWKwL" target='_blank' className="flex items-center hover:text-blue-400 transition">
                                     Facebook <span className="ml-1">↗</span>
                                 </Link>
                             </div>

@@ -20,7 +20,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   return (
     <div className="bg-[#EDF0FF] rounded-3xl p-6 shadow-md w-full max-w-[335px] mx-auto">
       {/* Company Logo */}
-      <div className="mb-2 pt-20">
+      <div className="mb-2 pt-10">
         {/* <Image 
           src={naividya.src} 
           alt={`${companyName} logo`} 

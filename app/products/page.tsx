@@ -30,16 +30,16 @@ function ProductContent() {
   // Apply filters
   useEffect(() => {
     if (!mounted) return;
-    
+
     let filteredProducts = [...Products];
-    
+
     // Filter by category
     if (filters.category.length > 0) {
-      filteredProducts = filteredProducts.filter(product => 
+      filteredProducts = filteredProducts.filter(product =>
         filters.category.includes(product.category)
       );
     }
-    
+
     setProducts(filteredProducts);
   }, [filters, mounted]);
 
@@ -92,16 +92,16 @@ function ProductContent() {
       <div className="mb-6 text-sm text-gray-500">
         <span>HOME</span> &gt; <span className="font-medium">PRODUCT CATALOGUE</span>
       </div>
-      
+
       {/* Page Title */}
       <h1 className="text-3xl font-bold mb-8">All Your Needs At One Stop</h1>
-      
+
       <div className="flex flex-col md:flex-row gap-8">
         {/* Filters Panel */}
         <div className="w-full md:w-64 flex-shrink-0 border-r pr-4">
           {/* Categories Filter */}
           <div className="mb-6 border-b pb-4">
-            <div 
+            <div
               className="flex justify-between items-center cursor-pointer"
               onClick={() => setCategoriesOpen(!categoriesOpen)}
             >
@@ -112,9 +112,9 @@ function ProductContent() {
               <div className="mt-3 space-y-2">
                 {uniqueCategories.map((category, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <input 
-                      type="checkbox" 
-                      id={`category-${index}`} 
+                    <input
+                      type="checkbox"
+                      id={`category-${index}`}
                       checked={filters.category.includes(category)}
                       onChange={() => toggleFilter('category', category)}
                       className="h-4 w-4"
@@ -126,7 +126,7 @@ function ProductContent() {
             )}
           </div>
         </div>
-        
+
         {/* Products Grid */}
         <div className="flex-1">
           {/* Clear Filter Button - Only show when filters are active */}
@@ -137,21 +137,21 @@ function ProductContent() {
                   Active filters: {filters.category.map(cat => getCategoryDisplayName(cat)).join(', ')}
                 </span>
               </div>
-              <button 
+              <button
                 onClick={clearAllFilters}
                 className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-2"
               >
-                <svg 
-                  className="w-4 h-4" 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M6 18L18 6M6 6l12 12" 
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
                 Clear Filters
@@ -160,7 +160,7 @@ function ProductContent() {
           )}
 
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
-            {products.map((product,index) => (
+            {products.map((product, index) => (
               <ProductCard
                 key={index}
                 gsmValue={product.gsm.toString()}
@@ -170,17 +170,17 @@ function ProductContent() {
               />
             ))}
           </div>
-          
+
           {/* Show empty state if no products match filters */}
           {products.length === 0 && (
             <div className="text-center py-12">
               <p className="text-gray-500 text-lg">No products match your selected filters</p>
-              <button 
+              <button
                 className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200"
                 onClick={clearAllFilters}
               >
                 Clear All Filters
-              </button> 
+              </button>
             </div>
           )}
         </div>

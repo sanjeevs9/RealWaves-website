@@ -90,7 +90,7 @@ export default function CustomerReviewSection() {
               renderDotsOutside={false}
             >
               {reviews.map((review, index) => (
-                <div key={index} className="w-full max-w-[335px] p-5 md:p-0">
+                <div key={index} className="w-full max-w-[335px] p-5 md:p-0 md:pr-2">
                   <ReviewCard
                     companyName={review.companyName}
                     quote={review.quote}

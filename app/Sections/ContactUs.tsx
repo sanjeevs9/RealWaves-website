@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import React from "react";
 import facebook from "@/public/socials/fb.png";
 import linkedin from "@/public/socials/linkedIn.png";
@@ -39,7 +39,7 @@ export default function ContactUs() {
               </span>
               <div className="min-w-0">
                 <p className="text-sm sm:text-base text-gray-500">E-mail</p>
-                <a href="mailto:info@realwavespacks.com" className="text-blue-600 font-medium text-sm sm:text-base hover:underline break-all">info@realwavespacks.com</a>
+                <a href="mailto:realwavespacks@gmail.com" className="text-blue-600 font-medium text-sm sm:text-base hover:underline break-all">realwavespacks@gmail.com</a>
               </div>
             </div>
             <div className="flex items-center gap-3 sm:gap-4">
@@ -66,12 +66,12 @@ export default function ContactUs() {
               <div className="text-center">
                 <div className="w-full h-[3px] bg-blue-500 rounded-full mb-3 sm:mb-4"></div>
                 <div className="flex items-center justify-center gap-1 sm:gap-2 cursor-pointer" onClick={() => {
-                  window.open("https://facebook.com", "_blank")
+                  window.open("https://www.facebook.com/realwavespacksraipur?mibextid=ZbWKwL", "_blank")
                 }}>
                   <Image src={facebook} alt="Facebook" width={40} height={40} className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
-                  <Link href="https://facebook.com" className="flex items-center hover:text-blue-400 transition text-sm sm:text-base">
+                  <span className="flex items-center hover:text-blue-400 transition text-sm sm:text-base">
                     Facebook <span className="ml-1">↗</span>
-                  </Link>
+                  </span>
                 </div>
               </div>
 
@@ -81,9 +81,9 @@ export default function ContactUs() {
                   window.open("https://www.instagram.com/real_wavespacks/#", "_blank")
                 }}>
                   <Image src={instagram} alt="Instagram" width={40} height={40} className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
-                  <Link href="https://instagram.com" className="flex items-center hover:text-pink-400 transition text-sm sm:text-base">
+                  <span className="flex items-center hover:text-pink-400 transition text-sm sm:text-base">
                     Instagram <span className="ml-1">↗</span>
-                  </Link>
+                  </span>
                 </div>
               </div>
 
@@ -93,9 +93,9 @@ export default function ContactUs() {
                   window.open("https://linkedin.com", "_blank")
                 }}>
                   <Image src={linkedin} alt="LinkedIn" width={40} height={40} className="w-[25px] h-[25px] md:w-[50px] md:h-[50px]" />
-                  <Link href="https://linkedin.com" className="flex items-center hover:text-blue-600 transition text-sm sm:text-base">
+                  <span className="flex items-center hover:text-blue-600 transition text-sm sm:text-base">
                     LinkedIn <span className="ml-1">↗</span>
-                  </Link>
+                  </span>
                 </div>
               </div>
             </div>

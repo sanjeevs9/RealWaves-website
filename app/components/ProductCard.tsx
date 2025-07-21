@@ -17,7 +17,7 @@ const ProductCard = ({
   dimensions: { width: number; height: number; Gusset: number };
 }) => {
   return (
-    <div className="bg-gray-50 rounded-lg shadow-md p-2 sm:p-3 w-full sm:w-64 mx-auto border border-gray-200 relative cursor-pointer group hover:shadow-lg hover:scale-105 transition-all duration-300">
+    <div className="bg-gray-50 rounded-lg shadow-md p-2 sm:p-3 w-full sm:w-64 md:w-52  mx-auto border border-gray-200 relative cursor-pointer group hover:shadow-lg hover:scale-105 transition-all duration-300">
       <div className="flex flex-col rounded-lg p-2 bg-gray-200 relative">
         {/* GSM Badge - Hidden by default, shown on hover */}
         <div className="absolute top-0 right-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -27,7 +27,7 @@ const ProductCard = ({
         </div>
 
         {/* Product Image */}
-        <div className="flex justify-center items-center h-36 sm:h-48 relative">
+        <div className="flex justify-center items-center h-36 sm:h-48 md:h-36 relative">
           <Image
             src={productImage}
             alt={productName}
