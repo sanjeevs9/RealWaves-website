@@ -25,20 +25,20 @@ export const Footer = () => {
                         height={70}
                         className="mx-auto w-[200px] md:w-[250px] lg:w-[300px]"
                     />
-                    <p className="text-[#F4F4F4] font-['Ananda_Black_Personal_Use'] text-[16px] sm:text-[18px] md:text-[20px] font-normal leading-[110%] tracking-[2.491px] capitalize  mt-5 px-2">A LEADING NON-WOVEN BAG MANUFACTURER IN CENTRAL INDIA</p>
+                    <p className="text-[#F4F4F4] font-['Ananda_Black_Personal_Use'] text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] font-normal leading-[110%] tracking-[2.491px] capitalize  mt-5 px-2">A LEADING NON-WOVEN BAG MANUFACTURER IN CENTRAL INDIA</p>
                 </div>
 
                 {/* Main Content Area */}
                 <div className="w-full flex flex-wrap justify-between items-start ">
                     {/* Contact Information */}
                     <div className="w-full md:w-1/4 ">
-                        <h2 className="text-xl font-bold mb-2">Contact</h2>
-                        <p className="mb-1">+91 90099 90000</p>
-                        <p className="mb-1">+91 9617234355</p>
-                        <p className="mb-1">Near SBI Bank,Nakoda Group Premises</p>
-                        <p className="mb-1"> Ward 26, Village Saddu,Raipur</p>
-                        <p className="mb-1"> (C.G) 492014</p>
-                        <p className="mb-1">realwavespacks@gmail.com</p>
+                        <h2 className="text-lg sm:text-xl font-bold mb-2">Contact</h2>
+                        <p className="mb-1 text-sm sm:text-base">+91 90099 90000</p>
+                        <p className="mb-1 text-sm sm:text-base">+91 9617234355</p>
+                        <p className="mb-1 text-sm sm:text-base">Near SBI Bank,Nakoda Group Premises</p>
+                        <p className="mb-1 text-sm sm:text-base"> Ward 26, Village Saddu,Raipur</p>
+                        <p className="mb-1 text-sm sm:text-base"> (C.G) 492014</p>
+                        <p className="mb-1 text-sm sm:text-base">realwavespacks@gmail.com</p>
                     </div>
 
                     {/* Explore Products Buttons */}
@@ -61,26 +61,26 @@ export const Footer = () => {
                         <div className="flex space-x-4 my-4 pt-10">
                             <div className='flex flex-row items-center gap-2'>
                                 <Image src={facebook} alt="Facebook" width={20} height={20} />
-                                <Link href="https://www.facebook.com/realwavespacksraipur?mibextid=ZbWKwL" target='_blank' className="flex items-center hover:text-blue-400 transition">
+                                <Link href="https://www.facebook.com/realwavespacksraipur?mibextid=ZbWKwL" target='_blank' className="flex items-center hover:text-blue-400 transition text-sm sm:text-base">
                                     Facebook <span className="ml-1">↗</span>
                                 </Link>
                             </div>
                             <div className='flex items-center gap-2'>
                                 <Image src={instagram} alt="Instagram" width={20} height={20} />
-                            <Link href="https://www.instagram.com/real_wavespacks/#" target='_blank' className="flex items-center hover:text-pink-400 transition">
+                            <Link href="https://www.instagram.com/real_wavespacks/#" target='_blank' className="flex items-center hover:text-pink-400 transition text-sm sm:text-base">
                                 Instagram <span className="ml-1">↗</span>
                             </Link>
                             </div>
                             <div className='flex items-center gap-2'>
                                 <Image src={linkedin} alt="LinkedIn" width={20} height={20} />
-                                <Link href="https://linkedin.com" className="flex items-center hover:text-blue-600 transition">
+                                <Link href="https://linkedin.com" className="flex items-center hover:text-blue-600 transition text-sm sm:text-base">
                                     LinkedIn <span className="ml-1">↗</span>
                                 </Link>
                             </div>
                         </div>
 
                         {/* Footer */}
-                        <div className="mt-4 text-sm text-gray-400">
+                        <div className="mt-4 text-xs sm:text-sm text-gray-400">
                         Copyright:© 2025 Realwaves. All rights reserved.
                         </div>
                     </div>
@@ -89,14 +89,14 @@ export const Footer = () => {
                     {/* Inbox and Search */}
                     <div className="w-full md:w-1/4 text-right pt-10">
                         <div className="mb-6">
-                            <h2 className="text-2xl font-bold mb-3">Your Inbox Needs</h2>
-                            <p className="text-lg text-gray-300">Some Rejuvenation too</p>
+                            <h2 className="text-base sm:text-lg font-bold mb-3">Send Your Queries to Our Inbox</h2>
+                            {/* <p className="text-lg text-gray-300">Some Rejuvenation too</p> */}
                         </div>
                         <div className="flex justify-end mt-4">
                             <input
                                 type="email"
                                 placeholder="Enter your email..."
-                                className="px-4 py-2.5 w-full max-w-xs rounded-l-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                className="px-4 py-2.5 w-full max-w-xs rounded-l-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
                             />
                             <button className="bg-blue-500 hover:bg-blue-600 px-5 py-2.5 rounded-r-lg transition-colors duration-300">
                                 <span className="text-xl">→</span>
