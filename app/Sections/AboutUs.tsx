@@ -56,7 +56,7 @@ const AboutVideoSection: React.FC = () => {
               {/* Content Paragraphs */}
               <div className="space-y-6 text-gray-200 text-base md:text-lg leading-relaxed mb-12 font-roboto">
                 <p>
-                Realwaves is a leading manufacturer and exporter of eco-friendly, durable, and customizable non-woven bags, proudly operating from Raipur, Chhattisgarh for over 7 years.
+                Realwaves is a leading manufacturer  of eco-friendly, durable, and customizable non-woven bags, proudly operating from Raipur, Chhattisgarh for over 7 years.
 
 
                 </p>

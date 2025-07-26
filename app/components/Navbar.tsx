@@ -113,12 +113,12 @@ const Navbar = () => {
                 )}
               </div>
 
-              <Link
+              {/* <Link
                 href="/blogs"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
               >
                 Blogs
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -243,13 +243,13 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link
+          {/* <Link
             href="/blogs"
             className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Blogs
-          </Link>
+          </Link> */}
 
           {/* Mobile Phone Number Button */}
 

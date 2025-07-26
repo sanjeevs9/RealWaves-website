@@ -186,7 +186,7 @@ export default function Hero2() {
             {/* Content */}
             <div className='relative h-full w-full flex flex-col justify-end gap-16 lg:gap-64 '>
                 <div className='flex flex-col items-center justify-center  w-full z-20 pt-10 md:pt-16 p-2 lg:p-0 lg:pt-20'>
-                        <div className='text-xl font-semibold lg:font-bold md:text-3xl lg:text-5xl mb-6 font-roboto text-center '>Premium Non-Woven Bags,Manufacturer & Exporter</div>
+                        <div className='text-xl font-semibold lg:font-bold md:text-3xl lg:text-5xl mb-6 font-roboto text-center '>Premium Non-Woven Bags,Manufacturer</div>
                         <div className='text-sm md:text-2xl font-semibold mb-8 tracking-wide text-black font-poppins text-center'>Sustainable. Customizable. Reusable.</div>
                         <button onClick={()=>{
                             router.push('/products')

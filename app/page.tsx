@@ -1,5 +1,5 @@
   //  import Hero from "./components/Hero";
-   import CustomerReviewSection from "./Sections/CustomerReviewSection";
+  //  import CustomerReviewSection from "./Sections/CustomerReviewSection";
    import MapSection from "./Sections/location";
    import WhyChooseUsSection from "./Sections/WhyChooseUs";
    import AboutVideoSection from "./Sections/AboutUs";
@@ -23,7 +23,7 @@ export default function Home() {
         <MapSection />
         {/* <BrandingCarousel /> */}
 
-        <CustomerReviewSection />/
+        {/* <CustomerReviewSection /> */}
       </div>
       <WhyChooseUsSection />
         {/* <Blogs /> */}
