@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Suspense } from 'react';
 // import ProductCard from '../components/ProductCard';
-import { Products } from '../products';
+import { Products, categories, Category } from '../products';
 import { useSearchParams } from 'next/navigation';
 import ProductCard2 from '../components/ProductCard2';
 
@@ -18,7 +18,7 @@ function ProductContent() {
   const category = searchParams.get('category');
 
   // Get unique categories from products
-  const uniqueCategories = Array.from(new Set(Products.map(product => product.category)));
+    const uniqueCategories = Array.from(new Set(categories));
 
   // Initialize filters from URL parameter (only once)
   useEffect(() => {
@@ -37,7 +37,7 @@ function ProductContent() {
     // Filter by category
     if (filters.category.length > 0) {
       filteredProducts = filteredProducts.filter(product =>
-        filters.category.includes(product.category)
+        filters.category.some(category => product.category.includes(category as Category))
       );
     }
 
