@@ -2,7 +2,6 @@ import dcut from "@/public/bags/D-cut4.png"
 import loophandle from "@/public/bags/LH4.png"
 import ucut from "@/public/bags/u-cut1.png"
 import boxbag from "@/public/bags/Box3.png"
-import bopploophandle from "@/public/bags/LH5.png"
 import boppbox from "@/public/bags/boppbox.png"
 import ucut2 from "@/public/bags/u-cut2.png"
 import loophandle2 from "@/public/bags/LH6.png"
@@ -23,7 +22,7 @@ import boppbox3 from "@/public/bags/boppbox2.png"
 
 import { StaticImageData } from "next/image"
 
-export const categories = ["dcut", "ucut", "loophandle", "boxbag", "boppboxbag", "bopploophandle", "nonwovenboxbag"] as const
+export const categories = ["dcut", "ucut", "loophandle", "boxbag", "boppboxbag", "nonwovenboxbag"] as const
 
 // Create a type from the categories array
 export type Category = typeof categories[number]
@@ -34,26 +33,24 @@ export interface Product {
     image: StaticImageData
     description: string
     category: Category[]
-    dimensions: {
-        Gusset: number
+    dimensions?: {
+        Gusset?: number
         width: number
         height: number
     }
-    gsm: number
+    gsm?: number
 }
 
 export const Products: Product[] = [
     {
-        name:"D-cut",
+        name:"Laxmi D-cut",
         image:dcut,
         description:"",
         category:["dcut"],
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            width:14,
+            height:19
         },
-        gsm:0
     },
     {
         name:"Maosaji U-cut bag",
@@ -61,11 +58,9 @@ export const Products: Product[] = [
         description:"",
         category:["ucut"],
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            width:14,
+            height:16
         },
-        gsm:0
     },
     {
         name:"Shringaar Loop Handle",
@@ -73,11 +68,10 @@ export const Products: Product[] = [
         description:"",
         category:["loophandle"],
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            width:15,
+            height:19
         },
-        gsm:0
+        
     },
     {
         name:"Kajri Loop Handle",
@@ -85,11 +79,9 @@ export const Products: Product[] = [
         description:"",
         category:["loophandle"],
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            width:16,
+            height:19
         },
-        gsm:0
     },
     {
         name:"BB Box bag",
@@ -97,11 +89,10 @@ export const Products: Product[] = [
         description:"",
         category:["boxbag"],
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
-        },
-        gsm:0
+            Gusset:8,
+            width:11,
+            height:8
+        },      
     },
     {
         name:"Madhu Textorium Bopp box bag",
@@ -109,11 +100,11 @@ export const Products: Product[] = [
         description:"",
         category:["boppboxbag","boxbag"],
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            Gusset:4,
+            width:13,
+            height:12
         },
-        gsm:0
+       
     },
     {
         name:"Puncher Bopp box bag",
@@ -121,11 +112,11 @@ export const Products: Product[] = [
         description:"",
         category:["boppboxbag","boxbag"],
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            Gusset:4,
+            width:12,
+            height:13
         },
-        gsm:0
+       
     },
     {
         name:"Bonzelo Box bag",
@@ -133,11 +124,11 @@ export const Products: Product[] = [
         description:"",
         category:["boxbag"],
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            Gusset:8,
+            width:13,
+            height:8
         },
-        gsm:0
+       
     },
     {
         name:"Saheb Loop Handle",
@@ -145,11 +136,10 @@ export const Products: Product[] = [
         description:"",
         category:["loophandle"],
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            width:18,
+            height:16
         },
-        gsm:0
+
     },
     {
         name:"Bombaywala U-cut bag",
@@ -157,57 +147,38 @@ export const Products: Product[] = [
         description:"",
         category:["ucut"],
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            width:11,
+            height:14
         },
-        gsm:0
+       
     },{
-        name:"Bopp box bag",
+        name:"Bajaj box bag",
         image:boppbox,
         description:"",
         category:["boppboxbag","boxbag"],
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            Gusset:4,
+            width:14,
+            height:13
         },
-        gsm:0
-    },{
-        name:"Bopp loop handle",
-        image:bopploophandle,
-        description:"",
-        category:["bopploophandle","boxbag"],
-        dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
-        },
-        gsm:0
+       
     },
     {
         name:"Non woven box bag",
         image:boxbag,
         description:"",
         category:["nonwovenboxbag"],
-        dimensions:{
-                    Gusset:0,
-            width:0,
-            height:0
-        },
-        gsm:0
     },
     {
-        name:"Sale D-cut bag",
+        name:"SHAIL D-cut bag",
         image:dcut2,
         description:"",
         category:["dcut"],
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            width:14,
+            height:19
         },
-        gsm:0
+        
     },
     {
         name:"Fusion D-cut bag",
@@ -215,11 +186,10 @@ export const Products: Product[] = [
         description:"",
         category:["dcut"]       ,
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            width:12,
+            height:16
         },
-        gsm:0
+
     },
     {
         name:"Shree Shyam D-cut bag",
@@ -227,11 +197,10 @@ export const Products: Product[] = [
         description:"",
         category:["dcut"]   ,
         dimensions:{
-            Gusset:0,
-            width:0,
-            height:0
+            width:14,
+            height:19
         },
-        gsm:0
+        
     }
     
 ]

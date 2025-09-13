@@ -14,6 +14,7 @@ import Dcut from "./public/bags/D-cut4.png"
 import LH from "./public/bags/LH4.png"
 import Ucut from "./public/bags/u-cut1.png"
 import Box from "./public/bags/Box3.png"
+import box2 from "@/public/bags/Box4.png" 
 import boppLH from "./public/bags/LH5.png"
 import designed from "./public/bags/designed.png"
 
@@ -348,9 +349,9 @@ export const blogData = [
     },
     {
       id: 5,
-      title: "Bopp loop handle",
-      imageUrl: boppLH.src,
+      title: "Box bag",
+      imageUrl: box2.src,
       backgroundColor: "#02357E",
-      category: "bopploophandle",
+      category: "boxbag",
     },
   ];

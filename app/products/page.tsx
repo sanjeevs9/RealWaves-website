@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from 'react';
 // import ProductCard from '../components/ProductCard';
 import { Products, categories, Category } from '../products';
 import { useSearchParams } from 'next/navigation';
-import ProductCard2 from '../components/ProductCard2';
+import ProductCard from '../components/ProductCard';
 
 // Separate component that uses useSearchParams
 function ProductContent() {
@@ -162,10 +162,11 @@ function ProductContent() {
 
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
             {products.map((product, index) => (
-              <ProductCard2 
+              <ProductCard 
                 key={index}
                 productImage={product.image}
                 productName={product.name}
+                dimensions={product.dimensions as { width: number; height: number; Gusset: number }}
               />
             ))}
           </div>
