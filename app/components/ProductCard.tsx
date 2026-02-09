@@ -4,89 +4,68 @@ import Image, { StaticImageData } from "next/image";
 const ProductCard = ({
   productImage,
   productName,
-  dimensions
+  dimensions,
+  onInquiry,
 }: {
   productImage: StaticImageData;
   productName: string;
   dimensions: { width?: number; height?: number; Gusset?: number };
+  onInquiry?: (productName: string) => void;
 }) => {
   return (
-    <div className="bg-gray-50 rounded-lg shadow-md p-2 sm:p-3 w-full sm:w-64 md:w-52  mx-auto border border-gray-200 relative cursor-pointer group hover:shadow-lg hover:scale-105 transition-all duration-300">
-      <div className="flex flex-col rounded-lg p-2 bg-gray-200 relative">
+    <div className="bg-white rounded-xl ring-1 ring-black/[0.04] overflow-hidden cursor-pointer group hover:shadow-lg hover:shadow-charcoal/5 transition-all duration-300">
+      {/* Image */}
+      <div className="relative bg-linen flex justify-center items-center h-36 sm:h-48 p-4">
+        <Image
+          src={productImage}
+          alt={productName}
+          width={200}
+          height={200}
+          className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+        />
 
-        {/* Product Image */}
-        <div className="flex justify-center items-center h-36 sm:h-48 md:h-36 relative">
-          <Image
-            src={productImage}
-            alt={productName}
-            width={200}
-            height={200}
-            className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
-          />
-        </div>
+        {/* Inquiry overlay */}
+        {onInquiry && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onInquiry(productName);
+            }}
+            className="absolute top-2 right-2 bg-white/80 backdrop-blur-sm p-2 rounded-full ring-1 ring-black/[0.06] shadow-sm opacity-60 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 hover:bg-forest hover:text-white text-charcoal"
+            aria-label={`Inquire about ${productName}`}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+          </button>
+        )}
       </div>
 
+      {/* Info */}
+      <div className="p-3 sm:p-4">
+        <h3 className="text-xs sm:text-sm font-medium text-charcoal mb-2 group-hover:text-[#0992C2] transition-colors duration-300 leading-snug">
+          {productName}
+        </h3>
 
-      {/* Product Name */}
-      <h3 className="text-xs sm:text-sm xl:text-base font-medium text-gray-800 mb-1 sm:mb-2 pt-2 group-hover:text-blue-600 transition-colors duration-300">
-        {productName}
-      </h3>
-
-      {/* Dimensions */}
-      <div className="flex gap-1">
-        <div className="flex items-center gap-0.5">
-          {dimensions && dimensions.height && (
-            <> 
-          <span className="text-[10px] sm:text-xs font-medium text-gray-700">
-            {dimensions.height}
-          </span>
-          <span className="text-[8px] sm:text-[10px] text-gray-500">in</span>
-          <span
-            className={`
-              w-3 h-3 sm:w-4 sm:h-4 rounded-full text-white text-[8px] sm:text-[10px] flex items-center justify-center group-hover:scale-110 transition-transform duration-300
-              ${"bg-blue-500"
-              }
-            `}
-          >
-            H
-          </span>
-          </>
+        {/* Dimensions */}
+        <div className="flex items-center gap-2 flex-wrap">
+          {dimensions?.height && (
+            <span className="inline-flex items-center gap-1 text-[10px] sm:text-xs text-sage">
+              <span className="w-4 h-4 rounded bg-charcoal/10 text-charcoal text-[9px] font-semibold flex items-center justify-center">H</span>
+              {dimensions.height}<span className="text-sage/60">in</span>
+            </span>
           )}
-          {dimensions && dimensions.width && (
-            <>
-          <span className="text-[10px] sm:text-xs font-medium text-gray-700">
-            {dimensions.width}
-          </span>
-          <span className="text-[8px] sm:text-[10px] text-gray-500">in</span>
-          <span
-            className={`
-              w-3 h-3 sm:w-4 sm:h-4 rounded-full text-white text-[8px] sm:text-[10px] flex items-center justify-center group-hover:scale-110 transition-transform duration-300
-              ${"bg-green-500"
-
-              }
-            `}
-          >
-            W
-          </span>
-          </>
+          {dimensions?.width && (
+            <span className="inline-flex items-center gap-1 text-[10px] sm:text-xs text-sage">
+              <span className="w-4 h-4 rounded bg-charcoal/10 text-charcoal text-[9px] font-semibold flex items-center justify-center">W</span>
+              {dimensions.width}<span className="text-sage/60">in</span>
+            </span>
           )}
-          {dimensions && dimensions.Gusset && (
-            <>
-              <span className="text-[10px] sm:text-xs font-medium text-gray-700">
-                {dimensions.Gusset}
-              </span>
-              <span className="text-[8px] sm:text-[10px] text-gray-500">in</span>
-              <span
-                className={`
-              w-3 h-3 sm:w-4 sm:h-4 rounded-full text-white text-[8px] sm:text-[10px] flex items-center justify-center group-hover:scale-110 transition-transform duration-300
-              ${"bg-gray-500"
-
-                  }
-            `}
-              >
-                G
-              </span>
-            </>
+          {dimensions?.Gusset && (
+            <span className="inline-flex items-center gap-1 text-[10px] sm:text-xs text-sage">
+              <span className="w-4 h-4 rounded bg-charcoal/10 text-charcoal text-[9px] font-semibold flex items-center justify-center">G</span>
+              {dimensions.Gusset}<span className="text-sage/60">in</span>
+            </span>
           )}
         </div>
       </div>
