@@ -76,7 +76,7 @@ export default function Hero2() {
             </div>
 
             {/* Text content — on top of the bag */}
-            <div className="relative z-10 flex flex-col items-center text-center md:h-full justify-start pt-12 pb-8 sm:pt-16 sm:pb-10 md:pb-0 md:pt-[14svh] lg:pt-[10svh] px-4">
+            <div className="relative z-10 flex flex-col items-center text-center md:h-full justify-start pt-10 sm:pt-14 md:pb-0 md:pt-[14svh] lg:pt-[10svh] px-4">
                 {/* Trust Badge */}
                 <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-charcoal/5 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-5 ring-1 ring-charcoal/8">
                     <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#0992C2] animate-pulse" />
@@ -111,6 +111,18 @@ export default function Hero2() {
                     >
                         Contact Us
                     </button>
+                </div>
+
+                {/* Mobile bag image — flows naturally after buttons */}
+                <div className="md:hidden flex justify-center mt-8 pointer-events-none">
+                    <Image
+                        src={bag2}
+                        alt="Premium Non-Woven Bags Collection"
+                        width={1500}
+                        height={1500}
+                        quality={100}
+                        className="w-full object-contain"
+                    />
                 </div>
             </div>
         </div>
