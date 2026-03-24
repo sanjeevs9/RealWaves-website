@@ -43,7 +43,7 @@ export default function ContactUs() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-28">
+    <section className="py-16 sm:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left - Contact Info */}
@@ -107,11 +107,11 @@ export default function ContactUs() {
 
             {/* Social Links */}
             <div className="mt-10 lg:mt-0 pt-8 lg:pt-0">
-              <div className="flex items-center gap-6 flex-wrap">
+              <div className="flex items-center gap-3 sm:gap-6">
                 {socialLinks.map((social) => (
                   <div
                     key={social.label}
-                    className="flex items-center gap-2 cursor-pointer group"
+                    className="flex items-center gap-1.5 sm:gap-2 cursor-pointer group"
                     onClick={() => window.open(social.url, '_blank')}
                   >
                     <Image
@@ -119,10 +119,10 @@ export default function ContactUs() {
                       alt={social.label}
                       width={28}
                       height={28}
-                      className="opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                      className="w-5 h-5 sm:w-7 sm:h-7 opacity-50 group-hover:opacity-100 transition-opacity duration-300"
                     />
-                    <span className="text-sm text-sage group-hover:text-charcoal transition-colors duration-300">
-                      {social.label} <span className="text-xs">↗</span>
+                    <span className="text-xs sm:text-sm text-sage group-hover:text-charcoal transition-colors duration-300">
+                      {social.label} <span className="text-[10px] sm:text-xs">↗</span>
                     </span>
                   </div>
                 ))}

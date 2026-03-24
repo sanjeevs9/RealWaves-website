@@ -142,24 +142,24 @@ function ChevronRight() {
 
 function ReviewCard({ review }: { review: Review }) {
   return (
-    <div className="flex-shrink-0 w-[340px] min-h-[210px] bg-white rounded-2xl border border-gray-200/70 px-7 py-6 flex flex-col justify-between gap-6">
-      <p className="text-[14.5px] leading-[1.7] text-gray-600 font-body tracking-[0.01em]">
+    <div className="flex-shrink-0 w-[280px] sm:w-[340px] min-h-0 sm:min-h-[210px] bg-white rounded-xl sm:rounded-2xl border border-gray-200/70 px-4 sm:px-7 py-3 sm:py-6 flex flex-col justify-between gap-3 sm:gap-6">
+      <p className="text-[13px] sm:text-[14.5px] leading-[1.6] sm:leading-[1.7] text-gray-600 font-body tracking-[0.01em]">
         {review.quote}
       </p>
 
       <div className="flex items-center justify-between pt-1">
         <div className="min-w-0">
-          <p className="text-[15px] font-semibold text-gray-900 font-body tracking-[-0.01em]">
+          <p className="text-[13px] sm:text-[15px] font-semibold text-gray-900 font-body tracking-[-0.01em]">
             {review.name}
           </p>
-          <p className="text-[13px] text-gray-400 font-body mt-0.5">
+          <p className="text-[11px] sm:text-[13px] text-gray-400 font-body mt-0.5">
             {review.role}
           </p>
         </div>
 
         <div className="flex-shrink-0 relative ml-4">
           <div
-            className={`w-10 h-10 rounded-full ${review.avatarBg} flex items-center justify-center text-white text-[11px] font-bold tracking-wider shadow-sm`}
+            className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full ${review.avatarBg} flex items-center justify-center text-white text-[9px] sm:text-[11px] font-bold tracking-wider shadow-sm`}
           >
             {review.initials}
           </div>
@@ -190,7 +190,7 @@ function MarqueeRow({
       <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 lg:w-48 bg-gradient-to-l from-[#FAFCFF] via-[#FAFCFF]/80 to-transparent z-10 pointer-events-none" />
 
       <div
-        className="flex gap-5 hover:[animation-play-state:paused]"
+        className="flex gap-3 sm:gap-5 hover:[animation-play-state:paused]"
         style={{
           animation: `${animName} ${speed}s linear infinite`,
           width: 'max-content',
@@ -206,7 +206,7 @@ function MarqueeRow({
 
 export default function Reviews() {
   return (
-    <section className="py-20 sm:py-24 lg:py-28 overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 overflow-hidden">
       <style>{`
         @keyframes marquee-left {
           0% { transform: translateX(0); }
@@ -219,7 +219,7 @@ export default function Reviews() {
       `}</style>
 
       {/* Header */}
-      <div className="text-center mb-14 sm:mb-16 px-4">
+      <div className="text-center mb-8 sm:mb-14 lg:mb-16 px-4">
         <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-4 py-1.5 mb-6 backdrop-blur-sm">
           <ChatIcon />
           <span className="text-[13px] font-medium text-gray-600 font-body tracking-wide">
@@ -231,14 +231,14 @@ export default function Reviews() {
           What Our Clients Are Saying
         </h2>
 
-        <p className="mt-5 text-gray-400 text-[15.5px] sm:text-[16px] leading-[1.7] max-w-lg mx-auto font-body">
+        <p className="mt-3 sm:mt-5 text-gray-400 text-[13px] sm:text-[16px] leading-[1.6] sm:leading-[1.7] max-w-lg mx-auto font-body">
           We take pride in delivering exceptional solutions that deliver great
           results. But don&apos;t just take our word for it.
         </p>
       </div>
 
       {/* Marquee Rows */}
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-3 sm:gap-5">
         <MarqueeRow reviews={topRowReviews} direction="left" speed={45} />
         <MarqueeRow reviews={bottomRowReviews} direction="right" speed={45} />
       </div>

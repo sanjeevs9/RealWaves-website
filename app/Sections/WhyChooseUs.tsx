@@ -3,7 +3,7 @@ import { WhyChooseUsData as data } from "@/constants";
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-16 sm:py-20 lg:py-28 bg-cream">
+    <section className="py-16 sm:py-20 lg:py-24 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12 sm:mb-16">

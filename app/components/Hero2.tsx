@@ -52,8 +52,8 @@ export default function Hero2() {
             onClose={() => setIsContactOpen(false)}
         />
 
-        {/* Hero Section */}
-        <div className="relative w-full overflow-hidden">
+        {/* Hero Section — exactly fills viewport below navbar (68px) */}
+        <div className="relative w-full h-[calc(100vh-68px)] overflow-hidden">
             {/* Background — soft ambient gradient */}
             <div
                 className="absolute inset-0 z-0"
@@ -62,62 +62,61 @@ export default function Hero2() {
                 }}
             />
 
-            {/* Content */}
-            <div className="relative z-10 flex flex-col items-center justify-end gap-16 lg:gap-64">
-                <div className="relative z-20 flex flex-col items-center justify-center w-full pt-10 md:pt-16 lg:pt-24 px-4">
-                    {/* Trust Badge */}
-                    <div className="inline-flex items-center gap-2 bg-charcoal/5 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6 ring-1 ring-charcoal/8">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#0992C2] animate-pulse" />
-                        <span className="text-xs font-medium text-charcoal tracking-wide">Trusted by 2000+ Businesses Across India</span>
-                    </div>
+            {/* Bag image — absolute, behind text, anchored to bottom */}
+            <div className="absolute bottom-0 left-0 right-0 z-[1] flex items-end justify-center pointer-events-none h-[75%] sm:h-[50%] lg:h-[52%]">
+                <Image
+                    src={bag2}
+                    alt="Premium Non-Woven Bags Collection"
+                    width={1500}
+                    height={1500}
+                    quality={100}
+                    priority
+                    className="h-full w-auto min-w-[120%] sm:min-w-0 sm:w-[80%] sm:h-auto md:w-[70%] lg:w-[60%] max-h-full object-contain object-bottom"
+                />
+            </div>
 
-                    {/* Heading */}
-                    <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-charcoal text-center max-w-4xl leading-[1.08] tracking-tight">
-                        Premium Non-Woven
-                        <span className="block text-[#0992C2] mt-1">Bag Manufacturer</span>
-                    </h1>
-
-                    {/* Tagline */}
-                    <p className="mt-4 md:mt-6 text-sm sm:text-base md:text-lg text-sage font-medium tracking-[0.2em] uppercase text-center">
-                        Sustainable &middot; Customizable &middot; Reusable
-                    </p>
-
-                    {/* CTA Buttons */}
-                    <div className="flex items-center gap-3 sm:gap-4 mt-8">
-                        <button
-                            onClick={() => router.push('/products')}
-                            className="group bg-forest text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base font-medium hover:bg-forest-light transition-all duration-300 flex items-center gap-2.5 shadow-lg shadow-forest/15"
-                        >
-                            <span>View Products</span>
-                            <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </button>
-                        <button
-                            onClick={handleContactClick}
-                            className="bg-white/70 backdrop-blur-sm text-charcoal px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base font-medium ring-1 ring-charcoal/10 hover:ring-forest/30 hover:bg-white transition-all duration-300"
-                        >
-                            Contact Us
-                        </button>
-                    </div>
+            {/* Text content — on top of the bag */}
+            <div className="relative z-10 flex flex-col items-center text-center h-full justify-start pt-[14vh] sm:pt-[14vh] lg:pt-[10vh] px-4">
+                {/* Trust Badge */}
+                <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-charcoal/5 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-5 ring-1 ring-charcoal/8">
+                    <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#0992C2] animate-pulse" />
+                    <span className="text-[10px] sm:text-xs font-medium text-charcoal tracking-wide">Trusted by 2000+ Businesses Across India</span>
                 </div>
 
-                {/* Hero Product Image */}
-                <div className="relative z-0 w-full items-end flex justify-center h-[5rem] overflow-x-clip lg:overflow-x-visible pointer-events-none">
-                    <Image
-                        src={bag2}
-                        alt="Premium Non-Woven Bags Collection"
-                        width={1500}
-                        height={1500}
-                        quality={100}
-                        className="w-full sm:w-3/4 max-h-[600px] sm:max-h-[400px] md:max-h-[400px] lg:max-h-[500px] object-contain scale-110 md:scale-100"
-                    />
+                {/* Heading */}
+                <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-charcoal max-w-4xl leading-[1.08] tracking-tight">
+                    Premium Non-Woven
+                    <span className="block text-[#0992C2] mt-1">Bag Manufacturer</span>
+                </h1>
+
+                {/* Tagline */}
+                <p className="mt-3 md:mt-4 text-xs sm:text-sm md:text-lg text-sage font-medium tracking-[0.2em] uppercase">
+                    Sustainable &middot; Customizable &middot; Reusable
+                </p>
+
+                {/* CTA Buttons */}
+                <div className="flex items-center gap-3 sm:gap-4 mt-5 sm:mt-7">
+                    <button
+                        onClick={() => router.push('/products')}
+                        className="group bg-forest text-white px-4 sm:px-8 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-base font-medium hover:bg-forest-light transition-all duration-300 flex items-center gap-2 sm:gap-2.5 shadow-lg shadow-forest/15"
+                    >
+                        <span>View Products</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                    <button
+                        onClick={handleContactClick}
+                        className="bg-white/70 backdrop-blur-sm text-charcoal px-4 sm:px-8 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-base font-medium ring-1 ring-charcoal/10 hover:ring-forest/30 hover:bg-white transition-all duration-300"
+                    >
+                        Contact Us
+                    </button>
                 </div>
             </div>
         </div>
 
         {/* Category Section */}
-        <div className="bg-white py-14 xl:py-20">
+        <div className="bg-white py-16 sm:py-20 lg:py-24">
             {/* Section Heading */}
             <div className="text-center mb-8 lg:mb-10 px-4">
                 <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal tracking-tight">

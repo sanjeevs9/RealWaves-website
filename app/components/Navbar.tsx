@@ -30,7 +30,7 @@ const Navbar = () => {
         ? 'bg-white/95 backdrop-blur-xl shadow-[0_1px_0_rgba(15,44,29,0.06)]'
         : 'bg-white'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[68px]">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
