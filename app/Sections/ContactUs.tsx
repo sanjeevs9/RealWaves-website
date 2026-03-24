@@ -43,7 +43,7 @@ export default function ContactUs() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-28 bg-white">
+    <section className="py-16 sm:py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left - Contact Info */}
@@ -51,10 +51,6 @@ export default function ContactUs() {
             <div className="space-y-8">
               {/* Header */}
               <div>
-                <div className="section-label">
-                  <span className="section-label-dot" />
-                  <span className="section-label-text">Contact Us</span>
-                </div>
                 <h2 className="section-heading">Get in Touch</h2>
                 <p className="mt-4 text-sage text-sm sm:text-base max-w-md leading-relaxed">
                   Ready to elevate your packaging? Reach out and let&apos;s discuss how we can serve your business.

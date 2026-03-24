@@ -181,7 +181,7 @@ function ProductContent() {
               </div>
             )}
 
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
               {products.map((product, index) => (
                 <ProductCard
                   key={index}
@@ -238,9 +238,9 @@ function ProductLoading() {
             </div>
           </div>
           <div className="flex-1">
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
               {[...Array(8)].map((_, i) => (
-                <div key={i} className="bg-white rounded-xl h-56 sm:h-64 animate-pulse ring-1 ring-black/[0.04]" />
+                <div key={i} className="bg-white rounded-2xl h-72 sm:h-80 animate-pulse border border-gray-200 shadow-sm" />
               ))}
             </div>
           </div>

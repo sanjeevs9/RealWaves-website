@@ -67,10 +67,6 @@ const MapSection: React.FC = () => {
           <div className="space-y-8 lg:space-y-10 flex flex-col justify-between h-full p-2 md:p-0">
             {/* Header */}
             <div className="space-y-4">
-              <div className="section-label">
-                <span className="section-label-dot" />
-                <span className="section-label-text">Visit Us</span>
-              </div>
               <h2 className="section-heading">
                 Our Store Awaits
                 <br className="hidden sm:block" />

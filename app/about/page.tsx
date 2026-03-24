@@ -11,10 +11,6 @@ export default function About() {
             {/* Hero */}
             <section className="py-16 sm:py-20 lg:py-28">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <div className="section-label justify-center">
-                        <span className="section-label-dot" />
-                        <span className="section-label-text">About Us</span>
-                    </div>
                     <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-[1.15] tracking-tight">
                         Crafting Sustainable Packaging
                         <span className="block text-[#0992C2] mt-1">Since 2017</span>
@@ -43,7 +39,7 @@ export default function About() {
             <section className="pb-16 sm:pb-20 lg:pb-28">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="bg-white rounded-2xl p-8 md:p-12 lg:p-14 ring-1 ring-black/[0.04]">
-                        <h2 className="font-display text-2xl sm:text-3xl font-bold text-charcoal mb-8">
+                        <h2 className="section-heading mb-8">
                             Our Story
                         </h2>
                         <div className="space-y-5 text-sage text-sm sm:text-base leading-relaxed">

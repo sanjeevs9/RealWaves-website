@@ -7,10 +7,6 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12 sm:mb-16">
-          <div className="section-label">
-            <span className="section-label-dot" />
-            <span className="section-label-text">Why Realwaves</span>
-          </div>
           <h2 className="section-heading max-w-2xl">
             Why Choosing Us Is the Smart Move for Your Business
           </h2>

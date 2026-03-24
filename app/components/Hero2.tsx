@@ -116,17 +116,53 @@ export default function Hero2() {
             </div>
         </div>
 
-        {/* Category Row */}
-        <div className="bg-cream">
-            <div className="flex justify-between items-center pl-5 pr-5 lg:pl-10 lg:pr-10 pt-10 xl:pt-16 pb-8 lg:pb-10 overflow-x-auto overflow-y-hidden md:overflow-x-hidden scrollbar-hide">
-                {categoryData.map((item) => (
-                    <CategoryCard2
-                        key={item.category}
-                        category={item.category}
-                        title={item.title}
-                        imageUrl={item.imageUrl}
-                    />
-                ))}
+        {/* Category Section */}
+        <div className="bg-white py-14 xl:py-20">
+            {/* Section Heading */}
+            <div className="text-center mb-8 lg:mb-10 px-4">
+                <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal tracking-tight">
+                    Browse Our Products
+                </h2>
+                <p className="mt-3 text-sm sm:text-base text-sage max-w-md mx-auto">
+                    Explore our complete range of premium non-woven bags
+                </p>
+            </div>
+
+            {/* Ticker / Marquee */}
+            <div className="w-full overflow-hidden">
+                <div className="flex animate-ticker w-max">
+                    {/* First set */}
+                    {categoryData.map((item) => (
+                        <CategoryCard2
+                            key={`a-${item.category}`}
+                            category={item.category}
+                            title={item.title}
+                            imageUrl={item.imageUrl}
+                        />
+                    ))}
+                    {/* Duplicate set for seamless loop */}
+                    {categoryData.map((item) => (
+                        <CategoryCard2
+                            key={`b-${item.category}`}
+                            category={item.category}
+                            title={item.title}
+                            imageUrl={item.imageUrl}
+                        />
+                    ))}
+                </div>
+            </div>
+
+            {/* Explore All Button */}
+            <div className="text-center mt-10 lg:mt-12">
+                <button
+                    onClick={() => router.push('/products')}
+                    className="group inline-flex items-center gap-2 border border-[#0B2D72] text-[#0B2D72] px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide hover:bg-[#0B2D72] hover:text-white transition-all duration-300"
+                >
+                    <span>Explore All Products</span>
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </button>
             </div>
         </div>
         </>
