@@ -53,7 +53,7 @@ export default function Hero2() {
         />
 
         {/* Hero Section — exactly fills viewport below navbar (68px) */}
-        <div className="relative w-full h-[calc(100vh-68px)] overflow-hidden">
+        <div className="relative w-full md:h-[calc(100svh-68px)] overflow-hidden">
             {/* Background — soft ambient gradient */}
             <div
                 className="absolute inset-0 z-0"
@@ -63,7 +63,7 @@ export default function Hero2() {
             />
 
             {/* Bag image — absolute, behind text, anchored to bottom */}
-            <div className="absolute bottom-0 left-0 right-0 z-[1] flex items-end justify-center pointer-events-none h-[75%] sm:h-[50%] lg:h-[52%]">
+            <div className="hidden md:flex md:absolute md:bottom-0 md:left-0 md:right-0 z-[1] items-end justify-center pointer-events-none md:h-[50%] lg:h-[52%]">
                 <Image
                     src={bag2}
                     alt="Premium Non-Woven Bags Collection"
@@ -71,12 +71,12 @@ export default function Hero2() {
                     height={1500}
                     quality={100}
                     priority
-                    className="h-full w-auto min-w-[120%] sm:min-w-0 sm:w-[80%] sm:h-auto md:w-[70%] lg:w-[60%] max-h-full object-contain object-bottom"
+                    className="w-[85%] sm:w-[80%] md:w-[70%] lg:w-[60%] max-h-full object-contain object-bottom"
                 />
             </div>
 
             {/* Text content — on top of the bag */}
-            <div className="relative z-10 flex flex-col items-center text-center h-full justify-start pt-[14vh] sm:pt-[14vh] lg:pt-[10vh] px-4">
+            <div className="relative z-10 flex flex-col items-center text-center md:h-full justify-start pt-12 pb-8 sm:pt-16 sm:pb-10 md:pb-0 md:pt-[14svh] lg:pt-[10svh] px-4">
                 {/* Trust Badge */}
                 <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-charcoal/5 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-5 ring-1 ring-charcoal/8">
                     <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#0992C2] animate-pulse" />
