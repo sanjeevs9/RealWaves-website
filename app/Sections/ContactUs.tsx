@@ -131,34 +131,34 @@ export default function ContactUs() {
           </div>
 
           {/* Right - Form */}
-          <div className="bg-cream rounded-2xl p-6 sm:p-8 ring-1 ring-black/[0.04]">
+          <div className="bg-[#EEF2F9] rounded-2xl p-6 sm:p-8 lg:p-10">
             <form ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-5">
               <div>
                 <label htmlFor="contact-name" className="block text-sm font-medium text-charcoal mb-1.5">Name</label>
                 <input
                   id="contact-name" name="name" type="text" placeholder="Your full name"
-                  className="w-full border border-linen rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/60 text-sm transition-all"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/50 text-sm transition-all"
                 />
               </div>
               <div>
                 <label htmlFor="contact-email" className="block text-sm font-medium text-charcoal mb-1.5">Email</label>
                 <input
                   id="contact-email" name="email" type="email" placeholder="you@company.com"
-                  className="w-full border border-linen rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/60 text-sm transition-all"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/50 text-sm transition-all"
                 />
               </div>
               <div>
                 <label htmlFor="contact-industry" className="block text-sm font-medium text-charcoal mb-1.5">Industry</label>
                 <input
                   id="contact-industry" name="industry" type="text" placeholder="e.g. Retail, Grocery, Fashion"
-                  className="w-full border border-linen rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/60 text-sm transition-all"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/50 text-sm transition-all"
                 />
               </div>
               <div>
                 <label htmlFor="contact-desc" className="block text-sm font-medium text-charcoal mb-1.5">Message</label>
                 <textarea
                   id="contact-desc" name="description" rows={5} placeholder="Tell us about your requirements..."
-                  className="w-full border border-linen rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/60 resize-none text-sm transition-all"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/50 resize-none text-sm transition-all"
                 />
               </div>
               <button

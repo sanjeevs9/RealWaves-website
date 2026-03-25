@@ -128,10 +128,10 @@ export default function Hero2() {
         </div>
 
         {/* Category Section */}
-        <div className="bg-white py-16 sm:py-20 lg:py-24">
+        <div className="py-16 sm:py-20 lg:py-24">
             {/* Section Heading */}
             <div className="text-center mb-8 lg:mb-10 px-4">
-                <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal tracking-tight">
+                <h2 className="section-heading">
                     Browse Our Products
                 </h2>
                 <p className="mt-3 text-sm sm:text-base text-sage max-w-md mx-auto">
