@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, Suspense } from 'react';
+import Link from 'next/link';
 import { Products, categories, Category } from '../products';
 import { useSearchParams } from 'next/navigation';
 import ProductCard from '../components/ProductCard';
@@ -75,7 +76,7 @@ function ProductContent() {
         {/* Header */}
         <div className="mb-10">
           <div className="flex items-center gap-1.5 text-xs text-sage mb-4">
-            <span>Home</span>
+            <Link href="/" className="hover:text-charcoal transition-colors">Home</Link>
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
