@@ -1,19 +1,33 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import { useRouter } from "next/navigation";
 
 const ProductCard = ({
   productImage,
   productName,
   dimensions,
+  slug,
   onInquiry,
 }: {
   productImage: StaticImageData;
   productName: string;
   dimensions: { width?: number; height?: number; Gusset?: number };
+  slug?: string;
   onInquiry?: (productName: string) => void;
 }) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    if (slug) {
+      router.push(`/products/${slug}`);
+    }
+  };
+
   return (
-    <div className="bg-white rounded-xl ring-1 ring-black/[0.04] overflow-hidden cursor-pointer group hover:shadow-lg hover:shadow-charcoal/5 transition-all duration-300">
+    <div
+      onClick={handleClick}
+      className="bg-white rounded-xl ring-1 ring-black/[0.04] overflow-hidden cursor-pointer group hover:shadow-lg hover:shadow-charcoal/5 transition-all duration-300"
+    >
       {/* Image */}
       <div className="relative bg-linen flex justify-center items-center h-36 sm:h-48 p-4">
         <Image

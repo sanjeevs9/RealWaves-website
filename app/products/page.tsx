@@ -187,6 +187,7 @@ function ProductContent() {
                   key={index}
                   productImage={product.image}
                   productName={product.name}
+                  slug={product.slug}
                   dimensions={product.dimensions as { width: number; height: number; Gusset: number }}
                   onInquiry={(name) => setInquiryProduct(name)}
                 />
