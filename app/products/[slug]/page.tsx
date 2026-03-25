@@ -55,16 +55,16 @@ export default function ProductDetail() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
           <nav className="flex items-center gap-2 text-xs sm:text-sm text-sage">
             <Link href="/" className="hover:text-charcoal transition-colors">Home</Link>
-            <span>/</span>
+            <span>&gt;</span>
             <Link href="/products" className="hover:text-charcoal transition-colors">Products</Link>
-            <span>/</span>
+            <span>&gt;</span>
             <Link
               href={`/products?category=${product.category[0]}`}
               className="hover:text-charcoal transition-colors"
             >
               {categoryLabel}
             </Link>
-            <span>/</span>
+            <span>&gt;</span>
             <span className="text-charcoal font-medium truncate max-w-[140px] sm:max-w-none">{product.name}</span>
           </nav>
         </div>

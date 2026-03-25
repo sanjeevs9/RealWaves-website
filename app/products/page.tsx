@@ -75,13 +75,11 @@ function ProductContent() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         {/* Header */}
         <div className="mb-10">
-          <div className="flex items-center gap-1.5 text-xs text-sage mb-4">
+          <nav className="flex items-center gap-2 text-xs sm:text-sm text-sage mb-4">
             <Link href="/" className="hover:text-charcoal transition-colors">Home</Link>
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            <span>&gt;</span>
             <span className="text-charcoal font-medium">Products</span>
-          </div>
+          </nav>
           <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal tracking-tight">
             Product Catalogue
           </h1>

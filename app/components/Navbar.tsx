@@ -47,6 +47,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-1">
             <Link href="/" className="nav-link">Home</Link>
             <Link href="/about" className="nav-link">About Us</Link>
+            <Link href="/blogs" className="nav-link">Blogs</Link>
 
             {/* Products Dropdown */}
             <div
@@ -146,6 +147,13 @@ const Navbar = () => {
             className="block px-4 py-3 text-sm font-medium text-charcoal hover:text-forest hover:bg-forest/5 rounded-lg transition-colors"
           >
             About Us
+          </Link>
+          <Link
+            href="/blogs"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block px-4 py-3 text-sm font-medium text-charcoal hover:text-forest hover:bg-forest/5 rounded-lg transition-colors"
+          >
+            Blogs
           </Link>
 
           <div>
