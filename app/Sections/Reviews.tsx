@@ -1,6 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
+import { FadeIn } from '../components/animations';
 
 interface Review {
   quote: string;
@@ -264,6 +265,7 @@ export default function Reviews() {
         }
       `}</style>
 
+      <FadeIn direction="up">
       <div className="text-center mb-8 sm:mb-14 lg:mb-16 px-4">
         {/* <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-4 py-1.5 mb-6 backdrop-blur-sm">
           <ChatIcon />
@@ -281,6 +283,7 @@ export default function Reviews() {
           results. But don&apos;t just take our word for it.
         </p>
       </div>
+      </FadeIn>
 
       <div className="flex flex-col gap-3 sm:gap-5">
         <MarqueeRow reviews={topRowReviews} direction="left" speed={45} />

@@ -1,6 +1,8 @@
+'use client'
 import React from "react";
 import Image from "next/image";
 import logo from "@/public/logo.png";
+import { FadeIn, ScaleIn } from '../components/animations';
 
 const AboutVideoSection: React.FC = () => {
   return (
@@ -35,21 +37,27 @@ const AboutVideoSection: React.FC = () => {
         {/* Content */}
         <div className="relative z-10 w-full h-screen lg:h-full flex items-end lg:items-center p-5 lg:p-16 xl:p-20">
           <div className="w-full max-w-2xl mb-8 md:mb-12">
+            <ScaleIn delay={0.1}>
             <div className="backdrop-blur-2xl bg-forest-dark/55 rounded-2xl border border-white/10 shadow-2xl p-6 md:p-8 lg:p-10">
               {/* Label */}
+              <FadeIn delay={0.1} direction="none">
               <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-3 py-1 mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
                 <span className="text-white/80 text-xs font-medium tracking-widest uppercase">About Us</span>
               </div>
+              </FadeIn>
 
               {/* Heading */}
+              <FadeIn delay={0.15} direction="up">
               <h2 className="text-white font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.12] tracking-tight mb-6 lg:mb-8">
                 Our Journey &mdash; From
                 <br />
                 Trial to Excellence
               </h2>
+              </FadeIn>
 
               {/* Description */}
+              <FadeIn delay={0.25} direction="up">
               <div className="space-y-4 text-white/70 text-sm md:text-base leading-relaxed mb-8 lg:mb-10">
                 <p>
                   Realwaves is a leading manufacturer of eco-friendly, durable, and customizable non-woven bags, proudly operating from Raipur, Chhattisgarh for over 7 years.
@@ -58,8 +66,10 @@ const AboutVideoSection: React.FC = () => {
                   Backed by advanced machinery, skilled professionals, and a strict quality control process, every Realwaves bag is a step toward a greener tomorrow.
                 </p>
               </div>
+              </FadeIn>
 
               {/* Stats */}
+              <FadeIn delay={0.3} direction="up">
               <div className="grid grid-cols-3 gap-4 md:gap-8">
                 {[
                   { value: '7+ years', label: 'of establishing brands larger than life' },
@@ -73,7 +83,9 @@ const AboutVideoSection: React.FC = () => {
                   </div>
                 ))}
               </div>
+              </FadeIn>
             </div>
+            </ScaleIn>
           </div>
         </div>
       </div>

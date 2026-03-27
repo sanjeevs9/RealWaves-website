@@ -3,6 +3,7 @@
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
 import React from "react";
+import { FadeIn } from '../components/animations';
 import facebook from "@/public/socials/fb.png";
 import linkedin from "@/public/socials/linkedIn.png";
 import instagram from "@/public/socials/insta.png";
@@ -43,10 +44,11 @@ export default function ContactUs() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24">
+    <section id="contact" className="py-16 sm:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left - Contact Info */}
+          <FadeIn direction="right">
           <div className="flex flex-col justify-between">
             <div className="space-y-8">
               {/* Header */}
@@ -129,8 +131,10 @@ export default function ContactUs() {
               </div>
             </div>
           </div>
+          </FadeIn>
 
           {/* Right - Form */}
+          <FadeIn direction="left" delay={0.15}>
           <div className="bg-[#EEF2F9] rounded-2xl p-6 sm:p-8 lg:p-10">
             <form ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-5">
               <div>
@@ -148,11 +152,28 @@ export default function ContactUs() {
                 />
               </div>
               <div>
-                <label htmlFor="contact-industry" className="block text-sm font-medium text-charcoal mb-1.5">Industry</label>
+                <label htmlFor="contact-phone" className="block text-sm font-medium text-charcoal mb-1.5">Phone / WhatsApp Number <span className="text-red-500">*</span></label>
                 <input
-                  id="contact-industry" name="industry" type="text" placeholder="e.g. Retail, Grocery, Fashion"
+                  id="contact-phone" name="phone" type="tel" required placeholder="+91 XXXXX XXXXX"
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/50 text-sm transition-all"
                 />
+              </div>
+              <div>
+                <label htmlFor="contact-category" className="block text-sm font-medium text-charcoal mb-1.5">Product Category</label>
+                <select
+                  id="contact-category" name="category"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white text-sm transition-all text-charcoal"
+                  defaultValue=""
+                >
+                  <option value="" disabled>Select a category</option>
+                  <option value="D-Cut">D-Cut</option>
+                  <option value="Loop Handle">Loop Handle</option>
+                  <option value="U-Cut">U-Cut</option>
+                  <option value="Box Bag">Box Bag</option>
+                  <option value="Bopp Box Bag">Bopp Box Bag</option>
+                  <option value="Bopp Loop Handle">Bopp Loop Handle</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
               <div>
                 <label htmlFor="contact-desc" className="block text-sm font-medium text-charcoal mb-1.5">Message</label>
@@ -178,6 +199,7 @@ export default function ContactUs() {
               </button>
             </form>
           </div>
+          </FadeIn>
         </div>
       </div>
     </section>

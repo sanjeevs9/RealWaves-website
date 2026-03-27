@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { StaggerContainer, StaggerItem } from '../components/animations';
 import logo from '@/public/logo.png';
 import facebook from '@/public/socials/fb.png';
 import instagram from '@/public/socials/insta.png';
@@ -52,10 +55,10 @@ export const Footer = () => {
                     <div className="w-full h-px bg-[#0B2D72]/10 mb-12 sm:mb-14" />
 
                     {/* 3-column grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12">
+                    <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12" staggerDelay={0.15}>
 
                         {/* Contact */}
-                        <div>
+                        <StaggerItem>
                             <h3 className="text-xs font-semibold uppercase tracking-[2.5px] text-[#0B2D72] mb-6">
                                 Contact
                             </h3>
@@ -90,10 +93,10 @@ export const Footer = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </StaggerItem>
 
                         {/* Quick Links */}
-                        <div>
+                        <StaggerItem>
                             <h3 className="text-xs font-semibold uppercase tracking-[2.5px] text-[#0B2D72] mb-6">
                                 Quick Links
                             </h3>
@@ -115,10 +118,10 @@ export const Footer = () => {
                                     </Link>
                                 ))}
                             </div>
-                        </div>
+                        </StaggerItem>
 
                         {/* Get In Touch + Socials */}
-                        <div>
+                        <StaggerItem>
                             <h3 className="text-xs font-semibold uppercase tracking-[2.5px] text-[#0B2D72] mb-6">
                                 Get In Touch
                             </h3>
@@ -155,6 +158,43 @@ export const Footer = () => {
                                     </Link>
                                 ))}
                             </div>
+                        </StaggerItem>
+                    </StaggerContainer>
+                </div>
+            </div>
+
+            {/* Certifications strip */}
+            <div className="bg-[#E8ECF3] border-t border-[#0B2D72]/8">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+                    <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+                        {/* 100% Recyclable */}
+                        <div className="flex items-center gap-2.5">
+                            <div className="w-9 h-9 rounded-full bg-green-600/10 flex items-center justify-center">
+                                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
+                            </div>
+                            <span className="text-xs font-semibold text-[#0B2D72]/70 uppercase tracking-wider">100% Recyclable</span>
+                        </div>
+
+                        {/* ISO Certified */}
+                        <div className="flex items-center gap-2.5">
+                            <div className="w-9 h-9 rounded-full bg-blue-600/10 flex items-center justify-center">
+                                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <span className="text-xs font-semibold text-[#0B2D72]/70 uppercase tracking-wider">ISO Certified</span>
+                        </div>
+
+                        {/* Make in India */}
+                        <div className="flex items-center gap-2.5">
+                            <div className="w-9 h-9 rounded-full bg-orange-500/10 flex items-center justify-center">
+                                <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21h18M5 21V7l8-4v18M13 21V3l6 4v14" />
+                                </svg>
+                            </div>
+                            <span className="text-xs font-semibold text-[#0B2D72]/70 uppercase tracking-wider">Make in India</span>
                         </div>
                     </div>
                 </div>

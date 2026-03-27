@@ -80,6 +80,30 @@ export default function ContactModal({
                         />
                     </div>
                     <div>
+                        <label htmlFor="modal-phone" className="block text-sm font-medium text-charcoal mb-1.5">Phone / WhatsApp Number <span className="text-red-500">*</span></label>
+                        <input
+                            id="modal-phone" name="phone" type="tel" required placeholder="+91 XXXXX XXXXX"
+                            className="w-full border border-linen rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-cream/50 placeholder-sage text-sm transition-all"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="modal-category" className="block text-sm font-medium text-charcoal mb-1.5">Product Category</label>
+                        <select
+                            id="modal-category" name="category"
+                            className="w-full border border-linen rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-cream/50 text-sm transition-all text-charcoal"
+                            defaultValue=""
+                        >
+                            <option value="" disabled>Select a category</option>
+                            <option value="D-Cut">D-Cut</option>
+                            <option value="Loop Handle">Loop Handle</option>
+                            <option value="U-Cut">U-Cut</option>
+                            <option value="Box Bag">Box Bag</option>
+                            <option value="Bopp Box Bag">Bopp Box Bag</option>
+                            <option value="Bopp Loop Handle">Bopp Loop Handle</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div>
                         <label htmlFor="modal-desc" className="block text-sm font-medium text-charcoal mb-1.5">Message</label>
                         <textarea
                             id="modal-desc" name="description" rows={4} required placeholder="Tell us about your requirements..."

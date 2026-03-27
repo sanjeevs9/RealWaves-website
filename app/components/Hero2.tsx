@@ -5,6 +5,7 @@ import { categoryData } from '@/constants';
 import bag2 from "@/public/heroSection/_DSC3176 2.png"
 import { useRouter } from 'next/navigation'
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import ContactModal from './ContactModal';
 
 export default function Hero2() {
@@ -63,7 +64,12 @@ export default function Hero2() {
             />
 
             {/* Bag image — absolute, behind text, anchored to bottom */}
-            <div className="hidden md:flex md:absolute md:bottom-0 md:left-0 md:right-0 z-[1] items-end justify-center pointer-events-none md:h-[50%] lg:h-[52%]">
+            <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="hidden md:flex md:absolute md:bottom-0 md:left-0 md:right-0 z-[1] items-end justify-center pointer-events-none md:h-[50%] lg:h-[52%]"
+            >
                 <Image
                     src={bag2}
                     alt="Premium Non-Woven Bags Collection"
@@ -73,29 +79,66 @@ export default function Hero2() {
                     priority
                     className="w-[85%] sm:w-[80%] md:w-[70%] lg:w-[60%] max-h-full object-contain object-bottom"
                 />
-            </div>
+            </motion.div>
 
             {/* Text content — on top of the bag */}
             <div className="relative z-10 flex flex-col items-center text-center md:h-full justify-start pt-10 sm:pt-14 md:pb-0 md:pt-[14svh] lg:pt-[10svh] px-4">
                 {/* Trust Badge */}
-                <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-charcoal/5 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-5 ring-1 ring-charcoal/8">
+                <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                    className="inline-flex items-center gap-1.5 sm:gap-2 bg-charcoal/5 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1 sm:py-1.5 mb-4 sm:mb-5 ring-1 ring-charcoal/8"
+                >
                     <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#0992C2] animate-pulse" />
                     <span className="text-[10px] sm:text-xs font-medium text-charcoal tracking-wide">Trusted by 2000+ Businesses Across India</span>
-                </div>
+                </motion.div>
 
                 {/* Heading */}
                 <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-charcoal max-w-4xl leading-[1.08] tracking-tight">
-                    Premium Non-Woven
-                    <span className="block text-[#0992C2] mt-1">Bag Manufacturer</span>
+                    <motion.span
+                        initial={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
+                        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                        className="inline-block mr-[0.25em]"
+                    >
+                        Premium
+                    </motion.span>
+                    <motion.span
+                        initial={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
+                        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                        className="inline-block"
+                    >
+                        Non-Woven
+                    </motion.span>
+                    <motion.span
+                        initial={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
+                        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        transition={{ duration: 0.7, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                        className="block text-[#0992C2] mt-1"
+                    >
+                        Bag Manufacturer
+                    </motion.span>
                 </h1>
 
                 {/* Tagline */}
-                <p className="mt-3 md:mt-4 text-xs sm:text-sm md:text-lg text-sage font-medium tracking-[0.2em] uppercase">
+                <motion.p
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                    className="mt-3 md:mt-4 text-xs sm:text-sm md:text-lg text-sage font-medium tracking-[0.2em] uppercase"
+                >
                     Sustainable &middot; Customizable &middot; Reusable
-                </p>
+                </motion.p>
 
                 {/* CTA Buttons */}
-                <div className="flex items-center gap-3 sm:gap-4 mt-5 sm:mt-7">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex items-center gap-3 sm:gap-4 mt-5 sm:mt-7"
+                >
                     <button
                         onClick={() => router.push('/products')}
                         className="group bg-forest text-white px-4 sm:px-8 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-base font-medium hover:bg-forest-light transition-all duration-300 flex items-center gap-2 sm:gap-2.5 shadow-lg shadow-forest/15"
@@ -111,10 +154,15 @@ export default function Hero2() {
                     >
                         Contact Us
                     </button>
-                </div>
+                </motion.div>
 
                 {/* Mobile bag image — flows naturally after buttons */}
-                <div className="md:hidden flex justify-center mt-8 pointer-events-none">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    className="md:hidden flex justify-center mt-8 pointer-events-none"
+                >
                     <Image
                         src={bag2}
                         alt="Premium Non-Woven Bags Collection"
@@ -123,7 +171,7 @@ export default function Hero2() {
                         quality={100}
                         className="w-full object-contain"
                     />
-                </div>
+                </motion.div>
             </div>
         </div>
 

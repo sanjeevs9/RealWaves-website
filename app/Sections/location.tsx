@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Navigation } from 'lucide-react';
+import { FadeIn, ScaleIn } from '../components/animations';
 
 interface StoreLocation {
   name: string;
@@ -66,13 +67,15 @@ const MapSection: React.FC = () => {
           {/* Left Column - Store Information */}
           <div className="space-y-8 lg:space-y-10 flex flex-col justify-between h-full p-2 md:p-0">
             {/* Header */}
-            <div className="space-y-4">
-              <h2 className="section-heading">
-                Our Store Awaits
-                <br className="hidden sm:block" />
-                Your Visit
-              </h2>
-            </div>
+            <FadeIn direction="up" duration={0.7}>
+              <div className="space-y-4">
+                <h2 className="section-heading">
+                  Our Store Awaits
+                  <br className="hidden sm:block" />
+                  Your Visit
+                </h2>
+              </div>
+            </FadeIn>
 
             {/* Store Details */}
             <div className="space-y-4">
@@ -113,6 +116,7 @@ const MapSection: React.FC = () => {
           </div>
 
           {/* Right Column - Map */}
+          <ScaleIn delay={0.15}>
           <div className="relative mt-6 lg:mt-0">
             <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5">
               {/* Map Container */}
@@ -171,6 +175,7 @@ const MapSection: React.FC = () => {
               </a>
             </div>
           </div>
+          </ScaleIn>
         </div>
       </div>
     </section>
