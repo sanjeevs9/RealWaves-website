@@ -45,7 +45,7 @@ export default async function BlogPage({ params }: { params: Promise<{ id: strin
                             <span>&gt;</span>
                             <Link href="/blogs" className="hover:text-white transition-colors">Blog</Link>
                             <span>&gt;</span>
-                            <span className="text-white font-medium truncate max-w-[200px]">{blog.title}</span>
+                            <span className="text-white font-medium truncate max-w-[250px] sm:max-w-none">{blog.title}</span>
                         </nav>
                     </div>
                 </div>
@@ -154,7 +154,7 @@ export default async function BlogPage({ params }: { params: Promise<{ id: strin
                 {related.length > 0 && (
                     <div>
                         <h3 className="font-display text-lg sm:text-xl font-bold text-charcoal mb-6">More to read</h3>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                             {related.map((item) => (
                                 <Link
                                     key={item.id}

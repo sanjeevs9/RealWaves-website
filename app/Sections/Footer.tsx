@@ -166,7 +166,7 @@ export const Footer = () => {
             {/* Certifications strip */}
             <div className="bg-[#E8ECF3] border-t border-[#0B2D72]/8">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-                    <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+                    <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-10">
                         {/* 100% Recyclable */}
                         <div className="flex items-center gap-2.5">
                             <div className="w-9 h-9 rounded-full bg-green-600/10 flex items-center justify-center">

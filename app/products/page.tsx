@@ -13,6 +13,7 @@ function ProductContent() {
     category: [] as string[],
   });
   const [categoriesOpen, setCategoriesOpen] = useState(true);
+  const [showFilters, setShowFilters] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [inquiryProduct, setInquiryProduct] = useState<string | null>(null);
   const searchParams = useSearchParams();
@@ -88,9 +89,27 @@ function ProductContent() {
           </p>
         </div>
 
+        {/* Mobile filter toggle */}
+        <div className="md:hidden mb-4">
+          <button
+            onClick={() => setShowFilters(!showFilters)}
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-white text-charcoal text-sm font-medium rounded-lg ring-1 ring-black/[0.04] active:scale-[0.98] transition-transform"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707L13 14.414V19a1 1 0 01-.553.894l-4 2A1 1 0 017 21v-6.586L3.293 6.707A1 1 0 013 6V4z" />
+            </svg>
+            Filters
+            {hasActiveFilters && (
+              <span className="bg-[#0B2D72] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                {filters.category.length}
+              </span>
+            )}
+          </button>
+        </div>
+
         <div className="flex flex-col md:flex-row gap-8 lg:gap-12">
           {/* Sidebar */}
-          <div className="w-full md:w-56 flex-shrink-0">
+          <div className={`w-full md:w-56 flex-shrink-0 ${showFilters ? 'block' : 'hidden md:block'}`}>
             <div className="md:sticky md:top-24">
               <div className="bg-white rounded-xl p-5 ring-1 ring-black/[0.04]">
                 <div
@@ -125,13 +144,13 @@ function ProductContent() {
                           onChange={() => toggleFilter('category', cat)}
                           className="sr-only"
                         />
-                        <span className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 border transition-colors ${
+                        <span className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 border transition-colors ${
                           filters.category.includes(cat)
                             ? 'bg-[#0B2D72] border-[#0B2D72]'
                             : 'border-sage/30'
                         }`}>
                           {filters.category.includes(cat) && (
-                            <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                             </svg>
                           )}

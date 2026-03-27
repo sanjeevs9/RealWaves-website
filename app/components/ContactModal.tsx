@@ -56,7 +56,7 @@ export default function ContactModal({
                     </div>
                     <button
                         onClick={onClose}
-                        className="text-sage hover:text-charcoal transition-colors p-1"
+                        className="text-sage hover:text-charcoal transition-colors p-2 -m-1 min-w-[40px] min-h-[40px] flex items-center justify-center"
                     >
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                             <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

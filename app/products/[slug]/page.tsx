@@ -65,7 +65,7 @@ export default function ProductDetail() {
               {categoryLabel}
             </Link>
             <span>&gt;</span>
-            <span className="text-charcoal font-medium truncate max-w-[140px] sm:max-w-none">{product.name}</span>
+            <span className="text-charcoal font-medium truncate max-w-[180px] sm:max-w-none">{product.name}</span>
           </nav>
         </div>
 
@@ -88,7 +88,7 @@ export default function ProductDetail() {
               </div>
 
               {/* Thumbnails */}
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 {galleryImages.map((img, i) => (
                   <button
                     key={i}
@@ -133,7 +133,7 @@ export default function ProductDetail() {
               {product.dimensions && (
                 <div className="mb-8">
                   <h3 className="text-xs font-semibold text-charcoal uppercase tracking-wider mb-3">Dimensions</h3>
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     {product.dimensions.width && (
                       <div className="bg-[#EEF2F9] rounded-xl px-4 py-3 text-center min-w-[70px]">
                         <p className="text-lg font-bold text-charcoal">{product.dimensions.width}&quot;</p>
@@ -203,7 +203,7 @@ export default function ProductDetail() {
         {related.length > 0 && (
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 border-t border-gray-100">
             <h2 className="font-display text-xl sm:text-2xl font-bold text-charcoal mb-8">You may also like</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               {related.map((item) => (
                 <div
                   key={item.slug}
