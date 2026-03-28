@@ -49,7 +49,7 @@ export default function ContactUs() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left - Contact Info */}
           <FadeIn direction="right">
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col">
             <div className="space-y-8">
               {/* Header */}
               <div>
@@ -108,8 +108,8 @@ export default function ContactUs() {
             </div>
 
             {/* Social Links */}
-            <div className="mt-10 lg:mt-0 pt-8 lg:pt-0">
-              <div className="flex items-center gap-3 sm:gap-6">
+            <div className="mt-10 pt-8 border-t border-linen lg:border-0">
+              <div className="flex items-center gap-4 sm:gap-6">
                 {socialLinks.map((social) => (
                   <div
                     key={social.label}

@@ -4,9 +4,112 @@ import CategoryCard2 from './CategoryCard2';
 import { categoryData } from '@/constants';
 import bag2 from "@/public/heroSection/_DSC3176 2.png"
 import { useRouter } from 'next/navigation'
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { motion, useMotionValue, useAnimation, PanInfo } from 'framer-motion';
 import ContactModal from './ContactModal';
+
+function DraggableCarousel() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const innerRef = useRef<HTMLDivElement>(null);
+    const x = useMotionValue(0);
+    const controls = useAnimation();
+    const isDragging = useRef(false);
+    const autoScrollRef = useRef<number | null>(null);
+    const speedRef = useRef(0.5);
+
+    const getHalfWidth = useCallback(() => {
+        if (!innerRef.current) return 0;
+        return innerRef.current.scrollWidth / 2;
+    }, []);
+
+    // Auto-scroll loop
+    useEffect(() => {
+        const animate = () => {
+            if (!isDragging.current) {
+                const halfW = getHalfWidth();
+                if (halfW === 0) {
+                    autoScrollRef.current = requestAnimationFrame(animate);
+                    return;
+                }
+                let current = x.get() - speedRef.current;
+                if (current <= -halfW) {
+                    current += halfW;
+                }
+                x.set(current);
+            }
+            autoScrollRef.current = requestAnimationFrame(animate);
+        };
+        autoScrollRef.current = requestAnimationFrame(animate);
+        return () => {
+            if (autoScrollRef.current) cancelAnimationFrame(autoScrollRef.current);
+        };
+    }, [x, getHalfWidth]);
+
+    const handleDragStart = () => {
+        isDragging.current = true;
+        controls.stop();
+    };
+
+    const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+        const halfW = getHalfWidth();
+        let current = x.get();
+        // Wrap around
+        if (current <= -halfW) current += halfW;
+        if (current > 0) current -= halfW;
+        x.set(current);
+
+        // Apply momentum then resume auto-scroll
+        const momentum = info.velocity.x * 0.3;
+        controls.start({
+            x: current + momentum,
+            transition: { type: 'tween', duration: 0.8, ease: [0.25, 1, 0.5, 1] },
+        }).then(() => {
+            let final = x.get();
+            if (final <= -halfW) final += halfW;
+            if (final > 0) final -= halfW;
+            x.set(final);
+            isDragging.current = false;
+        });
+    };
+
+    return (
+        <div
+            ref={containerRef}
+            className="w-full overflow-hidden cursor-grab active:cursor-grabbing select-none"
+        >
+            <motion.div
+                ref={innerRef}
+                className="flex w-max"
+                style={{ x }}
+                drag="x"
+                dragConstraints={{ left: -99999, right: 0 }}
+                dragElastic={0.05}
+                onDragStart={handleDragStart}
+                onDragEnd={handleDragEnd}
+                animate={controls}
+            >
+                {/* First set */}
+                {categoryData.map((item) => (
+                    <CategoryCard2
+                        key={`a-${item.category}`}
+                        category={item.category}
+                        title={item.title}
+                        imageUrl={item.imageUrl}
+                    />
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {categoryData.map((item) => (
+                    <CategoryCard2
+                        key={`b-${item.category}`}
+                        category={item.category}
+                        title={item.title}
+                        imageUrl={item.imageUrl}
+                    />
+                ))}
+            </motion.div>
+        </div>
+    );
+}
 
 export default function Hero2() {
     const router = useRouter()
@@ -187,29 +290,8 @@ export default function Hero2() {
                 </p>
             </div>
 
-            {/* Ticker / Marquee */}
-            <div className="w-full overflow-hidden">
-                <div className="flex animate-ticker w-max">
-                    {/* First set */}
-                    {categoryData.map((item) => (
-                        <CategoryCard2
-                            key={`a-${item.category}`}
-                            category={item.category}
-                            title={item.title}
-                            imageUrl={item.imageUrl}
-                        />
-                    ))}
-                    {/* Duplicate set for seamless loop */}
-                    {categoryData.map((item) => (
-                        <CategoryCard2
-                            key={`b-${item.category}`}
-                            category={item.category}
-                            title={item.title}
-                            imageUrl={item.imageUrl}
-                        />
-                    ))}
-                </div>
-            </div>
+            {/* Draggable + Auto-scroll Carousel */}
+            <DraggableCarousel />
 
             {/* Explore All Button */}
             <div className="text-center mt-10 lg:mt-12">
