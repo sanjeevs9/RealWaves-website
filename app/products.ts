@@ -30,6 +30,7 @@ export type Category = typeof categories[number]
 // Define the Product interface
 export interface Product {
     name: string
+    slug: string
     image: StaticImageData
     description: string
     category: Category[]
@@ -41,9 +42,30 @@ export interface Product {
     gsm?: number
 }
 
+// Category display names
+export const categoryNames: Record<Category, string> = {
+    dcut: 'D-Cut',
+    ucut: 'U-Cut',
+    loophandle: 'Loop Handle',
+    boxbag: 'Box Bag',
+    boppboxbag: 'Bopp Box Bag',
+    nonwovenboxbag: 'Non Woven Box Bag',
+}
+
+// Category descriptions for product detail
+export const categoryDescriptions: Record<Category, string> = {
+    dcut: 'Premium D-cut non-woven bags with clean die-cut handles. Ideal for retail shops, grocery stores, and promotional giveaways. Lightweight yet durable.',
+    ucut: 'U-cut non-woven bags featuring a simple, versatile design perfect for everyday retail use. Easy to carry with a comfortable handle cutout.',
+    loophandle: 'Sturdy loop handle non-woven bags built for heavier loads. The reinforced handles make them perfect for shopping, gifting, and brand promotion.',
+    boxbag: 'Structured box-shaped non-woven bags that stand upright. Great for packaging, food delivery, and premium retail presentation.',
+    boppboxbag: 'BOPP laminated box bags with a glossy, high-quality print finish. The lamination adds water resistance and a premium look.',
+    nonwovenboxbag: 'Classic non-woven box bags combining durability with eco-friendliness. A sustainable alternative to plastic packaging.',
+}
+
 export const Products: Product[] = [
     {
         name:"Laxmi D-cut",
+        slug:"laxmi-d-cut",
         image:dcut,
         description:"",
         category:["dcut"],
@@ -54,6 +76,7 @@ export const Products: Product[] = [
     },
     {
         name:"Maosaji U-cut bag",
+        slug:"maosaji-u-cut-bag",
         image:ucut2,
         description:"",
         category:["ucut"],
@@ -64,6 +87,7 @@ export const Products: Product[] = [
     },
     {
         name:"Shringaar Loop Handle",
+        slug:"shringaar-loop-handle",
         image:loophandle,
         description:"",
         category:["loophandle"],
@@ -75,6 +99,7 @@ export const Products: Product[] = [
     },
     {
         name:"Kajri Loop Handle",
+        slug:"kajri-loop-handle",
         image:loophandle2,
         description:"",
         category:["loophandle"],
@@ -85,6 +110,7 @@ export const Products: Product[] = [
     },
     {
         name:"BB Box bag",
+        slug:"bb-box-bag",
         image:box2,
         description:"",
         category:["boxbag"],
@@ -96,6 +122,7 @@ export const Products: Product[] = [
     },
     {
         name:"Madhu Textorium Bopp box bag",
+        slug:"madhu-textorium-bopp-box-bag",
         image:boppbox2,
         description:"",
         category:["boppboxbag","boxbag"],
@@ -108,6 +135,7 @@ export const Products: Product[] = [
     },
     {
         name:"Puncher Bopp box bag",
+        slug:"puncher-bopp-box-bag",
         image:boppbox3,
         description:"",
         category:["boppboxbag","boxbag"],
@@ -120,6 +148,7 @@ export const Products: Product[] = [
     },
     {
         name:"Bonzelo Box bag",
+        slug:"bonzelo-box-bag",
         image:box3,
         description:"",
         category:["boxbag"],
@@ -132,6 +161,7 @@ export const Products: Product[] = [
     },
     {
         name:"Saheb Loop Handle",
+        slug:"saheb-loop-handle",
         image:loophandle3,
         description:"",
         category:["loophandle"],
@@ -143,6 +173,7 @@ export const Products: Product[] = [
     },
     {
         name:"Bombaywala U-cut bag",
+        slug:"bombaywala-u-cut-bag",
         image:ucut,
         description:"",
         category:["ucut"],
@@ -153,6 +184,7 @@ export const Products: Product[] = [
        
     },{
         name:"Bajaj box bag",
+        slug:"bajaj-box-bag",
         image:boppbox,
         description:"",
         category:["boppboxbag","boxbag"],
@@ -165,12 +197,14 @@ export const Products: Product[] = [
     },
     {
         name:"Non woven box bag",
+        slug:"non-woven-box-bag",
         image:boxbag,
         description:"",
         category:["nonwovenboxbag"],
     },
     {
         name:"SHAIL D-cut bag",
+        slug:"shail-d-cut-bag",
         image:dcut2,
         description:"",
         category:["dcut"],
@@ -182,6 +216,7 @@ export const Products: Product[] = [
     },
     {
         name:"Fusion D-cut bag",
+        slug:"fusion-d-cut-bag",
         image:dcut3,
         description:"",
         category:["dcut"]       ,
@@ -193,6 +228,7 @@ export const Products: Product[] = [
     },
     {
         name:"Shree Shyam D-cut bag",
+        slug:"shree-shyam-d-cut-bag",
         image:dcut4,
         description:"",
         category:["dcut"]   ,

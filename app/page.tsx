@@ -1,35 +1,23 @@
-  //  import Hero from "./components/Hero";
-  //  import CustomerReviewSection from "./Sections/CustomerReviewSection";
-   import MapSection from "./Sections/location";
-   import WhyChooseUsSection from "./Sections/WhyChooseUs";
-   import AboutVideoSection from "./Sections/AboutUs";
-  //  import BestSellers from "./Sections/BestSellers";
-   import ContactUs from "./Sections/ContactUs";
-  //  import BrandingCarousel from "./Sections/BrandingCarousel";
-  //  import Blogs from "./Sections/Blogs";
-// import UnderConstruction from "./under-construction";
+import MapSection from "./Sections/location";
+import WhyChooseUsSection from "./Sections/WhyChooseUs";
+// import WhyUs from "./Sections/WhyUs";
+import AboutVideoSection from "./Sections/AboutUs";
+import ContactUs from "./Sections/ContactUs";
+// import Reviews from "./Sections/Reviews";
 import Hero2 from "./components/Hero2";
-
+// import Hero3 from "./components/Hero3";
 export default function Home() {
   return (
     <>
-      <div className="bg-white min-h-screen w-full">
-        {/* <UnderConstruction /> */}
+      <div className="bg-cream min-h-screen w-full">
         <Hero2 />
-
-        {/* <BestSellers /> */}
-
         <AboutVideoSection />
         <MapSection />
-        {/* <BrandingCarousel /> */}
-
-        {/* <CustomerReviewSection /> */}
       </div>
-      <WhyChooseUsSection />
-        {/* <Blogs /> */}
-        <ContactUs />
-      
-
+      <WhyChooseUsSection/>
+      {/* <WhyUs />/ */}
+      {/* <Reviews /> */}
+      <ContactUs />
     </>
   );
 }

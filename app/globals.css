@@ -2,10 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-charcoal;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply px-4 py-2 text-[13px] font-medium tracking-wide text-charcoal/70 hover:text-forest transition-colors duration-300;
+  }
+  .section-label {
+    @apply inline-flex items-center gap-2 rounded-full px-3 py-1 mb-4;
+    background-color: rgba(9, 146, 194, 0.08);
+  }
+  .section-label-dot {
+    @apply w-1.5 h-1.5 rounded-full;
+    background-color: #0992C2;
+  }
+  .section-label-text {
+    @apply text-xs font-medium tracking-widest uppercase;
+    color: #0992C2;
+  }
+  .section-heading {
+    @apply font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal leading-[1.15] tracking-tight;
+  }
+}
+
 @layer utilities {
+  .animate-reveal {
+    animation: reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+  }
+  .animate-reveal-delay-1 { animation-delay: 0.1s; }
+  .animate-reveal-delay-2 { animation-delay: 0.2s; }
+  .animate-reveal-delay-3 { animation-delay: 0.3s; }
+  .animate-reveal-delay-4 { animation-delay: 0.4s; }
+  .animate-reveal-delay-5 { animation-delay: 0.5s; }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .animate-fadein {
     animation: fadeInUp 0.8s ease-out 0.1s forwards;
   }
+
   @keyframes fadeInUp {
     0% {
       opacity: 0;
@@ -16,17 +68,34 @@
       transform: translateY(0);
     }
   }
-  
+
   .scrollbar-hide {
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
   .scrollbar-hide::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
+    display: none;
   }
-  
+
   .no-scrollbar {
     overflow-y: hidden;
   }
-}
 
+  /* Ticker / Marquee animation */
+  @keyframes ticker {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-ticker {
+    animation: ticker 28s linear infinite;
+  }
+
+  .animate-ticker:hover {
+    animation-play-state: paused;
+  }
+}

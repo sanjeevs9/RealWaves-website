@@ -1,22 +1,12 @@
 'use client';
 
 import Image from "next/image";
-// import Link from "next/link";
 import emailjs from "@emailjs/browser";
 import React from "react";
+import { FadeIn } from '../components/animations';
 import facebook from "@/public/socials/fb.png";
 import linkedin from "@/public/socials/linkedIn.png";
 import instagram from "@/public/socials/insta.png";
-
-const WhatsAppIcon = () => {
-  return (
-    <span className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 cursor-pointer" onClick={() => {
-      window.open("https://wa.me/919009990000", "_blank")
-    }}>
-      <Image src="/whatsapp.png" alt="WhatsApp Icon" width={32} height={32} />
-    </span>
-  );
-};
 
 export default function ContactUs() {
   const formRef = React.useRef<HTMLFormElement>(null);
@@ -27,7 +17,6 @@ export default function ContactUs() {
 
     if (formRef.current) {
       setIsLoading(true);
-      // console.log(formRef.current);
       emailjs
         .sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, formRef.current, {
           publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
@@ -47,134 +36,172 @@ export default function ContactUs() {
         );
     }
   };
+
+  const socialLinks = [
+    { icon: facebook, label: 'Facebook', url: 'https://www.facebook.com/realwavespacksraipur?mibextid=ZbWKwL' },
+    { icon: instagram, label: 'Instagram', url: 'https://www.instagram.com/real_wavespacks/#' },
+    { icon: linkedin, label: 'LinkedIn', url: 'https://linkedin.com' },
+  ];
+
   return (
-    <div className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-16 2xl:px-40 bg-white">
-      <div className="w-full flex flex-col lg:flex-row justify-between lg:items-start gap-8 lg:gap-12">
-        {/* Left Side: Contact Info */}
-        <div className="flex flex-col gap-6 sm:gap-8 min-h-[400px] sm:min-h-[500px] lg:min-h-[550px] bg-white w-full justify-between">
-          <div className="flex flex-col gap-4 sm:gap-6 justify-between p-5 md:p-0">
-            <div>
-              <p className="text-lg sm:text-xl uppercase tracking-wider mb-2 font-roboto text-[#656565]">Contact Us</p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-black font-roboto leading-[124%] tracking-[1px] sm:tracking-[2px]">Get in Touch</h2>
-            </div>
-            <div className="flex items-center gap-3 sm:gap-4 mb-2 pt-3 sm:pt-5">
-              {/* Email Icon */}
-              <span className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
-                <svg width="40" height="40" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="32" height="32" rx="8" fill="#2476FE" />
-                  <path d="M8 12.5L16 18L24 12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <rect x="8" y="12" width="16" height="8" rx="2" stroke="white" strokeWidth="2" />
-                </svg>
-              </span>
-              <div className="min-w-0">
-                <p className="text-sm sm:text-base text-gray-500">E-mail</p>
-                <a href="mailto:realwavespacks@gmail.com" className="text-blue-600 font-medium text-sm sm:text-base hover:underline break-all">realwavespacks@gmail.com</a>
+    <section id="contact" className="py-16 sm:py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+          {/* Left - Contact Info */}
+          <FadeIn direction="right">
+          <div className="flex flex-col">
+            <div className="space-y-8">
+              {/* Header */}
+              <div>
+                <h2 className="section-heading">Get in Touch</h2>
+                <p className="mt-4 text-sage text-sm sm:text-base max-w-md leading-relaxed">
+                  Ready to elevate your packaging? Reach out and let&apos;s discuss how we can serve your business.
+                </p>
+              </div>
+
+              {/* Contact Methods */}
+              <div className="space-y-5">
+                {/* Email */}
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-forest/5 flex items-center justify-center flex-shrink-0">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B2D72" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs text-sage uppercase tracking-wider">Email</p>
+                    <a href="mailto:realwavespacks@gmail.com" className="text-sm font-medium text-charcoal hover:text-[#0992C2] transition-colors">
+                      realwavespacks@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* Phone */}
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-forest/5 flex items-center justify-center flex-shrink-0">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B2D72" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs text-sage uppercase tracking-wider">Phone</p>
+                    <a href="tel:+919009990000" className="text-sm font-medium text-charcoal hover:text-[#0992C2] transition-colors">
+                      +91 90099 90000
+                    </a>
+                  </div>
+                </div>
+
+                {/* WhatsApp */}
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center flex-shrink-0">
+                    <Image src="/whatsapp.png" alt="WhatsApp" width={20} height={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-sage uppercase tracking-wider">WhatsApp</p>
+                    <a href="https://wa.me/919009990000" className="text-sm font-medium text-charcoal hover:text-[#0992C2] transition-colors">
+                      Message us on WhatsApp
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="flex items-center gap-3 sm:gap-4">
-              {/* Phone Icon */}
-              <span className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
-                <Image src="/phone-icon.png" alt="Phone Icon" width={32} height={32} />
-              </span>
-              <div className="min-w-0">
-                <p className="text-sm sm:text-base text-gray-500">Phone Number</p>
-                <a href="tel:+919009990000" className="text-blue-600 font-medium text-sm sm:text-base hover:underline">+ 91 90099 90000</a>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 sm:gap-4">
-              {/* WhatsApp Icon */}
-              <WhatsAppIcon />
-              <div className="min-w-0">
-                <p className="text-sm sm:text-base text-gray-500">WhatsApp</p>
-                <a href="https://wa.me/919009990000" className="text-blue-600 font-medium text-sm sm:text-base hover:underline">Message us on WhatsApp</a>
+
+            {/* Social Links */}
+            <div className="mt-10 pt-8 border-t border-linen lg:border-0">
+              <div className="flex items-center gap-4 sm:gap-6">
+                {socialLinks.map((social) => (
+                  <div
+                    key={social.label}
+                    className="flex items-center gap-1.5 sm:gap-2 cursor-pointer group"
+                    onClick={() => window.open(social.url, '_blank')}
+                  >
+                    <Image
+                      src={social.icon}
+                      alt={social.label}
+                      width={28}
+                      height={28}
+                      className="w-5 h-5 sm:w-7 sm:h-7 opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                    <span className="text-xs sm:text-sm text-sage group-hover:text-charcoal transition-colors duration-300">
+                      {social.label} <span className="text-[10px] sm:text-xs">↗</span>
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-          <div className="flex">
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-10 w-full 2xl:w-4/6 p-5 md:p-0">
-              <div className="text-center">
-                <div className="w-full h-[3px] bg-blue-500 rounded-full mb-3 sm:mb-4"></div>
-                <div className="flex items-center justify-center gap-1 sm:gap-2 cursor-pointer" onClick={() => {
-                  window.open("https://www.facebook.com/realwavespacksraipur?mibextid=ZbWKwL", "_blank")
-                }}>
-                  <Image src={facebook} alt="Facebook" width={40} height={40} className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
-                  <span className="flex items-center hover:text-blue-400 transition text-sm sm:text-base">
-                    Facebook <span className="ml-1">↗</span>
-                  </span>
-                </div>
-              </div>
+          </FadeIn>
 
-              <div className="">
-                <div className="w-full h-[3px] bg-blue-500 rounded-full mb-3 sm:mb-4"></div>
-                <div className="flex items-center justify-center gap-1 sm:gap-2 cursor-pointer" onClick={() => {
-                  window.open("https://www.instagram.com/real_wavespacks/#", "_blank")
-                }}>
-                  <Image src={instagram} alt="Instagram" width={40} height={40} className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
-                  <span className="flex items-center hover:text-pink-400 transition text-sm sm:text-base">
-                    Instagram <span className="ml-1">↗</span>
-                  </span>
-                </div>
+          {/* Right - Form */}
+          <FadeIn direction="left" delay={0.15}>
+          <div className="bg-[#EEF2F9] rounded-2xl p-6 sm:p-8 lg:p-10">
+            <form ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-5">
+              <div>
+                <label htmlFor="contact-name" className="block text-sm font-medium text-charcoal mb-1.5">Name</label>
+                <input
+                  id="contact-name" name="name" type="text" placeholder="Your full name"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/50 text-sm transition-all"
+                />
               </div>
-
-              <div className="text-left">
-                <div className="w-full h-[3px] bg-blue-500 rounded-full mb-3 sm:mb-4"></div>
-                <div className="flex items-center justify-center gap-1 sm:gap-2 cursor-pointer" onClick={() => {
-                  window.open("https://linkedin.com", "_blank")
-                }}>
-                  <Image src={linkedin} alt="LinkedIn" width={40} height={40} className="w-[25px] h-[25px] md:w-[50px] md:h-[50px]" />
-                  <span className="flex items-center hover:text-blue-600 transition text-sm sm:text-base">
-                    LinkedIn <span className="ml-1">↗</span>
-                  </span>
-                </div>
+              <div>
+                <label htmlFor="contact-email" className="block text-sm font-medium text-charcoal mb-1.5">Email</label>
+                <input
+                  id="contact-email" name="email" type="email" placeholder="you@company.com"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/50 text-sm transition-all"
+                />
               </div>
-            </div>
+              <div>
+                <label htmlFor="contact-phone" className="block text-sm font-medium text-charcoal mb-1.5">Phone / WhatsApp Number <span className="text-red-500">*</span></label>
+                <input
+                  id="contact-phone" name="phone" type="tel" required placeholder="+91 XXXXX XXXXX"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/50 text-sm transition-all"
+                />
+              </div>
+              <div>
+                <label htmlFor="contact-category" className="block text-sm font-medium text-charcoal mb-1.5">Product Category</label>
+                <select
+                  id="contact-category" name="category"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white text-sm transition-all text-charcoal"
+                  defaultValue=""
+                >
+                  <option value="" disabled>Select a category</option>
+                  <option value="D-Cut">D-Cut</option>
+                  <option value="Loop Handle">Loop Handle</option>
+                  <option value="U-Cut">U-Cut</option>
+                  <option value="Box Bag">Box Bag</option>
+                  <option value="Bopp Box Bag">Bopp Box Bag</option>
+                  <option value="Bopp Loop Handle">Bopp Loop Handle</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="contact-desc" className="block text-sm font-medium text-charcoal mb-1.5">Message</label>
+                <textarea
+                  id="contact-desc" name="description" rows={5} placeholder="Tell us about your requirements..."
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/50 resize-none text-sm transition-all"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="mt-1 bg-forest text-white font-medium rounded-xl px-6 py-3.5 hover:bg-forest-light transition-all duration-300 text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                {isLoading ? (
+                  <>
+                    <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : 'Send Message'}
+              </button>
+            </form>
           </div>
-        </div>
-
-        {/* Right Side: Contact Form */}
-        <div className="w-full lg:max-w-lg bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 border-t-[0.5px]">
-          <form ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-3 sm:gap-4">
-            <div>
-              <label htmlFor="name" className="block font-semibold text-sm sm:text-md mb-1">Name</label>
-              <input id="name" name="name" type="text" placeholder="Name" className="w-full border border-gray-200 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-100 placeholder-gray-400 text-sm sm:text-base" />
-            </div>
-            <div>
-              <label htmlFor="email" className="block font-semibold text-sm sm:text-md mb-1">Email</label>
-              <input id="email" name="email" type="email" placeholder="Email" className="w-full border border-gray-200 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-100 placeholder-gray-400 text-sm sm:text-base" />
-            </div>
-            <div>
-              <label htmlFor="industry" className="block font-semibold text-sm sm:text-md mb-1">Industry</label>
-              <input id="industry" name="industry" type="text" placeholder="Industry" className="w-full border border-gray-200 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-100 placeholder-gray-400 text-sm sm:text-base" />
-            </div>
-            <div>
-              <label htmlFor="description" className="block font-semibold text-sm sm:text-md mb-1">Description</label>
-              <textarea id="description" name="description" rows={6} placeholder="Go ahead write it out." className="w-full border border-gray-200 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-100 placeholder-gray-400 resize-none text-sm sm:text-base" />
-            </div>
-            <button 
-              type="submit" 
-              disabled={isLoading}
-              className="mt-2 flex items-center gap-2 justify-center bg-blue-600 text-white font-medium rounded-full px-4 sm:px-6 py-2 shadow hover:bg-blue-700 transition-all text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isLoading ? (
-                <>
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Sending...
-                </>
-              ) : (
-                <>
-                  <svg width="20" height="20" fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="#fff" /><path d="M7 10.5l2 2 4-4" stroke="#2476FE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                  Submit Response
-                </>
-              )}
-            </button>
-          </form>
+          </FadeIn>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
-
-

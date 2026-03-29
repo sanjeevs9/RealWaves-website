@@ -3,10 +3,10 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, industry, description } = body;
+    const { name, email, phone, category, description } = body;
 
     // Validate form inputs
-    if (!name || !email || !industry || !description) {
+    if (!name || !email || !phone || !description) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -16,10 +16,11 @@ export async function POST(request: Request) {
     // Prepare email content
     const emailContent = `
       New Contact Form Submission:
-      
+
       Name: ${name}
       Email: ${email}
-      Industry: ${industry}
+      Phone/WhatsApp: ${phone}
+      Product Category: ${category || 'Not specified'}
       Description: ${description}
     `;
 

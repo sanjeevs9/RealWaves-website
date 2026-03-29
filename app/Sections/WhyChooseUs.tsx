@@ -1,31 +1,38 @@
-import { WhyChooseUsCard} from "../components/WhyChooseUsCard";
+'use client'
+import { WhyChooseUsCard } from "../components/WhyChooseUsCard";
 import { WhyChooseUsData as data } from "@/constants";
+import { FadeIn, StaggerContainer, StaggerItem } from '../components/animations';
 
 export default function WhyChooseUs() {
   return (
-    <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 2xl:px-40 pt-8 sm:pt-10 md:pt-12 lg:pt-14 pb-20 sm:pb-24 md:pb-28">
-      <div className="text-start mb-8 sm:mb-10 md:mb-12 pl-2 2xl:pl-10">
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl uppercase tracking-wider mb-2 font-roboto text-[#656565]">Why Realwaves?</p>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-black font-roboto leading-[120%] sm:leading-[122%] md:leading-[124%] tracking-[1px] sm:tracking-[1.5px] md:tracking-[2px]">
-          Why Choosing Us Is the Smart Move for Your Business?
-        </h2>
+    <section className="py-16 sm:py-20 lg:py-24 bg-cream">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <FadeIn delay={0.1} direction="up">
+        <div className="mb-12 sm:mb-16">
+          <h2 className="section-heading max-w-2xl">
+            Why Choosing Us Is the Smart Move for Your Business
+          </h2>
+        </div>
+        </FadeIn>
+
+        {/* Cards Grid */}
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" staggerDelay={0.12}>
+          {[...data].slice(0, 6).map((item, index) => (
+            <StaggerItem key={index}>
+            <WhyChooseUsCard
+              index={index}
+              title={item.title}
+              description={item.description}
+              icon={<div dangerouslySetInnerHTML={{ __html: item.icon1 }} />}
+              icon2={<div dangerouslySetInnerHTML={{ __html: item.icon2 }} />}
+              extraText={item.extraText}
+              imageSrc={item.image}
+            />
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
       </div>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-        {[...data].slice(0, 6).map((item, index) => (
-          <WhyChooseUsCard
-            key={index}
-            index={index}
-            title={item.title}
-            description={item.description}
-            icon={<div dangerouslySetInnerHTML={{ __html: item.icon1 }} />}
-            icon2={<div dangerouslySetInnerHTML={{ __html: item.icon2 }} />}
-            extraText={item.extraText}
-            imageSrc={item.image}
-          />
-        ))}
-      </div>
-    </div>
+    </section>
   );
 }
-

@@ -13,30 +13,41 @@ interface CategoryCard2Props {
 const CategoryCard2: React.FC<CategoryCard2Props> = ({
   title,
   imageUrl,
-  backgroundColor = '#0A0A3A',
   category,
 }) => {
   const router = useRouter();
-  
+
   return (
-    <div className="flex flex-col items-center mx-2">
-      <div 
-        className="relative rounded-2xl w-24 h-24 sm:w-32 sm:h-32 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 2xl:w-64  2xl:h-64  flex flex-col items-center justify-end cursor-pointer transition-transform hover:scale-105"
-        style={{ backgroundColor }}
-        onClick={() => {
-          router.push(`/products?category=${category}`);
-        }}
-      >
-        <div className="relative w-full h-full flex items-center justify-center">
+    <div
+      className="flex-shrink-0 mx-2 sm:mx-4 group cursor-pointer"
+      onClick={() => {
+        router.push(`/products?category=${category}`);
+      }}
+    >
+      <div className="relative rounded-2xl w-40 h-48 sm:w-44 sm:h-56 md:w-48 md:h-60 lg:w-52 lg:h-64 xl:w-56 xl:h-[17rem] overflow-hidden transition-all duration-500 hover:-translate-y-2">
+        {/* Tinted background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#EEF2F9] via-[#F0F4FA] to-[#E8ECF4]" />
+
+        {/* Product image */}
+        <div className="relative w-full h-[calc(100%-3rem)] sm:h-[calc(100%-3.5rem)] flex items-center justify-center p-4 sm:p-6 lg:p-7">
           <Image
             src={imageUrl}
             alt={title}
-            width={500}    
+            width={500}
             height={500}
-            className="w-20 h-20 sm:w-28 sm:h-28  lg:w-32 lg:h-32 xl:w-44 xl:h-44 2xl:w-64 2xl:h-64 object-contain -translate-y-6 xl:-translate-y-10"
+            className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md"
           />
         </div>
-        <h3 className="p-1 text-white text-[10px] sm:text-xs lg:text-sm font-medium text-center absolute bottom-2">{title}</h3>
+
+        {/* Title bar */}
+        <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm px-3 py-2.5 sm:py-3 border-t border-gray-100/50">
+          <h3 className="text-charcoal font-display text-xs sm:text-sm font-bold tracking-wide text-center truncate">
+            {title}
+          </h3>
+        </div>
+
+        {/* Hover border glow */}
+        <div className="absolute inset-0 rounded-2xl ring-1 ring-gray-200/60 group-hover:ring-[#0B2D72]/30 transition-all duration-500" />
       </div>
     </div>
   );
