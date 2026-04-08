@@ -1,11 +1,11 @@
 "use client"
 import React from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
 
 interface CategoryCard2Props {
   title: string;
-  imageUrl: string;
+  imageUrl: StaticImageData | string;
   backgroundColor?: string;
   category: string;
 }
