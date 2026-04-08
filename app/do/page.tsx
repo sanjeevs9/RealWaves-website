@@ -45,35 +45,12 @@ const collectSections: Section[] = [
         title: 'Collect from Clients — Testimonials',
         tasks: [
             { id: 'c-rev-1', text: 'Ask 8-10 real clients for testimonials (name, designation, company, city, review text)', done: false },
-            { id: 'c-rev-2', text: 'Get permission to use client company logos', done: false },
-            { id: 'c-rev-3', text: 'Ask top clients for a short video testimonial (optional, high impact)', done: false },
-            { id: 'c-rev-4', text: 'Collect client company logos (PNG with transparent background, min 200x200px)', done: false },
-        ],
-    },
-    {
-        title: 'Collect from Team — Content',
-        tasks: [
-            { id: 'c-con-1', text: 'Founder\'s name and real founding story for About page', done: false },
-            { id: 'c-con-2', text: 'Company mission statement', done: false },
-            { id: 'c-con-3', text: 'Actual MOQ numbers for each product category', done: false },
-            { id: 'c-con-4', text: 'GSM values for each product', done: false },
-            { id: 'c-con-5', text: 'Starting price per bag for each category (even approximate)', done: false },
-            { id: 'c-con-6', text: 'Available colors and sizes per product', done: false },
-            { id: 'c-con-7', text: 'Delivery timelines (e.g., "7-10 days for 5000 pcs")', done: false },
-            { id: 'c-con-8', text: 'Real LinkedIn company page URL', done: false },
-        ],
-    },
-    {
-        title: 'Collect — Certifications & Documents',
-        tasks: [
-            { id: 'c-cert-1', text: 'ISO certificate image (if certified) — or remove badge from footer', done: false },
-            { id: 'c-cert-2', text: 'Any other certifications (BIS, FSSAI, etc.)', done: false },
-            { id: 'c-cert-3', text: 'GST number (for legal pages)', done: false },
         ],
     },
 ]
 
 // ─── TAB 2: Things you need to do yourself ───
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const yourTaskSections: Section[] = [
     {
         title: 'EmailJS Dashboard',
@@ -163,11 +140,11 @@ const tabs: TabData[] = [
         description: 'Images, testimonials, and content to gather from your team and clients',
         sections: collectSections,
     },
-    {
-        label: 'Your Tasks',
-        description: 'Things you need to do yourself on the website',
-        sections: yourTaskSections,
-    },
+    // {
+    //     label: 'Your Tasks',
+    //     description: 'Things you need to do yourself on the website',
+    //     sections: yourTaskSections,
+    // },
 ]
 
 const STORAGE_KEY = 'realwaves-todo-v2'

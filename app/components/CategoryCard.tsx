@@ -1,9 +1,9 @@
 import React from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
 interface CategoryCardProps {
   title: string;
-  imageUrl: string;
+  imageUrl: StaticImageData | string;
   backgroundColor?: string;
   category: string;
 }
