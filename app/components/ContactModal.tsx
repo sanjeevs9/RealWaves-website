@@ -1,6 +1,7 @@
 'use client'
 import { useRef, useState } from 'react';
 import emailjs from "@emailjs/browser";
+import Toast, { ToastState } from './Toast';
 
 export default function ContactModal({
     isOpen,
@@ -12,28 +13,40 @@ export default function ContactModal({
     defaultMessage?: string;
 }) {
     const [isLoading, setIsLoading] = useState(false);
+    const [toast, setToast] = useState<ToastState>(null);
+    const [contactError, setContactError] = useState(false);
     const formRef = useRef<HTMLFormElement>(null);
-
-    if (!isOpen) return null;
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (formRef.current) {
+        const form = formRef.current;
+        if (!form) return;
+
+        const phone = (form.elements.namedItem('phone') as HTMLInputElement)?.value.trim();
+        const email = (form.elements.namedItem('email') as HTMLInputElement)?.value.trim();
+        if (!phone && !email) {
+            setContactError(true);
+            setToast({ type: 'info', message: 'Please share a phone number or email so we can reach you.' });
+            return;
+        }
+        setContactError(false);
+
+        {
             setIsLoading(true);
             emailjs
-                .sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, formRef.current, {
+                .sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, form, {
                     publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
                 })
                 .then(
                     () => {
-                        alert('Message sent successfully!');
+                        setToast({ type: 'success', message: 'Thanks for reaching out — we’ll get back to you within 24 hours.' });
                         formRef.current?.reset();
                         onClose();
                         setIsLoading(false);
                     },
                     (error) => {
                         console.log('FAILED...', error.text);
-                        alert('Failed to send message. Please try again.');
+                        setToast({ type: 'error', message: 'We couldn’t send your message. Please try again or WhatsApp us.' });
                         setIsLoading(false);
                     },
                 );
@@ -41,6 +54,8 @@ export default function ContactModal({
     };
 
     return (
+      <>
+        {isOpen && (
         <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-charcoal/50 backdrop-blur-sm"
             onClick={onClose}
@@ -75,16 +90,30 @@ export default function ContactModal({
                     <div>
                         <label htmlFor="modal-email" className="block text-sm font-medium text-charcoal mb-1.5">Email</label>
                         <input
-                            id="modal-email" name="email" type="email" required placeholder="you@company.com"
-                            className="w-full border border-linen rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-cream/50 placeholder-sage text-sm transition-all"
+                            id="modal-email" name="email" type="email" placeholder="you@company.com"
+                            onInput={() => contactError && setContactError(false)}
+                            className={`w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 bg-cream/50 placeholder-sage text-sm transition-all ${
+                                contactError
+                                    ? 'border-[#0992C2] ring-2 ring-[#0992C2]/15 focus:border-[#0992C2] focus:ring-[#0992C2]/15'
+                                    : 'border-linen focus:ring-forest/20 focus:border-forest'
+                            }`}
                         />
                     </div>
                     <div>
-                        <label htmlFor="modal-phone" className="block text-sm font-medium text-charcoal mb-1.5">Phone / WhatsApp Number <span className="text-red-500">*</span></label>
+                        <label htmlFor="modal-phone" className="block text-sm font-medium text-charcoal mb-1.5">Phone / WhatsApp Number</label>
                         <input
-                            id="modal-phone" name="phone" type="tel" required placeholder="+91 XXXXX XXXXX"
-                            className="w-full border border-linen rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-cream/50 placeholder-sage text-sm transition-all"
+                            id="modal-phone" name="phone" type="tel"
+                            inputMode="numeric" maxLength={10} pattern="[6-9][0-9]{9}"
+                            title="Enter a 10-digit mobile number (without +91)"
+                            placeholder="10-digit mobile number"
+                            onInput={() => contactError && setContactError(false)}
+                            className={`w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 bg-cream/50 placeholder-sage text-sm transition-all ${
+                                contactError
+                                    ? 'border-[#0992C2] ring-2 ring-[#0992C2]/15 focus:border-[#0992C2] focus:ring-[#0992C2]/15'
+                                    : 'border-linen focus:ring-forest/20 focus:border-forest'
+                            }`}
                         />
+                        <p className={`mt-1.5 text-xs ${contactError ? 'text-[#0992C2] font-medium' : 'text-sage'}`}>Please provide a phone number or email so we can reach you.</p>
                     </div>
                     <div>
                         <label htmlFor="modal-category" className="block text-sm font-medium text-charcoal mb-1.5">Product Category</label>
@@ -129,5 +158,9 @@ export default function ContactModal({
                 </form>
             </div>
         </div>
+        )}
+
+        <Toast toast={toast} onClose={() => setToast(null)} />
+      </>
     );
 }
