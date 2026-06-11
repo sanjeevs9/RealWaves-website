@@ -18,15 +18,32 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "RealWaves - Premium Non-Woven Bag Manufacturer",
+  metadataBase: new URL("https://real-waves-website.vercel.app"),
+  title: {
+    default: "RealWaves - Premium Non-Woven Bag Manufacturer",
+    template: "%s | RealWaves",
+  },
   description:
-    "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India. Sustainable packaging solutions for businesses.",
-  // So link previews (Slack, iMessage, Facebook, etc.) show RealWaves, not "Create Next App"
+    "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India. D-Cut, Loop Handle, U-Cut, Box Bags & BOPP laminated bags for businesses.",
+  keywords: [
+    "non woven bags",
+    "non woven bag manufacturer",
+    "carry bags",
+    "eco friendly bags",
+    "custom printed bags",
+    "D-cut bags",
+    "loop handle bags",
+    "box bags",
+    "non woven bags Raipur",
+    "wholesale bags India",
+  ],
   openGraph: {
     title: "RealWaves - Premium Non-Woven Bag Manufacturer",
     description:
       "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India. Sustainable packaging solutions for businesses.",
     type: "website",
+    siteName: "RealWaves",
+    locale: "en_IN",
     images: [
       {
         url: "/logo.png",
@@ -42,6 +59,52 @@ export const metadata: Metadata = {
     description:
       "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India. Sustainable packaging solutions for businesses.",
   },
+  alternates: {
+    canonical: "/",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://real-waves-website.vercel.app/#organization",
+      name: "RealWaves",
+      url: "https://real-waves-website.vercel.app",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://real-waves-website.vercel.app/logo.png",
+      },
+      description:
+        "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Raipur",
+        addressRegion: "Chhattisgarh",
+        addressCountry: "IN",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+91-9009990000",
+        contactType: "sales",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://real-waves-website.vercel.app/#website",
+      url: "https://real-waves-website.vercel.app",
+      name: "RealWaves",
+      publisher: {
+        "@id": "https://real-waves-website.vercel.app/#organization",
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://real-waves-website.vercel.app/products?search={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -51,6 +114,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${playfair.variable} ${dmSans.variable} antialiased font-body`}
       >

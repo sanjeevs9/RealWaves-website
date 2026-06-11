@@ -1,6 +1,34 @@
 import { blogData } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export async function generateStaticParams() {
+    return blogData.map((blog) => ({ id: blog.id }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+    const { id } = await params;
+    const blog = blogData.find((b) => b.id === id);
+    if (!blog) return { title: "Blog Not Found" };
+
+    const description = blog.content.substring(0, 155).replace(/\n/g, " ") + "...";
+    return {
+        title: blog.title,
+        description,
+        openGraph: {
+            title: blog.title,
+            description,
+            type: "article",
+            publishedTime: blog.date,
+            authors: [blog.author],
+            images: [{ url: blog.image, alt: blog.title }],
+        },
+        alternates: {
+            canonical: `/blogs/${id}`,
+        },
+    };
+}
 
 export default async function BlogPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
