@@ -1,63 +1,98 @@
 import { NextResponse } from 'next/server';
 
+export const runtime = 'nodejs';
+
+const SERVICE_ID = process.env.EMAILJS_SERVICE_ID || '';
+const TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID || '';
+const PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY || '';
+
+function str(v: unknown, max = 4000): string | null {
+  return typeof v === 'string' && v.trim() ? v.trim().slice(0, max) : null;
+}
+
+function clientIp(req: Request): string | null {
+  const xff = req.headers.get('x-forwarded-for');
+  if (xff) return xff.split(',')[0].trim();
+  return req.headers.get('x-real-ip');
+}
+
+// In-memory per-key limiter. Resets on cold start (no DB in this project to
+// back a durable cap), but still meaningfully throttles a script hammering
+// this endpoint directly — the same abuse pattern that hit our Portfolio
+// site's exposed client-side EmailJS key.
+const hits = new Map<string, number[]>();
+function isRateLimited(key: string, max: number, windowMs: number): boolean {
+  const now = Date.now();
+  const recent = (hits.get(key) ?? []).filter((t) => now - t < windowMs);
+  recent.push(now);
+  hits.set(key, recent);
+  return recent.length > max;
+}
+
+// Same string pasted into 2+ unrelated fields — the pattern behind the
+// spam our sibling site got.
+function looksLikeSpam(values: (string | null)[]): boolean {
+  const filled = values.filter((v): v is string => !!v);
+  return filled.length >= 2 && new Set(filled).size === 1;
+}
+
 export async function POST(request: Request) {
+  let body: Record<string, unknown>;
   try {
-    const body = await request.json();
-    const { name, email, phone, category, description } = body;
-
-    // Validate form inputs
-    if (!name || !email || !phone || !description) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
-    }
-
-    // Prepare email content
-    const emailContent = `
-      New Contact Form Submission:
-
-      Name: ${name}
-      Email: ${email}
-      Phone/WhatsApp: ${phone}
-      Product Category: ${category || 'Not specified'}
-      Description: ${description}
-    `;
-
-    // In a real implementation, you would use a service like Nodemailer, SendGrid, etc.
-    // For this example, we'll just log the email content and simulate a successful send
-    console.log('Email would be sent with content:', emailContent);
-    
-    // Simulate sending email to info@realwavespacks.com
-    // In production, replace this with actual email sending logic
-    
-    // Example with Nodemailer (commented out):
-    /*
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: Number(process.env.EMAIL_PORT),
-      secure: Boolean(process.env.EMAIL_SECURE),
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD,
-      },
-    });
-
-    await transporter.sendMail({
-      from: process.env.EMAIL_FROM,
-      to: 'info@realwavespacks.com',
-      subject: `New Contact Form Submission from ${name}`,
-      text: emailContent,
-    });
-    */
-
-    // Return success response
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Error processing contact form:', error);
-    return NextResponse.json(
-      { error: 'Failed to process contact form' },
-      { status: 500 }
-    );
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
   }
-} 
+
+  const ip = clientIp(request);
+  // Pretend success rather than 429ing so a scanner doesn't learn it's
+  // being rate-limited.
+  if (ip && isRateLimited(`contact:${ip}`, 5, 10 * 60 * 1000)) {
+    return NextResponse.json({ success: true });
+  }
+  if (ip && isRateLimited(`contact:day:${ip}`, 3, 24 * 60 * 60 * 1000)) {
+    return NextResponse.json({ success: true });
+  }
+
+  const name = str(body.name, 120);
+  const email = str(body.email, 200);
+  const phone = str(body.phone, 40);
+  const category = str(body.category, 60);
+  const description = str(body.description, 4000);
+
+  if (!name || !email || !phone) {
+    return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+  }
+
+  if (looksLikeSpam([name, email, phone, description])) {
+    return NextResponse.json({ success: true });
+  }
+
+  try {
+    const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        service_id: SERVICE_ID,
+        template_id: TEMPLATE_ID,
+        user_id: PUBLIC_KEY,
+        template_params: {
+          name,
+          email,
+          phone,
+          category: category || 'Not specified',
+          description: description || '',
+        },
+      }),
+    });
+    if (!res.ok) {
+      console.error('[contact] emailjs failed:', res.status, await res.text());
+      return NextResponse.json({ error: 'Failed to send' }, { status: 502 });
+    }
+  } catch (err) {
+    console.error('[contact] emailjs error:', err);
+    return NextResponse.json({ error: 'Failed to send' }, { status: 502 });
+  }
+
+  return NextResponse.json({ success: true });
+}

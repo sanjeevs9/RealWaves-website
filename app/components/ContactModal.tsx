@@ -1,6 +1,5 @@
 'use client'
 import { useRef, useState } from 'react';
-import emailjs from "@emailjs/browser";
 import Toast, { ToastState } from './Toast';
 
 export default function ContactModal({
@@ -25,6 +24,7 @@ export default function ContactModal({
         const name = (form.elements.namedItem('name') as HTMLInputElement)?.value.trim();
         const phone = (form.elements.namedItem('phone') as HTMLInputElement)?.value.trim();
         const email = (form.elements.namedItem('email') as HTMLInputElement)?.value.trim();
+        const category = (form.elements.namedItem('category') as HTMLSelectElement)?.value.trim();
         const description = (form.elements.namedItem('description') as HTMLTextAreaElement)?.value.trim();
         if (!phone && !email) {
             setContactError(true);
@@ -33,39 +33,24 @@ export default function ContactModal({
         }
         setContactError(false);
 
-        // Same garbage string pasted into every field is the pattern behind the
-        // EmailJS-key-scraping spam these forms have been getting — pretend
-        // success and skip the actual send rather than tipping the bot off.
-        const filled = [name, email, phone, description].filter(Boolean);
-        if (filled.length >= 2 && new Set(filled).size === 1) {
-            setToast({ type: 'success', message: 'Thanks for reaching out — we’ll get back to you within 24 hours.' });
-            formRef.current?.reset();
-            onClose();
-            return;
-        }
-
-        {
-            setIsLoading(true);
-            emailjs
-                .sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, form, {
-                    publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
-                    blockHeadless: true,
-                    limitRate: { throttle: 20000 },
-                })
-                .then(
-                    () => {
-                        setToast({ type: 'success', message: 'Thanks for reaching out — we’ll get back to you within 24 hours.' });
-                        formRef.current?.reset();
-                        onClose();
-                        setIsLoading(false);
-                    },
-                    (error) => {
-                        console.log('FAILED...', error.text);
-                        setToast({ type: 'error', message: 'We couldn’t send your message. Please try again or WhatsApp us.' });
-                        setIsLoading(false);
-                    },
-                );
-        }
+        setIsLoading(true);
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, phone, email, category, description }),
+        })
+            .then((res) => {
+                if (!res.ok) throw new Error('Request failed');
+                setToast({ type: 'success', message: 'Thanks for reaching out — we’ll get back to you within 24 hours.' });
+                formRef.current?.reset();
+                onClose();
+                setIsLoading(false);
+            })
+            .catch((error) => {
+                console.log('FAILED...', error);
+                setToast({ type: 'error', message: 'We couldn’t send your message. Please try again or WhatsApp us.' });
+                setIsLoading(false);
+            });
     };
 
     return (
