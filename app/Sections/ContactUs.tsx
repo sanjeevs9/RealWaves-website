@@ -21,8 +21,10 @@ export default function ContactUs() {
     const form = formRef.current;
     if (!form) return;
 
+    const name = (form.elements.namedItem('name') as HTMLInputElement)?.value.trim();
     const phone = (form.elements.namedItem('phone') as HTMLInputElement)?.value.trim();
     const email = (form.elements.namedItem('email') as HTMLInputElement)?.value.trim();
+    const description = (form.elements.namedItem('description') as HTMLTextAreaElement)?.value.trim();
     if (!phone && !email) {
       setContactError(true);
       setToast({ type: 'info', message: 'Please share a phone number or email so we can reach you.' });
@@ -30,11 +32,23 @@ export default function ContactUs() {
     }
     setContactError(false);
 
+    // Same garbage string pasted into every field is the pattern behind the
+    // EmailJS-key-scraping spam these forms have been getting — pretend
+    // success and skip the actual send rather than tipping the bot off.
+    const filled = [name, email, phone, description].filter(Boolean);
+    if (filled.length >= 2 && new Set(filled).size === 1) {
+      setToast({ type: 'success', message: 'Thanks for reaching out — we’ll get back to you within 24 hours.' });
+      formRef.current?.reset();
+      return;
+    }
+
     {
       setIsLoading(true);
       emailjs
         .sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, form, {
           publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+          blockHeadless: true,
+          limitRate: { throttle: 20000 },
         })
         .then(
           () => {
