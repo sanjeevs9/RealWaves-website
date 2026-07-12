@@ -5,6 +5,7 @@ export const runtime = 'nodejs';
 const SERVICE_ID = process.env.EMAILJS_SERVICE_ID || '';
 const TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID || '';
 const PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY || '';
+const PRIVATE_KEY = process.env.EMAILJS_PRIVATE_KEY || '';
 
 function str(v: unknown, max = 4000): string | null {
   return typeof v === 'string' && v.trim() ? v.trim().slice(0, max) : null;
@@ -76,6 +77,7 @@ export async function POST(request: Request) {
         service_id: SERVICE_ID,
         template_id: TEMPLATE_ID,
         user_id: PUBLIC_KEY,
+        accessToken: PRIVATE_KEY,
         template_params: {
           name,
           email,
