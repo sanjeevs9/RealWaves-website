@@ -1,9 +1,9 @@
 import { StaticImageData } from "next/image"
-import dcutImg from "@/public/bags/D-cut4.png"
-import ucutImg from "@/public/bags/u-cut1.png"
-import loopImg from "@/public/bags/LH4.png"
-import boxImg from "@/public/bags/Box3.png"
-import boppImg from "@/public/bags/boppbox.png"
+import dcutImg from "@/public/bags/D-cut4.webp"
+import ucutImg from "@/public/bags/u-cut1.webp"
+import loopImg from "@/public/bags/LH4.webp"
+import boxImg from "@/public/bags/Box3.webp"
+import boppImg from "@/public/bags/boppbox.webp"
 import { Category, Product, Products } from "./products"
 
 // One landing page per bag type, served at /non-woven-bags/<slug>.

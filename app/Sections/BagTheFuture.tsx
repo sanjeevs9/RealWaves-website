@@ -46,7 +46,7 @@ export default function BagTheFuture() {
           <div className="relative mt-6 lg:mt-0 lg:absolute lg:right-6 xl:right-10 lg:top-[-2rem] lg:bottom-[-2rem] lg:w-[42%] rounded-2xl overflow-hidden shadow-2xl">
             <div className="relative w-full h-72 sm:h-96 lg:h-full bg-gradient-to-br from-[#E8E0D4] via-[#F5F0E8] to-[#DDD5C8] flex items-center justify-center">
               <Image
-                src="/bags/LH4.png"
+                src="/bags/LH4.webp"
                 alt="Eco-friendly reusable loop handle bag"
                 width={500}
                 height={600}

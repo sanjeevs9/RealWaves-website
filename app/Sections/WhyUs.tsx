@@ -5,25 +5,25 @@ const features = [
     title: 'Sustainable Products',
     description:
       'Our non-woven bags are crafted from recyclable, reusable materials — helping your brand make an eco-friendly statement without compromising on strength or quality.',
-    image: '/WhyChooseus/ecological-bag-grass.jpg',
+    image: '/WhyChooseus/ecological-bag-grass.webp',
   },
   {
     title: '7+ Years of Expertise',
     description:
       'With over 7 years of experience in non-woven bag manufacturing, our team delivers consistently high-quality products and understands the evolving needs of businesses across sectors.',
-    image: '/WhyChooseus/light-bulb-with-drawing-graph.jpg',
+    image: '/WhyChooseus/light-bulb-with-drawing-graph.webp',
   },
   {
     title: 'Custom Branding & Printing',
     description:
       'From logos to taglines, we offer personalized printing options to help businesses reflect their brand identity with every bag. Professional design support available on request.',
-    image: '/WhyChooseus/woman-holding-gift-bag-desk.jpg',
+    image: '/WhyChooseus/woman-holding-gift-bag-desk.webp',
   },
   {
     title: 'Quick Turnaround & Competitive Pricing',
     description:
       'Our streamlined production and delivery process ensures fast turnaround times without cutting corners. Transparent pricing and a flexible, client-first approach make working with us easy.',
-    image: '/WhyChooseus/laptop-delivery-truck-with-box.jpg',
+    image: '/WhyChooseus/laptop-delivery-truck-with-box.webp',
   },
 ];
 

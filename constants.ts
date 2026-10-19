@@ -1,23 +1,23 @@
-import image5 from "./public/WhyChooseus/close-up-environment-sign-collection.jpg"
+import image5 from "./public/WhyChooseus/close-up-environment-sign-collection.webp"
 
-import image2 from './public/WhyChooseus/light-bulb-with-drawing-graph.jpg';
+import image2 from './public/WhyChooseus/light-bulb-with-drawing-graph.webp';
 
-import image3 from './public/WhyChooseus/location-symbol-with-landscape-background.jpg';
+import image3 from './public/WhyChooseus/location-symbol-with-landscape-background.webp';
 
-import image4 from './public/WhyChooseus/woman-holding-gift-bag-desk.jpg';
+import image4 from './public/WhyChooseus/woman-holding-gift-bag-desk.webp';
 
-import image1 from './public/WhyChooseus/ecological-bag-grass.jpg';
+import image1 from './public/WhyChooseus/ecological-bag-grass.webp';
 
-import image6 from './public/WhyChooseus/laptop-delivery-truck-with-box.jpg';
+import image6 from './public/WhyChooseus/laptop-delivery-truck-with-box.webp';
 
-import Dcut from "./public/bags/D-cut4.png"
-import LH from "./public/bags/LH4.png"
-import Ucut from "./public/bags/u-cut1.png"
-import Box from "./public/bags/Box3.png"
-import box2 from "@/public/bags/Box4.png" 
-import boppLH from "./public/bags/LH5.png"
-import designed from "./public/bags/designed.png"
-import boppBox from "./public/bags/boppbox.png"
+import Dcut from "./public/bags/D-cut4.webp"
+import LH from "./public/bags/LH4.webp"
+import Ucut from "./public/bags/u-cut1.webp"
+import Box from "./public/bags/Box3.webp"
+import box2 from "@/public/bags/Box4.webp" 
+import boppLH from "./public/bags/LH5.webp"
+import designed from "./public/bags/designed.webp"
+import boppBox from "./public/bags/boppbox.webp"
 
 
 export const icon1 = `<svg xmlns="http://www.w3.org/2000/svg" width="71" height="71" viewBox="0 0 71 71" fill="none">
@@ -200,7 +200,7 @@ export const blogData = [
       readTime: "5 min read",
       category: "Marketing",
       tags: ["Custom Bags", "Business Promotion", "Branding", "Marketing"],
-      image: "/a310f323ee3331152834763071548ae7378fa3c5.jpg"
+      image: "/a310f323ee3331152834763071548ae7378fa3c5.webp"
     },
     {
       id:"2",
@@ -233,7 +233,7 @@ export const blogData = [
       readTime: "4 min read",
       category: "Sustainability",
       tags: ["Eco-Friendly", "Sustainable Packaging", "Green Business", "Environment"],
-      image: "/WhyChooseus/ecological-bag-grass.jpg"
+      image: "/WhyChooseus/ecological-bag-grass.webp"
     },
     {
       id:"3",
@@ -266,7 +266,7 @@ export const blogData = [
       readTime: "6 min read",
       category: "Branding",
       tags: ["Custom Branding", "Design", "Marketing", "Brand Identity"],
-      image: "/WhyChooseus/woman-holding-gift-bag-desk.jpg"
+      image: "/WhyChooseus/woman-holding-gift-bag-desk.webp"
     }
   ];
 

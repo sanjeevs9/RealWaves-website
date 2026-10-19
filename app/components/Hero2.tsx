@@ -2,9 +2,9 @@
 import Image from 'next/image';
 import CategoryCard2 from './CategoryCard2';
 import { categoryData } from '@/constants';
-// A complete, standing bag on every screen size, grounded with a soft shadow.
-// (The old half-cut photo looked like it was hanging in mid-air.)
-import heroBag from "@/public/heroSection/hero-bag.png"
+// Phones show a complete, standing bag under the hero text (the old half-cut photo looked
+// like it was hanging in mid-air). Laptops and desktops show the text only.
+import heroBag from "@/public/heroSection/hero-bag.webp"
 import { useRouter } from 'next/navigation'
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, useMotionValue, useAnimation, PanInfo } from 'framer-motion';
@@ -160,8 +160,8 @@ export default function Hero2() {
             onClose={() => setIsContactOpen(false)}
         />
 
-        {/* Hero Section — exactly fills viewport below navbar (68px) */}
-        <div className="relative w-full md:h-[calc(100svh-68px)] overflow-hidden">
+        {/* Hero Section — sized to its content; on laptops it's text only */}
+        <div className="relative w-full overflow-hidden">
             {/* Background — soft ambient gradient */}
             <div
                 className="absolute inset-0 z-0"
@@ -170,8 +170,8 @@ export default function Hero2() {
                 }}
             />
 
-            {/* Text content, with the bag image below it */}
-            <div className="relative z-10 flex flex-col items-center text-center md:h-full justify-start pt-10 sm:pt-14 md:pb-0 md:pt-[14svh] lg:pt-[10svh] px-4">
+            {/* Text content, with the bag image below it on phones */}
+            <div className="relative z-10 flex flex-col items-center text-center justify-start pt-10 sm:pt-14 md:pt-28 md:pb-24 lg:pt-32 lg:pb-28 px-4">
                 {/* Trust Badge */}
                 <motion.div
                     initial={{ opacity: 0, y: -10 }}
@@ -247,30 +247,27 @@ export default function Hero2() {
                     </button>
                 </motion.div>
 
-                {/* Bag image — below the buttons on every screen. On larger screens it fills
-                    the space left in the hero, so it can never run into the text. No opacity
-                    fade: it's the main image, and an opacity-0 start makes it count as unseen
-                    until scripts load (5+ s on a slow phone). */}
+                {/* Bag image — phones only, below the buttons. No opacity fade: it's the
+                    phone's main image, and an opacity-0 start makes it count as unseen until
+                    scripts load (5+ s on a slow phone). */}
                 <motion.div
                     initial={{ scale: 0.96 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex flex-col items-center w-full mt-8 pb-2 md:mt-4 md:flex-1 md:min-h-0 md:justify-center md:pb-6 pointer-events-none"
+                    className="md:hidden flex flex-col items-center w-full mt-8 pb-2 pointer-events-none"
                 >
                     <Image
                         src={heroBag}
                         alt="Custom printed non-woven box bag made by RealWaves Packs in Raipur"
                         quality={85}
-                        sizes="(min-width: 768px) 34vw, 70vw"
+                        sizes="(min-width: 768px) 1px, 70vw"
                         priority
-                        className="w-auto max-w-[70%] max-h-[300px] object-contain md:max-w-[42%] lg:max-w-[34%] md:max-h-[min(480px,calc(100%_-_28px))] md:drop-shadow-[0_22px_16px_rgba(11,45,114,0.18)]"
+                        className="w-auto max-w-[70%] max-h-[300px] object-contain"
                     />
-                    {/* Soft ground shadow so the bag reads as standing, not floating. On larger
-                        screens the bag resizes with the hero, so a drop-shadow that follows the
-                        bag's outline (on the image above) replaces this fixed-width oval. */}
+                    {/* Soft ground shadow so the bag reads as standing, not floating */}
                     <div
                         aria-hidden="true"
-                        className="md:hidden w-[56%] h-[18px] -mt-1 rounded-[50%] bg-[radial-gradient(closest-side,rgba(11,45,114,0.22),rgba(11,45,114,0))]"
+                        className="w-[56%] h-[18px] -mt-1 rounded-[50%] bg-[radial-gradient(closest-side,rgba(11,45,114,0.22),rgba(11,45,114,0))]"
                     />
                 </motion.div>
             </div>

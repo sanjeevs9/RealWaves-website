@@ -2,6 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
+    // Serve images as-is. Vercel's image optimisation returns 402 (Payment Required)
+    // for any new image once the Hobby plan's monthly quota runs out, which left
+    // pictures broken on deployments. Photos are pre-sized to WebP instead:
+    // see scripts/optimize-images.mjs.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",

@@ -1,4 +1,4 @@
-// import bagImage from "@/public/bags/redBag.png";
+// import bagImage from "@/public/bags/redBag.webp";
 // import ProductCard from "../components/ProductCard";
 // import { StaticImageData } from "next/image";
 
