@@ -1,0 +1,819 @@
+<title>RealWaves Packs SEO Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* Layout: a light, printed-handout style briefing for a business owner. One centred reading column,
+   plain-English headings, a scorecard up front, and large BEFORE / AFTER screenshot pairs.
+   Deliberately light-only so it reads the same for everyone. Colours are RealWaves' own navy and blue. */
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --soft: #f4f7fb;
+  --line: #e2e8f0;
+  --ink: #15213b;
+  --ink-2: #434f68;
+  --ink-3: #6b7690;
+  --navy: #0b2d72;
+  --sky: #0992c2;
+  --sky-soft: #e7f5fb;
+  --red: #c4362c;
+  --red-soft: #fdeceb;
+  --green: #1b8549;
+  --green-soft: #e5f4eb;
+  --amber: #a15f00;
+  --amber-soft: #fdf1dc;
+  --font-head: "Lexend", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--navy); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 4px; }
+img { max-width: 100%; display: block; }
+code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .85em; background: var(--soft); padding: 1px 6px; border-radius: 5px; overflow-wrap: anywhere; }
+
+.wrap { max-width: 68rem; margin: 0 auto; padding-inline: 20px; padding-block: 0 80px; }
+h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy); margin: 0; line-height: 1.2; text-wrap: balance; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; }
+h3 { font-size: clamp(1.2rem, 2vw, 1.45rem); font-weight: 600; }
+h4 { font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+p { margin: 0; }
+.lead { font-size: clamp(1.1rem, 1.6vw, 1.3rem); color: var(--ink-2); max-width: 60ch; }
+.muted { color: var(--ink-3); }
+.small { font-size: 15.5px; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* top */
+.top { padding-block: 40px 36px; border-bottom: 1px solid var(--line); display: grid; gap: 18px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); font-weight: 600; color: var(--navy); font-size: 15px; }
+.brand .mark { width: 34px; height: 34px; border-radius: 9px; background: var(--navy); color: #ffffff; display: grid; place-items: center; font-size: 14px; font-weight: 700; }
+.top .meta { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15.5px; color: var(--ink-3); }
+.top .meta b { color: var(--ink-2); font-weight: 600; }
+
+/* sections */
+section { padding-top: 64px; display: grid; gap: 24px; }
+.sec-head { display: grid; gap: 10px; }
+.sec-num { font-family: var(--font-head); font-size: 15px; font-weight: 600; color: var(--sky); }
+
+/* summary */
+.summary { background: var(--sky-soft); border-radius: 18px; padding: clamp(22px, 3.5vw, 36px); display: grid; gap: 18px; }
+.summary ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: s; }
+.summary li { display: grid; grid-template-columns: 2.2rem 1fr; gap: 12px; align-items: start; font-size: 18px; color: var(--ink); }
+.summary li::before { counter-increment: s; content: counter(s); width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--navy); color: #ffffff; display: grid; place-items: center; font-family: var(--font-head); font-weight: 600; font-size: 15px; }
+.summary li b { color: var(--navy); }
+
+/* scorecard */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); }
+table { border-collapse: collapse; width: 100%; font-size: 16.5px; }
+@media (max-width: 560px) { table { font-size: 15px; } th, td { padding: 10px 10px !important; } .chip { font-size: 13.5px; padding: 3px 9px; } }
+th, td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { background: var(--soft); font-family: var(--font-head); font-weight: 600; font-size: 14px; color: var(--ink-2); }
+tbody tr:last-child td { border-bottom: 0; }
+td.c, th.c { text-align: center; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.chip { display: inline-block; padding: 3px 12px; border-radius: 999px; font-weight: 700; font-size: 15px; white-space: nowrap; }
+.chip.bad { background: var(--red-soft); color: var(--red); }
+.chip.good { background: var(--green-soft); color: var(--green); }
+.chip.warn { background: var(--amber-soft); color: var(--amber); }
+.chip.info { background: var(--sky-soft); color: var(--navy); }
+
+/* three actions */
+.actions { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+.action { border: 2px solid var(--navy); border-radius: 16px; padding: 22px; display: grid; gap: 8px; align-content: start; }
+.action .n { font-family: var(--font-head); font-size: 2.2rem; font-weight: 700; color: var(--sky); line-height: 1; }
+.action p { color: var(--ink-2); font-size: 16.5px; }
+
+/* contents */
+.toc { display: flex; flex-wrap: wrap; gap: 8px; }
+.toc a { text-decoration: none; padding: 7px 14px; border-radius: 999px; background: var(--soft); color: var(--ink-2); font-size: 15.5px; font-weight: 600; }
+.toc a:hover { background: var(--sky-soft); color: var(--navy); }
+
+/* how people find you */
+.ways { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+.way { background: var(--soft); border-radius: 16px; padding: 22px; display: grid; gap: 10px; align-content: start; }
+.way svg { width: 40px; height: 40px; }
+.way p { color: var(--ink-2); font-size: 16.5px; }
+.way .now { font-size: 15.5px; padding: 10px 12px; border-radius: 10px; background: var(--bg); color: var(--ink-2); }
+.steps { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11.5rem), 1fr)); }
+.step { border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 8px; align-content: start; }
+.step h4 { color: var(--navy); }
+.step p { font-size: 15.5px; color: var(--ink-2); line-height: 1.45; }
+.step .b, .step .a { font-size: 14.5px; line-height: 1.4; padding: 8px 10px; border-radius: 8px; }
+.step .b { background: var(--red-soft); color: var(--red); }
+.step .a { background: var(--green-soft); color: var(--green); }
+
+/* screenshots */
+.frame { margin: 0; display: grid; gap: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--bg); min-width: 0; align-content: start; box-shadow: 0 1px 2px rgba(21, 33, 59, .05), 0 8px 24px rgba(21, 33, 59, .06); }
+.frame .label { display: flex; align-items: center; gap: 8px; padding: 10px 14px; font-family: var(--font-head); font-size: 13.5px; font-weight: 600; letter-spacing: .02em; }
+.frame .label::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: currentColor; flex: none; }
+.frame.before .label { background: var(--red-soft); color: var(--red); }
+.frame.after .label { background: var(--green-soft); color: var(--green); }
+.frame.note .label { background: var(--amber-soft); color: var(--amber); }
+.frame .pic { background: var(--soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.frame .pic img { width: 100%; height: auto; }
+.frame .pic.tall img { max-height: 760px; object-fit: cover; object-position: top; }
+.frame .pic.phone { display: flex; justify-content: center; padding: 16px; }
+.frame .pic.phone img { width: auto; max-width: 100%; max-height: 620px; border-radius: 10px; border: 1px solid var(--line); }
+.frame figcaption { padding: 12px 14px 14px; font-size: 15.5px; color: var(--ink-2); line-height: 1.45; }
+.pair { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 820px) { .pair { grid-template-columns: 1fr 1fr; } }
+.trio { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+
+/* a fixed item */
+.fix { display: grid; gap: 16px; padding-top: 36px; margin-top: 8px; border-top: 1px solid var(--line); }
+.fix-head { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.fix-head h3 { flex: 1 1 20rem; }
+.simple { font-size: 17.5px; color: var(--ink-2); max-width: 62ch; }
+.simple b { color: var(--ink); }
+.bwa { display: grid; gap: 10px; grid-template-columns: 1fr; }
+@media (min-width: 820px) { .bwa { grid-template-columns: repeat(3, 1fr); } }
+.bwa > div { border-radius: 12px; padding: 14px 16px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.bwa .b { background: var(--red-soft); }
+.bwa .c { background: var(--soft); }
+.bwa .r { background: var(--green-soft); }
+.bwa h4 { font-size: 14px; letter-spacing: .03em; text-transform: uppercase; }
+.bwa .b h4 { color: var(--red); } .bwa .c h4 { color: var(--navy); } .bwa .r h4 { color: var(--green); }
+.bwa p { font-size: 16px; color: var(--ink-2); line-height: 1.45; }
+
+/* group banner */
+.group { background: var(--navy); color: #ffffff; border-radius: 18px; padding: clamp(22px, 3.5vw, 34px); display: grid; gap: 8px; margin-top: 24px; }
+.group h2 { color: #ffffff; }
+.group p { color: #d6e2f7; font-size: 17.5px; max-width: 62ch; }
+.group .sec-num { color: #8fd6f2; }
+
+/* google-style result previews */
+.serp { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; display: grid; gap: 4px; align-content: start; font-family: Arial, Helvetica, sans-serif; background: #ffffff; min-width: 0; }
+.serp .site { display: flex; align-items: center; gap: 10px; }
+.serp .fav { width: 28px; height: 28px; border-radius: 50%; background: #e8eef8; display: grid; place-items: center; font: 700 12px/1 Arial, sans-serif; color: var(--navy); flex: none; }
+.serp .sname { font-size: 14px; color: #202124; line-height: 1.2; }
+.serp .surl { font-size: 12px; color: #4d5156; overflow-wrap: anywhere; }
+.serp .stitle { font-size: 20px; line-height: 1.3; color: #1a0dab; margin-top: 4px; overflow-wrap: anywhere; }
+.serp .stext { font-size: 14px; line-height: 1.58; color: #4d5156; }
+.serp .tagline { font-family: var(--font-head); font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.serp .tagline.b { color: var(--red); } .serp .tagline.a { color: var(--green); }
+
+
+/* keyword-by-keyword */
+.kw { display: grid; gap: 16px; padding-top: 36px; margin-top: 8px; border-top: 1px solid var(--line); scroll-margin-top: 16px; }
+.kw-head { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.searchbox { flex: 1 1 22rem; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border: 1px solid #dfe1e5; border-radius: 999px; background: #ffffff; box-shadow: 0 1px 6px rgba(32, 33, 36, .12); font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #202124; min-width: 0; }
+.searchbox svg { width: 20px; height: 20px; flex: none; }
+.searchbox span { overflow-wrap: anywhere; }
+.kw .pair { align-items: start; }
+.kw .frame .pic:not(.phone) img { aspect-ratio: 4 / 3; object-fit: cover; object-position: top; }
+.kw .frame .pic.phone img { max-height: 520px; }
+.better { background: var(--green-soft); border-radius: 12px; padding: 16px 18px; display: grid; gap: 6px; align-content: start; }
+.better h4 { color: var(--green); font-size: 14px; letter-spacing: .03em; text-transform: uppercase; }
+.better p { color: var(--ink); font-size: 16.5px; line-height: 1.5; }
+
+/* misc */
+.callout { border-radius: 14px; padding: 16px 20px; background: var(--amber-soft); display: grid; gap: 4px; }
+.callout p { color: var(--ink); font-size: 16.5px; }
+.callout.blue { background: var(--sky-soft); }
+.cards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+.card { background: var(--soft); border-radius: 16px; padding: 20px 22px; display: grid; gap: 8px; align-content: start; }
+.card .when { font-family: var(--font-head); font-size: 14px; font-weight: 600; color: var(--sky); }
+.card p { color: var(--ink-2); font-size: 16.5px; }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.checks li { display: grid; grid-template-columns: 1.7rem 1fr; gap: 12px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; }
+.checks li::before { content: ""; width: 1.25rem; height: 1.25rem; margin-top: .2rem; border-radius: 6px; border: 2px solid var(--navy); }
+.checks li b { display: block; color: var(--ink); font-size: 17.5px; }
+.checks li span { color: var(--ink-2); font-size: 16px; }
+.checks li .chip { margin-left: 6px; font-size: 13px; vertical-align: 2px; }
+details.appendix { border: 1px solid var(--line); border-radius: 16px; padding: 4px 20px; }
+details.appendix > summary { cursor: pointer; padding: 16px 0; font-family: var(--font-head); font-weight: 600; color: var(--navy); font-size: 1.1rem; }
+details.appendix[open] > summary { border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+details.appendix .inner { display: grid; gap: 18px; padding-bottom: 20px; }
+.foot { font-size: 14.5px; color: var(--ink-3); max-width: 78ch; }
+</style>
+
+<div class="wrap">
+
+  <!-- TOP -->
+  <header class="top">
+    <div class="brand"><span class="mark">RW</span>RealWaves Packs · Raipur</div>
+    <h1>Website &amp; Google Search Report</h1>
+    <p class="lead">How buyers find RealWaves on Google today, what we have fixed on the website, and the few steps that will bring more enquiries.</p>
+    <div class="meta">
+      <span><b>For</b> Realwaves Packs (India) Pvt. Ltd.</span>
+      <span><b>Website</b> www.realwavespacks.com</span>
+      <span><b>Date</b> 9 October 2026</span>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <section id="summary">
+    <div class="summary">
+      <h2>The short version</h2>
+      <ol>
+        <li><span><b>Buyers searching for bags in Raipur don't see RealWaves.</b> For searches like "non woven bag manufacturer in Raipur", Google shows IndiaMART, JustDial and other bag makers. RealWaves only appears when someone types the company name.</span></li>
+        <li><span><b>Google could see only 4 of the website's 22 pages.</b> A technical mistake told Google that the "real" website was a temporary copy, so Google ignored most pages, including every product.</span></li>
+        <li><span><b>The Google Maps listing is broken.</b> It is spelt "RealWeaves", marked <b>"Permanently closed"</b> and nobody has claimed it. This is why RealWaves never appears for "near me" searches.</span></li>
+        <li><span><b>We have fixed the website.</b> Every page can now be found by Google, each bag type has its own page, the headings say "Raipur", and the homepage loads twice as fast on phones.</span></li>
+        <li><span><b>Three things are needed from you</b> to turn this into enquiries: publish the new website, fix the Google Maps listing, and ask happy clients for Google reviews.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SCORECARD -->
+  <section id="scorecard">
+    <div class="sec-head">
+      <h2>Scorecard: before and after</h2>
+      <p class="lead">Measured the same way on the website today and on the new version.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>What we checked</th><th class="c">Before</th><th class="c">After</th></tr></thead>
+        <tbody>
+          <tr><td>Pages Google can find</td><td class="c"><span class="chip bad">4 of 22</span></td><td class="c"><span class="chip good">27 of 27</span></td></tr>
+          <tr><td>Pages telling Google the correct website address</td><td class="c"><span class="chip bad">0</span></td><td class="c"><span class="chip good">27</span></td></tr>
+          <tr><td>Page titles that mention "Raipur"</td><td class="c"><span class="chip bad">0</span></td><td class="c"><span class="chip good">23</span></td></tr>
+          <tr><td>Pages for each bag type (D-cut, U-cut, loop handle, box, BOPP)</td><td class="c"><span class="chip bad">0</span></td><td class="c"><span class="chip good">5</span></td></tr>
+          <tr><td>Homepage on a phone: time until the main picture shows</td><td class="c"><span class="chip bad">9.9 sec</span></td><td class="c"><span class="chip good">4.5 sec</span></td></tr>
+          <tr><td>Homepage on a phone: speed score out of 100</td><td class="c"><span class="chip warn">67</span></td><td class="c"><span class="chip warn">78</span></td></tr>
+          <tr><td>Business details Google can read (address, PIN, map location)</td><td class="c"><span class="chip bad">City only</span></td><td class="c"><span class="chip good">Complete</span></td></tr>
+          <tr><td>Google Maps listing</td><td class="c"><span class="chip bad">Closed</span></td><td class="c"><span class="chip warn">Needs you</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ACTIONS -->
+  <section id="actions">
+    <div class="sec-head">
+      <h2>The three most important next steps</h2>
+    </div>
+    <div class="actions">
+      <div class="action"><span class="n">1</span><h3>Publish the new website</h3><p>All the fixes in this report are ready. Once they go live, Google can find every page.</p></div>
+      <div class="action"><span class="n">2</span><h3>Fix the Google Maps listing</h3><p>Claim it, mark it open, correct the name, phone and PIN, and add photos. This is what makes you appear for "near me".</p></div>
+      <div class="action"><span class="n">3</span><h3>Collect Google reviews</h3><p>Ask every happy client for a review. Competitors at the top of Google Maps have between 3 and 129 reviews; RealWaves has none.</p></div>
+    </div>
+    <nav class="toc" aria-label="In this report">
+      <a href="#how">How people find a business</a>
+      <a href="#today">Where you appear today</a>
+      <a href="#keywords">Keyword by keyword</a>
+      <a href="#previews">Searching your name</a>
+      <a href="#found">Google can find every page</a>
+      <a href="#content">Pages buyers are looking for</a>
+      <a href="#ai">Showing up in AI answers</a>
+      <a href="#plan">Competitors and plan</a>
+      <a href="#expect">What will improve</a>
+      <a href="#checklist">Your checklist</a>
+    </nav>
+  </section>
+
+  <!-- HOW -->
+  <section id="how">
+    <div class="sec-head">
+      <h2>How people find a business on Google</h2>
+      <p class="lead">There are three places a buyer can find you. The website controls the first; the Google Maps listing controls the second; both feed the third.</p>
+    </div>
+    <div class="ways">
+      <div class="way">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="17" cy="17" r="10" fill="none" stroke="#0b2d72" stroke-width="3.5"/><line x1="24.5" y1="24.5" x2="34" y2="34" stroke="#0992c2" stroke-width="4" stroke-linecap="round"/></svg>
+        <h3>1. Google search results</h3>
+        <p>The list of websites. Google shows pages whose words match the search, like "D-cut bags Raipur".</p>
+        <p class="now"><b>Today:</b> no RealWaves page matched these searches. <b>Now:</b> one page per bag type.</p>
+      </div>
+      <div class="way">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4c-6.6 0-12 5.2-12 11.7C8 24.5 20 36 20 36s12-11.5 12-20.3C32 9.2 26.6 4 20 4z" fill="none" stroke="#0b2d72" stroke-width="3.5" stroke-linejoin="round"/><circle cx="20" cy="15.5" r="4.5" fill="#0992c2"/></svg>
+        <h3>2. Google Maps and "near me"</h3>
+        <p>The map with three businesses. Google picks open, verified listings near the buyer, with good reviews.</p>
+        <p class="now"><b>Today:</b> your listing is "Permanently closed", so it can't appear. <b>Fix:</b> claim it (step 2 above).</p>
+      </div>
+      <div class="way">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 8h28a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H16l-8 7v-7H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z" fill="none" stroke="#0b2d72" stroke-width="3.5" stroke-linejoin="round"/><circle cx="13" cy="18" r="2.2" fill="#0992c2"/><circle cx="20" cy="18" r="2.2" fill="#0992c2"/><circle cx="27" cy="18" r="2.2" fill="#0992c2"/></svg>
+        <h3>3. AI answers</h3>
+        <p>Google's AI summary, ChatGPT and others answer questions directly and name businesses they trust.</p>
+        <p class="now"><b>Today:</b> for "D-cut bag manufacturer Raipur", Google's AI names four competitors, not RealWaves.</p>
+      </div>
+    </div>
+    <h3>What Google does before showing a page</h3>
+    <div class="steps">
+      <div class="step"><h4>1 · Finds it</h4><p>Follows links and the website's page list.</p><span class="b">Before: 18 pages had no link to them</span><span class="a">Now: every page is linked</span></div>
+      <div class="step"><h4>2 · Reads it</h4><p>Downloads the page's text.</p><span class="b">Before: products and blogs looked empty</span><span class="a">Now: all text is readable</span></div>
+      <div class="step"><h4>3 · Saves it</h4><p>Keeps one official version of each page.</p><span class="b">Before: pointed to a temporary copy</span><span class="a">Now: points to realwavespacks.com</span></div>
+      <div class="step"><h4>4 · Ranks it</h4><p>Matches it to searches and checks trust.</p><span class="b">Before: no page for "D-cut bags Raipur"</span><span class="a">Now: a page for each bag type</span></div>
+      <div class="step"><h4>5 · Shows it</h4><p>In results, on the map, or in AI answers.</p><span class="b">Before: map listing closed</span><span class="a">Next: claim the listing</span></div>
+    </div>
+  </section>
+
+  <!-- TODAY -->
+  <section id="today">
+    <div class="sec-head">
+      <h2>Where RealWaves appears on Google today</h2>
+      <p class="lead">We searched the way a buyer would, with Google set to India and the location set to Raipur.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>What a buyer types</th><th class="c">RealWaves on the first page?</th><th>Who appears instead</th></tr></thead>
+        <tbody>
+          <tr><td>non woven bag manufacturer in raipur</td><td class="c"><span class="chip bad">No</span></td><td>IndiaMART, JustDial, TradeIndia, and three bag makers on the map</td></tr>
+          <tr><td>d cut bag manufacturer raipur</td><td class="c"><span class="chip bad">No</span></td><td>Google's AI names Shivam Enterprises, Kanha, Nature's Bag, Khandelwal</td></tr>
+          <tr><td>box bag manufacturer raipur</td><td class="c"><span class="chip bad">No</span></td><td>IndiaMART, JustDial, TradeIndia, ExportersIndia</td></tr>
+          <tr><td>non woven bag manufacturer chhattisgarh</td><td class="c"><span class="chip bad">No</span></td><td>IndiaMART, JustDial, TradeIndia</td></tr>
+          <tr><td>bag manufacturer near me</td><td class="c"><span class="chip bad">No</span></td><td>Businesses near the person searching, from Google Maps</td></tr>
+          <tr><td>Real Waves Packs (your name)</td><td class="c"><span class="chip warn">Yes, but…</span></td><td>The top result is the temporary copy of the website, not realwavespacks.com</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pair">
+      <figure class="frame before">
+        <span class="label">BEFORE · Google search, Raipur</span>
+        <div class="pic"><img src="img/serp-google-nonwoven-raipur.jpg" alt="Google results for non woven bag manufacturer in raipur showing three competitors on the map and no RealWaves" loading="lazy"></div>
+        <figcaption>"non woven bag manufacturer in raipur": three competitors on the map. RealWaves isn't on the page.</figcaption>
+      </figure>
+      <figure class="frame before">
+        <span class="label">BEFORE · Your Google Maps listing</span>
+        <div class="pic"><img src="img/maps-listing-realweaves.jpg" alt="Google Maps listing named RealWeaves Packs India Pvt Ltd marked permanently closed with a claim this business link" loading="lazy"></div>
+        <figcaption>Spelt "RealWeaves", marked <b>Permanently closed</b>, not claimed, wrong phone and PIN, no photos or reviews.</figcaption>
+      </figure>
+    </div>
+    <div class="trio">
+      <figure class="frame before">
+        <span class="label">BEFORE · Your name</span>
+        <div class="pic"><img src="img/serp-google-brand.jpg" alt="Google results for Real Waves Packs with the temporary vercel.app copy as the first result" loading="lazy"></div>
+        <figcaption>The first website result (bottom) is the temporary copy, <code>real-waves-website.vercel.app</code>.</figcaption>
+      </figure>
+      <figure class="frame before">
+        <span class="label">BEFORE · Pages Google knows</span>
+        <div class="pic"><img src="img/serp-google-site-query.jpg" alt="Google showing only four pages of realwavespacks.com" loading="lazy"></div>
+        <figcaption>Only 4 pages, all with the same title. No product pages.</figcaption>
+      </figure>
+      <figure class="frame note">
+        <span class="label">GOOD TO KNOW · "Near me"</span>
+        <div class="pic"><img src="img/serp-google-near-me.jpg" alt="Google near me results showing bag makers near the searcher's own location" loading="lazy"></div>
+        <figcaption>Google answers "near me" for wherever the person is (our test was placed in Bihar). It uses Google Maps listings.</figcaption>
+      </figure>
+    </div>
+    <div class="pair">
+      <figure class="frame before">
+        <span class="label">BEFORE · Bing search, Raipur</span>
+        <div class="pic"><img src="img/serp-bing-nonwoven-raipur.jpg" alt="Bing results for non woven bag manufacturer in Raipur with two competitors on the map" loading="lazy"></div>
+        <figcaption>Bing shows the same picture: competitors on the map, no RealWaves.</figcaption>
+      </figure>
+      <figure class="frame after">
+        <span class="label">WORKING · Bing, your name</span>
+        <div class="pic"><img src="img/serp-bing-brand.jpg" alt="Bing results for Real Waves Packs Raipur with realwavespacks.com first" loading="lazy"></div>
+        <figcaption>On Bing, your website is first for your own name. Bing also powers ChatGPT search.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- KEYWORDS -->
+  <section id="keywords">
+    <div class="sec-head">
+      <h2>Keyword by keyword: today and after the fix</h2>
+      <p class="lead">These are the searches buyers in Raipur actually type. For each one: the real Google page today, the new page we built to win it, and how RealWaves's result will read. Google decides positions over time; the new pages give it something to rank.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Search</th><th class="c">RealWaves today</th><th>Who Google shows instead</th><th>Our new page for it</th></tr></thead>
+        <tbody>
+          <tr><td><a href="#kw-1">non woven bag manufacturer in raipur</a></td><td class="c"><span class="chip bad">Not shown</span></td><td>V.M. Extrusions, Khandelwal, Kanha; directories</td><td>Homepage</td></tr>
+          <tr><td><a href="#kw-2">non woven bags raipur</a></td><td class="c"><span class="chip bad">Not shown</span></td><td>Reena Bag House, Bag Image, G M Global; directories</td><td>Catalogue</td></tr>
+          <tr><td><a href="#kw-3">d cut bag manufacturer raipur</a></td><td class="c"><span class="chip bad">Not shown</span></td><td>Shivam Enterprises (AI answer)</td><td>D-cut bags page</td></tr>
+          <tr><td><a href="#kw-4">box bag manufacturer raipur</a></td><td class="c"><span class="chip bad">Not shown</span></td><td>Anjali Paper Bag &amp; Box Works (AI answer)</td><td>Box bags page</td></tr>
+          <tr><td><a href="#kw-5">loop handle bag manufacturer raipur</a></td><td class="c"><span class="chip bad">Not shown</span></td><td>Shivam Enterprises (AI answer)</td><td>Loop handle page</td></tr>
+          <tr><td><a href="#kw-6">u cut bag manufacturer raipur</a></td><td class="c"><span class="chip bad">Not shown</span></td><td>Kanha Non Woven Bags (AI answer)</td><td>U-cut bags page</td></tr>
+          <tr><td><a href="#kw-7">bopp laminated bag manufacturer raipur</a></td><td class="c"><span class="chip warn">Name inside JustDial</span></td><td>SB Plastech (AI answer)</td><td>BOPP laminated page</td></tr>
+          <tr><td><a href="#kw-8">carry bag manufacturer raipur</a></td><td class="c"><span class="chip bad">Not shown</span></td><td>Nature's Bag, Kanha (AI answer)</td><td>Homepage</td></tr>
+          <tr><td><a href="#kw-9">bag manufacturer near me</a></td><td class="c"><span class="chip bad">Not shown</span></td><td>Nearby Google Maps listings</td><td>Google Maps listing (your step)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <article class="kw" id="kw-1">
+      <div class="kw-head"><div class="searchbox"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#5f6368" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round"/></svg><span>non woven bag manufacturer in raipur</span></div><span class="chip good">Page ready</span></div>
+      <p class="simple"><b>Today:</b> Three bag makers on the map, then IndiaMART, JustDial and TradeIndia. RealWaves isn't on the page.</p>
+      <div class="pair">
+        <figure class="frame before"><span class="label">BEFORE · Google today (Raipur)</span><div class="pic"><img src="img/serp-google-nonwoven-raipur.jpg" alt="Google today: map with V.M. Extrusions, Khandelwal Plastic and Kanha Non Woven Bags" loading="lazy"></div></figure>
+        <figure class="frame after"><span class="label">AFTER · Homepage now says it in the main heading</span><div class="pic"><img src="img/after-home-desktop.jpg" alt="New homepage heading: Non-Woven Bag Manufacturer in Raipur" loading="lazy"></div></figure>
+      </div>
+      <div class="pair">
+        <div class="serp"><span class="tagline a">AFTER · how RealWaves's result will read</span><div class="site"><span class="fav">RW</span><div><div class="sname">RealWaves Packs</div><div class="surl">https://www.realwavespacks.com</div></div></div><div class="stitle">Non-Woven Bag Manufacturer in Raipur | RealWaves Packs</div><div class="stext">RealWaves Packs makes custom printed non-woven bags in Raipur, Chhattisgarh: D-Cut, U-Cut, Loop Handle, Box and BOPP bags, supplied wholesale across India.</div></div>
+        <div class="better"><h4>What gets better</h4><p>The homepage title and main heading now match this search word for word. To also win the map, the Google Maps listing has to be fixed.</p></div>
+      </div>
+    </article>
+    <article class="kw" id="kw-2">
+      <div class="kw-head"><div class="searchbox"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#5f6368" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round"/></svg><span>non woven bags raipur</span></div><span class="chip good">Page ready</span></div>
+      <p class="simple"><b>Today:</b> Google shows bag shops on the map and directories below. No RealWaves page.</p>
+      <div class="pair">
+        <figure class="frame before"><span class="label">BEFORE · Google today (Raipur)</span><div class="pic"><img src="img/kw-nonwoven-raipur-before.jpg" alt="Google today: Reena Bag House, Bag Image and G M Global Packaging on the map" loading="lazy"></div></figure>
+        <figure class="frame after"><span class="label">AFTER · Catalogue page built for this search</span><div class="pic"><img src="img/after-products.jpg" alt="New products page titled Non-Woven Bag Catalogue with buttons for each bag type" loading="lazy"></div></figure>
+      </div>
+      <div class="pair">
+        <div class="serp"><span class="tagline a">AFTER · how RealWaves's result will read</span><div class="site"><span class="fav">RW</span><div><div class="sname">RealWaves Packs</div><div class="surl">https://www.realwavespacks.com › products</div></div></div><div class="stitle">Non-Woven D-Cut, U-Cut &amp; Box Bags in Raipur | RealWaves Packs</div><div class="stext">Non-woven D-Cut, U-Cut, Loop Handle, Box and BOPP bags in standard sizes with custom printing. Made in Raipur, Chhattisgarh by RealWaves Packs.</div></div>
+        <div class="better"><h4>What gets better</h4><p>The catalogue now has a title with "non-woven" and "Raipur", all 15 products readable by Google, and links to each bag type.</p></div>
+      </div>
+    </article>
+    <article class="kw" id="kw-3">
+      <div class="kw-head"><div class="searchbox"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#5f6368" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round"/></svg><span>d cut bag manufacturer raipur</span></div><span class="chip good">New page</span></div>
+      <p class="simple"><b>Today:</b> Google's AI answer recommends Shivam Enterprises (15 reviews). Then IndiaMART, JustDial, TradeIndia.</p>
+      <div class="pair">
+        <figure class="frame before"><span class="label">BEFORE · Google today (Raipur)</span><div class="pic"><img src="img/kw-dcut-before.jpg" alt="Google today: AI answer recommending Shivam Enterprises for D-cut bags in Raipur" loading="lazy"></div></figure>
+        <figure class="frame after"><span class="label">AFTER · New page: D-Cut Bags Manufacturer in Raipur</span><div class="pic"><img src="img/after-dcut-page-top.jpg" alt="New D-cut bags page" loading="lazy"></div></figure>
+      </div>
+      <div class="pair">
+        <div class="serp"><span class="tagline a">AFTER · how RealWaves's result will read</span><div class="site"><span class="fav">RW</span><div><div class="sname">RealWaves Packs</div><div class="surl">https://www.realwavespacks.com › Products › D-Cut Bags</div></div></div><div class="stitle">D-Cut Non-Woven Bags Manufacturer in Raipur | RealWaves Packs</div><div class="stext">Custom printed non-woven D-cut bags made in Raipur, Chhattisgarh by RealWaves Packs. For shops, pharmacies and events. Bulk orders across India.</div></div>
+        <div class="better"><h4>What gets better</h4><p>Before, there was no page about D-cut bags at all. Now there's one with sizes, uses, your client bags and answers to buyers' questions.</p></div>
+      </div>
+    </article>
+    <article class="kw" id="kw-4">
+      <div class="kw-head"><div class="searchbox"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#5f6368" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round"/></svg><span>box bag manufacturer raipur</span></div><span class="chip good">New page</span></div>
+      <p class="simple"><b>Today:</b> Google's AI answer names Anjali Paper Bag &amp; Box Works; the map shows packaging firms right next to Saddu, where your factory is.</p>
+      <div class="pair">
+        <figure class="frame before"><span class="label">BEFORE · Google today (Raipur)</span><div class="pic"><img src="img/kw-box-before.jpg" alt="Google today: AI answer naming Anjali Paper Bag and Box Works" loading="lazy"></div></figure>
+        <figure class="frame after"><span class="label">AFTER · New page: Box Bags Manufacturer in Raipur</span><div class="pic"><img src="img/after-box-page-top.jpg" alt="New box bags page" loading="lazy"></div></figure>
+      </div>
+      <div class="pair">
+        <div class="serp"><span class="tagline a">AFTER · how RealWaves's result will read</span><div class="site"><span class="fav">RW</span><div><div class="sname">RealWaves Packs</div><div class="surl">https://www.realwavespacks.com › Products › Box Bags</div></div></div><div class="stitle">Non-Woven Box Bags Manufacturer in Raipur | RealWaves Packs</div><div class="stext">Non-woven box bags with side and bottom gussets that stand upright. Custom printed in Raipur, Chhattisgarh by RealWaves Packs. Bulk orders across India.</div></div>
+        <div class="better"><h4>What gets better</h4><p>Box bags are your biggest range (6 client bags). They now have their own page instead of being hidden under one shared title.</p></div>
+      </div>
+    </article>
+    <article class="kw" id="kw-5">
+      <div class="kw-head"><div class="searchbox"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#5f6368" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round"/></svg><span>loop handle bag manufacturer raipur</span></div><span class="chip good">New page</span></div>
+      <p class="simple"><b>Today:</b> Google's AI answer again recommends Shivam Enterprises. IndiaMART lists loop handle bags at ₹125/kg.</p>
+      <div class="pair">
+        <figure class="frame before"><span class="label">BEFORE · Google today (Raipur)</span><div class="pic"><img src="img/kw-loop-before.jpg" alt="Google today: AI answer recommending Shivam Enterprises for loop handle bags" loading="lazy"></div></figure>
+        <figure class="frame after"><span class="label">AFTER · New page: Loop Handle Bags Manufacturer in Raipur</span><div class="pic"><img src="img/after-loop-page-top.jpg" alt="New loop handle bags page" loading="lazy"></div></figure>
+      </div>
+      <div class="pair">
+        <div class="serp"><span class="tagline a">AFTER · how RealWaves's result will read</span><div class="site"><span class="fav">RW</span><div><div class="sname">RealWaves Packs</div><div class="surl">https://www.realwavespacks.com › Products › Loop Handle Bags</div></div></div><div class="stitle">Loop Handle Non-Woven Bags Manufacturer in Raipur | RealWaves Packs</div><div class="stext">Strong non-woven loop handle bags with custom printing, made in Raipur, Chhattisgarh by RealWaves Packs. For garments, gifting and heavier loads.</div></div>
+        <div class="better"><h4>What gets better</h4><p>A page aimed at garment showrooms, weddings and gifting. Adding your price range would help it compete with the ₹/kg prices directories show.</p></div>
+      </div>
+    </article>
+    <article class="kw" id="kw-6">
+      <div class="kw-head"><div class="searchbox"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#5f6368" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round"/></svg><span>u cut bag manufacturer raipur</span></div><span class="chip good">New page</span></div>
+      <p class="simple"><b>Today:</b> Google's AI answer names Kanha Non Woven Bags, with only 3 reviews. IndiaMART and JustDial follow.</p>
+      <div class="pair">
+        <figure class="frame before"><span class="label">BEFORE · Google today (Raipur)</span><div class="pic"><img src="img/kw-ucut-before.jpg" alt="Google today: AI answer naming Kanha Non Woven Bags for U-cut bags" loading="lazy"></div></figure>
+        <figure class="frame after"><span class="label">AFTER · New page: U-Cut Bags Manufacturer in Raipur</span><div class="pic"><img src="img/after-ucut-page-top.jpg" alt="New U-cut bags page" loading="lazy"></div></figure>
+      </div>
+      <div class="pair">
+        <div class="serp"><span class="tagline a">AFTER · how RealWaves's result will read</span><div class="site"><span class="fav">RW</span><div><div class="sname">RealWaves Packs</div><div class="surl">https://www.realwavespacks.com › Products › U-Cut Bags</div></div></div><div class="stitle">U-Cut Non-Woven Bags Manufacturer in Raipur | RealWaves Packs</div><div class="stext">Non-woven U-cut carry bags with custom printing, made in Raipur, Chhattisgarh by RealWaves Packs. For grocery, retail and daily use. Bulk orders.</div></div>
+        <div class="better"><h4>What gets better</h4><p>The business Google recommends here has just 3 reviews: a handful of genuine reviews plus this page puts RealWaves in contention.</p></div>
+      </div>
+    </article>
+    <article class="kw" id="kw-7">
+      <div class="kw-head"><div class="searchbox"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#5f6368" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round"/></svg><span>bopp laminated bag manufacturer raipur</span></div><span class="chip good">New page</span></div>
+      <p class="simple"><b>Today:</b> Google's AI answer names SB Plastech (178 reviews). "Realwaves Packs" appears only as a name inside a JustDial result, so JustDial gets the click.</p>
+      <div class="pair">
+        <figure class="frame before"><span class="label">BEFORE · Google today (Raipur)</span><div class="pic"><img src="img/kw-bopp-before.jpg" alt="Google today: AI answer naming SB Plastech for BOPP bags" loading="lazy"></div></figure>
+        <figure class="frame after"><span class="label">AFTER · New page: BOPP Laminated Bags Manufacturer in Raipur</span><div class="pic"><img src="img/after-bopp-page-top.jpg" alt="New BOPP laminated bags page" loading="lazy"></div></figure>
+      </div>
+      <div class="pair">
+        <div class="serp"><span class="tagline a">AFTER · how RealWaves's result will read</span><div class="site"><span class="fav">RW</span><div><div class="sname">RealWaves Packs</div><div class="surl">https://www.realwavespacks.com › Products › BOPP Laminated Bags</div></div></div><div class="stitle">BOPP Laminated Non-Woven Bags Manufacturer in Raipur | RealWaves Packs</div><div class="stext">BOPP laminated non-woven bags with glossy full-colour printing and a water-resistant finish. Made in Raipur, Chhattisgarh by RealWaves Packs.</div></div>
+        <div class="better"><h4>What gets better</h4><p>Buyers who already find you through JustDial can now land on your own page instead.</p></div>
+      </div>
+    </article>
+    <article class="kw" id="kw-8">
+      <div class="kw-head"><div class="searchbox"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#5f6368" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round"/></svg><span>carry bag manufacturer raipur</span></div><span class="chip good">Page ready</span></div>
+      <p class="simple"><b>Today:</b> Google's AI answer lists Nature's Bag and Kanha. Directories fill the rest of the page.</p>
+      <div class="pair">
+        <figure class="frame before"><span class="label">BEFORE · Google today (Raipur)</span><div class="pic"><img src="img/kw-carry-before.jpg" alt="Google today: AI answer listing Nature's Bag and Kanha Non Woven Bags" loading="lazy"></div></figure>
+        <figure class="frame after"><span class="label">AFTER · Homepage on a phone</span><div class="pic phone"><img src="img/after-home-mobile.jpg" alt="New homepage on a phone" loading="lazy"></div></figure>
+      </div>
+      <div class="pair">
+        <div class="serp"><span class="tagline a">AFTER · how RealWaves's result will read</span><div class="site"><span class="fav">RW</span><div><div class="sname">RealWaves Packs</div><div class="surl">https://www.realwavespacks.com</div></div></div><div class="stitle">Non-Woven Bag Manufacturer in Raipur | RealWaves Packs</div><div class="stext">RealWaves Packs makes custom printed non-woven bags in Raipur, Chhattisgarh: D-Cut, U-Cut, Loop Handle, Box and BOPP bags, supplied wholesale across India.</div></div>
+        <div class="better"><h4>What gets better</h4><p>The D-cut and U-cut pages describe them as carry bags for shops, and a page about printed carry bags is next on the plan.</p></div>
+      </div>
+    </article>
+    <article class="kw" id="kw-9">
+      <div class="kw-head"><div class="searchbox"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#5f6368" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round"/></svg><span>bag manufacturer near me</span></div><span class="chip warn">Needs your Maps listing</span></div>
+      <p class="simple"><b>Today:</b> "near me" results come only from Google Maps, and your listing is closed and unclaimed, so RealWaves can't appear for anyone nearby.</p>
+      <div class="pair">
+        <figure class="frame before"><span class="label">BEFORE · Your Google Maps listing today</span><div class="pic"><img src="img/maps-listing-realweaves.jpg" alt="RealWeaves Packs listing marked permanently closed and unclaimed" loading="lazy"></div><figcaption>Misspelt, "Permanently closed", unclaimed, wrong phone and PIN, no photos.</figcaption></figure>
+        <figure class="frame note"><span class="label">EXAMPLE · What a complete listing looks like</span><div class="pic"><img src="img/maps-example-complete-listing.jpg" alt="A competitor's complete Google Maps listing with photos, rating, category, hours, website and phone" loading="lazy"></div><figcaption>A competitor's listing (Shivam Enterprises): bag photos with sizes, 15 reviews, "Manufacturer" category, hours, website and phone. This is what yours should look like once claimed.</figcaption></figure>
+      </div>
+      <div class="better"><h4>What gets better</h4><p>Once the listing is claimed, open and complete, RealWaves can appear on the map for buyers near Saddu and Raipur, and in Google's AI answers, which pick businesses straight from Google Maps.</p></div>
+    </article>
+  </section>
+
+  <!-- PREVIEWS -->
+  <section id="previews">
+    <div class="sec-head">
+      <h2>When someone searches your name</h2>
+      <p class="lead">Today Google's top result is the temporary copy of the website. After the fix it will be realwavespacks.com with a clearer title.</p>
+    </div>
+    <div class="pair">
+      <div class="serp">
+        <span class="tagline b">BEFORE · today's top result</span>
+        <div class="site"><span class="fav">RW</span><div><div class="sname">RealWaves</div><div class="surl">https://real-waves-website.vercel.app</div></div></div>
+        <div class="stitle">RealWaves - Premium Non-Woven Bag Manufacturer</div>
+        <div class="stext">Realwaves is a leading manufacturer of eco-friendly, durable, and customizable non-woven bags, proudly operating from Raipur, Chhattisgarh for over 7 years.</div>
+      </div>
+      <div class="serp">
+        <span class="tagline a">AFTER · preview</span>
+        <div class="site"><span class="fav">RW</span><div><div class="sname">RealWaves Packs</div><div class="surl">https://www.realwavespacks.com</div></div></div>
+        <div class="stitle">Non-Woven Bag Manufacturer in Raipur | RealWaves Packs</div>
+        <div class="stext">RealWaves Packs makes custom printed non-woven bags in Raipur, Chhattisgarh: D-Cut, U-Cut, Loop Handle, Box and BOPP bags, supplied wholesale across India.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROUP 1 -->
+  <div class="group" id="found">
+    <span class="sec-num">Part 1 · Technical</span>
+    <h2>Google can now find and trust every page</h2>
+    <p>These were the hidden problems that stopped Google from showing the website. All are fixed in the new version.</p>
+  </div>
+
+  <div class="fix">
+    <div class="fix-head"><h3>Every page can now be found and read</h3><span class="chip good">Fixed</span></div>
+    <p class="simple"><b>In simple words:</b> Google reads a page's text without clicking buttons. On the old website, the product list and blog posts only appeared after clicking or loading, so Google saw empty pages.</p>
+    <div class="bwa">
+      <div class="b"><h4>Before</h4><p>Only 4 of 22 pages could be found. The product list showed grey boxes to Google.</p></div>
+      <div class="c"><h4>What we changed</h4><p>Made every product and blog card a real link, and put the full text in each page.</p></div>
+      <div class="r"><h4>Result</h4><p>All 27 pages can be found. Google can list them within a few weeks of going live.</p></div>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Products page, as Google reads it</span><div class="pic tall"><img src="img/before-products-nojs.jpg" alt="Old products page showing only grey placeholder boxes to Google" loading="lazy"></div><figcaption>Grey boxes only: no products, no links.</figcaption></figure>
+      <figure class="frame after"><span class="label">AFTER · Products page, as Google reads it</span><div class="pic tall"><img src="img/after-products-nojs.jpg" alt="New products page showing the full catalogue to Google" loading="lazy"></div><figcaption>The full catalogue with all 15 products.</figcaption></figure>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · A page that doesn't exist</span><div class="pic"><img src="img/before-soft-404.jpg" alt="Old site showing Product not found while telling Google the page is fine" loading="lazy"></div><figcaption>Showed "Product not found" but told Google the page was fine, so empty pages could be listed.</figcaption></figure>
+      <figure class="frame after"><span class="label">AFTER · A page that doesn't exist</span><div class="pic"><img src="img/after-real-404.jpg" alt="New site returning a proper not found page" loading="lazy"></div><figcaption>Now tells Google clearly that the page doesn't exist.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="fix">
+    <div class="fix-head"><h3>Google is told the correct website address</h3><span class="chip good">Fixed</span><span class="chip warn">1 setting for you</span></div>
+    <p class="simple"><b>In simple words:</b> every page had a hidden note telling Google "my real address is real-waves-website.vercel.app", a temporary copy. Google believed it, which is why the copy shows up first for your name.</p>
+    <div class="bwa">
+      <div class="b"><h4>Before</h4><p>All 22 pages pointed to the temporary copy. Four pages also shared one title.</p></div>
+      <div class="c"><h4>What we changed</h4><p>Every page now points to its own address on realwavespacks.com. The temporary copy sends visitors to the real site.</p></div>
+      <div class="r"><h4>Result</h4><p>Within weeks, realwavespacks.com replaces the copy in Google.</p></div>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · What each page tells Google</span><div class="pic"><img src="img/evidence-head-before.jpg" alt="Table of old page titles and addresses all pointing to the temporary copy" loading="lazy"></div><figcaption>Red: every page points to the temporary copy.</figcaption></figure>
+      <figure class="frame after"><span class="label">AFTER · What each page tells Google</span><div class="pic"><img src="img/evidence-head-after.jpg" alt="Table of new page titles and addresses each pointing to realwavespacks.com" loading="lazy"></div><figcaption>Green: each page names its own realwavespacks.com address.</figcaption></figure>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Page list given to Google</span><div class="pic"><img src="img/before-sitemap.jpg" alt="Old page list with temporary copy addresses" loading="lazy"></div></figure>
+      <figure class="frame after"><span class="label">AFTER · Page list given to Google</span><div class="pic"><img src="img/after-sitemap.jpg" alt="New page list with realwavespacks.com addresses" loading="lazy"></div></figure>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Instructions file for search engines</span><div class="pic"><img src="img/before-robots.jpg" alt="Old robots file pointing to the temporary copy" loading="lazy"></div></figure>
+      <figure class="frame after"><span class="label">AFTER · Instructions file for search engines</span><div class="pic"><img src="img/after-robots.jpg" alt="New robots file pointing to realwavespacks.com" loading="lazy"></div></figure>
+    </div>
+    <div class="callout"><p><b>Your one setting:</b> in Vercel → Domains, set the redirect from realwavespacks.com to www as <b>permanent (308)</b> instead of temporary (307).</p></div>
+  </div>
+
+  <div class="fix">
+    <div class="fix-head"><h3>Business details Google can read</h3><span class="chip good">Fixed</span></div>
+    <p class="simple"><b>In simple words:</b> websites can include a hidden "business card" for Google with the address, phone and map location. The old one only said "Raipur".</p>
+    <div class="bwa">
+      <div class="b"><h4>Before</h4><p>City only. No street, PIN or map location.</p></div>
+      <div class="c"><h4>What we changed</h4><p>Full Saddu address, PIN 492014, map location, both phones, email, legal company name, Facebook and Instagram.</p></div>
+      <div class="r"><h4>Result</h4><p>Google and AI tools understand who you are and where you are. Opening hours will be added once you confirm them.</p></div>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Business details on each page</span><div class="pic"><img src="img/evidence-schema-before.jpg" alt="Old business details with no street or PIN" loading="lazy"></div></figure>
+      <figure class="frame after"><span class="label">AFTER · Business details on each page</span><div class="pic"><img src="img/evidence-schema-after.jpg" alt="New business details with address, PIN, map location, breadcrumbs and FAQs" loading="lazy"></div></figure>
+    </div>
+  </div>
+
+  <div class="fix">
+    <div class="fix-head"><h3>Faster homepage on phones</h3><span class="chip good">Improved</span></div>
+    <p class="simple"><b>In simple words:</b> most buyers search on a phone. The homepage was slow because of a very large video and a picture that loaded last.</p>
+    <div class="bwa">
+      <div class="b"><h4>Before</h4><p>Score 67 out of 100. The main picture took 9.9 seconds. The video alone was 20 MB.</p></div>
+      <div class="c"><h4>What we changed</h4><p>Shrank the video to 4 MB with no visible difference, made the main picture load first, and stopped it waiting for an animation before showing.</p></div>
+      <div class="r"><h4>Result</h4><p>Score 78. The main picture shows in 4.5 seconds. Other pages already scored 93–100.</p></div>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Google's speed test, phone</span><div class="pic"><img src="img/lighthouse-before-home-mobile.jpg" alt="Google Lighthouse scores for the old homepage: performance 67" loading="lazy"></div></figure>
+      <figure class="frame after"><span class="label">AFTER · Google's speed test, phone</span><div class="pic"><img src="img/lighthouse-after-home-mobile.jpg" alt="Google Lighthouse scores for the new homepage: performance 78" loading="lazy"></div></figure>
+    </div>
+  </div>
+
+  <!-- GROUP 2 -->
+  <div class="group" id="content">
+    <span class="sec-num">Part 2 · Content</span>
+    <h2>Pages that match what buyers search for</h2>
+    <p>Now that Google can read the website, each page needs to say clearly what you make and where.</p>
+  </div>
+
+  <div class="fix">
+    <div class="fix-head"><h3>Clear headings and page titles with "Raipur"</h3><span class="chip good">Fixed</span></div>
+    <p class="simple"><b>In simple words:</b> the page title is the blue line in Google's results. Buyers search "… in Raipur", so the titles and main headings now say that.</p>
+    <div class="bwa">
+      <div class="b"><h4>Before</h4><p>No title mentioned Raipur. Google read the homepage heading as "PremiumNon-WovenBag Manufacturer".</p></div>
+      <div class="c"><h4>What we changed</h4><p>Homepage heading: "Non-Woven Bag Manufacturer in Raipur". A unique title on every page.</p></div>
+      <div class="r"><h4>Result</h4><p>Pages match the words buyers type, the first thing Google checks.</p></div>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Homepage</span><div class="pic"><img src="img/before-home-desktop.jpg" alt="Old homepage heading Premium Non-Woven Bag Manufacturer" loading="lazy"></div></figure>
+      <figure class="frame after"><span class="label">AFTER · Homepage</span><div class="pic"><img src="img/after-home-desktop.jpg" alt="New homepage heading Non-Woven Bag Manufacturer in Raipur" loading="lazy"></div></figure>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Homepage on a phone</span><div class="pic phone"><img src="img/before-home-mobile.jpg" alt="Old homepage on a phone" loading="lazy"></div></figure>
+      <figure class="frame after"><span class="label">AFTER · Homepage on a phone</span><div class="pic phone"><img src="img/after-home-mobile.jpg" alt="New homepage on a phone with the Raipur heading and a complete standing bag" loading="lazy"></div><figcaption>"in Raipur" in the heading, and a complete bag standing on the page instead of a half-cut photo.</figcaption></figure>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Products page</span><div class="pic"><img src="img/before-products.jpg" alt="Old products page titled Product Catalogue" loading="lazy"></div><figcaption>Titled "Product Catalogue", which nobody searches for.</figcaption></figure>
+      <figure class="frame after"><span class="label">AFTER · Products page</span><div class="pic"><img src="img/after-products.jpg" alt="New products page titled Non-Woven Bag Catalogue with buttons for each bag type" loading="lazy"></div><figcaption>"Non-Woven Bag Catalogue", with a button for each bag type.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="fix">
+    <div class="fix-head"><h3>A page for each type of bag</h3><span class="chip good">5 new pages</span><span class="chip warn">Needs your prices</span></div>
+    <p class="simple"><b>In simple words:</b> a buyer searching "box bags Raipur" should land on a page about box bags. Before, no such pages existed; products were named after clients ("Laxmi", "Bajaj").</p>
+    <div class="bwa">
+      <div class="b"><h4>Before</h4><p>No page for any bag type. No sizes, GSM, minimum order or prices, which competitors all show.</p></div>
+      <div class="c"><h4>What we changed</h4><p>Five pages: D-cut, U-cut, loop handle, box and BOPP laminated, each with uses, sizes, your client work and common questions.</p></div>
+      <div class="r"><h4>Still needed</h4><p>Your price ranges, minimum order and GSM for each type. These are what buyers and Google look for most.</p></div>
+    </div>
+    <figure class="frame after"><span class="label">AFTER · New D-cut bags page</span><div class="pic tall"><img src="img/after-dcut-page.jpg" alt="New D-cut bags page with heading, introduction, details, client bags and questions" loading="lazy"></div></figure>
+    <div class="pair">
+      <figure class="frame after"><span class="label">AFTER · New box bags page</span><div class="pic"><img src="img/after-box-page-top.jpg" alt="New box bags page" loading="lazy"></div></figure>
+      <figure class="frame after"><span class="label">AFTER · D-cut page on a phone</span><div class="pic phone"><img src="img/after-dcut-mobile.jpg" alt="New D-cut page on a phone" loading="lazy"></div></figure>
+    </div>
+    <figure class="frame after"><span class="label">AFTER · Common questions on the D-cut page</span><div class="pic"><img src="img/after-dcut-faq.jpg" alt="Questions and answers on the D-cut page" loading="lazy"></div><figcaption>Answers buyers' questions, including India's rule that non-woven carry bags must be at least 60 GSM.</figcaption></figure>
+  </div>
+
+  <div class="fix">
+    <div class="fix-head"><h3>Easier to move between pages</h3><span class="chip good">Fixed</span></div>
+    <p class="simple"><b>In simple words:</b> links between pages help visitors and tell Google which pages matter. The old Products menu had a broken item that led to an empty page.</p>
+    <div class="bwa">
+      <div class="b"><h4>Before</h4><p>"Bopp Loop Handle" in the menu showed "No products". Product pages didn't link to their bag type.</p></div>
+      <div class="c"><h4>What we changed</h4><p>The menu, footer and homepage now link to the five bag pages. Each product links back to its bag type.</p></div>
+      <div class="r"><h4>Result</h4><p>Every page is one click from the homepage; no dead ends.</p></div>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Products menu</span><div class="pic"><img src="img/before-menu.jpg" alt="Old products menu with six filter links including Bopp Loop Handle" loading="lazy"></div></figure>
+      <figure class="frame after"><span class="label">AFTER · Products menu</span><div class="pic"><img src="img/after-menu.jpg" alt="New products menu linking to five bag-type pages and all products" loading="lazy"></div></figure>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Where "Bopp Loop Handle" led</span><div class="pic"><img src="img/before-empty-category.jpg" alt="Old products page showing no products for Bopp Loop Handle" loading="lazy"></div><figcaption>An empty page.</figcaption></figure>
+      <figure class="frame after"><span class="label">AFTER · A product page</span><div class="pic"><img src="img/after-product.jpg" alt="New product page with a path back to D-Cut Bags and a link to the D-cut page" loading="lazy"></div><figcaption>Shows "Products › D-Cut Bags" and links to the D-cut page.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="fix">
+    <div class="fix-head"><h3>One business name, shown consistently</h3><span class="chip good">Website fixed</span><span class="chip warn">Some items need you</span></div>
+    <p class="simple"><b>In simple words:</b> Google trusts a business more when its name, address and phone are the same everywhere. The website used five different names.</p>
+    <div class="bwa">
+      <div class="b"><h4>Before</h4><p>"RealWaves", "Realwaves Packs", "Real Wave Store" and more. Blog posts were signed by placeholder names.</p></div>
+      <div class="c"><h4>What we changed</h4><p>"RealWaves Packs" everywhere, the legal company name in the footer, and blog posts signed by the RealWaves Packs Team.</p></div>
+      <div class="r"><h4>For you to decide</h4><p>Remove the public internal page at /do, remove the word "biodegradable", and confirm the testimonials and ISO badge.</p></div>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Footer</span><div class="pic"><img src="img/before-footer.jpg" alt="Old footer" loading="lazy"></div></figure>
+      <figure class="frame after"><span class="label">AFTER · Footer</span><div class="pic"><img src="img/after-footer.jpg" alt="New footer with Raipur, bag-type links and the legal company name" loading="lazy"></div><figcaption>Says "in Raipur", links to every bag type, shows the legal company name.</figcaption></figure>
+    </div>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Store section on the homepage</span><div class="pic"><img src="img/before-store.jpg" alt="Old store section naming Real Wave Store" loading="lazy"></div><figcaption>Called "Real Wave Store".</figcaption></figure>
+      <figure class="frame after"><span class="label">AFTER · Store section on the homepage</span><div class="pic"><img src="img/after-store.jpg" alt="New store section naming RealWaves Packs Factory and Store" loading="lazy"></div></figure>
+    </div>
+  </div>
+
+  <!-- GROUP 3 -->
+  <div class="group" id="ai">
+    <span class="sec-num">Part 3 · AI search</span>
+    <h2>Showing up in AI answers</h2>
+    <p>More buyers now ask Google's AI, ChatGPT or Gemini instead of scrolling results. These tools name businesses whose websites they can read and whose listings they trust.</p>
+  </div>
+
+  <div class="fix">
+    <div class="fix-head"><h3>What AI says about RealWaves today</h3><span class="chip info">Starting point</span></div>
+    <p class="simple"><b>In simple words:</b> when asked about RealWaves by name, Google's AI gets it right. When asked "who makes D-cut bags in Raipur", it recommends four competitors with Google Maps listings and reviews.</p>
+    <div class="pair">
+      <figure class="frame after"><span class="label">WORKING · Asked about RealWaves by name</span><div class="pic"><img src="img/serp-google-brand-ai-overview.jpg" alt="Google AI summary describing Realwaves Packs correctly" loading="lazy"></div><figcaption>Correct address and details, taken from your website and IndiaMART.</figcaption></figure>
+      <figure class="frame before"><span class="label">BEFORE · Asked "d cut bag manufacturer raipur"</span><div class="pic"><img src="img/serp-google-dcut-ai-overview.jpg" alt="Google AI summary recommending Shivam Enterprises for D-cut bags in Raipur" loading="lazy"></div><figcaption>Recommends Shivam Enterprises and others. RealWaves isn't mentioned.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="fix">
+    <div class="fix-head"><h3>AI tools can now read the whole website</h3><span class="chip good">Fixed</span></div>
+    <p class="simple"><b>In simple words:</b> most AI tools read a page's text directly. On the old site, blog posts looked blank to them. We also added a short summary file written for AI tools.</p>
+    <div class="pair">
+      <figure class="frame before"><span class="label">BEFORE · Blog post, as an AI tool reads it</span><div class="pic"><img src="img/before-blogpost-nojs.jpg" alt="Old blog post showing only the word BLOG" loading="lazy"></div><figcaption>Blank apart from the word "BLOG".</figcaption></figure>
+      <figure class="frame after"><span class="label">AFTER · Blog post, as an AI tool reads it</span><div class="pic"><img src="img/after-blogpost-nojs.jpg" alt="New blog post showing the full article" loading="lazy"></div><figcaption>The whole article is readable.</figcaption></figure>
+    </div>
+    <figure class="frame after"><span class="label">AFTER · Summary file for AI tools (llms.txt)</span><div class="pic"><img src="img/after-llms.jpg" alt="The summary file describing RealWaves Packs for AI tools" loading="lazy"></div></figure>
+    <div class="callout blue"><p><b>Each month</b> we'll ask the same questions in Google, ChatGPT, Perplexity, Copilot and Gemini (for example "best non woven bag manufacturer in Raipur") and record whether RealWaves is named. Today's results are the starting point.</p></div>
+  </div>
+
+  <!-- GROUP 4 -->
+  <div class="group" id="plan">
+    <span class="sec-num">Part 4 · Strategy</span>
+    <h2>Competitors, the right search words, and the plan</h2>
+    <p>Most competition in Raipur is directories and small listings, not strong websites. That's an opportunity.</p>
+  </div>
+
+  <div class="fix">
+    <h3>Who appears instead of RealWaves</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Competitor</th><th>Where they appear</th><th>What they have that RealWaves doesn't yet</th></tr></thead>
+        <tbody>
+          <tr><td><b>IndiaMART, JustDial, TradeIndia</b></td><td>Most of the first page for every search</td><td>Prices, GSM, minimum order. Your own listings there are incomplete.</td></tr>
+          <tr><td><b>Khandelwal Plastic Industries</b></td><td>Google Maps, AI answers</td><td>129 Google reviews</td></tr>
+          <tr><td><b>Shivam Enterprises</b></td><td>First in the AI answer for D-cut bags</td><td>15 reviews, products listed on Maps</td></tr>
+          <tr><td><b>Nature's Bag</b></td><td>AI answers, Instagram</td><td>16 reviews</td></tr>
+          <tr><td><b>Kanha Non Woven Bags</b></td><td>Google Maps and Bing map</td><td>A verified listing (only 3 reviews)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="fix">
+    <h3>Search words that fit RealWaves</h3>
+    <p class="simple">Real phrases people type into Google in India, matched to the page that should appear.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Buyers type…</th><th>Page that answers it</th><th class="c">Status</th></tr></thead>
+        <tbody>
+          <tr><td>non woven bag manufacturer in raipur · non woven bag raipur · carry bag wholesale raipur</td><td>Homepage + Google Maps listing</td><td class="c"><span class="chip good">Ready</span></td></tr>
+          <tr><td>d cut bag manufacturer raipur · non woven box bag · loop handle bag · bopp bags</td><td>The five bag-type pages</td><td class="c"><span class="chip good">Ready</span></td></tr>
+          <tr><td>non woven bag price per kg · 60 gsm non woven bag · size chart</td><td>Price and GSM guide</td><td class="c"><span class="chip warn">Needs your prices</span></td></tr>
+          <tr><td>non woven bag printing raipur · bag with logo</td><td>Custom printing page</td><td class="c"><span class="chip info">Next</span></td></tr>
+          <tr><td>is non woven bag banned in india · plastic ban carry bags</td><td>Guide to the 60 GSM rule</td><td class="c"><span class="chip info">Next</span></td></tr>
+          <tr><td>sweet box carry bag · wedding return gift bags · cloth shop bags</td><td>Pages by type of shop</td><td class="c"><span class="chip info">Later</span></td></tr>
+          <tr><td>bag manufacturer near me</td><td>Google Maps listing (not a web page)</td><td class="c"><span class="chip warn">Needs you</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="fix">
+    <h3>The plan, step by step</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>When</th><th>What</th><th>Who</th></tr></thead>
+        <tbody>
+          <tr><td class="num">Day 1</td><td>Publish the new website; connect Google Search Console; send Google the page list</td><td>We do it; you give access</td></tr>
+          <tr><td class="num">Week 1</td><td>Claim and correct the Google Maps listing; add photos and opening hours</td><td>You, with our help</td></tr>
+          <tr><td class="num">Weeks 1–3</td><td>Make IndiaMART, JustDial, Facebook and Instagram show the same name, address and phone</td><td>You, with our checklist</td></tr>
+          <tr><td class="num">From week 2</td><td>Ask every client for a Google review after delivery</td><td>You</td></tr>
+          <tr><td class="num">Weeks 2–6</td><td>Add prices, minimum order and GSM; a printing page; a guide to the 60 GSM rule</td><td>You share figures; we write</td></tr>
+          <tr><td class="num">Months 2–6</td><td>Pages by type of shop, real factory photos, two helpful articles a month, monthly AI check</td><td>We write; you send photos</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- EXPECT -->
+  <section id="expect">
+    <div class="sec-head">
+      <h2>What will improve, and when</h2>
+      <p class="lead">Nobody can promise a position on Google. These are the realistic results once the website is live and the steps above are done.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><span class="when">In the first few weeks</span><p>Google lists all 27 pages. Your real website replaces the temporary copy for your name. The Maps listing shows as open with correct details.</p></div>
+      <div class="card"><span class="when">In 1 to 3 months</span><p>Bag-type pages start appearing for Raipur searches. The first reviews lift the Maps listing.</p></div>
+      <div class="card"><span class="when">In 3 to 6 months</span><p>Competing for the first page and the map on the main Raipur searches. AI answers start naming RealWaves.</p></div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section id="checklist">
+    <div class="sec-head">
+      <h2>Your checklist</h2>
+      <p class="lead">Only the business owner can do these. The first three matter most.</p>
+    </div>
+    <ul class="checks">
+      <li><div><b>Approve publishing the new website <span class="chip bad">most important</span></b><span>All the website fixes are ready but not live yet.</span></div></li>
+      <li><div><b>Claim and fix the Google Maps listing <span class="chip bad">most important</span></b><span>Search "RealWeaves Packs(India)Pvt. Ltd." on Google Maps and tap "Claim this business". Then mark it open; name it "RealWaves Packs"; phone +91 90099 90000; the Saddu address with the right PIN; move the map pin to the factory; category "Bag manufacturer"; opening hours; website; at least 10 real photos.</span></div></li>
+      <li><div><b>Ask clients for Google reviews <span class="chip bad">most important</span></b><span>Every happy client, after delivery. No gifts or discounts in return.</span></div></li>
+      <li><div><b>Confirm a few details</b><span>Opening hours (Google currently guesses Mon–Sat, 10:30 AM to 7:00 PM), the correct PIN (492014 or 492001), and which phone number to show.</span></div></li>
+      <li><div><b>Share prices, minimum order and GSM</b><span>Rough ranges per bag type are enough, for example ₹ per kg or per piece by size.</span></div></li>
+      <li><div><b>Update IndiaMART and JustDial</b><span>Add the address and website on IndiaMART; merge the two JustDial listings into one.</span></div></li>
+      <li><div><b>Give us access to Google Search Console and Vercel</b><span>So we can send Google the page list and change one redirect setting.</span></div></li>
+      <li><div><b>Small clean-ups</b><span>Remove the public /do page; drop the word "biodegradable"; keep the ISO badge only with a certificate; fix the LinkedIn link.</span></div></li>
+    </ul>
+  </section>
+
+  <!-- APPENDIX -->
+  <section id="appendix">
+    <details class="appendix">
+      <summary>Technical details (for the web developer)</summary>
+      <div class="inner">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Measurement</th><th class="c">Before (live)</th><th class="c">After (new build)</th></tr></thead>
+            <tbody>
+              <tr><td>Pages / reachable by links / orphans</td><td class="c">22 / 4 / 18</td><td class="c">27 / 27 / 0</td></tr>
+              <tr><td>Correct canonical tags</td><td class="c">0</td><td class="c">27</td></tr>
+              <tr><td>Unique titles / titles with "Raipur"</td><td class="c">19 / 0</td><td class="c">27 / 23</td></tr>
+              <tr><td>Pages with exactly one H1</td><td class="c">18</td><td class="c">27</td></tr>
+              <tr><td>LocalBusiness / BreadcrumbList / FAQPage / BlogPosting</td><td class="c">0 / 0 / 0 / 0</td><td class="c">27 / 23 / 5 / 3</td></tr>
+              <tr><td>Words of content / internal links per page</td><td class="c">7,426 / 10.4</td><td class="c">10,834 / 12.0</td></tr>
+              <tr><td>Non-existent URL returns</td><td class="c">200 (soft 404)</td><td class="c">404</td></tr>
+              <tr><td>vercel.app alias / /blogs/1</td><td class="c">200 duplicate / numeric URLs</td><td class="c">308 to www / 308 to readable slugs</td></tr>
+              <tr><td>Lighthouse mobile: home / products / product / about / blog</td><td class="c">67 / 95 / 95 / 93 / 93</td><td class="c">78 / 97 / 95 / 94 / 94</td></tr>
+              <tr><td>Home mobile: LCP / page weight / CLS</td><td class="c">9.9 s / 9.9 MB / 0.155</td><td class="c">4.5 s / 5.1 MB / 0.138 (still to fix)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="foot">How we checked: our own crawler reading raw HTML without JavaScript and following only real links; logged-out Google (India) and Bing (India) searches with screenshots on 9 Oct 2026; Google Maps; directory and competitor research; Lighthouse 12.8 (simulated slow 4G phone) on old and new builds on the same machine. The 60 GSM rule is from the Plastic Waste Management (Second Amendment) Rules 2021, Gazette G.S.R. 571(E), Rule 4(1)(j). Product structured data is left out until prices are published, because Google reports products without prices as errors. No access yet to Search Console, Analytics or the Business Profile, so there's no traffic history.</p>
+        <p class="foot">Files in the website project: <code>seo/data/serp-checks-2026-10-09.md</code> (every search), <code>seo/research-visibility.md</code> and <code>seo/research-competitors-keywords.md</code> (sources), <code>seo/ai-answer-tracking.md</code> (monthly AI questions), <code>seo/data/</code> (crawl and Lighthouse data), <code>seo/evidence/</code> (all screenshots), <code>seo/tools/</code> (scripts to repeat the audit).</p>
+      </div>
+    </details>
+  </section>
+
+</div>

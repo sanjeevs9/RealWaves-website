@@ -1,0 +1,795 @@
+{
+ "base": "https://www.realwavespacks.com",
+ "robots_txt": "User-Agent: *\nAllow: /\nDisallow: /do\nDisallow: /api/\n\nSitemap: https://real-waves-website.vercel.app/sitemap.xml\n",
+ "sitemap_status": 200,
+ "sitemap_urls": [
+  "https://real-waves-website.vercel.app",
+  "https://real-waves-website.vercel.app/products",
+  "https://real-waves-website.vercel.app/blogs",
+  "https://real-waves-website.vercel.app/about",
+  "https://real-waves-website.vercel.app/products/laxmi-d-cut",
+  "https://real-waves-website.vercel.app/products/maosaji-u-cut-bag",
+  "https://real-waves-website.vercel.app/products/shringaar-loop-handle",
+  "https://real-waves-website.vercel.app/products/kajri-loop-handle",
+  "https://real-waves-website.vercel.app/products/bb-box-bag",
+  "https://real-waves-website.vercel.app/products/madhu-textorium-bopp-box-bag",
+  "https://real-waves-website.vercel.app/products/puncher-bopp-box-bag",
+  "https://real-waves-website.vercel.app/products/bonzelo-box-bag",
+  "https://real-waves-website.vercel.app/products/saheb-loop-handle",
+  "https://real-waves-website.vercel.app/products/bombaywala-u-cut-bag",
+  "https://real-waves-website.vercel.app/products/bajaj-box-bag",
+  "https://real-waves-website.vercel.app/products/non-woven-box-bag",
+  "https://real-waves-website.vercel.app/products/shail-d-cut-bag",
+  "https://real-waves-website.vercel.app/products/fusion-d-cut-bag",
+  "https://real-waves-website.vercel.app/products/shree-shyam-d-cut-bag",
+  "https://real-waves-website.vercel.app/blogs/1",
+  "https://real-waves-website.vercel.app/blogs/2",
+  "https://real-waves-website.vercel.app/blogs/3"
+ ],
+ "sitemap_hosts": [
+  "https://real-waves-website.vercel.app"
+ ],
+ "pages": {
+  "/": {
+   "path": "/",
+   "status": 200,
+   "title": "RealWaves - Premium Non-Woven Bag Manufacturer",
+   "description": "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India. D-Cut, Loop Handle, U-Cut, Box Bags & BOPP laminated bags for businesses.",
+   "canonical": "https://real-waves-website.vercel.app",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/logo.png",
+   "h1": [
+    "Premium Non-Woven Bag Manufacturer"
+   ],
+   "words": 1545,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 28,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/about": {
+   "path": "/about",
+   "status": 200,
+   "title": "RealWaves - Premium Non-Woven Bag Manufacturer",
+   "description": "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India. D-Cut, Loop Handle, U-Cut, Box Bags & BOPP laminated bags for businesses.",
+   "canonical": "https://real-waves-website.vercel.app",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/logo.png",
+   "h1": [
+    "Crafting Sustainable Packaging Since 2017"
+   ],
+   "words": 297,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 5,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/blogs": {
+   "path": "/blogs",
+   "status": 200,
+   "title": "RealWaves - Premium Non-Woven Bag Manufacturer",
+   "description": "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India. D-Cut, Loop Handle, U-Cut, Box Bags & BOPP laminated bags for businesses.",
+   "canonical": "https://real-waves-website.vercel.app",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/logo.png",
+   "h1": [
+    "Insights & Resources"
+   ],
+   "words": 257,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 8,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products": {
+   "path": "/products",
+   "status": 200,
+   "title": "RealWaves - Premium Non-Woven Bag Manufacturer",
+   "description": "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India. D-Cut, Loop Handle, U-Cut, Box Bags & BOPP laminated bags for businesses.",
+   "canonical": "https://real-waves-website.vercel.app",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/logo.png",
+   "h1": [],
+   "words": 121,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 5,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/laxmi-d-cut": {
+   "path": "/products/laxmi-d-cut",
+   "status": 200,
+   "title": "Laxmi D-cut - D-Cut Non-Woven Bag | RealWaves",
+   "description": "Premium D-cut non-woven bags with clean die-cut handles. Ideal for retail shops, grocery stores, and promotional giveaways. Lightweight yet durable. Size: 14\" \u00d7 19\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/laxmi-d-cut",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/D-cut4.b5e0eba3.png",
+   "h1": [
+    "Laxmi D-cut"
+   ],
+   "words": 211,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 13,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/maosaji-u-cut-bag": {
+   "path": "/products/maosaji-u-cut-bag",
+   "status": 200,
+   "title": "Maosaji U-cut bag - U-Cut Non-Woven Bag | RealWaves",
+   "description": "U-cut non-woven bags featuring a simple, versatile design perfect for everyday retail use. Easy to carry with a comfortable handle cutout. Size: 14\" \u00d7 16\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/maosaji-u-cut-bag",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/u-cut2.6ec97dad.png",
+   "h1": [
+    "Maosaji U-cut bag"
+   ],
+   "words": 197,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 11,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/shringaar-loop-handle": {
+   "path": "/products/shringaar-loop-handle",
+   "status": 200,
+   "title": "Shringaar Loop Handle - Loop Handle Non-Woven Bag | RealWaves",
+   "description": "Sturdy loop handle non-woven bags built for heavier loads. The reinforced handles make them perfect for shopping, gifting, and brand promotion. Size: 15\" \u00d7 19\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/shringaar-loop-handle",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/LH4.671237aa.png",
+   "h1": [
+    "Shringaar Loop Handle"
+   ],
+   "words": 207,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 12,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/kajri-loop-handle": {
+   "path": "/products/kajri-loop-handle",
+   "status": 200,
+   "title": "Kajri Loop Handle - Loop Handle Non-Woven Bag | RealWaves",
+   "description": "Sturdy loop handle non-woven bags built for heavier loads. The reinforced handles make them perfect for shopping, gifting, and brand promotion. Size: 16\" \u00d7 19\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/kajri-loop-handle",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/LH6.e3a76e81.png",
+   "h1": [
+    "Kajri Loop Handle"
+   ],
+   "words": 207,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 12,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/bb-box-bag": {
+   "path": "/products/bb-box-bag",
+   "status": 200,
+   "title": "BB Box bag - Box Bag Non-Woven Bag | RealWaves",
+   "description": "Structured box-shaped non-woven bags that stand upright. Great for packaging, food delivery, and premium retail presentation. Size: 11\" \u00d7 8\" \u00d7 8\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/bb-box-bag",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/Box4.5aa3a27c.png",
+   "h1": [
+    "BB Box bag"
+   ],
+   "words": 233,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=boxbag",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 14,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/madhu-textorium-bopp-box-bag": {
+   "path": "/products/madhu-textorium-bopp-box-bag",
+   "status": 200,
+   "title": "Madhu Textorium Bopp box bag - Bopp Box Bag Non-Woven Bag | RealWaves",
+   "description": "BOPP laminated box bags with a glossy, high-quality print finish. The lamination adds water resistance and a premium look. Size: 13\" \u00d7 12\" \u00d7 4\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/madhu-textorium-bopp-box-bag",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/boppbox1.29070726.png",
+   "h1": [
+    "Madhu Textorium Bopp box bag"
+   ],
+   "words": 240,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 14,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/puncher-bopp-box-bag": {
+   "path": "/products/puncher-bopp-box-bag",
+   "status": 200,
+   "title": "Puncher Bopp box bag - Bopp Box Bag Non-Woven Bag | RealWaves",
+   "description": "BOPP laminated box bags with a glossy, high-quality print finish. The lamination adds water resistance and a premium look. Size: 12\" \u00d7 13\" \u00d7 4\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/puncher-bopp-box-bag",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/boppbox2.dc6be112.png",
+   "h1": [
+    "Puncher Bopp box bag"
+   ],
+   "words": 239,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 14,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/bonzelo-box-bag": {
+   "path": "/products/bonzelo-box-bag",
+   "status": 200,
+   "title": "Bonzelo Box bag - Box Bag Non-Woven Bag | RealWaves",
+   "description": "Structured box-shaped non-woven bags that stand upright. Great for packaging, food delivery, and premium retail presentation. Size: 13\" \u00d7 8\" \u00d7 8\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/bonzelo-box-bag",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/Box5.632d4191.png",
+   "h1": [
+    "Bonzelo Box bag"
+   ],
+   "words": 233,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=boxbag",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 14,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/saheb-loop-handle": {
+   "path": "/products/saheb-loop-handle",
+   "status": 200,
+   "title": "Saheb Loop Handle - Loop Handle Non-Woven Bag | RealWaves",
+   "description": "Sturdy loop handle non-woven bags built for heavier loads. The reinforced handles make them perfect for shopping, gifting, and brand promotion. Size: 18\" \u00d7 16\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/saheb-loop-handle",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/LH7.70f3ef32.png",
+   "h1": [
+    "Saheb Loop Handle"
+   ],
+   "words": 207,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 12,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/bombaywala-u-cut-bag": {
+   "path": "/products/bombaywala-u-cut-bag",
+   "status": 200,
+   "title": "Bombaywala U-cut bag - U-Cut Non-Woven Bag | RealWaves",
+   "description": "U-cut non-woven bags featuring a simple, versatile design perfect for everyday retail use. Easy to carry with a comfortable handle cutout. Size: 11\" \u00d7 14\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/bombaywala-u-cut-bag",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/u-cut1.e6801cd5.png",
+   "h1": [
+    "Bombaywala U-cut bag"
+   ],
+   "words": 197,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 11,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/bajaj-box-bag": {
+   "path": "/products/bajaj-box-bag",
+   "status": 200,
+   "title": "Bajaj box bag - Bopp Box Bag Non-Woven Bag | RealWaves",
+   "description": "BOPP laminated box bags with a glossy, high-quality print finish. The lamination adds water resistance and a premium look. Size: 14\" \u00d7 13\" \u00d7 4\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/bajaj-box-bag",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/boppbox.5e3fd62f.png",
+   "h1": [
+    "Bajaj box bag"
+   ],
+   "words": 238,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 14,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/non-woven-box-bag": {
+   "path": "/products/non-woven-box-bag",
+   "status": 200,
+   "title": "Non woven box bag - Non Woven Box Bag Non-Woven Bag | RealWaves",
+   "description": "Classic non-woven box bags combining durability with eco-friendliness. A sustainable alternative to plastic packaging. Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/non-woven-box-bag",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/Box3.cbfcb7c4.png",
+   "h1": [
+    "Non woven box bag"
+   ],
+   "words": 178,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 10,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/shail-d-cut-bag": {
+   "path": "/products/shail-d-cut-bag",
+   "status": 200,
+   "title": "SHAIL D-cut bag - D-Cut Non-Woven Bag | RealWaves",
+   "description": "Premium D-cut non-woven bags with clean die-cut handles. Ideal for retail shops, grocery stores, and promotional giveaways. Lightweight yet durable. Size: 14\" \u00d7 19\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/shail-d-cut-bag",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/D-cut5.e327110e.png",
+   "h1": [
+    "SHAIL D-cut bag"
+   ],
+   "words": 212,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 13,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/fusion-d-cut-bag": {
+   "path": "/products/fusion-d-cut-bag",
+   "status": 200,
+   "title": "Fusion D-cut bag - D-Cut Non-Woven Bag | RealWaves",
+   "description": "Premium D-cut non-woven bags with clean die-cut handles. Ideal for retail shops, grocery stores, and promotional giveaways. Lightweight yet durable. Size: 12\" \u00d7 16\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/fusion-d-cut-bag",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/D-cut6.9fd09960.png",
+   "h1": [
+    "Fusion D-cut bag"
+   ],
+   "words": 212,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 13,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/products/shree-shyam-d-cut-bag": {
+   "path": "/products/shree-shyam-d-cut-bag",
+   "status": 200,
+   "title": "Shree Shyam D-cut bag - D-Cut Non-Woven Bag | RealWaves",
+   "description": "Premium D-cut non-woven bags with clean die-cut handles. Ideal for retail shops, grocery stores, and promotional giveaways. Lightweight yet durable. Size: 14\" \u00d7 19\". Custom branding available. Order from RealWaves.",
+   "canonical": "https://real-waves-website.vercel.app/products/shree-shyam-d-cut-bag",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/_next/static/media/D-cut7.eea5132e.png",
+   "h1": [
+    "Shree Shyam D-cut bag"
+   ],
+   "words": 213,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 13,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/blogs/1": {
+   "path": "/blogs/1",
+   "status": 200,
+   "title": "How Customize Carry Bags Help You to Promote Your Business Effectively | RealWaves",
+   "description": "Your business could have the best products and services possible and be positioned at the perfect location, but if you're not effectively connecting your b...",
+   "canonical": "https://real-waves-website.vercel.app/blogs/1",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/a310f323ee3331152834763071548ae7378fa3c5.jpg",
+   "h1": [
+    "",
+    "How Customize Carry Bags Help You to Promote Your Business Effectively"
+   ],
+   "words": 870,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/blogs/2",
+    "https://www.realwavespacks.com/blogs/3",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 8,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/blogs/2": {
+   "path": "/blogs/2",
+   "status": 200,
+   "title": "Sustainable Packaging: The Future of Eco-Friendly Business Solutions | RealWaves",
+   "description": "In today's environmentally conscious world, businesses are increasingly recognizing the importance of sustainable packaging solutions. As consumers become ...",
+   "canonical": "https://real-waves-website.vercel.app/blogs/2",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/WhyChooseus/ecological-bag-grass.jpg",
+   "h1": [
+    "",
+    "Sustainable Packaging: The Future of Eco-Friendly Business Solutions"
+   ],
+   "words": 576,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/blogs/1",
+    "https://www.realwavespacks.com/blogs/3",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 8,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  },
+  "/blogs/3": {
+   "path": "/blogs/3",
+   "status": 200,
+   "title": "Custom Branding Solutions: Making Your Business Stand Out | RealWaves",
+   "description": "In today's competitive market, standing out from the crowd is more important than ever. Custom branding solutions offer businesses a unique opportunity to ...",
+   "canonical": "https://real-waves-website.vercel.app/blogs/3",
+   "robots": null,
+   "og_url": null,
+   "og_image": "https://real-waves-website.vercel.app/WhyChooseus/woman-holding-gift-bag-desk.jpg",
+   "h1": [
+    "",
+    "Custom Branding Solutions: Making Your Business Stand Out"
+   ],
+   "words": 536,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/blogs/1",
+    "https://www.realwavespacks.com/blogs/2",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products?category=boppboxbag",
+    "https://www.realwavespacks.com/products?category=bopploophandle",
+    "https://www.realwavespacks.com/products?category=dcut",
+    "https://www.realwavespacks.com/products?category=loophandle",
+    "https://www.realwavespacks.com/products?category=nonwovenboxbag",
+    "https://www.realwavespacks.com/products?category=ucut"
+   ],
+   "schema": [
+    "Organization",
+    "WebSite"
+   ],
+   "images": 8,
+   "images_no_alt": 0,
+   "mentions_vercel_app": true
+  }
+ },
+ "reachable_by_links": [
+  "/",
+  "/about",
+  "/blogs",
+  "/products"
+ ],
+ "in_sitemap_not_linked": [
+  "/blogs/1",
+  "/blogs/2",
+  "/blogs/3",
+  "/products/bajaj-box-bag",
+  "/products/bb-box-bag",
+  "/products/bombaywala-u-cut-bag",
+  "/products/bonzelo-box-bag",
+  "/products/fusion-d-cut-bag",
+  "/products/kajri-loop-handle",
+  "/products/laxmi-d-cut",
+  "/products/madhu-textorium-bopp-box-bag",
+  "/products/maosaji-u-cut-bag",
+  "/products/non-woven-box-bag",
+  "/products/puncher-bopp-box-bag",
+  "/products/saheb-loop-handle",
+  "/products/shail-d-cut-bag",
+  "/products/shree-shyam-d-cut-bag",
+  "/products/shringaar-loop-handle"
+ ]
+}

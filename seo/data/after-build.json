@@ -1,0 +1,1051 @@
+{
+ "base": "http://localhost:3123",
+ "robots_txt": "User-Agent: *\nAllow: /\nDisallow: /do\nDisallow: /api/\n\nHost: https://www.realwavespacks.com\nSitemap: https://www.realwavespacks.com/sitemap.xml\n",
+ "sitemap_status": 200,
+ "sitemap_urls": [
+  "https://www.realwavespacks.com",
+  "https://www.realwavespacks.com/products",
+  "https://www.realwavespacks.com/blogs",
+  "https://www.realwavespacks.com/about",
+  "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+  "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+  "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+  "https://www.realwavespacks.com/non-woven-bags/box-bags",
+  "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+  "https://www.realwavespacks.com/products/laxmi-d-cut",
+  "https://www.realwavespacks.com/products/maosaji-u-cut-bag",
+  "https://www.realwavespacks.com/products/shringaar-loop-handle",
+  "https://www.realwavespacks.com/products/kajri-loop-handle",
+  "https://www.realwavespacks.com/products/bb-box-bag",
+  "https://www.realwavespacks.com/products/madhu-textorium-bopp-box-bag",
+  "https://www.realwavespacks.com/products/puncher-bopp-box-bag",
+  "https://www.realwavespacks.com/products/bonzelo-box-bag",
+  "https://www.realwavespacks.com/products/saheb-loop-handle",
+  "https://www.realwavespacks.com/products/bombaywala-u-cut-bag",
+  "https://www.realwavespacks.com/products/bajaj-box-bag",
+  "https://www.realwavespacks.com/products/non-woven-box-bag",
+  "https://www.realwavespacks.com/products/shail-d-cut-bag",
+  "https://www.realwavespacks.com/products/fusion-d-cut-bag",
+  "https://www.realwavespacks.com/products/shree-shyam-d-cut-bag",
+  "https://www.realwavespacks.com/blogs/custom-carry-bags-promote-your-business",
+  "https://www.realwavespacks.com/blogs/sustainable-eco-friendly-packaging-for-business",
+  "https://www.realwavespacks.com/blogs/custom-branded-bags-make-your-business-stand-out"
+ ],
+ "sitemap_hosts": [
+  "https://www.realwavespacks.com"
+ ],
+ "pages": {
+  "/": {
+   "path": "/",
+   "status": 200,
+   "title": "Non-Woven Bag Manufacturer in Raipur | RealWaves Packs",
+   "description": "RealWaves Packs makes custom printed non-woven bags in Raipur, Chhattisgarh: D-Cut, U-Cut, Loop Handle, Box and BOPP bags, supplied wholesale across India.",
+   "canonical": "https://www.realwavespacks.com",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com",
+   "og_image": "https://www.realwavespacks.com/logo.png",
+   "h1": [
+    "Non-Woven Bag Manufacturer in Raipur"
+   ],
+   "words": 1547,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite"
+   ],
+   "images": 28,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/about": {
+   "path": "/about",
+   "status": 200,
+   "title": "About Us \u2013 Bag Manufacturer in Raipur Since 2017 | RealWaves Packs",
+   "description": "RealWaves Packs has made custom printed non-woven bags in Saddu, Raipur since 2017: 2000+ clients, 2 lakh+ bags a day, supplied to 100+ cities.",
+   "canonical": "https://www.realwavespacks.com/about",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/about",
+   "og_image": "https://www.realwavespacks.com/logo.png",
+   "h1": [
+    "Crafting Sustainable Packaging Since 2017"
+   ],
+   "words": 306,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite"
+   ],
+   "images": 5,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/blogs": {
+   "path": "/blogs",
+   "status": 200,
+   "title": "Packaging Blog \u2013 Non-Woven Bag Guides & Tips | RealWaves Packs",
+   "description": "Guides on non-woven carry bags, custom printing, GSM and plastic-free packaging from RealWaves Packs, a bag manufacturer in Raipur, Chhattisgarh.",
+   "canonical": "https://www.realwavespacks.com/blogs",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/blogs",
+   "og_image": "https://www.realwavespacks.com/logo.png",
+   "h1": [
+    "Insights & Resources"
+   ],
+   "words": 267,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/blogs/custom-branded-bags-make-your-business-stand-out",
+    "https://www.realwavespacks.com/blogs/custom-carry-bags-promote-your-business",
+    "https://www.realwavespacks.com/blogs/sustainable-eco-friendly-packaging-for-business",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite"
+   ],
+   "images": 8,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/non-woven-bags/bopp-laminated-bags": {
+   "path": "/non-woven-bags/bopp-laminated-bags",
+   "status": 200,
+   "title": "BOPP Laminated Non-Woven Bags Manufacturer in Raipur | RealWaves Packs",
+   "description": "BOPP laminated non-woven bags with glossy full-colour printing and a water-resistant finish. Made in Raipur, Chhattisgarh by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/boppbox.5e3fd62f.png",
+   "h1": [
+    "BOPP Laminated Non-Woven Bags Manufacturer in Raipur"
+   ],
+   "words": 566,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/bajaj-box-bag",
+    "https://www.realwavespacks.com/products/madhu-textorium-bopp-box-bag",
+    "https://www.realwavespacks.com/products/puncher-bopp-box-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList",
+    "FAQPage",
+    "WebPage"
+   ],
+   "images": 9,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/non-woven-bags/box-bags": {
+   "path": "/non-woven-bags/box-bags",
+   "status": 200,
+   "title": "Non-Woven Box Bags Manufacturer in Raipur | RealWaves Packs",
+   "description": "Non-woven box bags with side and bottom gussets that stand upright. Custom printed in Raipur, Chhattisgarh by RealWaves Packs. Bulk orders across India.",
+   "canonical": "https://www.realwavespacks.com/non-woven-bags/box-bags",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/non-woven-bags/box-bags",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/Box3.cbfcb7c4.png",
+   "h1": [
+    "Non-Woven Box Bags Manufacturer in Raipur"
+   ],
+   "words": 592,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/bajaj-box-bag",
+    "https://www.realwavespacks.com/products/bb-box-bag",
+    "https://www.realwavespacks.com/products/bonzelo-box-bag",
+    "https://www.realwavespacks.com/products/madhu-textorium-bopp-box-bag",
+    "https://www.realwavespacks.com/products/non-woven-box-bag",
+    "https://www.realwavespacks.com/products/puncher-bopp-box-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList",
+    "FAQPage",
+    "WebPage"
+   ],
+   "images": 12,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/non-woven-bags/d-cut-bags": {
+   "path": "/non-woven-bags/d-cut-bags",
+   "status": 200,
+   "title": "D-Cut Non-Woven Bags Manufacturer in Raipur | RealWaves Packs",
+   "description": "Custom printed non-woven D-cut bags made in Raipur, Chhattisgarh by RealWaves Packs. For shops, pharmacies and events. Bulk orders across India.",
+   "canonical": "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/D-cut4.b5e0eba3.png",
+   "h1": [
+    "Non-Woven D-Cut Bags Manufacturer in Raipur"
+   ],
+   "words": 591,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/fusion-d-cut-bag",
+    "https://www.realwavespacks.com/products/laxmi-d-cut",
+    "https://www.realwavespacks.com/products/shail-d-cut-bag",
+    "https://www.realwavespacks.com/products/shree-shyam-d-cut-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList",
+    "FAQPage",
+    "WebPage"
+   ],
+   "images": 10,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/non-woven-bags/loop-handle-bags": {
+   "path": "/non-woven-bags/loop-handle-bags",
+   "status": 200,
+   "title": "Loop Handle Non-Woven Bags Manufacturer in Raipur | RealWaves Packs",
+   "description": "Strong non-woven loop handle bags with custom printing, made in Raipur, Chhattisgarh by RealWaves Packs. For garments, gifting and heavier loads.",
+   "canonical": "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/LH4.671237aa.png",
+   "h1": [
+    "Non-Woven Loop Handle Bags Manufacturer in Raipur"
+   ],
+   "words": 563,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/kajri-loop-handle",
+    "https://www.realwavespacks.com/products/saheb-loop-handle",
+    "https://www.realwavespacks.com/products/shringaar-loop-handle"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList",
+    "FAQPage",
+    "WebPage"
+   ],
+   "images": 9,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/non-woven-bags/u-cut-bags": {
+   "path": "/non-woven-bags/u-cut-bags",
+   "status": 200,
+   "title": "U-Cut Non-Woven Bags Manufacturer in Raipur | RealWaves Packs",
+   "description": "Non-woven U-cut carry bags with custom printing, made in Raipur, Chhattisgarh by RealWaves Packs. For grocery, retail and daily use. Bulk orders.",
+   "canonical": "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/u-cut1.e6801cd5.png",
+   "h1": [
+    "Non-Woven U-Cut Bags Manufacturer in Raipur"
+   ],
+   "words": 544,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/bombaywala-u-cut-bag",
+    "https://www.realwavespacks.com/products/maosaji-u-cut-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList",
+    "FAQPage",
+    "WebPage"
+   ],
+   "images": 8,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products": {
+   "path": "/products",
+   "status": 200,
+   "title": "Non-Woven D-Cut, U-Cut & Box Bags in Raipur | RealWaves Packs",
+   "description": "Non-woven D-Cut, U-Cut, Loop Handle, Box and BOPP bags in standard sizes with custom printing. Made in Raipur, Chhattisgarh by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products",
+   "og_image": "https://www.realwavespacks.com/logo.png",
+   "h1": [
+    "Non-Woven Bag Catalogue"
+   ],
+   "words": 321,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/bajaj-box-bag",
+    "https://www.realwavespacks.com/products/bb-box-bag",
+    "https://www.realwavespacks.com/products/bombaywala-u-cut-bag",
+    "https://www.realwavespacks.com/products/bonzelo-box-bag",
+    "https://www.realwavespacks.com/products/fusion-d-cut-bag",
+    "https://www.realwavespacks.com/products/kajri-loop-handle",
+    "https://www.realwavespacks.com/products/laxmi-d-cut",
+    "https://www.realwavespacks.com/products/madhu-textorium-bopp-box-bag",
+    "https://www.realwavespacks.com/products/maosaji-u-cut-bag",
+    "https://www.realwavespacks.com/products/non-woven-box-bag",
+    "https://www.realwavespacks.com/products/puncher-bopp-box-bag",
+    "https://www.realwavespacks.com/products/saheb-loop-handle",
+    "https://www.realwavespacks.com/products/shail-d-cut-bag",
+    "https://www.realwavespacks.com/products/shree-shyam-d-cut-bag",
+    "https://www.realwavespacks.com/products/shringaar-loop-handle"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite"
+   ],
+   "images": 20,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/blogs/custom-branded-bags-make-your-business-stand-out": {
+   "path": "/blogs/custom-branded-bags-make-your-business-stand-out",
+   "status": 200,
+   "title": "Custom Branding Solutions: Making Your Business Stand Out | RealWaves Packs",
+   "description": "In today's competitive market, standing out from the crowd is more important than ever. Custom branding solutions offer businesses a unique opportunity to ...",
+   "canonical": "https://www.realwavespacks.com/blogs/custom-branded-bags-make-your-business-stand-out",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/blogs/custom-branded-bags-make-your-business-stand-out",
+   "og_image": "https://www.realwavespacks.com/WhyChooseus/woman-holding-gift-bag-desk.jpg",
+   "h1": [
+    "Custom Branding Solutions: Making Your Business Stand Out"
+   ],
+   "words": 547,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/blogs/custom-carry-bags-promote-your-business",
+    "https://www.realwavespacks.com/blogs/sustainable-eco-friendly-packaging-for-business",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList",
+    "BlogPosting"
+   ],
+   "images": 8,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/blogs/custom-carry-bags-promote-your-business": {
+   "path": "/blogs/custom-carry-bags-promote-your-business",
+   "status": 200,
+   "title": "How Customize Carry Bags Help You to Promote Your Business Effectively | RealWaves Packs",
+   "description": "Your business could have the best products and services possible and be positioned at the perfect location, but if you're not effectively connecting your b...",
+   "canonical": "https://www.realwavespacks.com/blogs/custom-carry-bags-promote-your-business",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/blogs/custom-carry-bags-promote-your-business",
+   "og_image": "https://www.realwavespacks.com/a310f323ee3331152834763071548ae7378fa3c5.jpg",
+   "h1": [
+    "How Customize Carry Bags Help You to Promote Your Business Effectively"
+   ],
+   "words": 881,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/blogs/custom-branded-bags-make-your-business-stand-out",
+    "https://www.realwavespacks.com/blogs/sustainable-eco-friendly-packaging-for-business",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList",
+    "BlogPosting"
+   ],
+   "images": 8,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/blogs/sustainable-eco-friendly-packaging-for-business": {
+   "path": "/blogs/sustainable-eco-friendly-packaging-for-business",
+   "status": 200,
+   "title": "Sustainable Packaging: The Future of Eco-Friendly Business Solutions | RealWaves Packs",
+   "description": "In today's environmentally conscious world, businesses are increasingly recognizing the importance of sustainable packaging solutions. As consumers become ...",
+   "canonical": "https://www.realwavespacks.com/blogs/sustainable-eco-friendly-packaging-for-business",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/blogs/sustainable-eco-friendly-packaging-for-business",
+   "og_image": "https://www.realwavespacks.com/WhyChooseus/ecological-bag-grass.jpg",
+   "h1": [
+    "Sustainable Packaging: The Future of Eco-Friendly Business Solutions"
+   ],
+   "words": 587,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/blogs/custom-branded-bags-make-your-business-stand-out",
+    "https://www.realwavespacks.com/blogs/custom-carry-bags-promote-your-business",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList",
+    "BlogPosting"
+   ],
+   "images": 8,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/bajaj-box-bag": {
+   "path": "/products/bajaj-box-bag",
+   "status": 200,
+   "title": "Bajaj box bag \u2013 Non-Woven BOPP Laminated Bag, Raipur | RealWaves Packs",
+   "description": "BOPP laminated box bags with a glossy, high-quality print finish. The lamination adds water resistance and a premium look. Size: 14\" \u00d7 13\" \u00d7 4\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/bajaj-box-bag",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/bajaj-box-bag",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/boppbox.5e3fd62f.png",
+   "h1": [
+    "Bajaj box bag"
+   ],
+   "words": 258,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/bb-box-bag",
+    "https://www.realwavespacks.com/products/bonzelo-box-bag",
+    "https://www.realwavespacks.com/products/madhu-textorium-bopp-box-bag",
+    "https://www.realwavespacks.com/products/puncher-bopp-box-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 14,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/madhu-textorium-bopp-box-bag": {
+   "path": "/products/madhu-textorium-bopp-box-bag",
+   "status": 200,
+   "title": "Madhu Textorium Bopp box bag \u2013 Non-Woven BOPP Laminated Bag, Raipur | RealWaves Packs",
+   "description": "BOPP laminated box bags with a glossy, high-quality print finish. The lamination adds water resistance and a premium look. Size: 13\" \u00d7 12\" \u00d7 4\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/madhu-textorium-bopp-box-bag",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/madhu-textorium-bopp-box-bag",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/boppbox1.29070726.png",
+   "h1": [
+    "Madhu Textorium Bopp box bag"
+   ],
+   "words": 260,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/bajaj-box-bag",
+    "https://www.realwavespacks.com/products/bb-box-bag",
+    "https://www.realwavespacks.com/products/bonzelo-box-bag",
+    "https://www.realwavespacks.com/products/puncher-bopp-box-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 14,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/puncher-bopp-box-bag": {
+   "path": "/products/puncher-bopp-box-bag",
+   "status": 200,
+   "title": "Puncher Bopp box bag \u2013 Non-Woven BOPP Laminated Bag, Raipur | RealWaves Packs",
+   "description": "BOPP laminated box bags with a glossy, high-quality print finish. The lamination adds water resistance and a premium look. Size: 12\" \u00d7 13\" \u00d7 4\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/puncher-bopp-box-bag",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/puncher-bopp-box-bag",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/boppbox2.dc6be112.png",
+   "h1": [
+    "Puncher Bopp box bag"
+   ],
+   "words": 259,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/bajaj-box-bag",
+    "https://www.realwavespacks.com/products/bb-box-bag",
+    "https://www.realwavespacks.com/products/bonzelo-box-bag",
+    "https://www.realwavespacks.com/products/madhu-textorium-bopp-box-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 14,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/bb-box-bag": {
+   "path": "/products/bb-box-bag",
+   "status": 200,
+   "title": "BB Box bag \u2013 Non-Woven Box Bag, Raipur | RealWaves Packs",
+   "description": "Structured box-shaped non-woven bags that stand upright. Great for packaging, food delivery, and premium retail presentation. Size: 11\" \u00d7 8\" \u00d7 8\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/bb-box-bag",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/bb-box-bag",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/Box4.5aa3a27c.png",
+   "h1": [
+    "BB Box bag"
+   ],
+   "words": 252,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/bajaj-box-bag",
+    "https://www.realwavespacks.com/products/bonzelo-box-bag",
+    "https://www.realwavespacks.com/products/madhu-textorium-bopp-box-bag",
+    "https://www.realwavespacks.com/products/puncher-bopp-box-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 14,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/bonzelo-box-bag": {
+   "path": "/products/bonzelo-box-bag",
+   "status": 200,
+   "title": "Bonzelo Box bag \u2013 Non-Woven Box Bag, Raipur | RealWaves Packs",
+   "description": "Structured box-shaped non-woven bags that stand upright. Great for packaging, food delivery, and premium retail presentation. Size: 13\" \u00d7 8\" \u00d7 8\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/bonzelo-box-bag",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/bonzelo-box-bag",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/Box5.632d4191.png",
+   "h1": [
+    "Bonzelo Box bag"
+   ],
+   "words": 252,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/bajaj-box-bag",
+    "https://www.realwavespacks.com/products/bb-box-bag",
+    "https://www.realwavespacks.com/products/madhu-textorium-bopp-box-bag",
+    "https://www.realwavespacks.com/products/puncher-bopp-box-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 14,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/non-woven-box-bag": {
+   "path": "/products/non-woven-box-bag",
+   "status": 200,
+   "title": "Non woven box bag \u2013 Non-Woven Box Bag, Raipur | RealWaves Packs",
+   "description": "Classic non-woven box bags combining durability with eco-friendliness. A sustainable alternative to plastic packaging. Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/non-woven-box-bag",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/non-woven-box-bag",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/Box3.cbfcb7c4.png",
+   "h1": [
+    "Non woven box bag"
+   ],
+   "words": 195,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 10,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/fusion-d-cut-bag": {
+   "path": "/products/fusion-d-cut-bag",
+   "status": 200,
+   "title": "Fusion D-cut bag \u2013 Non-Woven D-Cut Bag, Raipur | RealWaves Packs",
+   "description": "Premium D-cut non-woven bags with clean die-cut handles. Ideal for retail shops, grocery stores, and promotional giveaways. Lightweight yet durable. Size: 12\" \u00d7 16\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/fusion-d-cut-bag",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/fusion-d-cut-bag",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/D-cut6.9fd09960.png",
+   "h1": [
+    "Fusion D-cut bag"
+   ],
+   "words": 232,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/laxmi-d-cut",
+    "https://www.realwavespacks.com/products/shail-d-cut-bag",
+    "https://www.realwavespacks.com/products/shree-shyam-d-cut-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 13,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/laxmi-d-cut": {
+   "path": "/products/laxmi-d-cut",
+   "status": 200,
+   "title": "Laxmi D-cut \u2013 Non-Woven D-Cut Bag, Raipur | RealWaves Packs",
+   "description": "Premium D-cut non-woven bags with clean die-cut handles. Ideal for retail shops, grocery stores, and promotional giveaways. Lightweight yet durable. Size: 14\" \u00d7 19\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/laxmi-d-cut",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/laxmi-d-cut",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/D-cut4.b5e0eba3.png",
+   "h1": [
+    "Laxmi D-cut"
+   ],
+   "words": 231,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/fusion-d-cut-bag",
+    "https://www.realwavespacks.com/products/shail-d-cut-bag",
+    "https://www.realwavespacks.com/products/shree-shyam-d-cut-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 13,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/shail-d-cut-bag": {
+   "path": "/products/shail-d-cut-bag",
+   "status": 200,
+   "title": "SHAIL D-cut bag \u2013 Non-Woven D-Cut Bag, Raipur | RealWaves Packs",
+   "description": "Premium D-cut non-woven bags with clean die-cut handles. Ideal for retail shops, grocery stores, and promotional giveaways. Lightweight yet durable. Size: 14\" \u00d7 19\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/shail-d-cut-bag",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/shail-d-cut-bag",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/D-cut5.e327110e.png",
+   "h1": [
+    "SHAIL D-cut bag"
+   ],
+   "words": 232,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/fusion-d-cut-bag",
+    "https://www.realwavespacks.com/products/laxmi-d-cut",
+    "https://www.realwavespacks.com/products/shree-shyam-d-cut-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 13,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/shree-shyam-d-cut-bag": {
+   "path": "/products/shree-shyam-d-cut-bag",
+   "status": 200,
+   "title": "Shree Shyam D-cut bag \u2013 Non-Woven D-Cut Bag, Raipur | RealWaves Packs",
+   "description": "Premium D-cut non-woven bags with clean die-cut handles. Ideal for retail shops, grocery stores, and promotional giveaways. Lightweight yet durable. Size: 14\" \u00d7 19\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/shree-shyam-d-cut-bag",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/shree-shyam-d-cut-bag",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/D-cut7.eea5132e.png",
+   "h1": [
+    "Shree Shyam D-cut bag"
+   ],
+   "words": 233,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/fusion-d-cut-bag",
+    "https://www.realwavespacks.com/products/laxmi-d-cut",
+    "https://www.realwavespacks.com/products/shail-d-cut-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 13,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/kajri-loop-handle": {
+   "path": "/products/kajri-loop-handle",
+   "status": 200,
+   "title": "Kajri Loop Handle \u2013 Non-Woven Loop Handle Bag, Raipur | RealWaves Packs",
+   "description": "Sturdy loop handle non-woven bags built for heavier loads. The reinforced handles make them perfect for shopping, gifting, and brand promotion. Size: 16\" \u00d7 19\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/kajri-loop-handle",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/kajri-loop-handle",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/LH6.e3a76e81.png",
+   "h1": [
+    "Kajri Loop Handle"
+   ],
+   "words": 228,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/saheb-loop-handle",
+    "https://www.realwavespacks.com/products/shringaar-loop-handle"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 12,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/saheb-loop-handle": {
+   "path": "/products/saheb-loop-handle",
+   "status": 200,
+   "title": "Saheb Loop Handle \u2013 Non-Woven Loop Handle Bag, Raipur | RealWaves Packs",
+   "description": "Sturdy loop handle non-woven bags built for heavier loads. The reinforced handles make them perfect for shopping, gifting, and brand promotion. Size: 18\" \u00d7 16\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/saheb-loop-handle",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/saheb-loop-handle",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/LH7.70f3ef32.png",
+   "h1": [
+    "Saheb Loop Handle"
+   ],
+   "words": 228,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/kajri-loop-handle",
+    "https://www.realwavespacks.com/products/shringaar-loop-handle"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 12,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/shringaar-loop-handle": {
+   "path": "/products/shringaar-loop-handle",
+   "status": 200,
+   "title": "Shringaar Loop Handle \u2013 Non-Woven Loop Handle Bag, Raipur | RealWaves Packs",
+   "description": "Sturdy loop handle non-woven bags built for heavier loads. The reinforced handles make them perfect for shopping, gifting, and brand promotion. Size: 15\" \u00d7 19\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/shringaar-loop-handle",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/shringaar-loop-handle",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/LH4.671237aa.png",
+   "h1": [
+    "Shringaar Loop Handle"
+   ],
+   "words": 228,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/kajri-loop-handle",
+    "https://www.realwavespacks.com/products/saheb-loop-handle"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 12,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/bombaywala-u-cut-bag": {
+   "path": "/products/bombaywala-u-cut-bag",
+   "status": 200,
+   "title": "Bombaywala U-cut bag \u2013 Non-Woven U-Cut Bag, Raipur | RealWaves Packs",
+   "description": "U-cut non-woven bags featuring a simple, versatile design perfect for everyday retail use. Easy to carry with a comfortable handle cutout. Size: 11\" \u00d7 14\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/bombaywala-u-cut-bag",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/bombaywala-u-cut-bag",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/u-cut1.e6801cd5.png",
+   "h1": [
+    "Bombaywala U-cut bag"
+   ],
+   "words": 217,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/maosaji-u-cut-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 11,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  },
+  "/products/maosaji-u-cut-bag": {
+   "path": "/products/maosaji-u-cut-bag",
+   "status": 200,
+   "title": "Maosaji U-cut bag \u2013 Non-Woven U-Cut Bag, Raipur | RealWaves Packs",
+   "description": "U-cut non-woven bags featuring a simple, versatile design perfect for everyday retail use. Easy to carry with a comfortable handle cutout. Size: 14\" \u00d7 16\". Custom printing available. Made in Raipur by RealWaves Packs.",
+   "canonical": "https://www.realwavespacks.com/products/maosaji-u-cut-bag",
+   "robots": null,
+   "og_url": "https://www.realwavespacks.com/products/maosaji-u-cut-bag",
+   "og_image": "https://www.realwavespacks.com/_next/static/media/u-cut2.6ec97dad.png",
+   "h1": [
+    "Maosaji U-cut bag"
+   ],
+   "words": 217,
+   "internal_links": [
+    "https://www.realwavespacks.com/",
+    "https://www.realwavespacks.com/about",
+    "https://www.realwavespacks.com/blogs",
+    "https://www.realwavespacks.com/non-woven-bags/bopp-laminated-bags",
+    "https://www.realwavespacks.com/non-woven-bags/box-bags",
+    "https://www.realwavespacks.com/non-woven-bags/d-cut-bags",
+    "https://www.realwavespacks.com/non-woven-bags/loop-handle-bags",
+    "https://www.realwavespacks.com/non-woven-bags/u-cut-bags",
+    "https://www.realwavespacks.com/products",
+    "https://www.realwavespacks.com/products/bombaywala-u-cut-bag"
+   ],
+   "schema": [
+    "LocalBusiness",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "images": 11,
+   "images_no_alt": 0,
+   "mentions_vercel_app": false
+  }
+ },
+ "reachable_by_links": [
+  "/",
+  "/about",
+  "/blogs",
+  "/blogs/custom-branded-bags-make-your-business-stand-out",
+  "/blogs/custom-carry-bags-promote-your-business",
+  "/blogs/sustainable-eco-friendly-packaging-for-business",
+  "/non-woven-bags/bopp-laminated-bags",
+  "/non-woven-bags/box-bags",
+  "/non-woven-bags/d-cut-bags",
+  "/non-woven-bags/loop-handle-bags",
+  "/non-woven-bags/u-cut-bags",
+  "/products",
+  "/products/bajaj-box-bag",
+  "/products/bb-box-bag",
+  "/products/bombaywala-u-cut-bag",
+  "/products/bonzelo-box-bag",
+  "/products/fusion-d-cut-bag",
+  "/products/kajri-loop-handle",
+  "/products/laxmi-d-cut",
+  "/products/madhu-textorium-bopp-box-bag",
+  "/products/maosaji-u-cut-bag",
+  "/products/non-woven-box-bag",
+  "/products/puncher-bopp-box-bag",
+  "/products/saheb-loop-handle",
+  "/products/shail-d-cut-bag",
+  "/products/shree-shyam-d-cut-bag",
+  "/products/shringaar-loop-handle"
+ ],
+ "in_sitemap_not_linked": []
+}

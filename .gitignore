@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw Lighthouse JSON from seo audits (summary is committed in seo/data/lighthouse-summary.md)
+/seo/data/lighthouse/
