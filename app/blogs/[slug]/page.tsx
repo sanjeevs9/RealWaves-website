@@ -2,15 +2,22 @@ import { blogData } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { SITE_NAME, SITE_URL } from "../../site";
+import JsonLd, { breadcrumbs } from "../../components/JsonLd";
+
+// Unknown slugs return a real 404 instead of a 200 "not found" page (a soft 404).
+// Old numeric addresses (/blogs/1) redirect permanently in next.config.js.
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
-    return blogData.map((blog) => ({ id: blog.id }));
+    return blogData.map((blog) => ({ slug: blog.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
-    const { id } = await params;
-    const blog = blogData.find((b) => b.id === id);
-    if (!blog) return { title: "Blog Not Found" };
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const blog = blogData.find((b) => b.slug === slug);
+    if (!blog) return {};
 
     const description = blog.content.substring(0, 155).replace(/\n/g, " ") + "...";
     return {
@@ -22,30 +29,22 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
             type: "article",
             publishedTime: blog.date,
             authors: [blog.author],
+            url: `/blogs/${slug}`,
+            siteName: SITE_NAME,
+            locale: "en_IN",
             images: [{ url: blog.image, alt: blog.title }],
         },
         alternates: {
-            canonical: `/blogs/${id}`,
+            canonical: `/blogs/${slug}`,
         },
     };
 }
 
-export default async function BlogPage({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = await params;
-    const blog = blogData.find((blog) => blog.id === id);
+export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const blog = blogData.find((blog) => blog.slug === slug);
 
-    if (!blog) {
-        return (
-            <div className="bg-cream min-h-screen flex items-center justify-center">
-                <div className="text-center">
-                    <h1 className="font-display text-2xl font-bold text-charcoal mb-4">Blog Not Found</h1>
-                    <Link href="/blogs" className="text-[#0992C2] hover:underline text-sm">
-                        Back to Blogs
-                    </Link>
-                </div>
-            </div>
-        );
-    }
+    if (!blog) notFound();
 
     const sections = blog.content.split(/\n\s*\n/);
 
@@ -54,6 +53,25 @@ export default async function BlogPage({ params }: { params: Promise<{ id: strin
 
     return (
         <div className="bg-cream min-h-screen">
+            <JsonLd
+                data={breadcrumbs([
+                    { name: "Home", path: "/" },
+                    { name: "Blog", path: "/blogs" },
+                    { name: blog.title, path: `/blogs/${blog.slug}` },
+                ])}
+            />
+            <JsonLd
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "BlogPosting",
+                    headline: blog.title,
+                    datePublished: blog.date,
+                    image: `${SITE_URL}${blog.image}`,
+                    mainEntityOfPage: `${SITE_URL}/blogs/${blog.slug}`,
+                    author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+                    publisher: { "@id": `${SITE_URL}/#business` },
+                }}
+            />
             {/* Hero Image with overlay */}
             <div className="relative h-[50vh] sm:h-[55vh] lg:h-[60vh] overflow-hidden">
                 <Image
@@ -186,7 +204,7 @@ export default async function BlogPage({ params }: { params: Promise<{ id: strin
                             {related.map((item) => (
                                 <Link
                                     key={item.id}
-                                    href={`/blogs/${item.id}`}
+                                    href={`/blogs/${item.slug}`}
                                     className="group"
                                 >
                                     <div className="relative rounded-xl overflow-hidden aspect-[3/2] mb-3">

@@ -1,43 +1,47 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, useCallback, Suspense } from 'react';
 import Link from 'next/link';
 import { Products, categories, Category } from '../products';
 import { useSearchParams } from 'next/navigation';
 import ProductCard from '../components/ProductCard';
 import ContactModal from '../components/ContactModal';
+import { BagTypes } from '../bagTypes';
 
-function ProductContent() {
-  const [products, setProducts] = useState<typeof Products>(Products);
+// Applies ?category= after hydration. useSearchParams() makes everything up to
+// the nearest Suspense boundary client-only, so it lives in its own boundary and
+// the full catalogue (with crawlable product links) stays in the prerendered HTML.
+function CategoryFromUrl({ onCategory }: { onCategory: (category: string) => void }) {
+  const category = useSearchParams().get('category');
+
+  useEffect(() => {
+    if (category) {
+      onCategory(category);
+    }
+  }, [category, onCategory]);
+
+  return null;
+}
+
+export default function Product() {
   const [filters, setFilters] = useState({
     category: [] as string[],
   });
   const [categoriesOpen, setCategoriesOpen] = useState(true);
   const [showFilters, setShowFilters] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [inquiryProduct, setInquiryProduct] = useState<string | null>(null);
-  const searchParams = useSearchParams();
-  const category = searchParams.get('category');
 
   const uniqueCategories = Array.from(new Set(categories));
 
-  useEffect(() => {
-    setMounted(true);
-    if (category) {
-      setFilters({ category: [category] });
-    }
-  }, [category]);
+  const applyUrlCategory = useCallback((category: string) => {
+    setFilters({ category: [category] });
+  }, []);
 
-  useEffect(() => {
-    if (!mounted) return;
-    let filteredProducts = [...Products];
-    if (filters.category.length > 0) {
-      filteredProducts = filteredProducts.filter(product =>
+  const products = filters.category.length > 0
+    ? Products.filter(product =>
         filters.category.some(category => product.category.includes(category as Category))
-      );
-    }
-    setProducts(filteredProducts);
-  }, [filters, mounted]);
+      )
+    : Products;
 
   const toggleFilter = (type: 'category', value: string) => {
     setFilters(prev => {
@@ -58,7 +62,8 @@ function ProductContent() {
       'dcut': 'D-Cut',
       'loophandle': 'Loop Handle',
       'ucut': 'U-Cut',
-      'boppboxbag': 'Bopp Box Bag',
+      'boxbag': 'Box Bag',
+      'boppboxbag': 'BOPP Box Bag',
       'bopploophandle': 'Bopp Loop Handle',
       'nonwovenboxbag': 'Non Woven Box Bag',
     };
@@ -67,12 +72,11 @@ function ProductContent() {
 
   const hasActiveFilters = filters.category.length > 0;
 
-  if (!mounted) {
-    return <ProductLoading />;
-  }
-
   return (
     <div className="bg-cream min-h-screen">
+      <Suspense fallback={null}>
+        <CategoryFromUrl onCategory={applyUrlCategory} />
+      </Suspense>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         {/* Header */}
         <div className="mb-10">
@@ -82,11 +86,22 @@ function ProductContent() {
             <span className="text-charcoal font-medium">Products</span>
           </nav>
           <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal tracking-tight">
-            Product Catalogue
+            Non-Woven Bag Catalogue
           </h1>
           <p className="mt-2 text-sage text-sm sm:text-base">
-            Browse our complete range of non-woven bags
+            Custom printed non-woven bags made in Raipur, Chhattisgarh. Browse by type:
           </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {BagTypes.map((t) => (
+              <Link
+                key={t.slug}
+                href={`/non-woven-bags/${t.slug}`}
+                className="px-3.5 py-2 bg-white rounded-lg ring-1 ring-black/[0.06] text-xs sm:text-sm font-medium text-charcoal hover:text-[#0992C2] hover:ring-[#0992C2]/30 transition-colors"
+              >
+                {t.name}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Mobile filter toggle */}
@@ -233,46 +248,5 @@ function ProductContent() {
         defaultMessage={inquiryProduct ? `I'm interested in ${inquiryProduct}. Please share more details about pricing, MOQ, and customization options.` : undefined}
       />
     </div>
-  );
-}
-
-function ProductLoading() {
-  return (
-    <div className="bg-cream min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-        <div className="mb-10">
-          <div className="h-3 w-32 bg-linen rounded mb-4" />
-          <div className="h-8 w-64 bg-linen rounded mb-2" />
-          <div className="h-4 w-48 bg-linen rounded" />
-        </div>
-        <div className="flex flex-col md:flex-row gap-8 lg:gap-12">
-          <div className="w-full md:w-56 flex-shrink-0">
-            <div className="bg-white rounded-xl p-5 ring-1 ring-black/[0.04]">
-              <div className="h-5 w-24 bg-linen rounded mb-4" />
-              <div className="space-y-2">
-                {[...Array(6)].map((_, i) => (
-                  <div key={i} className="h-9 bg-linen rounded-lg" />
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="flex-1">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-              {[...Array(8)].map((_, i) => (
-                <div key={i} className="bg-white rounded-2xl h-72 sm:h-80 animate-pulse border border-gray-200 shadow-sm" />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default function Product() {
-  return (
-    <Suspense fallback={<ProductLoading />}>
-      <ProductContent />
-    </Suspense>
   );
 }

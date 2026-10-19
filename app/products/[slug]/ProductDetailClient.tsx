@@ -1,14 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Products, categoryNames, categoryDescriptions } from '../../products';
 import ContactModal from '../../components/ContactModal';
+import { bagTypeForCategory } from '../../bagTypes';
 
 export default function ProductDetailClient({ slug }: { slug: string }) {
-  const router = useRouter();
   const [selectedImage, setSelectedImage] = useState(0);
   const [isContactOpen, setIsContactOpen] = useState(false);
 
@@ -31,6 +30,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
   const galleryImages = [product.image, product.image, product.image, product.image];
   const categoryLabel = categoryNames[product.category[0]] || product.category[0];
   const categoryDesc = categoryDescriptions[product.category[0]] || '';
+  const bagType = bagTypeForCategory(product.category[0]);
 
   // Related products (same category, exclude current)
   const related = Products.filter(
@@ -58,10 +58,10 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
             <Link href="/products" className="hover:text-charcoal transition-colors">Products</Link>
             <span>&gt;</span>
             <Link
-              href={`/products?category=${product.category[0]}`}
+              href={bagType ? `/non-woven-bags/${bagType.slug}` : `/products?category=${product.category[0]}`}
               className="hover:text-charcoal transition-colors"
             >
-              {categoryLabel}
+              {bagType?.name ?? categoryLabel}
             </Link>
             <span>&gt;</span>
             <span className="text-charcoal font-medium truncate max-w-[180px] sm:max-w-none">{product.name}</span>
@@ -124,9 +124,17 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
               </h1>
 
               {/* Description */}
-              <p className="text-sage text-sm sm:text-base leading-relaxed mb-8">
+              <p className="text-sage text-sm sm:text-base leading-relaxed mb-3">
                 {categoryDesc}
               </p>
+              {bagType && (
+                <Link
+                  href={`/non-woven-bags/${bagType.slug}`}
+                  className="self-start text-sm font-medium text-[#0992C2] hover:underline mb-8"
+                >
+                  About our non-woven {bagType.name}: uses, sizes and FAQs →
+                </Link>
+              )}
 
               {/* Dimensions */}
               {product.dimensions && (
@@ -204,10 +212,10 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
             <h2 className="font-display text-xl sm:text-2xl font-bold text-charcoal mb-8">You may also like</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               {related.map((item) => (
-                <div
+                <Link
                   key={item.slug}
-                  onClick={() => router.push(`/products/${item.slug}`)}
-                  className="group cursor-pointer"
+                  href={`/products/${item.slug}`}
+                  className="block group cursor-pointer"
                 >
                   <div className="bg-[#EEF2F9] rounded-xl flex items-center justify-center p-6 aspect-square mb-3 group-hover:shadow-md transition-all duration-300">
                     <Image
@@ -227,7 +235,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                       {item.dimensions.Gusset ? ` × ${item.dimensions.Gusset}"` : ''}
                     </p>
                   )}
-                </div>
+                </Link>
               ))}
             </div>
           </div>

@@ -33,7 +33,7 @@ const MapSection: React.FC = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
 
   const storeLocation: StoreLocation = {
-    name: "Real Wave Store",
+    name: "RealWaves Packs – Factory & Store",
     address: "Near SBI Bank, Nakoda Group Premises Ward 26, Village Saddu, Raipur (C.G) 492014",
     city: "Raipur",
     zipCode: "492014",

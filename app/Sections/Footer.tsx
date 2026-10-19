@@ -26,13 +26,13 @@ export const Footer = () => {
                         <div>
                             <Image
                                 src={logo}
-                                alt="RealWaves"
+                                alt="RealWaves Packs"
                                 width={471}
                                 height={70}
                                 className="w-[140px] sm:w-[180px]"
                             />
                             <p className="mt-2.5 text-[#0B2D72]/40 text-xs tracking-[1.5px] uppercase font-medium">
-                                Non-Woven Bag Manufacturer
+                                Non-Woven Bag Manufacturer in Raipur
                             </p>
                         </div>
                         <div className="flex items-center gap-3">
@@ -102,10 +102,11 @@ export const Footer = () => {
                             </h3>
                             <div className="space-y-3">
                                 {[
-                                    { label: 'D-Cut Bags', href: '/products?category=dcut' },
-                                    { label: 'Loop Handle Bags', href: '/products?category=loophandle' },
-                                    { label: 'U-Cut Bags', href: '/products?category=ucut' },
-                                    { label: 'Box Bags', href: '/products?category=nonwovenboxbag' },
+                                    { label: 'D-Cut Bags', href: '/non-woven-bags/d-cut-bags' },
+                                    { label: 'U-Cut Bags', href: '/non-woven-bags/u-cut-bags' },
+                                    { label: 'Loop Handle Bags', href: '/non-woven-bags/loop-handle-bags' },
+                                    { label: 'Box Bags', href: '/non-woven-bags/box-bags' },
+                                    { label: 'BOPP Laminated Bags', href: '/non-woven-bags/bopp-laminated-bags' },
                                     { label: 'All Products', href: '/products' },
                                     { label: 'About Us', href: '/about' },
                                 ].map((link) => (
@@ -204,7 +205,7 @@ export const Footer = () => {
             <div className="bg-[#0B2D72] px-4 sm:px-6 lg:px-8 py-4">
                 <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
                     <p className="text-[11px] text-white/50">
-                        &copy; {new Date().getFullYear()} Realwaves Packs. All rights reserved.
+                        &copy; {new Date().getFullYear()} Realwaves Packs (India) Pvt. Ltd. All rights reserved.
                     </p>
                     <p className="text-[11px] text-white/30">
                         Made in Raipur, Chhattisgarh

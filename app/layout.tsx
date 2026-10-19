@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import { Footer } from "./Sections/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import { SITE_URL, SITE_NAME, LEGAL_NAME, BUSINESS, DEFAULT_OPEN_GRAPH } from "./site";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -18,16 +19,17 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://real-waves-website.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "RealWaves - Premium Non-Woven Bag Manufacturer",
-    template: "%s | RealWaves",
+    default: `Non-Woven Bag Manufacturer in Raipur | ${SITE_NAME}`,
+    template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India. D-Cut, Loop Handle, U-Cut, Box Bags & BOPP laminated bags for businesses.",
+    "RealWaves Packs is a non-woven bag manufacturer in Raipur, Chhattisgarh. D-Cut, U-Cut, Loop Handle, Box and BOPP laminated bags with custom printing for businesses across India.",
   keywords: [
     "non woven bags",
     "non woven bag manufacturer",
+    "non woven bag manufacturer in Raipur",
     "carry bags",
     "eco friendly bags",
     "custom printed bags",
@@ -37,71 +39,69 @@ export const metadata: Metadata = {
     "non woven bags Raipur",
     "wholesale bags India",
   ],
-  openGraph: {
-    title: "RealWaves - Premium Non-Woven Bag Manufacturer",
-    description:
-      "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India. Sustainable packaging solutions for businesses.",
-    type: "website",
-    siteName: "RealWaves",
-    locale: "en_IN",
-    images: [
-      {
-        url: "/logo.png",
-        width: 1200,
-        height: 630,
-        alt: "RealWaves - Premium Non-Woven Bag Manufacturer",
-      },
-    ],
-  },
+  openGraph: DEFAULT_OPEN_GRAPH,
   twitter: {
-    card: "summary_large_image",
-    title: "RealWaves - Premium Non-Woven Bag Manufacturer",
-    description:
-      "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India. Sustainable packaging solutions for businesses.",
+    card: "summary",
   },
-  alternates: {
-    canonical: "/",
-  },
+  // No site-wide canonical here: every page sets its own via `alternates`,
+  // otherwise child pages inherit "/" and look like duplicates of the homepage.
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "https://real-waves-website.vercel.app/#organization",
-      name: "RealWaves",
-      url: "https://real-waves-website.vercel.app",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://real-waves-website.vercel.app/logo.png",
-      },
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#business`,
+      name: BUSINESS.name,
+      legalName: LEGAL_NAME,
+      alternateName: BUSINESS.alternateNames,
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+      image: `${SITE_URL}/logo.png`,
       description:
-        "Leading manufacturer of eco-friendly, customizable non-woven bags in Central India.",
+        "Manufacturer of eco-friendly, custom printed non-woven bags in Raipur, Chhattisgarh: D-Cut, U-Cut, Loop Handle, Box and BOPP laminated bags.",
+      telephone: BUSINESS.telephone,
+      email: BUSINESS.email,
+      foundingDate: BUSINESS.foundingYear,
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Raipur",
-        addressRegion: "Chhattisgarh",
-        addressCountry: "IN",
+        ...BUSINESS.address,
       },
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+91-9009990000",
-        contactType: "sales",
+      geo: {
+        "@type": "GeoCoordinates",
+        ...BUSINESS.geo,
       },
+      hasMap: `https://www.google.com/maps?q=${BUSINESS.geo.latitude},${BUSINESS.geo.longitude}`,
+      areaServed: { "@type": "Country", name: "India" },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: BUSINESS.telephone,
+          contactType: "sales",
+          areaServed: "IN",
+          availableLanguage: ["en", "hi"],
+        },
+        {
+          "@type": "ContactPoint",
+          telephone: BUSINESS.altTelephone,
+          contactType: "sales",
+          areaServed: "IN",
+        },
+      ],
+      sameAs: BUSINESS.sameAs,
+      // Product/Offer nodes are left out on purpose: without prices Google reports them
+      // as invalid Product items. Add them once real prices are published.
+      knowsAbout: ["Non-woven bags", "D-cut bags", "U-cut bags", "Loop handle bags", "Box bags", "BOPP laminated bags", "Custom printed carry bags"],
     },
     {
       "@type": "WebSite",
-      "@id": "https://real-waves-website.vercel.app/#website",
-      url: "https://real-waves-website.vercel.app",
-      name: "RealWaves",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      inLanguage: "en-IN",
       publisher: {
-        "@id": "https://real-waves-website.vercel.app/#organization",
-      },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://real-waves-website.vercel.app/products?search={search_term_string}",
-        "query-input": "required name=search_term_string",
+        "@id": `${SITE_URL}/#business`,
       },
     },
   ],

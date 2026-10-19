@@ -1,24 +1,44 @@
 'use client'
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import logo from "@/public/logo.png";
 import { FadeIn, ScaleIn } from '../components/animations';
 
 const AboutVideoSection: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Start downloading the background video only when the section is about to
+  // scroll into view, so it doesn't compete with the hero image on first load.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        video.src = "/videos/realwavesVideo.mp4";
+        video.play().catch(() => {});
+        observer.disconnect();
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="bg-cream p-3 sm:p-5">
       <div className="relative flex items-center rounded-2xl sm:rounded-3xl overflow-hidden">
         {/* Background Video */}
         <video
+          ref={videoRef}
           className="absolute inset-0 h-screen w-full md:h-full object-cover"
-          autoPlay
+          poster="/videos/realwavesVideo-poster.jpg"
+          preload="none"
           muted
           loop
           playsInline
-        >
-          <source src="/videos/realwavesVideo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          aria-hidden="true"
+        />
 
         {/* Subtle dark overlay */}
         <div className="absolute inset-0 bg-charcoal/10" />

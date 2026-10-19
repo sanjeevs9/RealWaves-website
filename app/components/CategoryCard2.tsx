@@ -8,12 +8,14 @@ interface CategoryCard2Props {
   imageUrl: StaticImageData | string;
   backgroundColor?: string;
   category: string;
+  href?: string;
 }
 
 const CategoryCard2: React.FC<CategoryCard2Props> = ({
   title,
   imageUrl,
   category,
+  href,
 }) => {
   const router = useRouter();
 
@@ -21,7 +23,7 @@ const CategoryCard2: React.FC<CategoryCard2Props> = ({
     <div
       className="flex-shrink-0 mx-2 sm:mx-4 group cursor-pointer"
       onClick={() => {
-        router.push(`/products?category=${category}`);
+        router.push(href ?? `/products?category=${category}`);
       }}
     >
       <div className="relative rounded-2xl w-40 h-48 sm:w-44 sm:h-56 md:w-48 md:h-60 lg:w-52 lg:h-64 xl:w-56 xl:h-[17rem] overflow-hidden transition-all duration-500 hover:-translate-y-2">

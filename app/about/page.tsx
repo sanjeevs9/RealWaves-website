@@ -1,14 +1,25 @@
-'use client'
-
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { FadeIn, StaggerContainer, StaggerItem, AnimatedCounter } from '../components/animations';
+import { DEFAULT_OPEN_GRAPH } from '../site';
+
+const title = 'About Us – Bag Manufacturer in Raipur Since 2017';
+const description =
+    'RealWaves Packs has made custom printed non-woven bags in Saddu, Raipur since 2017: 2000+ clients, 2 lakh+ bags a day, supplied to 100+ cities.';
+
+export const metadata: Metadata = {
+    title,
+    description,
+    alternates: { canonical: '/about' },
+    openGraph: { ...DEFAULT_OPEN_GRAPH, title, description, url: '/about' },
+};
 
 const offerings = [
-    { name: 'D-Cut Bags', href: '/products?category=dcut' },
-    { name: 'Loop Handle Bags', href: '/products?category=loophandle' },
-    { name: 'U-Cut Bags', href: '/products?category=ucut' },
-    { name: 'Box Bags', href: '/products?category=nonwovenboxbag' },
-    { name: 'BOPP Laminated Bags', href: '/products?category=boppboxbag' },
+    { name: 'D-Cut Bags', href: '/non-woven-bags/d-cut-bags' },
+    { name: 'Loop Handle Bags', href: '/non-woven-bags/loop-handle-bags' },
+    { name: 'U-Cut Bags', href: '/non-woven-bags/u-cut-bags' },
+    { name: 'Box Bags', href: '/non-woven-bags/box-bags' },
+    { name: 'BOPP Laminated Bags', href: '/non-woven-bags/bopp-laminated-bags' },
     { name: 'Custom Print Bags', href: '/products' },
 ];
 
@@ -36,7 +47,7 @@ export default function About() {
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <FadeIn direction="up" delay={0.1}>
                         <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal leading-[1.15] tracking-tight">
-                            Crafting Sustainable Packaging
+                            Crafting Sustainable Packaging{' '}
                             <span className="block text-[#0992C2] mt-1">Since 2017</span>
                         </h1>
                     </FadeIn>
@@ -76,7 +87,7 @@ export default function About() {
                             </h2>
                             <div className="space-y-5 text-sage text-sm sm:text-base leading-relaxed">
                                 <p>
-                                    <strong className="text-charcoal">Realwaves</strong> is a trusted name in the field of eco-friendly, durable, and customizable non-woven bags, proudly manufacturing and exporting from <strong className="text-charcoal">Raipur, Chhattisgarh</strong> for the past 7+ years.
+                                    <strong className="text-charcoal">RealWaves Packs</strong> is a trusted name in the field of eco-friendly, durable, and customizable non-woven bags, proudly manufacturing and exporting from <strong className="text-charcoal">Raipur, Chhattisgarh</strong> for the past 7+ years.
                                 </p>
                                 <p>
                                     Founded with a vision to contribute to a sustainable and plastic-free future, Realwaves combines innovation, quality, and affordability to deliver non-woven solutions that meet global standards. We specialize in manufacturing <strong className="text-charcoal">reusable, recyclable, and biodegradable non-woven bags</strong> that cater to various industries like retail, fashion, food &amp; grocery, corporate gifting, exhibitions, events, and more.

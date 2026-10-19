@@ -1,11 +1,21 @@
-"use client"
+import type { Metadata } from "next";
 import { blogData } from "@/constants";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { DEFAULT_OPEN_GRAPH } from "../site";
+
+const title = "Packaging Blog – Non-Woven Bag Guides & Tips";
+const description =
+    "Guides on non-woven carry bags, custom printing, GSM and plastic-free packaging from RealWaves Packs, a bag manufacturer in Raipur, Chhattisgarh.";
+
+export const metadata: Metadata = {
+    title,
+    description,
+    alternates: { canonical: "/blogs" },
+    openGraph: { ...DEFAULT_OPEN_GRAPH, title, description, url: "/blogs" },
+};
 
 export default function Blogs() {
-    const router = useRouter();
     const featured = blogData[0];
     const rest = blogData.slice(1);
 
@@ -29,9 +39,9 @@ export default function Blogs() {
 
             {/* Featured Article */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
-                <div
-                    onClick={() => router.push(`/blogs/${featured.id}`)}
-                    className="group cursor-pointer bg-white rounded-2xl ring-1 ring-black/[0.04] overflow-hidden hover:shadow-lg hover:shadow-charcoal/5 transition-all duration-300"
+                <Link
+                    href={`/blogs/${featured.slug}`}
+                    className="block group cursor-pointer bg-white rounded-2xl ring-1 ring-black/[0.04] overflow-hidden hover:shadow-lg hover:shadow-charcoal/5 transition-all duration-300"
                 >
                     <div className="grid md:grid-cols-2">
                         <div className="relative h-56 md:h-full min-h-[280px] overflow-hidden">
@@ -74,7 +84,7 @@ export default function Blogs() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </Link>
             </div>
 
             {/* All Articles Grid */}
@@ -82,10 +92,10 @@ export default function Blogs() {
                 <h2 className="font-display text-lg sm:text-xl font-bold text-charcoal mb-6 sm:mb-8">All Articles</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
                     {rest.map((blog) => (
-                        <div
+                        <Link
                             key={blog.id}
-                            onClick={() => router.push(`/blogs/${blog.id}`)}
-                            className="group cursor-pointer bg-white rounded-xl ring-1 ring-black/[0.04] overflow-hidden hover:shadow-lg hover:shadow-charcoal/5 transition-all duration-300"
+                            href={`/blogs/${blog.slug}`}
+                            className="block group cursor-pointer bg-white rounded-xl ring-1 ring-black/[0.04] overflow-hidden hover:shadow-lg hover:shadow-charcoal/5 transition-all duration-300"
                         >
                             <div className="relative h-40 sm:h-44 overflow-hidden">
                                 <Image
@@ -125,7 +135,7 @@ export default function Blogs() {
                                     </svg>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

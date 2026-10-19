@@ -3,6 +3,9 @@ import Image from 'next/image';
 import CategoryCard2 from './CategoryCard2';
 import { categoryData } from '@/constants';
 import bag2 from "@/public/heroSection/_DSC3176 2.png"
+// Phones get a complete, standing bag: the desktop photo is cropped at the bottom so it can
+// sit on the screen edge, which looks like it's hanging in mid-air on a narrow screen.
+import bagMobile from "@/public/heroSection/erasebg-transformed (1).png"
 import { useRouter } from 'next/navigation'
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, useMotionValue, useAnimation, PanInfo } from 'framer-motion';
@@ -95,6 +98,7 @@ function DraggableCarousel() {
                         category={item.category}
                         title={item.title}
                         imageUrl={item.imageUrl}
+                        href={item.href}
                     />
                 ))}
                 {/* Duplicate set for seamless loop */}
@@ -104,6 +108,7 @@ function DraggableCarousel() {
                         category={item.category}
                         title={item.title}
                         imageUrl={item.imageUrl}
+                        href={item.href}
                     />
                 ))}
             </motion.div>
@@ -173,12 +178,14 @@ export default function Hero2() {
                 transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="hidden md:flex md:absolute md:bottom-0 md:left-0 md:right-0 z-[1] items-end justify-center pointer-events-none md:h-[50%] lg:h-[52%]"
             >
+                {/* sizes: on phones this copy is hidden, so ask for the smallest file */}
                 <Image
                     src={bag2}
-                    alt="Premium Non-Woven Bags Collection"
+                    alt="Custom printed non-woven bags made by RealWaves Packs in Raipur"
                     width={1500}
                     height={1500}
-                    quality={100}
+                    quality={85}
+                    sizes="(max-width: 767px) 1px, (max-width: 1023px) 70vw, 60vw"
                     priority
                     className="w-[85%] sm:w-[80%] md:w-[70%] lg:w-[60%] max-h-full object-contain object-bottom"
                 />
@@ -198,30 +205,32 @@ export default function Hero2() {
                 </motion.div>
 
                 {/* Heading */}
+                {/* Real {' '} text nodes between the spans: margins alone render as
+                    "PremiumNon-WovenBag" to crawlers and screen readers. */}
                 <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-charcoal max-w-4xl leading-[1.08] tracking-tight">
                     <motion.span
                         initial={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
                         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                         transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                        className="inline-block mr-[0.25em]"
+                        className="inline-block"
                     >
-                        Premium
-                    </motion.span>
+                        Non-Woven
+                    </motion.span>{' '}
                     <motion.span
                         initial={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
                         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                         transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                         className="inline-block"
                     >
-                        Non-Woven
-                    </motion.span>
+                        Bag Manufacturer
+                    </motion.span>{' '}
                     <motion.span
                         initial={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
                         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                         transition={{ duration: 0.7, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
                         className="block text-[#0992C2] mt-1"
                     >
-                        Bag Manufacturer
+                        in Raipur
                     </motion.span>
                 </h1>
 
@@ -260,19 +269,28 @@ export default function Hero2() {
                 </motion.div>
 
                 {/* Mobile bag image — flows naturally after buttons */}
+                {/* No fade-in here: this is the phone's main image, and an opacity-0 start makes
+                    it count as unseen until scripts load (5+ s on a slow phone). */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    className="md:hidden flex justify-center mt-8 pointer-events-none"
+                    initial={{ scale: 0.96 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    className="md:hidden flex flex-col items-center mt-8 pb-2 pointer-events-none"
                 >
+                    {/* The main image on phones: load it first (it was lazy-loaded). On
+                        larger screens this copy is hidden, so ask for the smallest file. */}
                     <Image
-                        src={bag2}
-                        alt="Premium Non-Woven Bags Collection"
-                        width={1500}
-                        height={1500}
-                        quality={100}
-                        className="w-full object-contain"
+                        src={bagMobile}
+                        alt="Custom printed non-woven box bag made by RealWaves Packs in Raipur"
+                        quality={85}
+                        sizes="(min-width: 768px) 1px, 88vw"
+                        priority
+                        className="w-auto max-w-[88%] max-h-[340px] object-contain"
+                    />
+                    {/* Soft ground shadow so the bag reads as standing, not floating */}
+                    <div
+                        aria-hidden="true"
+                        className="w-[62%] h-[18px] -mt-1.5 rounded-[50%] bg-[radial-gradient(closest-side,rgba(11,45,114,0.22),rgba(11,45,114,0))]"
                     />
                 </motion.div>
             </div>

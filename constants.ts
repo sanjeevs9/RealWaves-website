@@ -17,6 +17,7 @@ import Box from "./public/bags/Box3.png"
 import box2 from "@/public/bags/Box4.png" 
 import boppLH from "./public/bags/LH5.png"
 import designed from "./public/bags/designed.png"
+import boppBox from "./public/bags/boppbox.png"
 
 
 export const icon1 = `<svg xmlns="http://www.w3.org/2000/svg" width="71" height="71" viewBox="0 0 71 71" fill="none">
@@ -170,6 +171,7 @@ export const  FooterSvg = `<svg className="absolute top-0 left-0 w-full h-full -
 export const blogData = [
     {
       id:"1",
+      slug: "custom-carry-bags-promote-your-business",
       title: "How Customize Carry Bags Help You to Promote Your Business Effectively",
       content: `Your business could have the best products and services possible and be positioned at the perfect location, but if you're not effectively connecting your business to your clients and prospective customers, then you are probably disregarding the power of having a physical presence in the real world. As a matter of fact, physical promotional items are the most effective brand carriers that can help your business reach the target audience and at the same time, give more exposure to your business in the long run. With several types of promotional products playing an imperative role in enhancing your business prospects, customized carry bags are one of the exceedingly effective marketing tools that can give a physical market presence to your business and ensure a long reach for your marketing campaign.
   
@@ -193,7 +195,7 @@ export const blogData = [
   
   Give Your Business an Edge Over the Competition
   The right branded carrier bag can make all the difference and you should consider using customized carrier bags as an advantage to your business. We are sure that you will be satisfyingly rewarded for considering customized carry bags, an effective marketing tool for creating brand awareness and advertising.`,
-      author: "RealWaves Team",
+      author: "Real Waves Packs Team",
       date: "2024-01-15",
       readTime: "5 min read",
       category: "Marketing",
@@ -202,6 +204,7 @@ export const blogData = [
     },
     {
       id:"2",
+      slug: "sustainable-eco-friendly-packaging-for-business",
       title: "Sustainable Packaging: The Future of Eco-Friendly Business Solutions",
       content: `In today's environmentally conscious world, businesses are increasingly recognizing the importance of sustainable packaging solutions. As consumers become more aware of environmental issues, they're actively seeking out brands that prioritize eco-friendly practices. This shift in consumer behavior has made sustainable packaging not just a trend, but a necessity for forward-thinking businesses.
   
@@ -225,7 +228,7 @@ export const blogData = [
   
   The Road Ahead
   As technology advances and consumer demand grows, sustainable packaging solutions will continue to evolve. Businesses that embrace these changes early will be better positioned to meet future challenges and opportunities. The future of packaging is undoubtedly green, and the time to act is now.`,
-      author: "Sarah Johnson",
+      author: "Real Waves Packs Team",
       date: "2024-01-20",
       readTime: "4 min read",
       category: "Sustainability",
@@ -234,6 +237,7 @@ export const blogData = [
     },
     {
       id:"3",
+      slug: "custom-branded-bags-make-your-business-stand-out",
       title: "Custom Branding Solutions: Making Your Business Stand Out",
       content: `In today's competitive market, standing out from the crowd is more important than ever. Custom branding solutions offer businesses a unique opportunity to create memorable experiences and build lasting relationships with customers. From custom-printed bags to personalized packaging, these solutions can transform how your brand is perceived and remembered.
   
@@ -257,7 +261,7 @@ export const blogData = [
   
   Future Trends
   As technology evolves, custom branding solutions continue to advance. Digital printing, augmented reality, and smart packaging are just some of the innovations shaping the future of custom branding. Staying informed about these trends helps businesses maintain competitive advantages.`,
-      author: "Michael Chen",
+      author: "Real Waves Packs Team",
       date: "2024-01-25",
       readTime: "6 min read",
       category: "Branding",
@@ -325,6 +329,7 @@ export const blogData = [
       imageUrl: Dcut,
       backgroundColor: "#B9C7FF",
       category: "dcut",
+      href: "/non-woven-bags/d-cut-bags",
     },
     {
       id: 2,
@@ -332,6 +337,7 @@ export const blogData = [
       imageUrl: LH,
       backgroundColor: "#7F9EFE",
       category: "loophandle",
+      href: "/non-woven-bags/loop-handle-bags",
     },
     {
       id: 3,
@@ -339,19 +345,22 @@ export const blogData = [
       imageUrl: Ucut,
       backgroundColor: "#2476FE",
       category: "ucut",
+      href: "/non-woven-bags/u-cut-bags",
     },
     {
       id: 4,
-      title: "Non woven box",
+      title: "Box Bag",
       imageUrl: Box,
       backgroundColor: "#0454BF",
       category: "nonwovenboxbag",
+      href: "/non-woven-bags/box-bags",
     },
     {
       id: 5,
-      title: "Box bag",
-      imageUrl: box2,
+      title: "BOPP Laminated",
+      imageUrl: boppBox,
       backgroundColor: "#02357E",
-      category: "boxbag",
+      category: "boppboxbag",
+      href: "/non-woven-bags/bopp-laminated-bags",
     },
   ];

@@ -4,13 +4,15 @@ import Image from 'next/image'
 import logo from "@/public/logo.png"
 import { useState, useEffect } from 'react'
 
+// Each entry is a real landing page (app/non-woven-bags/[type]), so every page's
+// HTML links to every bag type. Keep in sync with BagTypes in app/bagTypes.ts.
 const categoryData = [
-  { id: 1, title: "D-Cut", category: "dcut" },
-  { id: 2, title: "Loop Handle", category: "loophandle" },
-  { id: 3, title: "U-Cut", category: "ucut" },
-  { id: 4, title: "Bopp Box Bag", category: "boppboxbag" },
-  { id: 5, title: "Bopp Loop Handle", category: "bopploophandle" },
-  { id: 6, title: "Non Woven Box Bag", category: "nonwovenboxbag" },
+  { id: 1, title: "D-Cut Bags", href: "/non-woven-bags/d-cut-bags" },
+  { id: 2, title: "U-Cut Bags", href: "/non-woven-bags/u-cut-bags" },
+  { id: 3, title: "Loop Handle Bags", href: "/non-woven-bags/loop-handle-bags" },
+  { id: 4, title: "Box Bags", href: "/non-woven-bags/box-bags" },
+  { id: 5, title: "BOPP Laminated Bags", href: "/non-woven-bags/bopp-laminated-bags" },
+  { id: 6, title: "All Products", href: "/products" },
 ];
 
 const Navbar = () => {
@@ -74,7 +76,7 @@ const Navbar = () => {
                   {categoryData.map((cat) => (
                     <Link
                       key={cat.id}
-                      href={`/products?category=${encodeURIComponent(cat.category)}`}
+                      href={cat.href}
                       className="block px-5 py-2.5 text-sm text-charcoal/80 hover:text-forest hover:bg-forest/5 transition-all duration-200"
                     >
                       {cat.title}
@@ -177,7 +179,7 @@ const Navbar = () => {
                 {categoryData.map((cat) => (
                   <Link
                     key={cat.id}
-                    href={`/products?category=${encodeURIComponent(cat.category)}`}
+                    href={cat.href}
                     onClick={() => { setIsMobileMenuOpen(false); setIsProductsDropdownOpen(false); }}
                     className="block px-4 py-2.5 text-sm text-sage hover:text-forest transition-colors"
                   >
