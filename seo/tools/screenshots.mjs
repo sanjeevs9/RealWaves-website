@@ -13,7 +13,7 @@ const { ReportGenerator } = await import(path.join(MODULES, "lighthouse/report/g
 const OUT = path.resolve("seo/evidence");
 const SRC = path.join(OUT, "src");
 const BEFORE = "https://www.realwavespacks.com";
-const AFTER = "http://localhost:3123";
+const AFTER = process.env.AFTER || "http://localhost:3123";
 const desktop = { width: 1440, height: 900, deviceScaleFactor: 1 };
 const phone = { width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true };
 
@@ -83,6 +83,8 @@ for (const s of shots) {
     await page.goto(s.url, { waitUntil: "domcontentloaded", timeout: 45000 });
     await new Promise((r) => setTimeout(r, s.wait ?? 3500)); // let fonts, images and entry animations settle
     const file = path.join(OUT, `${s.name}.jpg`);
+    // hide the Next.js dev-mode badge if shooting a dev server
+    await page.evaluate(() => document.querySelectorAll("nextjs-portal").forEach((e) => e.remove()));
     if (s.menu) {
       const btn = await page.evaluateHandle(() => [...document.querySelectorAll("nav button")].find((b) => b.textContent.trim().startsWith("Products")));
       await btn.hover();

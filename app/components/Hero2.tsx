@@ -2,10 +2,9 @@
 import Image from 'next/image';
 import CategoryCard2 from './CategoryCard2';
 import { categoryData } from '@/constants';
-import bag2 from "@/public/heroSection/_DSC3176 2.png"
-// Phones get a complete, standing bag: the desktop photo is cropped at the bottom so it can
-// sit on the screen edge, which looks like it's hanging in mid-air on a narrow screen.
-import bagMobile from "@/public/heroSection/erasebg-transformed (1).png"
+// A complete, standing bag on every screen size, grounded with a soft shadow.
+// (The old half-cut photo looked like it was hanging in mid-air.)
+import heroBag from "@/public/heroSection/hero-bag.png"
 import { useRouter } from 'next/navigation'
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, useMotionValue, useAnimation, PanInfo } from 'framer-motion';
@@ -171,27 +170,7 @@ export default function Hero2() {
                 }}
             />
 
-            {/* Bag image — absolute, behind text, anchored to bottom */}
-            <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="hidden md:flex md:absolute md:bottom-0 md:left-0 md:right-0 z-[1] items-end justify-center pointer-events-none md:h-[50%] lg:h-[52%]"
-            >
-                {/* sizes: on phones this copy is hidden, so ask for the smallest file */}
-                <Image
-                    src={bag2}
-                    alt="Custom printed non-woven bags made by RealWaves Packs in Raipur"
-                    width={1500}
-                    height={1500}
-                    quality={85}
-                    sizes="(max-width: 767px) 1px, (max-width: 1023px) 70vw, 60vw"
-                    priority
-                    className="w-[85%] sm:w-[80%] md:w-[70%] lg:w-[60%] max-h-full object-contain object-bottom"
-                />
-            </motion.div>
-
-            {/* Text content — on top of the bag */}
+            {/* Text content, with the bag image below it */}
             <div className="relative z-10 flex flex-col items-center text-center md:h-full justify-start pt-10 sm:pt-14 md:pb-0 md:pt-[14svh] lg:pt-[10svh] px-4">
                 {/* Trust Badge */}
                 <motion.div
@@ -268,29 +247,30 @@ export default function Hero2() {
                     </button>
                 </motion.div>
 
-                {/* Mobile bag image — flows naturally after buttons */}
-                {/* No fade-in here: this is the phone's main image, and an opacity-0 start makes
-                    it count as unseen until scripts load (5+ s on a slow phone). */}
+                {/* Bag image — below the buttons on every screen. On larger screens it fills
+                    the space left in the hero, so it can never run into the text. No opacity
+                    fade: it's the main image, and an opacity-0 start makes it count as unseen
+                    until scripts load (5+ s on a slow phone). */}
                 <motion.div
                     initial={{ scale: 0.96 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="md:hidden flex flex-col items-center mt-8 pb-2 pointer-events-none"
+                    className="flex flex-col items-center w-full mt-8 pb-2 md:mt-4 md:flex-1 md:min-h-0 md:justify-center md:pb-6 pointer-events-none"
                 >
-                    {/* The main image on phones: load it first (it was lazy-loaded). On
-                        larger screens this copy is hidden, so ask for the smallest file. */}
                     <Image
-                        src={bagMobile}
+                        src={heroBag}
                         alt="Custom printed non-woven box bag made by RealWaves Packs in Raipur"
                         quality={85}
-                        sizes="(min-width: 768px) 1px, 88vw"
+                        sizes="(min-width: 768px) 34vw, 70vw"
                         priority
-                        className="w-auto max-w-[88%] max-h-[340px] object-contain"
+                        className="w-auto max-w-[70%] max-h-[300px] object-contain md:max-w-[42%] lg:max-w-[34%] md:max-h-[min(480px,calc(100%_-_28px))] md:drop-shadow-[0_22px_16px_rgba(11,45,114,0.18)]"
                     />
-                    {/* Soft ground shadow so the bag reads as standing, not floating */}
+                    {/* Soft ground shadow so the bag reads as standing, not floating. On larger
+                        screens the bag resizes with the hero, so a drop-shadow that follows the
+                        bag's outline (on the image above) replaces this fixed-width oval. */}
                     <div
                         aria-hidden="true"
-                        className="w-[62%] h-[18px] -mt-1.5 rounded-[50%] bg-[radial-gradient(closest-side,rgba(11,45,114,0.22),rgba(11,45,114,0))]"
+                        className="md:hidden w-[56%] h-[18px] -mt-1 rounded-[50%] bg-[radial-gradient(closest-side,rgba(11,45,114,0.22),rgba(11,45,114,0))]"
                     />
                 </motion.div>
             </div>
