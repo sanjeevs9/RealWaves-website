@@ -2,8 +2,10 @@
 import Image from 'next/image';
 import CategoryCard2 from './CategoryCard2';
 import { categoryData } from '@/constants';
-// Phones show a complete, standing bag under the hero text (the old half-cut photo looked
-// like it was hanging in mid-air). Laptops and desktops show the text only.
+// Laptops/desktops: the original photo, a bag cut off at the bottom that sits on the bottom
+// edge of the full-screen hero. Phones: a complete, standing bag under the text, because the
+// half-cut photo looks like it's hanging in mid-air on a narrow screen.
+import bag2 from "@/public/heroSection/_DSC3176 2.webp"
 import heroBag from "@/public/heroSection/hero-bag.webp"
 import { useRouter } from 'next/navigation'
 import { useState, useRef, useEffect, useCallback } from 'react';
@@ -160,8 +162,8 @@ export default function Hero2() {
             onClose={() => setIsContactOpen(false)}
         />
 
-        {/* Hero Section — sized to its content; on laptops it's text only */}
-        <div className="relative w-full overflow-hidden">
+        {/* Hero Section — on laptops it exactly fills the viewport below the navbar (68px) */}
+        <div className="relative w-full md:h-[calc(100svh-68px)] overflow-hidden">
             {/* Background — soft ambient gradient */}
             <div
                 className="absolute inset-0 z-0"
@@ -170,8 +172,23 @@ export default function Hero2() {
                 }}
             />
 
-            {/* Text content, with the bag image below it on phones */}
-            <div className="relative z-10 flex flex-col items-center text-center justify-start pt-10 sm:pt-14 md:pt-28 md:pb-24 lg:pt-32 lg:pb-28 px-4">
+            {/* Bag image (laptops/desktops) — absolute, behind text, anchored to bottom */}
+            <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="hidden md:flex md:absolute md:bottom-0 md:left-0 md:right-0 z-[1] items-end justify-center pointer-events-none md:h-[50%] lg:h-[52%]"
+            >
+                <Image
+                    src={bag2}
+                    alt="Custom printed non-woven bags made by RealWaves Packs in Raipur"
+                    priority
+                    className="w-[85%] sm:w-[80%] md:w-[70%] lg:w-[60%] max-h-full object-contain object-bottom"
+                />
+            </motion.div>
+
+            {/* Text content — on top of the bag; phones get their own bag image below the buttons */}
+            <div className="relative z-10 flex flex-col items-center text-center md:h-full justify-start pt-10 sm:pt-14 md:pb-0 md:pt-[14svh] lg:pt-[10svh] px-4">
                 {/* Trust Badge */}
                 <motion.div
                     initial={{ opacity: 0, y: -10 }}

@@ -15,6 +15,7 @@ const IMAGES = [
     "Box3", "Box4", "Box5", "boppbox", "boppbox1", "boppbox2", "designed", "redBag",
   ].map((n) => [`bags/${n}.png`, 1000]),
   ["heroSection/hero-bag.png", 900],
+  ["heroSection/_DSC3176 2.png", 1600], // laptop/desktop hero (bag sits on the bottom edge)
   // "Why choose us" cards; two of them are also full-width blog headers
   ["WhyChooseus/ecological-bag-grass.jpg", 1600, 62], // grass texture compresses poorly
   ["WhyChooseus/woman-holding-gift-bag-desk.jpg", 1800],
