@@ -36,6 +36,36 @@ export const WhatsAppIcon = ({ className = '' }: { className?: string }) => (
     </svg>
 )
 
+// The circle from the RealWaves logo (a ball split by a wave), redrawn as a faint
+// tone-on-tone pattern for the navy hero. The wave gap is drawn in the hero's navy,
+// so the marks read as the logo. It fades out towards the middle, behind the text.
+function LogoPattern() {
+    return (
+        <svg
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 h-full w-full [mask-image:radial-gradient(ellipse_70%_60%_at_50%_38%,transparent_25%,#000_80%)]"
+        >
+            <defs>
+                <symbol id="rw-mark" viewBox="0 0 100 100">
+                    <clipPath id="rw-mark-clip">
+                        <circle cx="50" cy="50" r="46" />
+                    </clipPath>
+                    <g clipPath="url(#rw-mark-clip)">
+                        <rect width="100" height="100" fill="rgba(252,248,239,0.065)" />
+                        <path d="M0 46 C10 40 17 70 29 68 S 42 34 50 34 S 61 70 71 68 S 88 38 100 34 L100 100 L0 100 Z" fill="rgba(252,248,239,0.042)" />
+                        <path d="M0 46 C10 40 17 70 29 68 S 42 34 50 34 S 61 70 71 68 S 88 38 100 34" fill="none" stroke="#0B2D72" strokeWidth="9" />
+                    </g>
+                </symbol>
+                <pattern id="rw-mark-pattern" width="132" height="132" patternUnits="userSpaceOnUse">
+                    <use href="#rw-mark" x="8" y="8" width="50" height="50" />
+                    <use href="#rw-mark" x="74" y="74" width="50" height="50" />
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#rw-mark-pattern)" />
+        </svg>
+    )
+}
+
 export default function HomeHero() {
     const [isContactOpen, setIsContactOpen] = useState(false)
 
@@ -73,9 +103,10 @@ export default function HomeHero() {
                 is left. */}
             <section
                 aria-labelledby="home-hero-title"
-                className="flex flex-col overflow-hidden bg-forest text-ivory wide:h-[clamp(620px,calc(100svh-68px),1000px)]"
+                className="relative flex flex-col overflow-hidden bg-forest text-ivory wide:h-[clamp(620px,calc(100svh-68px),1000px)]"
             >
-                <div className="mx-auto max-w-4xl shrink-0 px-5 pb-7 pt-9 text-center sm:px-6 md:pb-[clamp(20px,4vh,40px)] md:pt-[clamp(28px,6vh,64px)]">
+                <LogoPattern />
+                <div className="relative mx-auto max-w-4xl shrink-0 px-5 pb-7 pt-9 text-center sm:px-6 md:pb-[clamp(20px,4vh,40px)] md:pt-[clamp(28px,6vh,64px)]">
                     {/* Real {' '} text node between the spans, so crawlers and screen readers
                         don't read "…since 2017Bags that…" */}
                     <h1 id="home-hero-title">
