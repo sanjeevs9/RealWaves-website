@@ -7,7 +7,7 @@ export type ToastState = { type: 'success' | 'error' | 'info'; message: string }
 const VARIANTS = {
   success: { accent: '#25D366', title: 'Message sent' },
   error: { accent: '#EF4444', title: 'Something went wrong' },
-  info: { accent: '#0992C2', title: 'Almost there' },
+  info: { accent: '#0B2D72', title: 'Almost there' },
 } as const;
 
 export default function Toast({

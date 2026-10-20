@@ -1,112 +1,128 @@
 'use client'
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
-import logo from "@/public/logo.png";
-import { FadeIn, ScaleIn } from '../components/animations';
+import type { StaticImageData } from "next/image";
+import printingPoster from "@/public/factory/printing.webp";
+import bagMakingPoster from "@/public/factory/bag-making.webp";
+import inShopsPoster from "@/public/factory/in-shops.webp";
 
-const AboutVideoSection: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+// The 40-second factory film, cut into three short muted loops (public/factory/*.mp4,
+// 640px wide, cut from public/videos/realwavesVideo.mp4 with ffmpeg).
+const STEPS = [
+  {
+    title: "Printed",
+    text: "Your logo is printed on non-woven fabric on our own machines.",
+    video: "/factory/printing.mp4",
+    poster: printingPoster,
+    label: "Fabric being printed with a customer's logo on the RealWaves printing machine",
+  },
+  {
+    title: "Made into bags",
+    text: "Cut, sealed and fitted with handles in the same factory.",
+    video: "/factory/bag-making.mp4",
+    poster: bagMakingPoster,
+    label: "Printed bags coming off the bag-making machine",
+  },
+  {
+    title: "On your counter",
+    text: "Packed in Raipur and delivered to your shop anywhere in India.",
+    video: "/factory/in-shops.mp4",
+    poster: inShopsPoster,
+    label: "RealWaves bags being handed to customers at shop counters",
+  },
+];
 
-  // Start downloading the background video only when the section is about to
-  // scroll into view, so it doesn't compete with the hero image on first load.
+const STATS = [
+  { value: "2 lakh+", label: "bags a day" },
+  { value: "2000+", label: "businesses" },
+  { value: "100+", label: "cities" },
+];
+
+// A muted clip that only downloads once it nears the screen, plays while visible and
+// pauses when scrolled away. People who ask for reduced motion just see the poster.
+function LoopClip({ src, poster, label }: { src: string; poster: StaticImageData; label: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+
   useEffect(() => {
-    const video = videoRef.current;
+    const video = ref.current;
     if (!video) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) return;
-        video.src = "/videos/realwavesVideo.mp4";
-        video.play().catch(() => {});
-        observer.disconnect();
+        if (entry.isIntersecting) {
+          if (!video.src) video.src = src;
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
       },
-      { rootMargin: "200px" }
+      { rootMargin: "120px" }
     );
     observer.observe(video);
     return () => observer.disconnect();
-  }, []);
+  }, [src]);
 
   return (
-    <section className="bg-cream p-3 sm:p-5">
-      <div className="relative flex items-center rounded-2xl sm:rounded-3xl overflow-hidden">
-        {/* Background Video */}
-        <video
-          ref={videoRef}
-          className="absolute inset-0 h-screen w-full md:h-full object-cover"
-          poster="/videos/realwavesVideo-poster.jpg"
-          preload="none"
-          muted
-          loop
-          playsInline
-          aria-hidden="true"
-        />
+    <video
+      ref={ref}
+      poster={poster.src}
+      preload="none"
+      muted
+      loop
+      playsInline
+      aria-label={label}
+      className="block aspect-[4/3] w-full rounded-3xl bg-forest object-cover"
+    />
+  );
+}
 
-        {/* Subtle dark overlay */}
-        <div className="absolute inset-0 bg-charcoal/10" />
-
-        {/* Logo watermark */}
-        <div className="absolute top-6 right-6 md:top-8 md:right-8 z-20">
-          <Image
-            src={logo}
-            alt="RealWaves Logo"
-            width={300}
-            height={80}
-            className="h-5 lg:h-12 w-auto opacity-70"
-          />
+const AboutVideoSection: React.FC = () => {
+  return (
+    <section aria-labelledby="about-title" className="bg-cream px-4 py-16 sm:px-6 sm:py-20">
+      <div className="mx-auto max-w-6xl">
+        <div className="flex flex-wrap items-end justify-between gap-x-16 gap-y-5">
+          <div className="min-w-0 flex-1 basis-[420px]">
+            <p className="text-[15px] font-semibold text-sage">About RealWaves Packs</p>
+            <h2 id="about-title" className="section-heading mt-3 text-balance">
+              From our machines to your counter
+            </h2>
+          </div>
+          <p className="min-w-0 flex-1 basis-[340px] text-pretty text-base leading-relaxed text-sage sm:text-[17px]">
+            Since 2017, every RealWaves bag has been printed and made in our own factory in Raipur, then sent to shops across India.
+          </p>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 w-full h-screen lg:h-full flex items-end lg:items-center p-5 lg:p-16 xl:p-20">
-          <div className="w-full max-w-2xl mb-8 md:mb-12">
-            <ScaleIn delay={0.1}>
-            <div className="backdrop-blur-2xl bg-forest-dark/55 rounded-2xl border border-white/10 shadow-2xl p-6 md:p-8 lg:p-10">
-              {/* Label */}
-              <FadeIn delay={0.1} direction="none">
-              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-3 py-1 mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
-                <span className="text-white/80 text-xs font-medium tracking-widest uppercase">About Us</span>
+        {/* Phones: a swipeable row with the next step peeking in, so the three clips
+            don't stack into a very long scroll. Tablets and up: a grid. */}
+        <ol className="-mx-4 mt-10 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:mt-12 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-8 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 lg:gap-6 [&::-webkit-scrollbar]:hidden">
+          {STEPS.map((step, i) => (
+            <li key={step.title} className="w-[82%] min-w-0 flex-none snap-start sm:w-auto">
+              <LoopClip src={step.video} poster={step.poster} label={step.label} />
+              <div className="mt-4 flex items-start gap-3.5 sm:mt-5 sm:gap-4">
+                <span
+                  aria-hidden="true"
+                  className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-forest text-[15px] font-semibold text-bronze"
+                >
+                  {i + 1}
+                </span>
+                <div>
+                  <h3 className="mt-1.5 text-lg font-semibold sm:text-xl tracking-[-0.01em] text-charcoal">{step.title}</h3>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-sage">{step.text}</p>
+                </div>
               </div>
-              </FadeIn>
+            </li>
+          ))}
+        </ol>
 
-              {/* Heading */}
-              <FadeIn delay={0.15} direction="up">
-              <h2 className="text-white font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.12] tracking-tight mb-6 lg:mb-8">
-                Our Journey &mdash; From
-                <br />
-                Trial to Excellence
-              </h2>
-              </FadeIn>
-
-              {/* Description */}
-              <FadeIn delay={0.25} direction="up">
-              <div className="space-y-4 text-white/70 text-sm md:text-base leading-relaxed mb-8 lg:mb-10">
-                <p>
-                  Realwaves is a leading manufacturer of eco-friendly, durable, and customizable non-woven bags, proudly operating from Raipur, Chhattisgarh for over 7 years.
-                </p>
-                <p className="hidden md:block">
-                  Backed by advanced machinery, skilled professionals, and a strict quality control process, every Realwaves bag is a step toward a greener tomorrow.
-                </p>
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-x-10 gap-y-6 border-t border-[#EADFC4] pt-7 sm:mt-12">
+          <dl className="grid w-full grid-cols-3 gap-3 sm:flex sm:w-auto sm:flex-wrap sm:gap-x-10 sm:gap-y-3">
+            {STATS.map((stat) => (
+              <div key={stat.label} className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-2">
+                <dt className="sr-only">{stat.label}</dt>
+                <dd className="text-[22px] font-semibold tracking-[-0.02em] text-charcoal">{stat.value}</dd>
+                <dd aria-hidden="true" className="text-sm text-sage sm:text-[15px]">{stat.label}</dd>
               </div>
-              </FadeIn>
-
-              {/* Stats */}
-              <FadeIn delay={0.3} direction="up">
-              <div className="grid grid-cols-3 gap-4 md:gap-8">
-                {[
-                  { value: '7+ years', label: 'of establishing brands larger than life' },
-                  { value: '2000+ clients', label: 'with happy reviews' },
-                  { value: '2 Lakh+', label: 'bags per day manufacturing capability' },
-                ].map((stat, i) => (
-                  <div key={i}>
-                    <div className="w-full h-[2px] bg-white/20 rounded-full mb-3 lg:mb-4" />
-                    <h3 className="text-sm md:text-2xl font-semibold text-white mb-1">{stat.value}</h3>
-                    <p className="text-[10px] md:text-xs text-white/50 leading-relaxed">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-              </FadeIn>
-            </div>
-            </ScaleIn>
-          </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>

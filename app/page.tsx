@@ -4,7 +4,8 @@ import WhyChooseUsSection from "./Sections/WhyChooseUs";
 import AboutVideoSection from "./Sections/AboutUs";
 import ContactUs from "./Sections/ContactUs";
 import Reviews from "./Sections/Reviews";
-import Hero2 from "./components/Hero2";
+import HomeHero from "./components/HomeHero";
+import PromoBanners from "./components/PromoBanners";
 // import Hero3 from "./components/Hero3";
 import type { Metadata } from "next";
 import { SITE_NAME, DEFAULT_OPEN_GRAPH } from "./site";
@@ -24,11 +25,13 @@ export default function Home() {
   return (
     <>
       <div className="bg-cream min-h-screen w-full">
-        <Hero2 />
+        <HomeHero />
+        <PromoBanners />
         <AboutVideoSection />
+        {/* Sits right under the About section and shares its spacing (no top padding) */}
+        <WhyChooseUsSection />
         <MapSection />
       </div>
-      <WhyChooseUsSection/>
       {/* <WhyUs />/ */}
       <Reviews />
       <ContactUs />

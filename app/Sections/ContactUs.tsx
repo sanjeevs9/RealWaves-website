@@ -1,12 +1,26 @@
 'use client';
 
-import Image from "next/image";
 import React from "react";
-import { FadeIn } from '../components/animations';
+import Image from "next/image";
 import Toast, { ToastState } from '../components/Toast';
-import facebook from "@/public/socials/fb.png";
-import linkedin from "@/public/socials/linkedIn.png";
-import instagram from "@/public/socials/insta.png";
+import { BUSINESS, whatsappUrl } from '../site';
+import madhuBag from '@/public/bags/boppbox1.webp';
+import kajriBag from '@/public/bags/LH6.webp';
+import breadBasketBag from '@/public/bags/Box4.webp';
+
+// Three customer bags standing beside the form, like the bag stage in the hero.
+// Chosen for contrast on navy and for their full-size cut-outs (sharp on big screens).
+const PANEL_BAGS = [
+  { src: madhuBag, alt: 'Brown BOPP box bag printed for Madhu Textorium', className: 'h-[80%] z-[1]' },
+  { src: kajriBag, alt: 'White and red loop-handle bag printed for Kajri', className: 'h-full z-[2]' },
+  { src: breadBasketBag, alt: 'White box bag printed for The Bread Basket', className: 'h-[70%] z-[1]' },
+];
+
+const inputBase =
+  "w-full rounded-xl border bg-white px-4 py-3 text-[15px] text-charcoal placeholder-sage/60 transition-all focus:outline-none focus:ring-2";
+const inputOk = "border-[#E5DCC6] focus:border-forest focus:ring-forest/15";
+const inputError = "border-danger ring-2 ring-danger/15 focus:border-danger focus:ring-danger/15";
+const labelClass = "mb-1.5 block text-sm font-semibold text-charcoal";
 
 export default function ContactUs() {
   const formRef = React.useRef<HTMLFormElement>(null);
@@ -51,183 +65,135 @@ export default function ContactUs() {
       });
   };
 
-  const socialLinks = [
-    { icon: facebook, label: 'Facebook', url: 'https://www.facebook.com/realwavespacksraipur?mibextid=ZbWKwL' },
-    { icon: instagram, label: 'Instagram', url: 'https://www.instagram.com/real_wavespacks/#' },
-    { icon: linkedin, label: 'LinkedIn', url: 'https://linkedin.com' },
-  ];
-
   return (
-    <section id="contact" className="py-16 sm:py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Left - Contact Info */}
-          <FadeIn direction="right">
-          <div className="flex flex-col">
-            <div className="space-y-8">
-              {/* Header */}
-              <div>
-                <h2 className="section-heading">Get in Touch</h2>
-                <p className="mt-4 text-sage text-sm sm:text-base max-w-md leading-relaxed">
-                  Ready to elevate your packaging? Reach out and let&apos;s discuss how we can serve your business.
-                </p>
-              </div>
-
-              {/* Contact Methods */}
-              <div className="space-y-5">
-                {/* Email */}
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-forest/5 flex items-center justify-center flex-shrink-0">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B2D72" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="2" y="4" width="20" height="16" rx="2" />
-                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-xs text-sage uppercase tracking-wider">Email</p>
-                    <a href="mailto:realwavespacks@gmail.com" className="text-sm font-medium text-charcoal hover:text-[#0992C2] transition-colors">
-                      realwavespacks@gmail.com
-                    </a>
-                  </div>
+    <section id="contact" aria-labelledby="contact-title" className="bg-cream px-4 pb-16 sm:px-6 sm:pb-20">
+      <div className="mx-auto flex max-w-6xl flex-wrap overflow-hidden rounded-[28px] bg-white">
+        {/* Navy panel: a short line and three of our bags standing on a darker "shelf" */}
+        <div className="relative flex min-w-0 flex-1 basis-[420px] flex-col justify-between gap-8 overflow-hidden bg-forest px-7 pt-9 text-ivory sm:px-10 sm:pt-11">
+          <div>
+            <p className="text-[15px] font-semibold text-bronze">Made for your shop</p>
+            <p className="mt-2.5 max-w-[24rem] text-balance font-display text-[1.6rem] font-semibold leading-[1.15] tracking-[-0.02em] sm:text-[1.9rem]">
+              Your logo, on bags your customers carry home.
+            </p>
+            <p className="mt-3 max-w-[26rem] text-pretty text-[15px] leading-relaxed text-mist">
+              Printed for Madhu Textorium, Kajri, The Bread Basket and 2000+ more shops.
+            </p>
+          </div>
+          <div className="relative -mx-7 px-7 pb-7 sm:-mx-10 sm:px-10 sm:pb-9">
+            <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-14 bg-forest-dark sm:h-16" />
+            {/* Phones size the row by the screen width so all three bags fit side by side */}
+            <div className="relative mx-auto flex h-[50vw] items-end justify-center sm:h-[270px]">
+              {PANEL_BAGS.map((bag) => (
+                <div key={bag.alt} className={`relative -mx-[4vw] shrink-0 sm:-mx-4 ${bag.className}`}>
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-x-[8%] -bottom-2 h-4 rounded-[50%] bg-[radial-gradient(closest-side,rgba(0,0,0,0.35),rgba(0,0,0,0))]"
+                  />
+                  <Image
+                    src={bag.src}
+                    alt={bag.alt}
+                    sizes="(min-width: 1024px) 200px, 34vw"
+                    className="relative block h-full w-auto max-w-none"
+                  />
                 </div>
-
-                {/* Phone */}
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-forest/5 flex items-center justify-center flex-shrink-0">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B2D72" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-xs text-sage uppercase tracking-wider">Phone</p>
-                    <a href="tel:+919009990000" className="text-sm font-medium text-charcoal hover:text-[#0992C2] transition-colors">
-                      +91 90099 90000
-                    </a>
-                  </div>
-                </div>
-
-                {/* WhatsApp */}
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center flex-shrink-0">
-                    <Image src="/whatsapp.png" alt="WhatsApp" width={20} height={20} />
-                  </div>
-                  <div>
-                    <p className="text-xs text-sage uppercase tracking-wider">WhatsApp</p>
-                    <a href="https://wa.me/919009990000" className="text-sm font-medium text-charcoal hover:text-[#0992C2] transition-colors">
-                      Message us on WhatsApp
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="mt-10 pt-8 border-t border-linen lg:border-0">
-              <div className="flex items-center gap-4 sm:gap-6">
-                {socialLinks.map((social) => (
-                  <div
-                    key={social.label}
-                    className="flex items-center gap-1.5 sm:gap-2 cursor-pointer group"
-                    onClick={() => window.open(social.url, '_blank')}
-                  >
-                    <Image
-                      src={social.icon}
-                      alt={social.label}
-                      width={28}
-                      height={28}
-                      className="w-5 h-5 sm:w-7 sm:h-7 opacity-50 group-hover:opacity-100 transition-opacity duration-300"
-                    />
-                    <span className="text-xs sm:text-sm text-sage group-hover:text-charcoal transition-colors duration-300">
-                      {social.label} <span className="text-[10px] sm:text-xs">↗</span>
-                    </span>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
-          </FadeIn>
+        </div>
 
-          {/* Right - Form */}
-          <FadeIn direction="left" delay={0.15}>
-          <div className="bg-[#EEF2F9] rounded-2xl p-6 sm:p-8 lg:p-10">
-            <form ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-5">
-              <div>
-                <label htmlFor="contact-name" className="block text-sm font-medium text-charcoal mb-1.5">Name <span className="text-red-500">*</span></label>
-                <input
-                  id="contact-name" name="name" type="text" required placeholder="Your full name"
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/50 text-sm transition-all"
-                />
-              </div>
-              <div>
-                <label htmlFor="contact-email" className="block text-sm font-medium text-charcoal mb-1.5">Email</label>
-                <input
-                  id="contact-email" name="email" type="email" placeholder="you@company.com"
-                  onInput={() => contactError && setContactError(false)}
-                  className={`w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 bg-white placeholder-sage/50 text-sm transition-all ${
-                    contactError
-                      ? 'border-[#0992C2] ring-2 ring-[#0992C2]/15 focus:border-[#0992C2] focus:ring-[#0992C2]/15'
-                      : 'border-gray-200 focus:ring-forest/20 focus:border-forest'
-                  }`}
-                />
-              </div>
-              <div>
-                <label htmlFor="contact-phone" className="block text-sm font-medium text-charcoal mb-1.5">Phone / WhatsApp Number</label>
-                <input
-                  id="contact-phone" name="phone" type="tel"
-                  inputMode="numeric" maxLength={10} pattern="[6-9][0-9]{9}"
-                  title="Enter a 10-digit mobile number (without +91)"
-                  placeholder="10-digit mobile number"
-                  onInput={() => contactError && setContactError(false)}
-                  className={`w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 bg-white placeholder-sage/50 text-sm transition-all ${
-                    contactError
-                      ? 'border-[#0992C2] ring-2 ring-[#0992C2]/15 focus:border-[#0992C2] focus:ring-[#0992C2]/15'
-                      : 'border-gray-200 focus:ring-forest/20 focus:border-forest'
-                  }`}
-                />
-                <p className={`mt-1.5 text-xs ${contactError ? 'text-[#0992C2] font-medium' : 'text-sage'}`}>Please provide a phone number or email so we can reach you.</p>
-              </div>
-              <div>
-                <label htmlFor="contact-category" className="block text-sm font-medium text-charcoal mb-1.5">Product Category</label>
-                <select
-                  id="contact-category" name="category"
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white text-sm transition-all text-charcoal"
-                  defaultValue=""
-                >
-                  <option value="" disabled>Select a category</option>
-                  <option value="D-Cut">D-Cut</option>
-                  <option value="Loop Handle">Loop Handle</option>
-                  <option value="U-Cut">U-Cut</option>
-                  <option value="Box Bag">Box Bag</option>
-                  <option value="Bopp Box Bag">Bopp Box Bag</option>
-                  <option value="Bopp Loop Handle">Bopp Loop Handle</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="contact-desc" className="block text-sm font-medium text-charcoal mb-1.5">Message</label>
-                <textarea
-                  id="contact-desc" name="description" rows={5} placeholder="Tell us about your requirements..."
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-forest/20 focus:border-forest bg-white placeholder-sage/50 resize-none text-sm transition-all"
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="mt-1 bg-forest text-white font-medium rounded-xl px-6 py-3.5 hover:bg-forest-light transition-all duration-300 text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        {/* The enquiry form */}
+        <div className="min-w-0 flex-1 basis-[420px] p-7 sm:p-11">
+          <p className="text-[15px] font-semibold text-sage">Get in touch</p>
+          <h2 id="contact-title" className="mt-2.5 text-balance font-display text-[1.9rem] font-semibold leading-[1.1] tracking-[-0.02em] text-charcoal sm:text-[2.15rem]">
+            Tell us what you need
+          </h2>
+          <p className="mt-3 text-pretty text-[15px] leading-relaxed text-sage">
+            WhatsApp{' '}
+            <a
+              href={whatsappUrl("Hi RealWaves, I'd like to know more about your bags.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-charcoal underline-offset-4 hover:underline"
+            >
+              +91 90099 90000
+            </a>
+            , email{' '}
+            <a href={`mailto:${BUSINESS.email}`} className="font-semibold text-charcoal underline-offset-4 hover:underline">
+              {BUSINESS.email}
+            </a>{' '}
+            or fill in the form. We reply within 24 hours.
+          </p>
+
+          <form ref={formRef} onSubmit={sendEmail} className="mt-7 grid gap-4 sm:grid-cols-2">
+            <div className="sm:col-span-2">
+              <label htmlFor="contact-name" className={labelClass}>Name <span className="text-danger">*</span></label>
+              <input
+                id="contact-name" name="name" type="text" required placeholder="Your full name"
+                className={`${inputBase} ${inputOk}`}
+              />
+            </div>
+            <div>
+              <label htmlFor="contact-phone" className={labelClass}>Phone / WhatsApp</label>
+              <input
+                id="contact-phone" name="phone" type="tel"
+                inputMode="numeric" maxLength={10} pattern="[6-9][0-9]{9}"
+                title="Enter a 10-digit mobile number (without +91)"
+                placeholder="10-digit mobile number"
+                onInput={() => contactError && setContactError(false)}
+                className={`${inputBase} ${contactError ? inputError : inputOk}`}
+              />
+            </div>
+            <div>
+              <label htmlFor="contact-email" className={labelClass}>Email</label>
+              <input
+                id="contact-email" name="email" type="email" placeholder="you@company.com"
+                onInput={() => contactError && setContactError(false)}
+                className={`${inputBase} ${contactError ? inputError : inputOk}`}
+              />
+            </div>
+            <p className={`-mt-1 text-sm sm:col-span-2 ${contactError ? 'font-medium text-danger' : 'text-sage'}`}>
+              Please provide a phone number or email so we can reach you.
+            </p>
+            <div className="sm:col-span-2">
+              <label htmlFor="contact-category" className={labelClass}>Bag style</label>
+              <select
+                id="contact-category" name="category"
+                className={`${inputBase} ${inputOk}`}
+                defaultValue=""
               >
-                {isLoading ? (
-                  <>
-                    <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Sending...
-                  </>
-                ) : 'Send Message'}
-              </button>
-            </form>
-          </div>
-          </FadeIn>
+                <option value="" disabled>Select a bag style</option>
+                <option value="D-Cut">D-Cut</option>
+                <option value="Loop Handle">Loop Handle</option>
+                <option value="U-Cut">U-Cut</option>
+                <option value="Box Bag">Box Bag</option>
+                <option value="Bopp Box Bag">BOPP Box Bag</option>
+                <option value="Bopp Loop Handle">BOPP Loop Handle</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="contact-desc" className={labelClass}>Message</label>
+              <textarea
+                id="contact-desc" name="description" rows={3} placeholder="Quantity, colours, delivery city…"
+                className={`${inputBase} ${inputOk} resize-none`}
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-forest px-6 text-[15px] font-semibold text-ivory transition-colors hover:bg-forest-light disabled:cursor-not-allowed disabled:opacity-50 sm:col-span-2"
+            >
+              {isLoading ? (
+                <>
+                  <svg className="h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Sending…
+                </>
+              ) : 'Send enquiry'}
+            </button>
+          </form>
         </div>
       </div>
 

@@ -1,181 +1,97 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Navigation } from 'lucide-react';
-import { FadeIn, ScaleIn } from '../components/animations';
+import Image from 'next/image';
+import { BUSINESS } from '../site';
+// A group of bags we printed for real shops, built from our bag cut-outs by
+// scripts/make-bag-collage.cjs (transparent, so it sits on the ivory panel below)
+import bagsCollage from '@/public/factory/bags-collage.webp';
 
-interface StoreLocation {
-  name: string;
-  address: string;
-  city: string;
-  zipCode: string;
-  nearestMetro?: {
-    name: string;
-    line: string;
-  } | null;
-  nearestBus?: string;
-  coordinates: {
-    lat: number;
-    lng: number;
-  };
-}
+const { latitude: lat, longitude: lng } = BUSINESS.geo;
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+const googleMapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}&q=${lat},${lng}&zoom=15&maptype=satellite`;
+const fallbackMapUrl = `https://maps.google.com/maps?q=${lat},${lng}&z=15&t=k&output=embed`;
 
-interface StoreStats {
-  dailyFootfall: string;
-  dailyFootfallDescription: string;
-  bagsShipped: string;
-  bagsShippedDescription: string;
-  rating: string;
-  ratingDescription: string;
-}
-
+// Figures the site already states. The old "4.9 rating" is left out: no review
+// listing backs it up (the only Google Maps listing found is marked closed).
 const MapSection: React.FC = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
 
-  const storeLocation: StoreLocation = {
-    name: "RealWaves Packs – Factory & Store",
-    address: "Near SBI Bank, Nakoda Group Premises Ward 26, Village Saddu, Raipur (C.G) 492014",
-    city: "Raipur",
-    zipCode: "492014",
-    coordinates: {
-      lat: 21.272750,
-      lng: 81.693197
-    }
-  };
-
-  const storeStats: StoreStats = {
-    dailyFootfall: "100+",
-    dailyFootfallDescription: "Cities across India we supply to",
-    bagsShipped: "3 Crore+",
-    bagsShippedDescription: "Bags Shipped to 100+ cities",
-    rating: "4.9 Rating",
-    ratingDescription: "By the customers visiting our store."
-  };
-
-  const googleMapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}&q=${storeLocation.coordinates.lat},${storeLocation.coordinates.lng}&zoom=15&maptype=satellite`;
-  const fallbackMapUrl = `https://maps.google.com/maps?q=${storeLocation.coordinates.lat},${storeLocation.coordinates.lng}&z=15&t=k&output=embed`;
-
-  const handleNavigateClick = () => {
-    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${storeLocation.coordinates.lat},${storeLocation.coordinates.lng}`;
-    window.open(googleMapsUrl, '_blank');
-  };
-
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-cream">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-          {/* Left Column - Store Information */}
-          <div className="space-y-8 lg:space-y-10 flex flex-col justify-between h-full p-2 md:p-0">
-            {/* Header */}
-            <FadeIn direction="up" duration={0.7}>
-              <div className="space-y-4">
-                <h2 className="section-heading">
-                  Our Store Awaits
-                  <br className="hidden sm:block" />
-                  Your Visit
-                </h2>
-              </div>
-            </FadeIn>
+    <section aria-labelledby="visit-title" className="bg-bronze px-4 py-16 sm:px-6 sm:py-20">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-12">
+        <div className="min-w-0 flex-1 basis-[360px]">
+          <p className="text-[15px] font-semibold text-sage">Factory &amp; store</p>
+          <h2 id="visit-title" className="section-heading mt-3 text-balance">
+            Visit our factory in Raipur
+          </h2>
+          <p className="mt-4 text-pretty text-base leading-relaxed text-sage sm:text-[17px]">
+            Feel the fabric, compare bag styles and talk through your print before you order.
+          </p>
+          <address className="mt-6 text-[15px] not-italic leading-relaxed text-charcoal">
+            <span className="block font-semibold">RealWaves Packs</span>
+            <span className="block text-sage">
+              {BUSINESS.address.streetAddress}, Raipur, Chhattisgarh {BUSINESS.address.postalCode}
+            </span>
+          </address>
+          <p className="mt-3 text-[15px] text-sage">
+            <a href="tel:+919009990000" className="inline-block py-2 font-semibold text-charcoal underline-offset-4 hover:underline">+91 90099 90000</a>
+            {' / '}
+            <a href="tel:+919617234355" className="inline-block py-2 font-semibold text-charcoal underline-offset-4 hover:underline">+91 96172 34355</a>
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a
+              href={directionsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[48px] items-center gap-2.5 rounded-full bg-forest px-6 text-[15px] font-semibold text-ivory transition-colors hover:bg-forest-light"
+            >
+              <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 11 22 2l-9 19-2-8z" />
+              </svg>
+              Get directions
+            </a>
+            <a
+              href="tel:+919009990000"
+              className="inline-flex min-h-[48px] items-center rounded-full px-6 text-[15px] font-semibold text-charcoal ring-1 ring-inset ring-forest transition-colors hover:bg-forest hover:text-ivory"
+            >
+              Call the store
+            </a>
+          </div>
+        </div>
 
-            {/* Store Details */}
-            <div className="space-y-4">
-              <h3 className="text-lg sm:text-xl font-semibold text-charcoal">
-                {storeLocation.name}
-              </h3>
-              <p className="text-sage leading-relaxed text-sm sm:text-base">
-                {storeLocation.address}
-              </p>
-              <div className="pt-1">
-                <p className="text-xs text-sage uppercase tracking-wider mb-1">Phone / WhatsApp</p>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <a href="tel:+919009990000" className="text-sm font-medium text-[#0992C2] hover:underline">+91 90099 90000</a>
-                  <span className="text-sage">/</span>
-                  <a href="tel:+919617234355" className="text-sm font-medium text-[#0992C2] hover:underline">+91 9617234355</a>
+        <div className="flex min-w-0 flex-1 basis-[480px] flex-col gap-4">
+          <div className="overflow-hidden rounded-3xl bg-ivory">
+            <Image
+              src={bagsCollage}
+              alt="Printed RealWaves bags for Kajri, Shail, Saheb, The Bread Basket, Fusion, Bonzelo and Madhu Textorium"
+              sizes="(min-width: 1024px) 620px, 100vw"
+              className="aspect-video w-full object-contain"
+            />
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="relative h-[200px] overflow-hidden rounded-[20px] bg-linen">
+              <iframe
+                src={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ? googleMapsEmbedUrl : fallbackMapUrl}
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full"
+                onLoad={() => setMapLoaded(true)}
+                title="Map of the RealWaves Packs factory in Raipur"
+              />
+              {!mapLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-linen">
+                  <p className="text-sm text-sage">Loading map…</p>
                 </div>
-              </div>
+              )}
             </div>
-
-            {/* Statistics */}
-            <div className="grid grid-cols-3 gap-4 lg:gap-6 pt-2">
-              {[
-                { value: storeStats.dailyFootfall, label: storeStats.dailyFootfallDescription },
-                { value: storeStats.bagsShipped, label: storeStats.bagsShippedDescription },
-                { value: storeStats.rating, label: storeStats.ratingDescription },
-              ].map((stat, i) => (
-                <div key={i} className="text-left">
-                  <div className="w-full h-[2px] bg-[#0B2D72]/15 rounded-full mb-3 lg:mb-4" />
-                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-charcoal mb-1 lg:mb-2">
-                    {stat.value}
-                  </div>
-                  <p className="text-xs text-sage leading-relaxed">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
+            <div className="flex flex-col justify-center rounded-[20px] bg-forest p-6 text-ivory">
+              <p className="text-[1.75rem] font-semibold tracking-[-0.02em] text-bronze">3 crore+</p>
+              <p className="mt-1 text-sm text-mist">bags shipped to 100+ cities</p>
             </div>
           </div>
-
-          {/* Right Column - Map */}
-          <ScaleIn delay={0.15}>
-          <div className="relative mt-6 lg:mt-0">
-            <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5">
-              {/* Map Container */}
-              <div className="absolute inset-0 bg-linen">
-                <iframe
-                  src={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ? googleMapsEmbedUrl : fallbackMapUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full"
-                  onLoad={() => setMapLoaded(true)}
-                  title="Store Location Map"
-                />
-
-                {/* Loading State */}
-                {!mapLoaded && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-linen">
-                    <div className="text-center space-y-2">
-                      <div className="w-6 h-6 sm:w-8 sm:h-8 border-2 border-forest border-t-transparent rounded-full animate-spin mx-auto"></div>
-                      <p className="text-xs sm:text-sm text-sage">Loading map...</p>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Navigate Button */}
-              <button
-                onClick={handleNavigateClick}
-                className="absolute bottom-3 right-3 lg:bottom-4 lg:right-4 bg-forest hover:bg-forest-light text-white px-3 py-2 lg:px-4 lg:py-2.5 rounded-xl shadow-lg transition-all duration-300 flex items-center gap-1.5 lg:gap-2 font-medium text-xs lg:text-sm"
-              >
-                <Navigation size={14} className="lg:w-4 lg:h-4" />
-                <span>Navigate</span>
-              </button>
-            </div>
-
-            {/* Mobile Quick Actions */}
-            <div className="mt-4 grid grid-cols-2 gap-3 lg:hidden">
-              <button
-                onClick={handleNavigateClick}
-                className="flex items-center justify-center gap-2 bg-forest hover:bg-forest-light text-white py-2.5 px-3 sm:py-3 sm:px-4 rounded-xl font-medium transition-colors text-sm"
-              >
-                <Navigation size={16} />
-                <span>Get Directions</span>
-              </button>
-              <a
-                href="tel:+919009990000"
-                className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#22c55e] text-white py-2.5 px-3 sm:py-3 sm:px-4 rounded-xl font-medium transition-colors text-sm"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-                <span>Call Store</span>
-              </a>
-            </div>
-          </div>
-          </ScaleIn>
         </div>
       </div>
     </section>

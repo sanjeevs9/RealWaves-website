@@ -15,71 +15,48 @@ const ProductCard = ({
   slug?: string;
   onInquiry?: (productName: string) => void;
 }) => {
+  const size = [dimensions?.width, dimensions?.height, dimensions?.Gusset].filter(Boolean).join('″ × ');
+
   const content = (
     <>
-      {/* Image */}
-      <div className="bg-linen flex justify-center items-center h-36 sm:h-48 p-4">
+      {/* Image on a soft cream tile, like the cards on the homepage */}
+      <div className="flex h-44 items-center justify-center rounded-2xl bg-cream p-4 sm:h-56 sm:p-6">
         <Image
           src={productImage}
           alt={productName}
-          width={200}
-          height={200}
-          className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+          width={220}
+          height={220}
+          className="max-h-full max-w-full object-contain drop-shadow-[0_10px_14px_rgba(11,45,114,0.14)] transition-transform duration-500 group-hover:scale-[1.04]"
         />
       </div>
 
-      {/* Info */}
-      <div className="p-3 sm:p-4">
-        <h3 className="text-xs sm:text-sm font-medium text-charcoal mb-2 group-hover:text-[#0992C2] transition-colors duration-300 leading-snug">
-          {productName}
-        </h3>
-
-        {/* Dimensions */}
-        <div className="flex items-center gap-2 flex-wrap">
-          {dimensions?.height && (
-            <span className="inline-flex items-center gap-1 text-[10px] sm:text-xs text-sage">
-              <span className="w-4 h-4 rounded bg-charcoal/10 text-charcoal text-[9px] font-semibold flex items-center justify-center">H</span>
-              {dimensions.height}<span className="text-sage/60">in</span>
-            </span>
-          )}
-          {dimensions?.width && (
-            <span className="inline-flex items-center gap-1 text-[10px] sm:text-xs text-sage">
-              <span className="w-4 h-4 rounded bg-charcoal/10 text-charcoal text-[9px] font-semibold flex items-center justify-center">W</span>
-              {dimensions.width}<span className="text-sage/60">in</span>
-            </span>
-          )}
-          {dimensions?.Gusset && (
-            <span className="inline-flex items-center gap-1 text-[10px] sm:text-xs text-sage">
-              <span className="w-4 h-4 rounded bg-charcoal/10 text-charcoal text-[9px] font-semibold flex items-center justify-center">G</span>
-              {dimensions.Gusset}<span className="text-sage/60">in</span>
-            </span>
-          )}
-        </div>
+      <div className="px-2 pb-1.5 pt-3 sm:px-2.5">
+        <h3 className="text-[15px] font-semibold leading-snug text-charcoal sm:text-base">{productName}</h3>
+        {size && <p className="mt-1 text-[13px] text-sage sm:text-sm">{size}″ (W × H{dimensions?.Gusset ? ' × G' : ''})</p>}
       </div>
     </>
   );
 
   return (
-    <div className="relative bg-white rounded-xl ring-1 ring-black/[0.04] overflow-hidden group hover:shadow-lg hover:shadow-charcoal/5 transition-all duration-300">
+    <div className="group relative rounded-[22px] bg-white p-2 ring-1 ring-inset ring-[#EADFC4] transition-shadow duration-300 hover:shadow-[0_16px_36px_rgba(11,45,114,0.10)] sm:p-2.5">
       {/* A real <a href> so crawlers can follow it to the product page */}
       {slug ? (
-        <Link href={`/products/${slug}`} className="block">
+        <Link href={`/products/${slug}`} className="block rounded-2xl">
           {content}
         </Link>
       ) : (
         content
       )}
 
-      {/* Inquiry overlay — a sibling of the link, since a <button> can't nest inside <a> */}
+      {/* Quote button: a sibling of the link, since a <button> can't nest inside <a> */}
       {onInquiry && (
         <button
+          type="button"
           onClick={() => onInquiry(productName)}
-          className="absolute top-2 right-2 bg-white/80 backdrop-blur-sm p-2 rounded-full ring-1 ring-black/[0.06] shadow-sm opacity-60 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 hover:bg-forest hover:text-white text-charcoal"
-          aria-label={`Inquire about ${productName}`}
+          className="absolute right-3.5 top-3.5 inline-flex h-10 items-center rounded-full bg-white px-3.5 text-[13px] font-semibold text-forest shadow-sm ring-1 ring-inset ring-[#EADFC4] transition-all duration-300 hover:bg-forest hover:text-ivory sm:right-5 sm:top-5 sm:opacity-0 sm:group-hover:opacity-100 sm:focus-visible:opacity-100"
+          aria-label={`Get a quote for ${productName}`}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-          </svg>
+          Quote
         </button>
       )}
     </div>

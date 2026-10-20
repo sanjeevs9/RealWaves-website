@@ -1,20 +1,17 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
+import { Archivo } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { Footer } from "./Sections/Footer";
 import { Analytics } from "@vercel/analytics/next";
-import { SITE_URL, SITE_NAME, LEGAL_NAME, BUSINESS, DEFAULT_OPEN_GRAPH } from "./site";
+import { SITE_URL, SITE_NAME, LEGAL_NAME, BUSINESS, DEFAULT_OPEN_GRAPH, IS_PREVIEW } from "./site";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+// One family for the whole site: a sturdy grotesk with a width axis. Body text uses
+// the normal width; headings (font-display) use a semi-expanded cut, see globals.css.
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
+  axes: ["wdth"],
   display: "swap",
 });
 
@@ -45,6 +42,7 @@ export const metadata: Metadata = {
   },
   // No site-wide canonical here: every page sets its own via `alternates`,
   // otherwise child pages inherit "/" and look like duplicates of the homepage.
+  ...(IS_PREVIEW && { robots: { index: false, follow: false } }),
 };
 
 const jsonLd = {
@@ -121,7 +119,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${playfair.variable} ${dmSans.variable} antialiased font-body`}
+        className={`${archivo.variable} antialiased font-body`}
       >
         <div className="flex flex-col justify-between min-h-screen">
           <Navbar />

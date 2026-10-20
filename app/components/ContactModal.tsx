@@ -66,7 +66,7 @@ export default function ContactModal({
             >
                 <div className="flex justify-between items-start mb-6">
                     <div>
-                        <h3 className="text-xl font-display font-bold text-charcoal">Get in Touch</h3>
+                        <h3 className="text-xl font-display font-semibold text-charcoal">Get in Touch</h3>
                         <p className="text-sm text-sage mt-1">We&apos;ll get back to you within 24 hours</p>
                     </div>
                     <button
@@ -94,7 +94,7 @@ export default function ContactModal({
                             onInput={() => contactError && setContactError(false)}
                             className={`w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 bg-cream/50 placeholder-sage text-sm transition-all ${
                                 contactError
-                                    ? 'border-[#0992C2] ring-2 ring-[#0992C2]/15 focus:border-[#0992C2] focus:ring-[#0992C2]/15'
+                                    ? 'border-danger ring-2 ring-danger/15 focus:border-danger focus:ring-danger/15'
                                     : 'border-linen focus:ring-forest/20 focus:border-forest'
                             }`}
                         />
@@ -109,11 +109,11 @@ export default function ContactModal({
                             onInput={() => contactError && setContactError(false)}
                             className={`w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 bg-cream/50 placeholder-sage text-sm transition-all ${
                                 contactError
-                                    ? 'border-[#0992C2] ring-2 ring-[#0992C2]/15 focus:border-[#0992C2] focus:ring-[#0992C2]/15'
+                                    ? 'border-danger ring-2 ring-danger/15 focus:border-danger focus:ring-danger/15'
                                     : 'border-linen focus:ring-forest/20 focus:border-forest'
                             }`}
                         />
-                        <p className={`mt-1.5 text-xs ${contactError ? 'text-[#0992C2] font-medium' : 'text-sage'}`}>Please provide a phone number or email so we can reach you.</p>
+                        <p className={`mt-1.5 text-xs ${contactError ? 'text-danger font-medium' : 'text-sage'}`}>Please provide a phone number or email so we can reach you.</p>
                     </div>
                     <div>
                         <label htmlFor="modal-category" className="block text-sm font-medium text-charcoal mb-1.5">Product Category</label>

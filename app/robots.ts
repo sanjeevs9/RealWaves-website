@@ -1,7 +1,10 @@
 import { MetadataRoute } from "next";
-import { SITE_URL } from "./site";
+import { IS_PREVIEW, SITE_URL } from "./site";
 
 export default function robots(): MetadataRoute.Robots {
+  if (IS_PREVIEW) {
+    return { rules: { userAgent: "*", disallow: "/" } };
+  }
   return {
     rules: {
       userAgent: "*",

@@ -11,8 +11,8 @@ import path from "node:path";
 const IMAGES = [
   // product cut-outs (transparent background), shown up to ~600px wide
   ...[
-    "D-cut4", "D-cut5", "D-cut6", "D-cut7", "u-cut1", "u-cut2", "LH4", "LH5", "LH6", "LH7",
-    "Box3", "Box4", "Box5", "boppbox", "boppbox1", "boppbox2", "designed", "redBag",
+    "D-cut3", "D-cut4", "D-cut5", "D-cut6", "D-cut7", "u-cut1", "u-cut2", "LH3", "LH4", "LH5", "LH6", "LH7",
+    "Box2", "Box3", "Box4", "Box5", "boppbox", "boppbox1", "boppbox2", "designed", "redBag",
   ].map((n) => [`bags/${n}.png`, 1000]),
   ["heroSection/hero-bag.png", 900],
   ["heroSection/_DSC3176 2.png", 1600], // laptop/desktop hero (bag sits on the bottom edge)

@@ -28,11 +28,17 @@
     color: #0992C2;
   }
   .section-heading {
-    @apply font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-charcoal leading-[1.15] tracking-tight;
+    @apply font-display text-2xl sm:text-3xl lg:text-4xl font-semibold text-charcoal leading-[1.12] tracking-[-0.02em];
   }
 }
 
 @layer utilities {
+  /* Headings: Archivo, slightly wider than body text. Set through the axis directly, so it
+     works whether or not the @font-face declares a font-stretch range. */
+  .font-display {
+    font-variation-settings: "wdth" 106;
+  }
+
   .animate-reveal {
     animation: reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     opacity: 0;

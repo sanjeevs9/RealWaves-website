@@ -38,12 +38,12 @@ export const WhyChooseUsCard: React.FC<WhyChooseUsCardProps> = ({
       {/* Content */}
       <div className="p-5 sm:p-6">
         {/* Icon */}
-        <div className="mb-4 text-[#0992C2] [&_svg]:w-10 [&_svg]:h-10">
+        <div className="mb-4 text-bronze-ink [&_svg]:w-10 [&_svg]:h-10">
           {icon}
         </div>
 
         {/* Title */}
-        <h3 className="text-lg font-display font-bold text-charcoal mb-2.5 leading-snug">{title}</h3>
+        <h3 className="text-lg font-display font-semibold text-charcoal mb-2.5 leading-snug">{title}</h3>
 
         {/* Description */}
         <p className="text-sm text-sage leading-relaxed">{description}</p>

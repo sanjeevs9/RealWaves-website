@@ -1,215 +1,119 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
-import { StaggerContainer, StaggerItem } from '../components/animations';
 import logo from '@/public/logo.png';
-import facebook from '@/public/socials/fb.png';
-import instagram from '@/public/socials/insta.png';
-import linkedin from '@/public/socials/linkedIn.png';
+import { BagTypes } from '../bagTypes';
+import { BUSINESS, LEGAL_NAME, whatsappUrl } from '../site';
+
+const COMPANY_LINKS = [
+    { label: 'All products', href: '/products' },
+    { label: 'About us', href: '/about' },
+    { label: 'Blogs', href: '/blogs' },
+    { label: 'Contact', href: '/#contact' },
+];
+
+// Only the profiles that exist (the old LinkedIn link pointed at linkedin.com itself).
+const SOCIALS = [
+    { label: 'Facebook', url: BUSINESS.sameAs[0] },
+    { label: 'Instagram', url: BUSINESS.sameAs[1] },
+];
+
+// Phones get 40px-tall rows so each link is easy to tap
+const linkClass = 'inline-flex min-h-[40px] items-center text-[15px] text-mist transition-colors hover:text-ivory sm:min-h-0';
 
 export const Footer = () => {
-    const socialLinks = [
-        { icon: facebook, label: 'Facebook', url: 'https://www.facebook.com/realwavespacksraipur?mibextid=ZbWKwL' },
-        { icon: instagram, label: 'Instagram', url: 'https://www.instagram.com/real_wavespacks/#' },
-        { icon: linkedin, label: 'LinkedIn', url: 'https://linkedin.com' },
-    ];
-
     return (
-        <footer className="relative overflow-hidden">
-            {/* Main footer */}
-            <div className="bg-[#F1F5F9]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10">
-
-                    {/* Top row — Logo + CTA */}
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12 sm:mb-14">
-                        <div>
-                            <Image
-                                src={logo}
-                                alt="RealWaves Packs"
-                                width={471}
-                                height={70}
-                                className="w-[140px] sm:w-[180px]"
-                            />
-                            <p className="mt-2.5 text-[#0B2D72]/40 text-xs tracking-[1.5px] uppercase font-medium">
-                                Non-Woven Bag Manufacturer in Raipur
-                            </p>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <Link
-                                href="/products"
-                                className="px-6 py-2.5 bg-[#0B2D72] text-white rounded-lg text-sm font-medium hover:bg-[#0B2D72]/85 transition-colors duration-300"
-                            >
-                                Explore Products
-                            </Link>
-                            <Link
-                                href="/about"
-                                className="px-6 py-2.5 ring-1 ring-[#0B2D72]/20 text-[#0B2D72] rounded-lg text-sm font-medium hover:bg-[#0B2D72]/5 transition-all duration-300"
-                            >
-                                About Us
-                            </Link>
-                        </div>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="w-full h-px bg-[#0B2D72]/10 mb-12 sm:mb-14" />
-
-                    {/* 3-column grid */}
-                    <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12" staggerDelay={0.15}>
-
-                        {/* Contact */}
-                        <StaggerItem>
-                            <h3 className="text-xs font-semibold uppercase tracking-[2.5px] text-[#0B2D72] mb-6">
-                                Contact
-                            </h3>
-                            <div className="space-y-3.5 text-sm text-[#0B2D72]/60 leading-relaxed">
-                                <a href="tel:+919009990000" className="flex items-center gap-2.5 hover:text-[#0B2D72] transition-colors">
-                                    <svg className="w-4 h-4 text-[#0B2D72]/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                    </svg>
-                                    +91 90099 90000
-                                </a>
-                                <a href="tel:+919617234355" className="flex items-center gap-2.5 hover:text-[#0B2D72] transition-colors">
-                                    <svg className="w-4 h-4 text-[#0B2D72]/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                    </svg>
-                                    +91 9617234355
-                                </a>
-                                <a href="mailto:realwavespacks@gmail.com" className="flex items-center gap-2.5 hover:text-[#0B2D72] transition-colors">
-                                    <svg className="w-4 h-4 text-[#0B2D72]/40 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                    </svg>
-                                    realwavespacks@gmail.com
-                                </a>
-                                <div className="flex items-start gap-2.5 pt-1">
-                                    <svg className="w-4 h-4 text-[#0B2D72]/40 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                    <div className="space-y-0.5">
-                                        <p>Near SBI Bank, Nakoda Group Premises</p>
-                                        <p>Ward 26, Village Saddu, Raipur</p>
-                                        <p>(C.G) 492014</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </StaggerItem>
-
-                        {/* Quick Links */}
-                        <StaggerItem>
-                            <h3 className="text-xs font-semibold uppercase tracking-[2.5px] text-[#0B2D72] mb-6">
-                                Quick Links
-                            </h3>
-                            <div className="space-y-3">
-                                {[
-                                    { label: 'D-Cut Bags', href: '/non-woven-bags/d-cut-bags' },
-                                    { label: 'U-Cut Bags', href: '/non-woven-bags/u-cut-bags' },
-                                    { label: 'Loop Handle Bags', href: '/non-woven-bags/loop-handle-bags' },
-                                    { label: 'Box Bags', href: '/non-woven-bags/box-bags' },
-                                    { label: 'BOPP Laminated Bags', href: '/non-woven-bags/bopp-laminated-bags' },
-                                    { label: 'All Products', href: '/products' },
-                                    { label: 'About Us', href: '/about' },
-                                ].map((link) => (
-                                    <Link
-                                        key={link.label}
-                                        href={link.href}
-                                        className="block text-sm text-[#0B2D72]/50 hover:text-[#0B2D72] hover:translate-x-1 transition-all duration-300"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                ))}
-                            </div>
-                        </StaggerItem>
-
-                        {/* Get In Touch + Socials */}
-                        <StaggerItem>
-                            <h3 className="text-xs font-semibold uppercase tracking-[2.5px] text-[#0B2D72] mb-6">
-                                Get In Touch
-                            </h3>
-                            <p className="text-sm text-[#0B2D72]/50 mb-5 leading-relaxed">
-                                Drop us your email and we&apos;ll get back to you within 24 hours.
-                            </p>
-                            <div className="flex">
-                                <input
-                                    type="email"
-                                    placeholder="Enter your email..."
-                                    className="px-4 py-2.5 w-full rounded-l-lg text-[#0B2D72] text-sm focus:outline-none bg-white border border-[#0B2D72]/10 border-r-0 placeholder-[#0B2D72]/30 focus:border-[#0B2D72]/25 transition-colors"
-                                />
-                                <button className="bg-[#0B2D72] hover:bg-[#0B2D72]/85 px-5 py-2.5 rounded-r-lg transition-colors duration-300 text-white font-medium text-sm flex-shrink-0">
-                                    Send
-                                </button>
-                            </div>
-
-                            {/* Socials */}
-                            <div className="flex items-center gap-3 mt-8">
-                                {socialLinks.map((s) => (
-                                    <Link
-                                        key={s.label}
-                                        href={s.url}
-                                        target="_blank"
-                                        className="w-9 h-9 rounded-lg bg-white hover:bg-[#0B2D72]/[0.06] ring-1 ring-[#0B2D72]/[0.06] flex items-center justify-center transition-all duration-300 group"
-                                    >
-                                        <Image
-                                            src={s.icon}
-                                            alt={s.label}
-                                            width={16}
-                                            height={16}
-                                            className="opacity-35 group-hover:opacity-70 transition-opacity duration-300"
-                                        />
-                                    </Link>
-                                ))}
-                            </div>
-                        </StaggerItem>
-                    </StaggerContainer>
+        // All navy: a last call to action, the link columns, then a giant faint
+        // "RealWaves" wordmark that the bottom bar slightly overlaps
+        <footer className="overflow-hidden bg-forest text-ivory">
+            <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-5 px-4 pb-10 pt-14 sm:px-6 sm:pt-16">
+                <p className="font-display text-[1.7rem] font-semibold leading-tight tracking-[-0.02em] sm:text-[2.2rem]">
+                    Ready to print your bags?
+                </p>
+                <div className="flex flex-wrap gap-3">
+                    <a
+                        href={whatsappUrl("Hi RealWaves, I'd like a quote for non-woven bags.")}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-[48px] items-center rounded-full bg-ivory px-6 text-[15px] font-semibold text-forest transition-colors hover:bg-white"
+                    >
+                        Get a quote on WhatsApp
+                    </a>
+                    <a
+                        href="tel:+919009990000"
+                        className="inline-flex min-h-[48px] items-center rounded-full px-6 text-[15px] font-semibold text-ivory ring-1 ring-inset ring-ivory/50 transition-colors hover:bg-ivory/10"
+                    >
+                        Call +91 90099 90000
+                    </a>
                 </div>
             </div>
 
-            {/* Certifications strip */}
-            <div className="bg-[#E8ECF3] border-t border-[#0B2D72]/8">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-                    <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-10">
-                        {/* 100% Recyclable */}
-                        <div className="flex items-center gap-2.5">
-                            <div className="w-9 h-9 rounded-full bg-green-600/10 flex items-center justify-center">
-                                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                                </svg>
-                            </div>
-                            <span className="text-xs font-semibold text-[#0B2D72]/70 uppercase tracking-wider">100% Recyclable</span>
-                        </div>
+            <div className="mx-auto max-w-6xl px-4 sm:px-6">
+                <div className="grid grid-cols-2 gap-x-6 gap-y-10 border-t border-ivory/15 pb-4 pt-12 sm:gap-10 lg:grid-cols-[minmax(0,1.3fr)_repeat(3,minmax(0,1fr))]">
+                    <div className="col-span-2 sm:col-span-1">
+                        <Link href="/" aria-label="RealWaves Packs home" className="inline-flex py-1">
+                            {/* The blue logo, turned white for the navy background */}
+                            <Image src={logo} alt="RealWaves Packs" className="h-[28px] w-auto brightness-0 invert" />
+                        </Link>
+                        <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-mist">
+                            Custom printed non-woven bags, made in Raipur since 2017.
+                        </p>
+                        <address className="mt-3 max-w-xs text-[15px] not-italic leading-relaxed text-mist">
+                            {BUSINESS.address.streetAddress}, Raipur, Chhattisgarh {BUSINESS.address.postalCode}
+                        </address>
+                    </div>
 
-                        {/* ISO Certified */}
-                        <div className="flex items-center gap-2.5">
-                            <div className="w-9 h-9 rounded-full bg-blue-600/10 flex items-center justify-center">
-                                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                            </div>
-                            <span className="text-xs font-semibold text-[#0B2D72]/70 uppercase tracking-wider">ISO Certified</span>
-                        </div>
+                    <nav aria-label="Bag styles">
+                        <h3 className="text-[15px] font-semibold text-ivory">Bag styles</h3>
+                        <ul className="mt-2 sm:mt-4 sm:space-y-2.5">
+                            {BagTypes.map((bag) => (
+                                <li key={bag.slug}>
+                                    <Link href={`/non-woven-bags/${bag.slug}`} className={linkClass}>{bag.name}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
 
-                        {/* Make in India */}
-                        <div className="flex items-center gap-2.5">
-                            <div className="w-9 h-9 rounded-full bg-orange-500/10 flex items-center justify-center">
-                                <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21h18M5 21V7l8-4v18M13 21V3l6 4v14" />
-                                </svg>
-                            </div>
-                            <span className="text-xs font-semibold text-[#0B2D72]/70 uppercase tracking-wider">Make in India</span>
-                        </div>
+                    <nav aria-label="Company">
+                        <h3 className="text-[15px] font-semibold text-ivory">Company</h3>
+                        <ul className="mt-2 sm:mt-4 sm:space-y-2.5">
+                            {COMPANY_LINKS.map((link) => (
+                                <li key={link.label}>
+                                    <Link href={link.href} className={linkClass}>{link.label}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+
+                    <div className="col-span-2 sm:col-span-1">
+                        <h3 className="text-[15px] font-semibold text-ivory">Contact</h3>
+                        <ul className="mt-2 sm:mt-4 sm:space-y-2.5">
+                            <li><a href="tel:+919009990000" className={linkClass}>+91 90099 90000</a></li>
+                            <li><a href="tel:+919617234355" className={linkClass}>+91 96172 34355</a></li>
+                            <li><a href={`mailto:${BUSINESS.email}`} className={`${linkClass} break-all`}>{BUSINESS.email}</a></li>
+                            <li className="flex gap-6 sm:pt-1">
+                                {SOCIALS.map((s) => (
+                                    <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[40px] items-center text-[15px] font-semibold text-ivory underline-offset-4 hover:underline sm:min-h-0">
+                                        {s.label}
+                                    </a>
+                                ))}
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            {/* Bottom bar — navy strip */}
-            <div className="bg-[#0B2D72] px-4 sm:px-6 lg:px-8 py-4">
-                <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-                    <p className="text-[11px] text-white/50">
-                        &copy; {new Date().getFullYear()} Realwaves Packs (India) Pvt. Ltd. All rights reserved.
-                    </p>
-                    <p className="text-[11px] text-white/30">
-                        Made in Raipur, Chhattisgarh
-                    </p>
+            {/* Sized so the word spans the content width; the bar below covers its foot */}
+            <p
+                aria-hidden="true"
+                className="mx-auto mb-[-0.13em] mt-6 max-w-6xl select-none whitespace-nowrap px-4 text-center font-display text-[clamp(3.6rem,calc((100vw-48px)/5.55),12.4rem)] font-bold leading-[0.8] tracking-[-0.045em] text-white/[0.07] sm:mt-10 sm:px-6"
+            >
+                RealWaves
+            </p>
+
+            <div className="relative bg-forest-dark">
+                <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-5 text-sm text-mist sm:px-6">
+                    <p>&copy; {new Date().getFullYear()} {LEGAL_NAME}. All rights reserved.</p>
+                    <p>Made in Raipur, Chhattisgarh</p>
                 </div>
             </div>
         </footer>

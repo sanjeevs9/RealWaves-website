@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[68px]">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0 py-2">
             <Image
               src={logo}
               alt="RealWaves"
@@ -106,7 +106,7 @@ const Navbar = () => {
           <div className="flex md:hidden items-center gap-2">
             <a
               href="tel:+919009990000"
-              className="bg-forest text-white p-2.5 rounded-full hover:bg-forest-light transition-colors"
+              className="bg-forest text-white p-3 rounded-full hover:bg-forest-light transition-colors"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -139,21 +139,21 @@ const Navbar = () => {
           <Link
             href="/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block px-4 py-3 text-sm font-medium text-charcoal hover:text-forest hover:bg-forest/5 rounded-lg transition-colors"
+            className="block px-4 py-3 text-[15px] font-medium text-charcoal hover:text-forest hover:bg-forest/5 rounded-lg transition-colors"
           >
             Home
           </Link>
           <Link
             href="/about"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block px-4 py-3 text-sm font-medium text-charcoal hover:text-forest hover:bg-forest/5 rounded-lg transition-colors"
+            className="block px-4 py-3 text-[15px] font-medium text-charcoal hover:text-forest hover:bg-forest/5 rounded-lg transition-colors"
           >
             About Us
           </Link>
           <Link
             href="/blogs"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block px-4 py-3 text-sm font-medium text-charcoal hover:text-forest hover:bg-forest/5 rounded-lg transition-colors"
+            className="block px-4 py-3 text-[15px] font-medium text-charcoal hover:text-forest hover:bg-forest/5 rounded-lg transition-colors"
           >
             Blogs
           </Link>
@@ -161,7 +161,7 @@ const Navbar = () => {
           <div>
             <button
               onClick={() => setIsProductsDropdownOpen(!isProductsDropdownOpen)}
-              className="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-charcoal hover:text-forest hover:bg-forest/5 rounded-lg transition-colors"
+              className="w-full flex items-center justify-between px-4 py-3 text-[15px] font-medium text-charcoal hover:text-forest hover:bg-forest/5 rounded-lg transition-colors"
             >
               Products
               <svg
@@ -181,7 +181,7 @@ const Navbar = () => {
                     key={cat.id}
                     href={cat.href}
                     onClick={() => { setIsMobileMenuOpen(false); setIsProductsDropdownOpen(false); }}
-                    className="block px-4 py-2.5 text-sm text-sage hover:text-forest transition-colors"
+                    className="block px-4 py-2.5 text-[15px] text-sage hover:text-forest transition-colors"
                   >
                     {cat.title}
                   </Link>
@@ -193,7 +193,7 @@ const Navbar = () => {
           {/* Mobile Phone */}
           <a
             href="tel:+919009990000"
-            className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-forest"
+            className="flex items-center gap-2 px-4 py-3 text-[15px] font-medium text-forest"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />

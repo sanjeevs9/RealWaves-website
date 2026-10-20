@@ -31,6 +31,11 @@ export const BUSINESS = {
   ],
 };
 
+// WhatsApp click-to-chat: same line as BUSINESS.telephone, country code without "+".
+export const WHATSAPP_NUMBER = "919009990000";
+export const whatsappUrl = (message?: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}${message ? `?text=${encodeURIComponent(message)}` : ""}`;
+
 // Shared Open Graph defaults. Child routes that set `openGraph` replace the
 // parent's object entirely, so they spread this to keep the image and site name.
 export const DEFAULT_OPEN_GRAPH = {
@@ -46,3 +51,8 @@ export const DEFAULT_OPEN_GRAPH = {
     },
   ],
 };
+
+// Branch previews (v2.realwavespacks.com, staging, *.vercel.app) build with
+// VERCEL_ENV=preview. They are kept out of search results so they never compete
+// with the live site; production and any non-Vercel build are unaffected.
+export const IS_PREVIEW = process.env.VERCEL_ENV === "preview";
