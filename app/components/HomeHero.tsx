@@ -106,15 +106,15 @@ export default function HomeHero() {
                 className="relative flex flex-col overflow-hidden bg-forest text-ivory wide:h-[clamp(620px,calc(100svh-68px),1000px)]"
             >
                 <LogoPattern />
-                <div className="relative mx-auto max-w-4xl shrink-0 px-5 pb-7 pt-9 text-center sm:px-6 md:pb-[clamp(20px,4vh,40px)] md:pt-[clamp(28px,6vh,64px)]">
+                <div className="relative mx-auto max-w-4xl shrink-0 px-5 pb-7 pt-9 text-center sm:px-6 md:max-w-6xl md:pb-[clamp(20px,4vh,40px)] md:pt-[clamp(28px,6vh,64px)]">
                     {/* Real {' '} text node between the spans, so crawlers and screen readers
                         don't read "…since 2017Bags that…" */}
                     <h1 id="home-hero-title">
                         <span className="block text-[13px] font-medium text-mist sm:text-base">
                             Non-woven bag manufacturer in Raipur, since 2017
                         </span>{' '}
-                        <span className="mt-3 block text-balance font-display text-[2rem] font-semibold leading-[1.08] tracking-[-0.02em] sm:text-[2.6rem] md:mt-4 md:text-[clamp(2.5rem,min(3.8vw,6.5vh),3.6rem)]">
-                            Bags that carry your brand home.
+                        <span className="mt-3 block text-balance font-display text-[2rem] font-semibold leading-[1.08] tracking-[-0.02em] sm:text-[2.6rem] md:mt-4 md:whitespace-nowrap md:text-[clamp(2.5rem,min(3.8vw,6.5vh),3.6rem)]">
+                            Bags that carry your brand home
                         </span>
                     </h1>
                     <p className="mx-auto mt-3 max-w-[32rem] text-pretty text-[15px] leading-normal text-mist sm:mt-5 sm:text-base sm:leading-relaxed md:text-[17px]">
