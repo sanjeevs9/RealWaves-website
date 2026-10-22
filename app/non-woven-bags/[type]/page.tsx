@@ -7,6 +7,7 @@ import { BUSINESS, DEFAULT_OPEN_GRAPH, SITE_URL, whatsappUrl } from "../../site"
 import JsonLd, { breadcrumbs } from "../../components/JsonLd";
 import PageHeader from "../../components/PageHeader";
 import ProductCard from "../../components/ProductCard";
+import { REAL_BAGS } from "../../realPhotos";
 
 export const dynamicParams = false;
 
@@ -170,6 +171,27 @@ export default async function BagTypePage({ params }: { params: Promise<{ type: 
           </div>
         </div>
       </section>
+
+      {/* Real photos of bags we printed in this style */}
+      {REAL_BAGS[bag.slug]?.length ? (
+        <section className="mx-auto max-w-6xl px-4 pb-14 sm:px-6 sm:pb-20">
+          <p className="text-[15px] font-semibold text-sage">Real photos</p>
+          <h2 className="section-heading mt-3">{bag.shortName} bags we printed, in the hand</h2>
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
+            {REAL_BAGS[bag.slug].map((p) => (
+              <figure key={p.alt} className="m-0">
+                <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-linen">
+                  <Image src={p.img} alt={p.alt} sizes="(min-width: 1024px) 270px, 45vw" className="h-full w-full object-cover" />
+                </div>
+                <figcaption className="px-1 pt-3">
+                  <span className="block text-[15px] font-semibold text-charcoal sm:text-base">{p.shop}</span>
+                  <span className="block text-[13px] text-sage sm:text-sm">{p.caption}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {/* Work */}
       {products.length > 0 && (

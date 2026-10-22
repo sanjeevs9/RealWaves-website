@@ -7,6 +7,7 @@ import AboutVideoSection from '../Sections/AboutUs';
 import WhyChooseUsSection from '../Sections/WhyChooseUs';
 import Reviews from '../Sections/Reviews';
 import MapSection from '../Sections/location';
+import FactoryPhotos from '../Sections/FactoryPhotos';
 
 const title = 'About Us – Bag Manufacturer in Raipur Since 2017';
 const description =
@@ -85,6 +86,7 @@ export default function About() {
                 </div>
             </section>
 
+            <FactoryPhotos />
             <AboutVideoSection />
             <WhyChooseUsSection />
             <Reviews />

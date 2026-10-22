@@ -3,9 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { BUSINESS } from '../site';
-// A group of bags we printed for real shops, built from our bag cut-outs by
-// scripts/make-bag-collage.cjs (transparent, so it sits on the ivory panel below)
-import bagsCollage from '@/public/factory/bags-collage.webp';
+// Our own bag-making floor in Saddu, Raipur (photographed on site)
+import factoryHall from '@/public/factory/factory-hall.webp';
 
 const { latitude: lat, longitude: lng } = BUSINESS.geo;
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
@@ -61,13 +60,16 @@ const MapSection: React.FC = () => {
         </div>
 
         <div className="flex min-w-0 flex-1 basis-[480px] flex-col gap-4">
-          <div className="overflow-hidden rounded-3xl bg-ivory">
+          <div className="relative overflow-hidden rounded-3xl">
             <Image
-              src={bagsCollage}
-              alt="Printed RealWaves bags for Kajri, Shail, Saheb, The Bread Basket, Fusion, Bonzelo and Madhu Textorium"
+              src={factoryHall}
+              alt="Bag-making machines on the factory floor at RealWaves Packs, Raipur"
               sizes="(min-width: 1024px) 620px, 100vw"
-              className="aspect-video w-full object-contain"
+              className="aspect-video w-full object-cover"
             />
+            <p className="absolute bottom-3 left-3 rounded-full bg-forest/85 px-3.5 py-1.5 text-[13px] font-semibold text-ivory backdrop-blur-sm sm:bottom-4 sm:left-4">
+              Our bag-making floor, Saddu
+            </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="relative h-[200px] overflow-hidden rounded-[20px] bg-linen">
