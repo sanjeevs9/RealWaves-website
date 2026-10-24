@@ -4,7 +4,6 @@ import WhyChooseUsSection from "./Sections/WhyChooseUs";
 import AboutVideoSection from "./Sections/AboutUs";
 import ContactUs from "./Sections/ContactUs";
 import Reviews from "./Sections/Reviews";
-import BeforePrint from "./Sections/BeforePrint";
 import HomeHero from "./components/HomeHero";
 import PromoBanners from "./components/PromoBanners";
 // import Hero3 from "./components/Hero3";
@@ -31,7 +30,6 @@ export default function Home() {
         <AboutVideoSection />
         {/* Sits right under the About section and shares its spacing (no top padding) */}
         <WhyChooseUsSection />
-        <BeforePrint />
         <MapSection />
       </div>
       {/* <WhyUs />/ */}
